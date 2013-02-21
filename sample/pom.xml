@@ -1,0 +1,120 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>giavacms</artifactId>
+		<groupId>org.giavacms</groupId>
+		<version>2.0.0</version>
+	</parent>
+
+	<groupId>org.giavacms.websites</groupId>
+	<artifactId>sample</artifactId>
+	<packaging>war</packaging>
+	<build>
+		<finalName>ROOT</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+	<dependencies>
+
+		<!-- Giava Commons -->
+		<dependency>
+			<groupId>org.giavacms.common</groupId>
+			<artifactId>giavacms-common-base</artifactId>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- Giava CMS -->
+
+		<dependency>
+			<groupId>org.giavacms</groupId>
+			<artifactId>base</artifactId>
+			<scope>compile</scope>
+			<version>2.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.giavacms</groupId>
+			<artifactId>contactus</artifactId>
+			<version>2.0.0</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.giavacms</groupId>
+			<artifactId>company</artifactId>
+			<version>2.0.0</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.giavacms</groupId>
+			<artifactId>faq</artifactId>
+			<version>2.0.0</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.giavacms</groupId>
+			<artifactId>richnews</artifactId>
+			<scope>compile</scope>
+			<version>2.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.giavacms</groupId>
+			<artifactId>banner</artifactId>
+			<scope>compile</scope>
+			<version>2.0.0</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.giavacms</groupId>
+			<artifactId>message</artifactId>
+			<scope>compile</scope>
+			<version>2.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.giavacms</groupId>
+			<artifactId>errors</artifactId>
+			<scope>compile</scope>
+			<version>2.0.0</version>
+		</dependency>
+
+
+		<!-- Required in WEB-INF/lib if not provided by jboss modules -->
+
+		<!-- Prime faces -->
+		<dependency>
+			<groupId>org.primefaces</groupId>
+			<artifactId>primefaces</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<!-- <dependency> <groupId>org.primefaces.themes</groupId> <artifactId>aristo</artifactId> 
+			<scope>compile</scope> </dependency> -->
+		<!-- Apache commons -->
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<scope>compile</scope>
+		</dependency>
+
+	</dependencies>
+
+</project>
