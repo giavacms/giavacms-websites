@@ -60,14 +60,14 @@
 
 		<dependency>
 			<groupId>org.giavacms</groupId>
-			<artifactId>richnews</artifactId>
+			<artifactId>richcontent</artifactId>
 			<scope>compile</scope>
 			<version>2.0.0</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.giavacms</groupId>
-			<artifactId>banner</artifactId>
+			<artifactId>catalogue</artifactId>
 			<scope>compile</scope>
 			<version>2.0.0</version>
 		</dependency>
@@ -80,7 +80,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.giavacms</groupId>
-			<artifactId>errors</artifactId>
+			<artifactId>errorpages</artifactId>
 			<scope>compile</scope>
 			<version>2.0.0</version>
 		</dependency>
