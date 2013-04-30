@@ -6,18 +6,18 @@
 	version="1.0">
 	<persistence-unit name="TestCmsDS">
 		<jta-data-source>java:jboss/datasources/MysqlDS</jta-data-source>
-		<jar-file>lib/base-2.0.0.jar</jar-file>
-		<jar-file>lib/contactus-2.0.0.jar</jar-file>
-		<jar-file>lib/company-2.0.0.jar</jar-file>
-		<jar-file>lib/faq-2.0.0.jar</jar-file>
-		<jar-file>lib/richcontent-2.0.0.jar</jar-file>
-		<jar-file>lib/catalogue-2.0.0.jar</jar-file>
-		<jar-file>lib/message-2.0.0.jar</jar-file>
-		<!-- jar-file>lib/errorpages-2.0.0.jar</jar-file -->
+		<jar-file>lib/base-2.0.1-SNAPSHOT.jar</jar-file>
+		<jar-file>lib/contactus-2.0.1-SNAPSHOT.jar</jar-file>
+		<jar-file>lib/company-2.0.1-SNAPSHOT.jar</jar-file>
+		<jar-file>lib/faq-2.0.1-SNAPSHOT.jar</jar-file>
+		<jar-file>lib/richcontent-2.0.1-SNAPSHOT.jar</jar-file>
+		<jar-file>lib/catalogue-2.0.1-SNAPSHOT.jar</jar-file>
+		<jar-file>lib/message-2.0.1-SNAPSHOT.jar</jar-file>
+		<!-- jar-file>lib/errorpages-2.0.1-SNAPSHOT.jar</jar-file -->
 		<properties>
 
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
-			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<!--  property name="hibernate.hbm2ddl.auto" value="update" /-->
 			<property name="hibernate.connection.useUnicode" value="true" />
 			<property name="hibernate.connection.characterEncoding"
 				value="UTF-8" />
