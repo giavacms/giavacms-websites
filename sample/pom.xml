@@ -46,6 +46,13 @@
 
 		<dependency>
 			<groupId>org.giavacms</groupId>
+			<artifactId>banner</artifactId>
+			<version>2.0.1-SNAPSHOT</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.giavacms</groupId>
 			<artifactId>company</artifactId>
 			<version>2.0.1-SNAPSHOT</version>
 			<scope>compile</scope>
