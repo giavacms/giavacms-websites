@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
           http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
 	version="1.0">
-	<persistence-unit name="TestCmsDS">
+	<persistence-unit name="MysqlDS">
 		<jta-data-source>java:jboss/datasources/MysqlDS</jta-data-source>
 		<jar-file>lib/base-2.0.1-SNAPSHOT.jar</jar-file>
 		<jar-file>lib/contactus-2.0.1-SNAPSHOT.jar</jar-file>
