@@ -4,6 +4,9 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
 	<display-name>avissbt</display-name>
+	
+	<!-- 
+
 	<servlet>
 		<servlet-name>CssStaticOpenShiftServlet</servlet-name>
 		<servlet-class>org.giavacms.base.servlet.StaticOpenShiftServlet</servlet-class>
@@ -91,4 +94,7 @@
 		<servlet-name>JsStaticOpenShiftServlet</servlet-name>
 		<url-pattern>/js/*</url-pattern>
 	</servlet-mapping>
+	
+	 -->
+	
 </web-app>
