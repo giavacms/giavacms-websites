@@ -8,6 +8,19 @@
 	<!-- 
 
 	<servlet>
+		<servlet-name>ErrorsStaticOpenShiftServlet</servlet-name>
+		<servlet-class>org.giavacms.base.servlet.StaticOpenShiftServlet</servlet-class>
+		<init-param>
+			<param-name>baseFolderSystemProperty</param-name>
+			<param-value>$OPENSHIFT_DATA_DIR</param-value>
+		</init-param>
+		<init-param>
+			<param-name>folderName</param-name>
+			<param-value>errors</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
 		<servlet-name>CssStaticOpenShiftServlet</servlet-name>
 		<servlet-class>org.giavacms.base.servlet.StaticOpenShiftServlet</servlet-class>
 		<init-param>
@@ -94,7 +107,11 @@
 		<servlet-name>JsStaticOpenShiftServlet</servlet-name>
 		<url-pattern>/js/*</url-pattern>
 	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ErrorsStaticOpenShiftServlet</servlet-name>
+		<url-pattern>/errors/*</url-pattern>
+	</servlet-mapping>
 	
-	 -->
+ -->	 
 	
 </web-app>
