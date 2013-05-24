@@ -4,8 +4,7 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
 	<display-name>avissbt</display-name>
-	
-	<!-- 
+
 
 	<servlet>
 		<servlet-name>ErrorsStaticOpenShiftServlet</servlet-name>
@@ -111,7 +110,6 @@
 		<servlet-name>ErrorsStaticOpenShiftServlet</servlet-name>
 		<url-pattern>/errors/*</url-pattern>
 	</servlet-mapping>
-	
- -->	 
-	
+
+
 </web-app>
