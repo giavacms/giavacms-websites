@@ -3,14 +3,28 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
-	<display-name>sample.eu</display-name>
-	<!-- DEPLOYANDO IN LOCALE NON SERVONO - LI DEVO CREARE DENTRO LA ROOT DEL JBOSS
+	<display-name>engimec</display-name>
+
+
+	<servlet>
+		<servlet-name>ErrorsStaticOpenShiftServlet</servlet-name>
+		<servlet-class>org.giavacms.base.servlet.StaticOpenShiftServlet</servlet-class>
+		<init-param>
+			<param-name>baseFolderSystemProperty</param-name>
+			<param-value>$OPENSHIFT_DATA_DIR</param-value>
+		</init-param>
+		<init-param>
+			<param-name>folderName</param-name>
+			<param-value>errors</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
 	<servlet>
 		<servlet-name>CssStaticOpenShiftServlet</servlet-name>
 		<servlet-class>org.giavacms.base.servlet.StaticOpenShiftServlet</servlet-class>
 		<init-param>
 			<param-name>baseFolderSystemProperty</param-name>
-			<param-value>/var/lib/openshift/e517d2dbaf954149ac602ddcf9550d0b/app-root/data/</param-value>
+			<param-value>$OPENSHIFT_DATA_DIR</param-value>
 		</init-param>
 		<init-param>
 			<param-name>folderName</param-name>
@@ -23,7 +37,7 @@
 		<servlet-class>org.giavacms.base.servlet.StaticOpenShiftServlet</servlet-class>
 		<init-param>
 			<param-name>baseFolderSystemProperty</param-name>
-			<param-value>/var/lib/openshift/e517d2dbaf954149ac602ddcf9550d0b/app-root/data/</param-value>
+			<param-value>$OPENSHIFT_DATA_DIR</param-value>
 		</init-param>
 		<init-param>
 			<param-name>folderName</param-name>
@@ -36,7 +50,7 @@
 		<servlet-class>org.giavacms.base.servlet.StaticOpenShiftServlet</servlet-class>
 		<init-param>
 			<param-name>baseFolderSystemProperty</param-name>
-			<param-value>/var/lib/openshift/e517d2dbaf954149ac602ddcf9550d0b/app-root/data/</param-value>
+			<param-value>$OPENSHIFT_DATA_DIR</param-value>
 		</init-param>
 		<init-param>
 			<param-name>folderName</param-name>
@@ -49,7 +63,7 @@
 		<servlet-class>org.giavacms.base.servlet.StaticOpenShiftServlet</servlet-class>
 		<init-param>
 			<param-name>baseFolderSystemProperty</param-name>
-			<param-value>/var/lib/openshift/e517d2dbaf954149ac602ddcf9550d0b/app-root/data/</param-value>
+			<param-value>$OPENSHIFT_DATA_DIR</param-value>
 		</init-param>
 		<init-param>
 			<param-name>folderName</param-name>
@@ -63,7 +77,7 @@
 		<servlet-class>org.giavacms.base.servlet.StaticOpenShiftServlet</servlet-class>
 		<init-param>
 			<param-name>baseFolderSystemProperty</param-name>
-			<param-value>/var/lib/openshift/e517d2dbaf954149ac602ddcf9550d0b/app-root/data/</param-value>
+			<param-value>$OPENSHIFT_DATA_DIR</param-value>
 		</init-param>
 		<init-param>
 			<param-name>folderName</param-name>
@@ -92,5 +106,10 @@
 		<servlet-name>JsStaticOpenShiftServlet</servlet-name>
 		<url-pattern>/js/*</url-pattern>
 	</servlet-mapping>
-	-->
+	<servlet-mapping>
+		<servlet-name>ErrorsStaticOpenShiftServlet</servlet-name>
+		<url-pattern>/errors/*</url-pattern>
+	</servlet-mapping>
+
+
 </web-app>
