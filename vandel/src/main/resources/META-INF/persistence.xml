@@ -13,6 +13,7 @@
 		<jar-file>lib/richnews-1.0-importer-2.0.3-SNAPSHOT.jar</jar-file>
 		<jar-file>lib/company-2.0.3-SNAPSHOT.jar</jar-file>
 		<jar-file>lib/banner-2.0.3-SNAPSHOT.jar</jar-file>
+		<jar-file>lib/catalogue-2.0.3-SNAPSHOT.jar</jar-file>
 		<properties>
 
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
