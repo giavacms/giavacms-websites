@@ -72,6 +72,12 @@
 
 		<dependency>
 			<groupId>org.giavacms</groupId>
+			<artifactId>paypal</artifactId>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.giavacms</groupId>
 			<artifactId>errorpages</artifactId>
 			<scope>compile</scope>
 		</dependency>

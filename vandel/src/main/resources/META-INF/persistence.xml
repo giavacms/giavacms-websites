@@ -14,6 +14,7 @@
 		<jar-file>lib/company-2.0.3-SNAPSHOT.jar</jar-file>
 		<jar-file>lib/banner-2.0.3-SNAPSHOT.jar</jar-file>
 		<jar-file>lib/catalogue-2.0.3-SNAPSHOT.jar</jar-file>
+		<jar-file>lib/paypal-2.0.3-SNAPSHOT.jar</jar-file>
 		<properties>
 
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
@@ -21,9 +22,10 @@
 			<property name="hibernate.connection.useUnicode" value="true" />
 			<property name="hibernate.connection.characterEncoding"
 				value="UTF-8" />
-			<!-- <property name="hibernate.hbm2ddl.auto" value="validate" /> <property 
-				name="hibernate.generate_statistics" value="true" /> <property name="hibernate.show_sql" 
-				value="true" /> <property name="hibernate.format_sql" value="true" /> -->
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.generate_statistics" value="true" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
 
 
 		</properties>
