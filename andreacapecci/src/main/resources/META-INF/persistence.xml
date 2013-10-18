@@ -11,8 +11,8 @@
 		<jar-file>lib/richcontent-2.0.3-SNAPSHOT.jar</jar-file>
 		<jar-file>lib/company-2.0.3-SNAPSHOT.jar</jar-file>
 		<jar-file>lib/banner-2.0.3-SNAPSHOT.jar</jar-file>
-		<jar-file>lib/githubcontent-2.0.3-SNAPSHOT.jar</jar-file>
 		<properties>
+
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
 			<property name="hibernate.hbm2ddl.auto" value="update" />
 			<property name="hibernate.connection.useUnicode" value="true" />
