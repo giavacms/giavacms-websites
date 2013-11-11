@@ -75,7 +75,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.giavacms</groupId>
-			<artifactId>rewriter</artifactId>
+			<artifactId>cache</artifactId>
 			<scope>compile</scope>
 		</dependency>
 
