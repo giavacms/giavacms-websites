@@ -19,10 +19,28 @@
 	</build>
 	<dependencies>
 
-		<!-- Giava Commons -->
+	<!-- Giava Commons -->
 		<dependency>
 			<groupId>org.giavacms.common</groupId>
 			<artifactId>giavacms-common-base</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.giavacms.common</groupId>
+			<artifactId>giavacms-common-jpa</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.giavacms.common</groupId>
+			<artifactId>giavacms-common-rewrite</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.giavacms.common</groupId>
+			<artifactId>giavacms-common-web</artifactId>
 			<scope>compile</scope>
 		</dependency>
 
@@ -31,6 +49,12 @@
 		<dependency>
 			<groupId>org.giavacms</groupId>
 			<artifactId>base</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.giavacms</groupId>
+			<artifactId>rewriter</artifactId>
 			<scope>compile</scope>
 		</dependency>
 
@@ -55,6 +79,12 @@
 		<dependency>
 			<groupId>org.giavacms</groupId>
 			<artifactId>richcontent</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.giavacms</groupId>
+			<artifactId>compatibility</artifactId>
 			<scope>compile</scope>
 		</dependency>
 

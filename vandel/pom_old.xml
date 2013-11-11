@@ -8,42 +8,15 @@
 	</parent>
 	<artifactId>vandel</artifactId>
 	<packaging>war</packaging>
-
 	<build>
-
 		<finalName>ROOT</finalName>
-
-		<!-- Substitution of maven properties -->
-		<resources>
-			<!-- this doesn't work: perhaps src/main/webapp is not a well-known maven 
-				path <resource> <directory>src/main/webapp</directory> <filtering>true</filtering> 
-				<includes> <include>WEB-INF/web.xml</include> <include>WEB-INF/jboss-web.xml</include> 
-				<include>**/*.xhtml</include> </includes> </resource> -->
-			<resource>
-				<directory>src/main/resources</directory>
-				<filtering>true</filtering>
-				<includes>
-					<include>META-INF/persistence.xml</include>
-				</includes>
-			</resource>
-			<resource>
-				<directory>src/main/resources</directory>
-				<filtering>false</filtering>
-				<excludes>
-					<exclude>META-INF/persistence.xml</exclude>
-				</excludes>
-			</resource>
-		</resources>
-
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
 			</plugin>
 		</plugins>
-
 	</build>
-
 	<dependencies>
 
 		<!-- Giava Commons -->
@@ -52,19 +25,22 @@
 			<artifactId>giavacms-common-base</artifactId>
 			<scope>compile</scope>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.giavacms.common</groupId>
 			<artifactId>giavacms-common-jpa</artifactId>
 			<scope>compile</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.giavacms.common</groupId>
-			<artifactId>giavacms-common-web</artifactId>
-			<scope>compile</scope>
-		</dependency>
+		
 		<dependency>
 			<groupId>org.giavacms.common</groupId>
 			<artifactId>giavacms-common-rewrite</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.giavacms.common</groupId>
+			<artifactId>giavacms-common-web</artifactId>
 			<scope>compile</scope>
 		</dependency>
 
@@ -73,11 +49,6 @@
 		<dependency>
 			<groupId>org.giavacms</groupId>
 			<artifactId>base</artifactId>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.giavacms</groupId>
-			<artifactId>rewriter</artifactId>
 			<scope>compile</scope>
 		</dependency>
 
@@ -120,12 +91,6 @@
 		<dependency>
 			<groupId>org.giavacms</groupId>
 			<artifactId>paypal</artifactId>
-			<scope>compile</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.giavacms</groupId>
-			<artifactId>scenario</artifactId>
 			<scope>compile</scope>
 		</dependency>
 

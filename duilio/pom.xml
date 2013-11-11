@@ -6,18 +6,41 @@
 		<groupId>org.giavacms</groupId>
 		<version>2.0.3-SNAPSHOT</version>
 	</parent>
-	<groupId>org.giavacms.websites</groupId>
 	<artifactId>duilio</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<build>
+
 		<finalName>ROOT</finalName>
+
+		<!-- Substitution of maven properties -->
+		<resources>
+			<!-- this doesn't work: perhaps src/main/webapp is not a well-known maven 
+				path <resource> <directory>src/main/webapp</directory> <filtering>true</filtering> 
+				<includes> <include>WEB-INF/web.xml</include> <include>WEB-INF/jboss-web.xml</include> 
+				<include>**/*.xhtml</include> </includes> </resource> -->
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>META-INF/persistence.xml</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>false</filtering>
+				<excludes>
+					<exclude>META-INF/persistence.xml</exclude>
+				</excludes>
+			</resource>
+		</resources>
+
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
 			</plugin>
 		</plugins>
+
 	</build>
 	<dependencies>
 
@@ -27,6 +50,21 @@
 			<artifactId>giavacms-common-base</artifactId>
 			<scope>compile</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.giavacms.common</groupId>
+			<artifactId>giavacms-common-jpa</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.giavacms.common</groupId>
+			<artifactId>giavacms-common-web</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.giavacms.common</groupId>
+			<artifactId>giavacms-common-rewrite</artifactId>
+			<scope>compile</scope>
+		</dependency>
 
 		<!-- Giava CMS -->
 
@@ -34,29 +72,24 @@
 			<groupId>org.giavacms</groupId>
 			<artifactId>base</artifactId>
 			<scope>compile</scope>
-			<version>2.0.3-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>org.giavacms</groupId>
+			<artifactId>rewriter</artifactId>
+			<scope>compile</scope>
+		</dependency>
+
 
 		<dependency>
 			<groupId>org.giavacms</groupId>
 			<artifactId>contactus</artifactId>
-			<version>2.0.3-SNAPSHOT</version>
 			<scope>compile</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.giavacms</groupId>
 			<artifactId>banner</artifactId>
-			<version>2.0.3-SNAPSHOT</version>
 			<scope>compile</scope>
-		</dependency>
-
-
-		<dependency>
-			<groupId>org.giavacms</groupId>
-			<artifactId>richcontent</artifactId>
-			<scope>compile</scope>
-			<version>2.0.3-SNAPSHOT</version>
 		</dependency>
 
 
@@ -64,21 +97,24 @@
 			<groupId>org.giavacms</groupId>
 			<artifactId>company</artifactId>
 			<scope>compile</scope>
-			<version>2.0.3-SNAPSHOT</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.giavacms</groupId>
 			<artifactId>errorpages</artifactId>
 			<scope>compile</scope>
-			<version>2.0.3-SNAPSHOT</version>
 		</dependency>
 		
 		<dependency>
 			<groupId>org.giavacms</groupId>
 			<artifactId>githubcontent</artifactId>
 			<scope>compile</scope>
-			<version>2.0.3-SNAPSHOT</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.giavacms</groupId>
+			<artifactId>compatibility</artifactId>
+			<scope>compile</scope>
 		</dependency>
 
 
