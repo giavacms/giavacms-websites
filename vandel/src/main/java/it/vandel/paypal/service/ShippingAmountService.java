@@ -134,10 +134,12 @@ public class ShippingAmountService implements ShippingService
       {
          if (shoppingCart.getTotal() > 40)
          {
+            System.out.println("IT Total() > 40: 0");
             return Double.valueOf("0");
          }
          else
          {
+            System.out.println("IT Total() < 40: 5");
             return Double.valueOf("5");
          }
       }
@@ -145,10 +147,12 @@ public class ShippingAmountService implements ShippingService
       {
          if (shoppingCart.getTotal() > 120)
          {
+            System.out.println("ESTERO Total() > 120: 0");
             return Double.valueOf("0");
          }
          else
          {
+            System.out.println("ESTERO Total() < 120: 5");
             return Double.valueOf("5");
          }
       }
