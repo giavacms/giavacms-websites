@@ -5,6 +5,15 @@
 
 	<display-name>vandel</display-name>
 
+	<context-param>
+		<param-name>primefaces.PUBLIC_CAPTCHA_KEY</param-name>
+		<param-value>6LfTHesSAAAAAIy6Cqh5cosGUxO5-mSVvG9tdRHM</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>primefaces.PRIVATE_CAPTCHA_KEY</param-name>
+		<param-value>6LfTHesSAAAAABQSxPlh45ST0Bqr7tIsp_wusXnk</param-value>
+	</context-param>
 
 	<servlet>
 		<servlet-name>ErrorsStaticOpenShiftServlet</servlet-name>
