@@ -8,11 +8,14 @@ import javax.ejb.Stateless;
 
 import org.giavacms.paypalweb.model.ShoppingCart;
 import org.giavacms.paypalweb.service.ShippingService;
+import org.jboss.logging.Logger;
 
 @Stateless
 @Local(ShippingService.class)
 public class ShippingAmountService implements ShippingService
 {
+
+   Logger logger = Logger.getLogger(getClass().getName());
 
    static List<String> getProvince()
    {
@@ -130,16 +133,16 @@ public class ShippingAmountService implements ShippingService
     */
    public double calculate(ShoppingCart shoppingCart)
    {
-      if (isItalian(shoppingCart.getShippingAddress().getState()))
+      if (isItalian(shoppingCart.getShippingAddress().getCountryCode(), shoppingCart.getShippingAddress().getState()))
       {
          if (shoppingCart.getTotal() > 40)
          {
-            System.out.println("IT Total() > 40: 0");
+            logger.info("IT Total() > 40: 0");
             return Double.valueOf("0");
          }
          else
          {
-            System.out.println("IT Total() < 40: 5");
+            logger.info("IT Total() < 40: 5");
             return Double.valueOf("5");
          }
       }
@@ -147,20 +150,21 @@ public class ShippingAmountService implements ShippingService
       {
          if (shoppingCart.getTotal() > 120)
          {
-            System.out.println("ESTERO Total() > 120: 0");
+            logger.info("ESTERO Total() > 120: 0");
             return Double.valueOf("0");
          }
          else
          {
-            System.out.println("ESTERO Total() < 120: 5");
+            logger.info("ESTERO Total() < 120: 5");
             return Double.valueOf("5");
          }
       }
    }
 
-   private static boolean isItalian(String state)
+   private static boolean isItalian(String countryCode, String state)
    {
-      if (state != null && !state.isEmpty() && getProvince().contains(state))
+      if (countryCode != null && countryCode.equals("IT") && state != null && !state.isEmpty()
+               && getProvince().contains(state))
          return true;
       return false;
    }
