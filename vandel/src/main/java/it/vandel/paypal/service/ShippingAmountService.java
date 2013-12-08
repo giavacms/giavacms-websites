@@ -1,3 +1,9 @@
+/*
+ * Copyright 2013 GiavaCms.org.
+ *
+ * Licensed under the Eclipse Public License version 1.0, available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ */
 package it.vandel.paypal.service;
 
 import java.util.ArrayList;
@@ -156,14 +162,14 @@ public class ShippingAmountService implements ShippingService
          else
          {
             logger.info("ESTERO Total() < 120: 5");
-            return Double.valueOf("5");
+            return Double.valueOf("50");
          }
       }
    }
 
    private static boolean isItalian(String countryCode, String state)
    {
-      if (countryCode != null && countryCode.equals("IT") && state != null && !state.isEmpty()
+      if (countryCode != null && countryCode.toUpperCase().equals("IT") && state != null && !state.isEmpty()
                && getProvince().contains(state))
          return true;
       return false;
