@@ -111,10 +111,10 @@
 			<artifactId>errorpages</artifactId>
 			<scope>compile</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.giavacms</groupId>
-			<artifactId>multisite</artifactId>
+			<artifactId>openshift-jboss7</artifactId>
 			<scope>compile</scope>
 		</dependency>
 
