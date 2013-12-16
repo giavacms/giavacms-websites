@@ -47,6 +47,8 @@
 			<artifactId>giavacms-common-web</artifactId>
 			<scope>compile</scope>
 		</dependency>
+
+
 		<!-- Giava CMS -->
 
 		<dependency>
@@ -119,7 +121,8 @@
 			<artifactId>primefaces</artifactId>
 			<scope>compile</scope>
 		</dependency>
-		
+		<!-- <dependency> <groupId>org.primefaces.themes</groupId> <artifactId>aristo</artifactId> 
+			<scope>compile</scope> </dependency> -->
 		<!-- Apache commons -->
 		<dependency>
 			<groupId>commons-fileupload</groupId>

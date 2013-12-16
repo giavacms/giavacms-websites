@@ -169,8 +169,8 @@ public class ShippingAmountService implements ShippingService
 
    private static boolean isItalian(String countryCode, String state)
    {
-      if (countryCode != null && countryCode.toUpperCase().equals("IT") && state != null && !state.isEmpty()
-               && getProvince().contains(state))
+      if (countryCode != null && countryCode.toUpperCase().equals("IT") && state != null && !state.trim().isEmpty()
+               && getProvince().contains(state.trim().toUpperCase()))
          return true;
       return false;
    }
