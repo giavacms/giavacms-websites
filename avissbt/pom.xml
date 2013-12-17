@@ -56,7 +56,7 @@
 			<artifactId>base</artifactId>
 			<scope>compile</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.giavacms</groupId>
 			<artifactId>compatibility</artifactId>
@@ -109,6 +109,12 @@
 		<dependency>
 			<groupId>org.giavacms</groupId>
 			<artifactId>people</artifactId>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.giavacms</groupId>
+			<artifactId>openshift-jboss7</artifactId>
 			<scope>compile</scope>
 		</dependency>
 
