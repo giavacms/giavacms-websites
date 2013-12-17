@@ -154,23 +154,16 @@ public class ShippingAmountService implements ShippingService
       }
       else
       {
-         if (shoppingCart.getTotal() > 120)
-         {
-            logger.info("ESTERO Total() > 120: 0");
-            return Double.valueOf("0");
-         }
-         else
-         {
-            logger.info("ESTERO Total() < 120: 5");
-            return Double.valueOf("50");
-         }
+         return Double.valueOf("0");
       }
    }
 
    private static boolean isItalian(String countryCode, String state)
    {
-      if (countryCode != null && countryCode.toUpperCase().equals("IT") && state != null && !state.trim().isEmpty()
-               && getProvince().contains(state.trim().toUpperCase()))
+      if (countryCode != null && countryCode.toUpperCase().equals("IT")
+      // && state != null && !state.trim().isEmpty()
+      // && getProvince().contains(state.trim().toUpperCase())
+      )
          return true;
       return false;
    }
