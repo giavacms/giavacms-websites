@@ -10,22 +10,21 @@
 		<jar-file>lib/contactus-${project.version}.jar</jar-file>
 		<jar-file>lib/faq-${project.version}.jar</jar-file>
 		<jar-file>lib/richcontent-${project.version}.jar</jar-file>
-		<jar-file>lib/company-${project.version}.jar</jar-file>
 		<jar-file>lib/banner-${project.version}.jar</jar-file>
+		<jar-file>lib/customer-2.0.4.jar</jar-file>
 		<jar-file>lib/catalogue-${project.version}.jar</jar-file>
-		<jar-file>lib/paypalweb-${project.version}.jar</jar-file>
-		<jar-file>lib/scenario-${project.version}.jar</jar-file>
+		<!-- <jar-file>lib/richnews-1.0-importer-${project.version}.jar</jar-file> -->
 		<properties>
 
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
-
+			<property name="hibernate.hbm2ddl.auto" value="update" />
 			<property name="hibernate.connection.useUnicode" value="true" />
 			<property name="hibernate.connection.characterEncoding"
 				value="UTF-8" />
-			<property name="hibernate.hbm2ddl.auto" value="update" />
-			<!-- <property name="hibernate.generate_statistics" value="true" /> <property 
-				name="hibernate.show_sql" value="true" /> <property name="hibernate.format_sql" 
-				value="true" /> -->
+			<!-- <property name="hibernate.hbm2ddl.auto" value="validate" /> <property 
+				name="hibernate.generate_statistics" value="true" /> <property name="hibernate.show_sql" 
+				value="true" /> <property name="hibernate.format_sql" value="true" /> -->
+
 
 		</properties>
 	</persistence-unit>

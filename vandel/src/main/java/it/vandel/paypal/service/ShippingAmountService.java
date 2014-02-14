@@ -141,15 +141,15 @@ public class ShippingAmountService implements ShippingService
    {
       if (isItalian(shoppingCart.getShippingAddress().getCountryCode(), shoppingCart.getShippingAddress().getState()))
       {
-         if (shoppingCart.getTotal() > 40)
+         if (shoppingCart.getTotal() >= 45)
          {
-            logger.info("IT Total() > 40: 0");
+            logger.info("IT Total() >= 45: 0");
             return Double.valueOf("0");
          }
          else
          {
-            logger.info("IT Total() < 40: 5");
-            return Double.valueOf("5");
+            logger.info("IT Total() < 45: 9");
+            return Double.valueOf("9");
          }
       }
       else
