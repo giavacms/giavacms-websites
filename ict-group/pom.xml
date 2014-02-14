@@ -69,14 +69,12 @@
 			<artifactId>catalogue</artifactId>
 			<scope>compile</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.giavacms</groupId>
 			<artifactId>people</artifactId>
 			<scope>compile</scope>
 		</dependency>
-
-
 
 		<dependency>
 			<groupId>org.giavacms</groupId>
@@ -123,12 +121,9 @@
 			<artifactId>compatibility</artifactId>
 			<scope>compile</scope>
 		</dependency>
-		
-		<dependency>
-			<groupId>org.giavacms</groupId>
-			<artifactId>richnews-1.0-importer</artifactId>
-			<scope>compile</scope>
-		</dependency>
+
+		<!-- <dependency> <groupId>org.giavacms</groupId> <artifactId>richnews-1.0-importer</artifactId> 
+			<scope>compile</scope> </dependency> -->
 
 
 
