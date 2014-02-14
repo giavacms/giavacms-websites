@@ -4,12 +4,35 @@
 	<parent>
 		<artifactId>giavacms</artifactId>
 		<groupId>org.giavacms</groupId>
-		<version>2.0.3-SNAPSHOT</version>
+		<version>2.0.4-SNAPSHOT</version>
 	</parent>
 	<artifactId>vandel</artifactId>
 	<packaging>war</packaging>
 	<build>
 		<finalName>ROOT</finalName>
+
+		<!-- Substitution of maven properties -->
+		<resources>
+			<!-- this doesn't work: perhaps src/main/webapp is not a well-known maven 
+				path <resource> <directory>src/main/webapp</directory> <filtering>true</filtering> 
+				<includes> <include>WEB-INF/web.xml</include> <include>WEB-INF/jboss-web.xml</include> 
+				<include>**/*.xhtml</include> </includes> </resource> -->
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>META-INF/persistence.xml</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>false</filtering>
+				<excludes>
+					<exclude>META-INF/persistence.xml</exclude>
+				</excludes>
+			</resource>
+		</resources>
+
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -98,6 +121,7 @@
 			<groupId>org.giavacms</groupId>
 			<artifactId>catalogue</artifactId>
 			<scope>compile</scope>
+			<version>2.0.4-SNAPSHOT</version>
 		</dependency>
 
 		<dependency>
@@ -117,10 +141,24 @@
 			<artifactId>openshift-jboss7</artifactId>
 			<scope>compile</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.giavacms</groupId>
 			<artifactId>scenario</artifactId>
+			<scope>compile</scope>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.giavacms</groupId>
+			<artifactId>base-rs</artifactId>
+			<scope>compile</scope>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.giavacms</groupId>
+			<artifactId>catalogue-rs</artifactId>
 			<scope>compile</scope>
 		</dependency>
 

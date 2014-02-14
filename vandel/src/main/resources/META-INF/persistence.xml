@@ -6,15 +6,15 @@
 	version="1.0">
 	<persistence-unit name="MysqlDS">
 		<jta-data-source>java:jboss/datasources/MysqlDS</jta-data-source>
-		<jar-file>lib/base-2.0.3-SNAPSHOT.jar</jar-file>
-		<jar-file>lib/contactus-2.0.3-SNAPSHOT.jar</jar-file>
-		<jar-file>lib/faq-2.0.3-SNAPSHOT.jar</jar-file>
-		<jar-file>lib/richcontent-2.0.3-SNAPSHOT.jar</jar-file>
-		<jar-file>lib/company-2.0.3-SNAPSHOT.jar</jar-file>
-		<jar-file>lib/banner-2.0.3-SNAPSHOT.jar</jar-file>
-		<jar-file>lib/catalogue-2.0.3-SNAPSHOT.jar</jar-file>
-		<jar-file>lib/paypalweb-2.0.3-SNAPSHOT.jar</jar-file>
-		<jar-file>lib/scenario-2.0.3-SNAPSHOT.jar</jar-file>
+		<jar-file>lib/base-${project.version}.jar</jar-file>
+		<jar-file>lib/contactus-${project.version}.jar</jar-file>
+		<jar-file>lib/faq-${project.version}.jar</jar-file>
+		<jar-file>lib/richcontent-${project.version}.jar</jar-file>
+		<jar-file>lib/company-${project.version}.jar</jar-file>
+		<jar-file>lib/banner-${project.version}.jar</jar-file>
+		<jar-file>lib/catalogue-${project.version}.jar</jar-file>
+		<jar-file>lib/paypalweb-${project.version}.jar</jar-file>
+		<jar-file>lib/scenario-${project.version}.jar</jar-file>
 		<properties>
 
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
