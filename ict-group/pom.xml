@@ -10,6 +10,26 @@
 	<packaging>war</packaging>
 	<build>
 		<finalName>ROOT</finalName>
+		<resources>
+			<!-- this doesn't work: perhaps src/main/webapp is not a well-known maven 
+				path <resource> <directory>src/main/webapp</directory> <filtering>true</filtering> 
+				<includes> <include>WEB-INF/web.xml</include> <include>WEB-INF/jboss-web.xml</include> 
+				<include>**/*.xhtml</include> </includes> </resource> -->
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>META-INF/persistence.xml</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>false</filtering>
+				<excludes>
+					<exclude>META-INF/persistence.xml</exclude>
+				</excludes>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
