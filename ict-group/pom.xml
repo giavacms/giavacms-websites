@@ -1,13 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>twizzme</artifactId>
-	<packaging>war</packaging>
 	<parent>
 		<artifactId>giavacms</artifactId>
 		<groupId>org.giavacms</groupId>
 		<version>2.0.4-SNAPSHOT</version>
 	</parent>
+	<artifactId>ict-group</artifactId>
+	<packaging>war</packaging>
 	<build>
 		<finalName>ROOT</finalName>
 		<plugins>
@@ -43,6 +43,7 @@
 			<artifactId>giavacms-common-web</artifactId>
 			<scope>compile</scope>
 		</dependency>
+
 		<!-- Giava CMS -->
 
 		<dependency>
@@ -53,10 +54,43 @@
 
 		<dependency>
 			<groupId>org.giavacms</groupId>
+			<artifactId>banner</artifactId>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.giavacms</groupId>
 			<artifactId>cache</artifactId>
 			<scope>compile</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>org.giavacms</groupId>
+			<artifactId>catalogue</artifactId>
+			<scope>compile</scope>
+		</dependency>
+
+
+
+		<dependency>
+			<groupId>org.giavacms</groupId>
+			<artifactId>contactus</artifactId>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.giavacms</groupId>
+			<artifactId>customer</artifactId>
+			<scope>compile</scope>
+		</dependency>
+
+
+
+		<dependency>
+			<groupId>org.giavacms</groupId>
+			<artifactId>richcontent</artifactId>
+			<scope>compile</scope>
+		</dependency>
 
 		<dependency>
 			<groupId>org.giavacms</groupId>
@@ -66,16 +100,27 @@
 
 		<dependency>
 			<groupId>org.giavacms</groupId>
-			<artifactId>twizz</artifactId>
+			<artifactId>openshift-jboss7</artifactId>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- GIAVACMS - RS -->
+
+		<dependency>
+			<groupId>org.giavacms</groupId>
+			<artifactId>base-rs</artifactId>
 			<scope>compile</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.giavacms</groupId>
-			<artifactId>openshift-jboss7</artifactId>
+			<artifactId>compatibility</artifactId>
 			<scope>compile</scope>
 		</dependency>
 
+
+
+		<!-- Required in WEB-INF/lib if not provided by jboss modules -->
 
 		<!-- Prime faces -->
 		<dependency>

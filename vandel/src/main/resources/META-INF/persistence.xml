@@ -6,15 +6,15 @@
 	version="1.0">
 	<persistence-unit name="MysqlDS">
 		<jta-data-source>java:jboss/datasources/MysqlDS</jta-data-source>
-		<jar-file>lib/base-2.0.3-SNAPSHOT.jar</jar-file>
-		<jar-file>lib/contactus-2.0.3-SNAPSHOT.jar</jar-file>
-		<jar-file>lib/faq-2.0.3-SNAPSHOT.jar</jar-file>
-		<jar-file>lib/richcontent-2.0.3-SNAPSHOT.jar</jar-file>
-		<jar-file>lib/company-2.0.3-SNAPSHOT.jar</jar-file>
-		<jar-file>lib/banner-2.0.3-SNAPSHOT.jar</jar-file>
-		<jar-file>lib/catalogue-2.0.3-SNAPSHOT.jar</jar-file>
-		<jar-file>lib/paypalweb-2.0.3-SNAPSHOT.jar</jar-file>
-		<jar-file>lib/scenario-2.0.3-SNAPSHOT.jar</jar-file>
+		<jar-file>lib/base-2.0.4-SNAPSHOT.jar</jar-file>
+		<jar-file>lib/contactus-2.0.4-SNAPSHOT.jar</jar-file>
+		<jar-file>lib/faq-2.0.4-SNAPSHOT.jar</jar-file>
+		<jar-file>lib/richcontent-2.0.4-SNAPSHOT.jar</jar-file>
+		<jar-file>lib/company-2.0.4-SNAPSHOT.jar</jar-file>
+		<jar-file>lib/banner-2.0.4-SNAPSHOT.jar</jar-file>
+		<jar-file>lib/catalogue-2.0.4-SNAPSHOT.jar</jar-file>
+		<jar-file>lib/paypalweb-2.0.4-SNAPSHOT.jar</jar-file>
+		<jar-file>lib/scenario-2.0.4-SNAPSHOT.jar</jar-file>
 		<properties>
 
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
@@ -23,9 +23,9 @@
 			<property name="hibernate.connection.characterEncoding"
 				value="UTF-8" />
 			<property name="hibernate.hbm2ddl.auto" value="update" />
-			<!-- <property name="hibernate.generate_statistics" value="true" />
-			<property name="hibernate.show_sql" value="true" />
-			<property name="hibernate.format_sql" value="true" /> -->
+			<!-- <property name="hibernate.generate_statistics" value="true" /> <property 
+				name="hibernate.show_sql" value="true" /> <property name="hibernate.format_sql" 
+				value="true" /> -->
 
 		</properties>
 	</persistence-unit>
