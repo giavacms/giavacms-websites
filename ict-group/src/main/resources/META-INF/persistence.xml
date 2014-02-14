@@ -11,7 +11,7 @@
 		<jar-file>lib/faq-${project.version}.jar</jar-file>
 		<jar-file>lib/richcontent-${project.version}.jar</jar-file>
 		<jar-file>lib/banner-${project.version}.jar</jar-file>
-		<jar-file>lib/customer-2.0.4.jar</jar-file>
+		<jar-file>lib/customer-${project.version}.jar</jar-file>
 		<jar-file>lib/catalogue-${project.version}.jar</jar-file>
 		<!-- <jar-file>lib/richnews-1.0-importer-${project.version}.jar</jar-file> -->
 		<properties>
