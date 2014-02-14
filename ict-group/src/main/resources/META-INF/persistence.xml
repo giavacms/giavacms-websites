@@ -6,13 +6,14 @@
 	version="1.0">
 	<persistence-unit name="MysqlDS">
 		<jta-data-source>java:jboss/datasources/MysqlDS</jta-data-source>
-		<jar-file>lib/base-${project.version}.jar</jar-file>
-		<jar-file>lib/contactus-${project.version}.jar</jar-file>
-		<jar-file>lib/faq-${project.version}.jar</jar-file>
-		<jar-file>lib/richcontent-${project.version}.jar</jar-file>
 		<jar-file>lib/banner-${project.version}.jar</jar-file>
-		<jar-file>lib/customer-${project.version}.jar</jar-file>
+		<jar-file>lib/base-${project.version}.jar</jar-file>
 		<jar-file>lib/catalogue-${project.version}.jar</jar-file>
+		<jar-file>lib/contactus-${project.version}.jar</jar-file>
+		<jar-file>lib/customer-${project.version}.jar</jar-file>
+		<jar-file>lib/faq-${project.version}.jar</jar-file>
+		<jar-file>lib/people-${project.version}.jar</jar-file>
+		<jar-file>lib/richcontent-${project.version}.jar</jar-file>
 		<!-- <jar-file>lib/richnews-1.0-importer-${project.version}.jar</jar-file> -->
 		<properties>
 
