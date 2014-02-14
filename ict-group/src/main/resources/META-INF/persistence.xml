@@ -15,6 +15,7 @@
 		<jar-file>lib/people-${project.version}.jar</jar-file>
 		<jar-file>lib/richcontent-${project.version}.jar</jar-file>
 		<!-- <jar-file>lib/richnews10importer-${project.version}.jar</jar-file> -->
+		<jar-file>lib/category10importer-${project.version}.jar</jar-file>
 		<properties>
 
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
