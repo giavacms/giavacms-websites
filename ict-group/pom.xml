@@ -138,7 +138,7 @@
 
 		<dependency>
 			<groupId>org.giavacms</groupId>
-			<artifactId>compatibility</artifactId>
+			<artifactId>base10importer</artifactId>
 			<scope>compile</scope>
 		</dependency>
 

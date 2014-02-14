@@ -84,7 +84,7 @@
 
 		<dependency>
 			<groupId>org.giavacms</groupId>
-			<artifactId>compatibility</artifactId>
+			<artifactId>base10importer</artifactId>
 			<scope>compile</scope>
 		</dependency>
 
@@ -106,7 +106,7 @@
 			<artifactId>openshift-jboss7</artifactId>
 			<scope>compile</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.giavacms</groupId>
 			<artifactId>scenario</artifactId>
