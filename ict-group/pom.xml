@@ -136,17 +136,13 @@
 			<scope>compile</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>org.giavacms</groupId>
-			<artifactId>base10importer</artifactId>
-			<scope>compile</scope>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.giavacms</groupId>
-			<artifactId>catalogue10importer</artifactId>
-			<scope>compile</scope>
-		</dependency>
+		<!-- <dependency> <groupId>org.giavacms</groupId> <artifactId>base10importer</artifactId> 
+			<scope>compile</scope> </dependency> -->
+		<!-- <dependency> <groupId>org.giavacms</groupId> <artifactId>catalogue10importer</artifactId> 
+			<scope>compile</scope> </dependency> -->
+
+	<!-- <dependency> <groupId>org.giavacms</groupId> <artifactId>customer10importer</artifactId> 
+		<scope>compile</scope> </dependency> -->
 
 		<!-- <dependency> <groupId>org.giavacms</groupId> <artifactId>richnews-1.0-importer</artifactId> 
 			<scope>compile</scope> </dependency> -->
