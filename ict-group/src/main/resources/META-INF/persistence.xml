@@ -14,6 +14,8 @@
 		<jar-file>lib/faq-${project.version}.jar</jar-file>
 		<jar-file>lib/people-${project.version}.jar</jar-file>
 		<jar-file>lib/richcontent-${project.version}.jar</jar-file>
+		<!-- <jar-file>lib/catalogue10importer-${project.version}.jar</jar-file> 
+			<jar-file>lib/customer10importer-${project.version}.jar</jar-file> -->
 		<properties>
 
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
