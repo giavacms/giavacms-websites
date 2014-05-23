@@ -135,6 +135,12 @@
 			<artifactId>base-rs</artifactId>
 			<scope>compile</scope>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.giavacms</groupId>
+			<artifactId>catalogue-rs</artifactId>
+			<scope>compile</scope>
+		</dependency>
 
 		<!-- <dependency> <groupId>org.giavacms</groupId> <artifactId>base10importer</artifactId> 
 			<scope>compile</scope> </dependency> -->
