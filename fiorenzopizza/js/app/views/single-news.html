@@ -1,0 +1,18 @@
+<div ng-include="'/views/templates/header-post.html'"
+     ng-init="image='home-bg.jpg'"
+     ng-controller="NewsController"></div>
+
+
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row" ng-controller="NewsController">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <h1>{{element.title}}</h1>
+        <span ng-bind-html="element.content"></span>
+      </div>
+    </div>
+  </div>
+</article>
+
+<div ng-include="'/views/templates/footer.html'"></div>

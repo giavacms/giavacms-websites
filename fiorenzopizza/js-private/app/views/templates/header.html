@@ -1,0 +1,32 @@
+<!-- Add your site or application content here -->
+<div class="header">
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <a class="navbar-brand" href="#/">administration</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="js-navbar-collapse">
+
+        <ul class="nav navbar-nav">
+          <li ng-class="{active: $state.includes('home')}"><a href="#/">Home</a></li>
+          <li
+            ng-class="{active:$state.includes('news') || $state.includes('news_view')  || $state.includes('news_edit')}">
+            <a ui-sref="news">News</a></li>
+          <li ng-class="{active: $state.includes('newstype')}"><a ui-sref="newstype">News type</a></li>
+          <li ng-class="{active: $state.includes('banner')}"><a ui-sref="banner">Banner</a></li>
+          <li ng-class="{active: $state.includes('bannertypology')}"><a ui-sref="bannertypology">bannertypology</a></li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
