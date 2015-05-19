@@ -2,13 +2,35 @@
      ng-init="image='home-bg.jpg'; pageTitle ='home'; pageSubTitle = 'angularJS+giavaCMS clipboard'"></div>
 
 
-<div class="container">
-  <ul>
-    <li><a ui-sref="news">News</a></li>
-    <li><a ui-sref="newstype">News type</a></li>
-    <li><a ui-sref="banner">Banner</a></li>
-    <li><a ui-sref="bannertypology">Banner typology</a></li>
-  </ul>
+<div class="container-fluid" style="border: solid 1px;" ng-controller="MenuLeftController">
+  <div class="row">
+    <div class="col-md-3" style="border: solid 1px;" ng-show="menuOn">
+      <div class="list-group">
+        <a href="#" class="list-group-item active">Link</a>
+        <a href="#" class="list-group-item">Link</a>
+        <a href="#" class="list-group-item">Link</a>
+        <a href="#" class="list-group-item">Link</a>
+        <a href="#" class="list-group-item">Link</a>
+        <a href="#" class="list-group-item">Link</a>
+        <a href="#" class="list-group-item">Link</a>
+        <a href="#" class="list-group-item">Link</a>
+        <a href="#" class="list-group-item">Link</a>
+        <a href="#" class="list-group-item">Link</a>
+      </div>
+    </div>
+    <div class="col-md-5" style="border: solid 1px;">
+      <ul>
+        <li><a ui-sref="news">News</a></li>
+        <li><a ui-sref="newstype">News type</a></li>
+        <li><a ui-sref="banner">Banner</a></li>
+        <li><a ui-sref="bannertypology">Banner typology</a></li>
+      </ul>
+    </div>
+    <div class="col-md-1" style="border: solid 1px;">
+      <a ng-click="menuSwitchOn()" ng-hide="menuOn">menu on</a>
+      <a ng-click="menuSwitchOff()" ng-show="menuOn">menu off</a>
+    </div>
+  </div>
 </div>
 
 <div ng-include="'/views/templates/footer.html'"></div>

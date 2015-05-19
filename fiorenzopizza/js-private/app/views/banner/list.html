@@ -2,7 +2,7 @@
      ng-init="image='home-bg.jpg'; pageTitle ='home'; pageSubTitle = 'angularJS+giavaCMS clipboard'"></div>
 
 
-<div class="container">
+<div class="container-fluid">
 
   <script type="text/ng-template" id="custom/pager">
     <div ng-if="params.data.length" style="text-align: center">
@@ -20,11 +20,14 @@
     </div>
   </script>
 
-  <table ng-table="tableParams" template-pagination="custom/pager" template-header="">
+  <table ng-table="tableParams" template-pagination="custom/pager" class="table table-hover">
     <tbody ng-repeat="p in $data">
     <tr ng-class-odd="'odd'" ng-class-even="'even'">
       <td data-title="'num'">
         {{$index}}
+      </td>
+      <td data-title="'bannerTypology'">
+        {{p.bannerTypology.name}}
       </td>
       <td data-title="'name'">
         {{p.name}}
@@ -32,16 +35,28 @@
       <td data-title="'description'">
         {{p.description}}
       </td>
+      <td data-title="'language'">
+        {{p.language}}
+      </td>
+      <td data-title="'url'">
+        {{p.url}}
+      </td>
+      <td data-title="'internal'">
+        {{p.internal}}
+      </td>
+      <td data-title="'filename'">
+        {{p.image.filename}}
+      </td>
       <td data-title="'Operations'">
-        <a href="/#/news/{{p.id}}/edit" title="edit"><i class="fa fa-pencil-square-o"></i></a>
-        <a href="/#/news/{{p.id}}" title="view"> <i class="fa fa-info-circle"></i></a>
-        <a href="/#/news/{{p.id}}/images/edit" title="edit images"><i class="fa fa-file-image-o"></i></a>
-        <a href="/#/news/{{p.id}}/documents/edit" title="edit documents"><i class="fa fa-file-text-o"></i></i></a>
+        <a href="/#/banner/{{p.id}}/edit" title="edit"><i class="fa fa-pencil-square-o"></i></a>
+        <a href="/#/banner/{{p.id}}" title="view"> <i class="fa fa-info-circle"></i></a>
+        <a href="/#/banner/{{p.id}}/images/edit" title="edit images"><i class="fa fa-file-image-o"></i></a>
+        <a href="/#/banner/{{p.id}}/documents/edit" title="edit documents"><i class="fa fa-file-text-o"></i></i></a>
       </td>
     </tr>
     </tbody>
   </table>
-  <a class="btn btn-default" href="/#/banner/new" role="button">Aggiungi nuova</a>
+  <a class="btn btn-primary btn-lg"  href="/#/banner/new" role="button">Aggiungi nuovo</a>
 
 </div>
 

@@ -18,15 +18,63 @@
 
         <ul class="nav navbar-nav">
           <li ng-class="{active: $state.includes('home')}"><a href="#/">Home</a></li>
-          <li
-            ng-class="{active:$state.includes('news') || $state.includes('news_view')  || $state.includes('news_edit')}">
-            <a ui-sref="news">News</a></li>
-          <li ng-class="{active: $state.includes('newstype')}"><a ui-sref="newstype">News type</a></li>
-          <li ng-class="{active: $state.includes('banner')}"><a ui-sref="banner">Banner</a></li>
-          <li ng-class="{active: $state.includes('bannertypology')}"><a ui-sref="bannertypology">bannertypology</a></li>
 
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+               aria-expanded="false">Base <span
+              class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a ui-sref="global-configuration">Global configuration</a></li>
+              <li><a ui-sref="security">Security</a></li>
+              <li><a ui-sref="logging">Logging</a></li>
+              <li><a ui-sref="pages">Pages</a></li>
+              <li><a ui-sref="resources">Resources</a></li>
+            </ul>
+          </li>
+
+
+          <li class="dropdown"
+              ng-class="{active:$state.includes('news') || $state.includes('news_view')  || $state.includes('news_edit')}">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+               aria-expanded="false">RichContent <span
+              class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a ui-sref="news">richcontent</a></li>
+              <li><a ui-sref="newstype">richcontent type</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Banner <span
+              class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li ng-class="{active: $state.includes('banner')}"><a ui-sref="banner">Banner</a></li>
+              <li ng-class="{active: $state.includes('bannertypology')}"><a ui-sref="bannertypology">bannertypology</a>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+               aria-expanded="false">Catalogue <span
+              class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li ng-class="{active: $state.includes('catalogue-configuration')}"><a ui-sref="catalogue-configuration">Configuration</a>
+              <li ng-class="{active: $state.includes('category')}"><a ui-sref="category">Category</a></li>
+              <li ng-class="{active: $state.includes('products')}"><a ui-sref="products">Products</a>
+              <li ng-class="{active: $state.includes('features')}"><a ui-sref="features">Features</a>
+
+              </li>
+            </ul>
+          </li>
         </ul>
+
       </div>
     </div>
   </div>
+  <row>
+    <ol class="breadcrumb">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Library</a></li>
+      <li class="active">Data</li>
+    </ol>
+  </row>
 </div>
