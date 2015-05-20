@@ -1,5 +1,6 @@
 'use strict';
 
+
 function BaseController($scope, $stateParams, $state, Service, popupService, NgTableParams, $location, APP_PROPERTIES, controller) {
 
   var host = APP_PROPERTIES.HOST;
@@ -152,5 +153,11 @@ function BaseController($scope, $stateParams, $state, Service, popupService, NgT
     $scope.editId = pid;
     $scope.tableParams.reload();
   }
+
+  $scope.onDateChange = function (dateField) {
+    if (dateField) {
+      dateField = Date.parse(dateField);
+    }
+  };
 
 }

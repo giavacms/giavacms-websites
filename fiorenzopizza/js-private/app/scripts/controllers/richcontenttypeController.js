@@ -3,12 +3,12 @@
 
 angular.module('giavacms-private')
 
-  .controller('NewsTypeController', ['$scope', '$stateParams', '$state', 'RsResource', 'popupService', 'NgTableParams', '$filter', '$location', 'APP_PROPERTIES',
+  .controller('RichcontentTypeController', ['$scope', '$stateParams', '$state', 'RsResource', 'popupService', 'NgTableParams', '$filter', '$location', 'APP_PROPERTIES',
     function ($scope, $stateParams, $state, RsResource, popupService, NgTableParams, $filter, $location, APP_PROPERTIES) {
       angular.extend(this, new BaseController($scope, $stateParams, $state, RsResource, popupService, NgTableParams, $location, APP_PROPERTIES, this));
 
-      $scope.listPage = 'newstype';
-      $scope.newPage = 'newstype';
+      $scope.listPage = 'richcontenttype';
+      $scope.newPage = 'richcontenttype';
       $scope.entityType = 'richcontenttype';
       $scope.sortingArray = {data: 'desc'};
 
@@ -39,23 +39,21 @@ angular.module('giavacms-private')
   .config(['$stateProvider', function ($stateProvider) {
 
     $stateProvider
-      .state('newstype', {
-        url: '/newstype',
-        views: {
-          'content@': {
-            templateUrl: 'views/newstype/list.html',
-            controller: 'NewsTypeController'
-          }
+      .state('richcontenttype', {
+        url: '/richcontenttype',
+        templateUrl: 'views/richcontenttype/list.html',
+        ncyBreadcrumb: {
+          label: 'Richcontenttype',
+          parent: 'home'
         }
       })
 
-      .state('newstype_edit', {
-        url: '/newstype/:id/edit',
-        views: {
-          'content@': {
-            controller: 'NewsTypeController',
-            templateUrl: 'views/newstype/list.html'
-          }
+      .state('richcontenttype_edit', {
+        url: '/richcontenttype/:id/edit',
+        templateUrl: 'views/richcontenttype/list.html',
+        ncyBreadcrumb: {
+          label: 'Richcontenttype',
+          parent: 'home'
         }
       })
 

@@ -2,10 +2,8 @@
      ng-init="image='home-bg.jpg'; pageTitle ='home'; pageSubTitle = 'angularJS+giavaCMS clipboard'"></div>
 
 
-<div class="container-fluid" ng-controller="NewsController">
+<div class="container-fluid" ng-controller="BannerController">
   <form>
-
-    private RichContentType richContentType;
 
     <div class="form-group">
       <label for="id">id</label>
@@ -43,7 +41,7 @@
     <button ng-click="save()" ng-show="element.id === undefined">Save</button>
     <button ng-click="update()" ng-show="element.id !== undefined">Update</button>
     <button ng-click="delete()" ng-show="element.id !== undefined">Delete</button>
-    <button ng-click="undo()" >Undo</button>
+    <button ng-click="undo()">Undo</button>
   </form>
 </div>
 

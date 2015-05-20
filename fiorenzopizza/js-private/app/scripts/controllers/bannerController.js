@@ -41,39 +41,37 @@ angular.module('giavacms-private')
     $stateProvider
       .state('banner', {
         url: '/banner',
-        views: {
-          'content@': {
-            templateUrl: 'views/banner/list.html',
-            controller: 'BannerController'
-          }
+        templateUrl: 'views/banner/list.html',
+        ncyBreadcrumb: {
+          label: 'Banner',
+          parent: 'home'
         }
       })
+
       .state('banner_new', {
         url: '/banner/new',
-        views: {
-          'content@': {
-            controller: 'BannerController',
-            templateUrl: 'views/banner/edit.html'
-          }
+        templateUrl: 'views/banner/edit.html',
+        ncyBreadcrumb: {
+          label: 'new',
+          parent: 'banner'
         }
       })
+
       .state('banner_edit', {
         url: '/banner/:id/edit',
-        views: {
-          'content@': {
-            controller: 'BannerController',
-            templateUrl: 'views/banner/edit.html'
-          }
+        templateUrl: 'views/banner/edit.html',
+        ncyBreadcrumb: {
+          label: 'edit',
+          parent: 'banner'
         }
       })
 
       .state('banner_view', {
         url: '/banner/:id',
-        views: {
-          'content@': {
-            controller: 'BannerController',
-            templateUrl: 'views/banner/view.html'
-          }
+        templateUrl: 'views/banner/view.html',
+        ncyBreadcrumb: {
+          label: 'detail',
+          parent: 'banner'
         }
       })
 

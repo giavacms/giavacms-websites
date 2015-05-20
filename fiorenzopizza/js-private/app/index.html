@@ -26,7 +26,7 @@
 <![endif]-->
 
 
-<div ui-view="content"></div>
+<div ui-view></div>
 
 
 <!-- build:js(.) scripts/vendor.js -->
@@ -50,22 +50,33 @@
 <script src="bower_components/textAngular/src/textAngular.js"></script>
 <script src="bower_components/textAngular/src/textAngular-sanitize.js"></script>
 <script src="bower_components/textAngular/src/textAngularSetup.js"></script>
+<script src="bower_components/angular-breadcrumb/release/angular-breadcrumb.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
 <script src="scripts/app.js"></script>
+
 <script src="scripts/common/BaseController.js"></script>
 <script src="scripts/common/BaseService.js"></script>
 <script src="scripts/common/ModalInstanceController.js"></script>
-<script src="scripts/controllers/newsController.js"></script>
-<script src="scripts/controllers/newstypeController.js"></script>
+
 <script src="scripts/controllers/bannerController.js"></script>
 <script src="scripts/controllers/bannertypologyController.js"></script>
 <script src="scripts/controllers/menuleftController.js"></script>
-
-
+<script src="scripts/controllers/richcontentController.js"></script>
+<script src="scripts/controllers/richcontenttypeController.js"></script>
 <script src="scripts/controllers/uploadController.js"></script>
+
+<script src="scripts/constants/appConstants.js"></script>
+
+<script src="scripts/directives/fileModel.js"></script>
+<script src="scripts/directives/formatMyDate.js"></script>
+
+<script src="scripts/services/popupService.js"></script>
+<script src="scripts/services/propertiesService.js"></script>
+
+
 <!-- endbuild -->
 </body>
 </html>

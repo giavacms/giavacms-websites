@@ -41,24 +41,19 @@ angular.module('giavacms-private')
     $stateProvider
       .state('bannertypology', {
         url: '/bannertypology',
-        views: {
-          'content@': {
-            templateUrl: 'views/bannertypology/list.html',
-            controller: 'BannerTypologyController'
-          }
+        templateUrl: 'views/bannertypology/list.html',
+        ncyBreadcrumb: {
+          label: 'Bannertypology',
+          parent: 'home'
         }
       })
 
       .state('bannertypology_edit', {
         url: '/bannertypology/:id/edit',
-        views: {
-          'content@': {
-            controller: 'BannerTypologyController',
-            templateUrl: 'views/bannertypology/list.html'
-          }
+        templateUrl: 'views/bannertypology/list.html',
+        ncyBreadcrumb: {
+          label: 'Bannertypology',
+          parent: 'home'
         }
       })
-
-  }])
-
-;
+  }]);

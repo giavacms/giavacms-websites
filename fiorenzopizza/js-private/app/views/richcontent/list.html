@@ -2,7 +2,7 @@
      ng-init="image='home-bg.jpg'; pageTitle ='home'; pageSubTitle = 'angularJS+giavaCMS clipboard'"></div>
 
 
-<div class="container-fluid">
+<div class="container-fluid" ng-controller="RichcontentController">
 
   <script type="text/ng-template" id="custom/pager">
     <div ng-if="params.data.length" style="text-align: center">
@@ -19,6 +19,25 @@
       </ul>
     </div>
   </script>
+  <div class="row">
+    <form name="form">
+
+      <label>Nome</label>
+      <input type="text" name="title" ng-model="search.like.title" class="span10"><br/>
+
+      <label>richContentType</label>
+      <select ng-model="search.obj.richContentType" class="form-control"
+              ng-options="richcontenttype as richcontenttype.name for richcontenttype in richcontenttypes track by richcontenttype.id"></select>
+
+
+      <button type="button" class="btn btn-primary" ng-click="reload()">
+        <span class="glyphicon glyphicon-ok" aria-hidden="true"> Search</span>
+      </button>
+      <button type="button" class="btn btn-primary" ng-click="resetSearch()">
+        <span class="glyphicon glyphicon-ok" aria-hidden="true"> Reset</span>
+      </button>
+    </form>
+  </div>
   <table ng-table="tableParams" template-pagination="custom/pager" class="table table-hover">
     <tbody ng-repeat="p in $data">
     <tr ng-class-odd="'odd'" ng-class-even="'even'">
@@ -31,17 +50,21 @@
       <td data-title="'title'">
         {{p.title}}
       </td>
+      <td data-title="'type'">
+        {{p.richContentType.name}}
+      </td>
       <td data-title="'Operations'">
-        <a href="/#/news/{{p.id}}/edit" title="edit"><i class="fa fa-pencil-square-o"></i></a>
-        <a href="/#/news/{{p.id}}" title="view"> <i class="fa fa-info-circle"></i></a>
-        <a href="/#/news/{{p.id}}/images/edit" title="edit images"><i class="fa fa-file-image-o"></i></a>
-        <a href="/#/news/{{p.id}}/documents/edit" title="edit documents"><i class="fa fa-file-text-o"></i></i></a>
+        <a href="/#/richcontent/{{p.id}}/edit" title="edit"><i class="fa fa-pencil-square-o"></i></a>
+        <a href="/#/richcontent/{{p.id}}" title="view"> <i class="fa fa-info-circle"></i></a>
+        <a href="/#/richcontent/{{p.id}}/images/edit" title="edit images"><i class="fa fa-file-image-o"></i></a>
+        <a href="/#/richcontent/{{p.id}}/documents/edit" title="edit documents"><i class="fa fa-file-text-o"></i></i>
+        </a>
       </td>
     </tr>
     </tbody>
   </table>
   <form>
-    <a class="btn btn-primary btn-lg" href="/#/news/new" role="button">Aggiungi nuova</a>
+    <a class="btn btn-primary" href="/#/richcontent/new" role="button">Aggiungi nuova</a>
   </form>
 </div>
 
