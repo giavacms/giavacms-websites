@@ -13,9 +13,11 @@ angular.module('giavacms-private')
                 transformRequest: angular.identity,
                 headers: {'Content-Type': undefined}
             })
-                .success(function () {
+                .success(function (output) {
+                    console.log(output);
                 })
-                .error(function () {
+                .error(function (output) {
+                    console.log(output);
                 });
         }
     }]);
