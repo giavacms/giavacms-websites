@@ -3,10 +3,42 @@
 
 
 <div class="container-fluid" ng-controller="RichcontentController">
-  <h1>{{element.title}}</h1>
-  <span ng-bind-html="element.content"></span>
-  <a class="btn btn-default" href="/#/richcontent/{{element.id}}/edit" role="button">Modifica</a>
 
+  <label>id:</label>
+  <span>{{element.id}}</span><br/>
+
+
+  <label>title:</label>
+  <span>{{element.title}}</span><br/>
+
+  <label>author:</label>
+  <span>{{element.author}}</span><br/>
+
+  <label>tags:</label>
+  <span>{{element.tags}}</span><br/>
+
+
+  <label>richContentType:</label>
+  <span>{{element.richContentType.name}}</span><br/>
+
+  <label>preview:</label><br/>
+  <span ng-bind-html="element.preview"></span><br/>
+
+  <label>content:</label><br/>
+  <span ng-bind-html="element.content"></span><br/>
+  <br/>
+
+  <div class="container slider">
+    <img ng-repeat="image in images" class="slide" ng-src="{{image.image}}" title="name">
+    <p>description: {{image.description}}<br/>
+    filename:  {{image.filename}}<br/>
+    filePath:  {{image.filePath}}<br/>
+    </p>
+  </div>
+
+
+  <a class="btn btn-default" href="/#/richcontent/{{element.id}}/edit" role="button">Modifica</a>
 </div>
+
 
 <div ng-include="'/views/templates/footer.html'"></div>

@@ -3,9 +3,13 @@
 
 angular.module('giavacms-private')
 
-  .controller('BannerController', ['$scope', '$stateParams', '$state', 'RsResource', 'popupService', 'NgTableParams', '$filter', '$location', 'APP_PROPERTIES',
-    function ($scope, $stateParams, $state, RsResource, popupService, NgTableParams, $filter, $location, APP_PROPERTIES) {
-      angular.extend(this, new BaseController($scope, $stateParams, $state, RsResource, popupService, NgTableParams, $location, APP_PROPERTIES, this));
+  .controller('BannerController',
+  ['$rootScope', '$scope', '$stateParams', '$state', 'RsResource', 'popupService', 'NgTableParams',
+    '$filter', '$location',
+    'factoryItems', 'APP_PROPERTIES',
+    function ($rootScope, $scope, $stateParams, $state, RsResource, popupService, NgTableParams,
+              $filter, $location, factoryItems, APP_PROPERTIES) {
+      angular.extend(this, new BaseController($rootScope, $scope, $stateParams, $state, RsResource, popupService, NgTableParams, $location, APP_PROPERTIES, this));
 
       $scope.listPage = 'banner';
       $scope.newPage = 'banner_new';
@@ -13,12 +17,21 @@ angular.module('giavacms-private')
       $scope.sortingArray = {id: 'desc'};
 
       $scope.getBaseSearch = function (search, reqParams) {
-        if (search && search.obj && search.obj.name) {
-          console.log('name: ' + search.obj.name);
-          reqParams['obj.name'] = search.obj.name;
+        if (search && search.like && search.like.name) {
+          console.log('name: ' + search.like.name);
+          reqParams['like.name'] = search.like.name;
+        }
+        if (search && search.obj && search.obj.bannerTypology && search.obj.bannerTypology.id) {
+          console.log('id: ' + search.obj.bannerTypology.id);
+          reqParams['obj.bannerTypology.id'] = search.obj.bannerTypology.id;
         }
         reqParams['obj.language'] = 'ITA';
       };
+
+      //inizializzo la lista dei bannerTypology
+      factoryItems.getBannertypologies().then(function (result) {
+        $scope.bannerTypologies = result;
+      });
 
 
       // anche dopo $scope.init() il valore di $scope.element non e' immediatamente disponibile. Si tratta di un promise non ancora risolto.

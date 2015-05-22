@@ -19,7 +19,25 @@
       </ul>
     </div>
   </script>
+  <div class="row">
+    <form name="form">
 
+      <label>Name</label>
+      <input type="text" name="name" ng-model="search.like.name" class="span10"><br/>
+
+      <label>bannerTypology</label>
+      <select ng-model="search.obj.bannerTypology" class="form-control"
+              ng-options="bannerTypology as bannerTypology.name for bannerTypology in bannerTypologies track by bannerTypology.id"></select>
+
+
+      <button type="button" class="btn btn-primary" ng-click="reload()">
+        <span class="glyphicon glyphicon-ok" aria-hidden="true"> Search</span>
+      </button>
+      <button type="button" class="btn btn-primary" ng-click="resetSearch()">
+        <span class="glyphicon glyphicon-ok" aria-hidden="true"> Reset</span>
+      </button>
+    </form>
+  </div>
   <table ng-table="tableParams" template-pagination="custom/pager" class="table table-hover">
     <tbody ng-repeat="p in $data">
     <tr ng-class-odd="'odd'" ng-class-even="'even'">

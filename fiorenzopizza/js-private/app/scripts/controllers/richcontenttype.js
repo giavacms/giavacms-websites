@@ -3,9 +3,11 @@
 
 angular.module('giavacms-private')
 
-  .controller('RichcontentTypeController', ['$scope', '$stateParams', '$state', 'RsResource', 'popupService', 'NgTableParams', '$filter', '$location', 'APP_PROPERTIES',
-    function ($scope, $stateParams, $state, RsResource, popupService, NgTableParams, $filter, $location, APP_PROPERTIES) {
-      angular.extend(this, new BaseController($scope, $stateParams, $state, RsResource, popupService, NgTableParams, $location, APP_PROPERTIES, this));
+  .controller('RichcontentTypeController',
+  ['$rootScope', '$scope', '$stateParams', '$state', 'RsResource', 'popupService', 'NgTableParams', '$filter',
+    '$location', 'APP_PROPERTIES',
+    function ($rootScope, $scope, $stateParams, $state, RsResource, popupService, NgTableParams, $filter, $location, APP_PROPERTIES) {
+      angular.extend(this, new BaseController($rootScope,$scope, $stateParams, $state, RsResource, popupService, NgTableParams, $location, APP_PROPERTIES, this));
 
       $scope.listPage = 'richcontenttype';
       $scope.newPage = 'richcontenttype';
@@ -41,15 +43,6 @@ angular.module('giavacms-private')
     $stateProvider
       .state('richcontenttype', {
         url: '/richcontenttype',
-        templateUrl: 'views/richcontenttype/list.html',
-        ncyBreadcrumb: {
-          label: 'Richcontenttype',
-          parent: 'home'
-        }
-      })
-
-      .state('richcontenttype_edit', {
-        url: '/richcontenttype/:id/edit',
         templateUrl: 'views/richcontenttype/list.html',
         ncyBreadcrumb: {
           label: 'Richcontenttype',

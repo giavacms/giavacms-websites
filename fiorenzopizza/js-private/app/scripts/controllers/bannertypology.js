@@ -3,9 +3,10 @@
 
 angular.module('giavacms-private')
 
-  .controller('BannerTypologyController', ['$scope', '$stateParams', '$state', 'RsResource', 'popupService', 'NgTableParams', '$filter', '$location', 'APP_PROPERTIES',
-    function ($scope, $stateParams, $state, RsResource, popupService, NgTableParams, $filter, $location, APP_PROPERTIES) {
-      angular.extend(this, new BaseController($scope, $stateParams, $state, RsResource, popupService, NgTableParams, $location, APP_PROPERTIES, this));
+  .controller('BannerTypologyController',
+  ['$rootScope', '$scope', '$stateParams', '$state', 'RsResource', 'popupService', 'NgTableParams', '$filter', '$location', 'APP_PROPERTIES',
+    function ($rootScope, $scope, $stateParams, $state, RsResource, popupService, NgTableParams, $filter, $location, APP_PROPERTIES) {
+      angular.extend(this, new BaseController($rootScope, $scope, $stateParams, $state, RsResource, popupService, NgTableParams, $location, APP_PROPERTIES, this));
 
       $scope.listPage = 'bannertypology';
       $scope.newPage = 'bannertypology';
@@ -48,12 +49,4 @@ angular.module('giavacms-private')
         }
       })
 
-      .state('bannertypology_edit', {
-        url: '/bannertypology/:id/edit',
-        templateUrl: 'views/bannertypology/list.html',
-        ncyBreadcrumb: {
-          label: 'Bannertypology',
-          parent: 'home'
-        }
-      })
   }]);

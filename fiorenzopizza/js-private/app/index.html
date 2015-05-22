@@ -8,18 +8,18 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
-  <link rel="stylesheet" href="bower_components/ng-table/dist/ng-table.min.css"/>
-  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css"/>
-  <link rel="stylesheet" href="bower_components/bootstrap-css-only/css/bootstrap.css"/>
-  <link rel="stylesheet" href="bower_components/textAngular/src/textAngular.css"/>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="bower_components/ng-table/dist/ng-table.min.css" />
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+  <link rel="stylesheet" href="bower_components/bootstrap-css-only/css/bootstrap.css" />
+  <link rel="stylesheet" href="bower_components/textAngular/src/textAngular.css" />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
 </head>
-<body ng-app="giavacms-private">
+<body ng-app="giavacms-private" ng-cloak>
 <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
   your browser</a> to improve your experience.</p>
@@ -57,24 +57,25 @@
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
 <script src="scripts/app.js"></script>
 
-<script src="scripts/common/BaseController.js"></script>
-<script src="scripts/common/BaseService.js"></script>
-<script src="scripts/common/ModalInstanceController.js"></script>
+<script src="scripts/common/basecontroller.js"></script>
+<script src="scripts/common/baseservice.js"></script>
+<script src="scripts/common/modalinstancecontroller.js"></script>
 
-<script src="scripts/controllers/bannerController.js"></script>
-<script src="scripts/controllers/bannertypologyController.js"></script>
-<script src="scripts/controllers/menuleftController.js"></script>
-<script src="scripts/controllers/richcontentController.js"></script>
-<script src="scripts/controllers/richcontenttypeController.js"></script>
-<script src="scripts/controllers/uploadController.js"></script>
+<script src="scripts/controllers/banner.js"></script>
+<script src="scripts/controllers/bannertypology.js"></script>
+<script src="scripts/controllers/menuleft.js"></script>
+<script src="scripts/controllers/richcontent.js"></script>
+<script src="scripts/controllers/richcontenttype.js"></script>
+<script src="scripts/controllers/upload.js"></script>
 
-<script src="scripts/constants/appConstants.js"></script>
+<script src="scripts/constants/global.js"></script>
 
 <script src="scripts/directives/fileModel.js"></script>
 <script src="scripts/directives/formatMyDate.js"></script>
 
-<script src="scripts/services/popupService.js"></script>
-<script src="scripts/services/propertiesService.js"></script>
+<script src="scripts/services/popup.js"></script>
+<script src="scripts/services/properties.js"></script>
+<script src="scripts/services/factoryproperties.js"></script>
 
 
 <!-- endbuild -->

@@ -3,9 +3,13 @@
 
 angular.module('giavacms-private')
 
-  .controller('RichcontentController', ['$scope', '$stateParams', '$state', 'RsResource', 'popupService', 'NgTableParams', '$filter', '$location', 'APP_PROPERTIES',
-    function ($scope, $stateParams, $state, RsResource, popupService, NgTableParams, $filter, $location, APP_PROPERTIES) {
-      angular.extend(this, new BaseController($scope, $stateParams, $state, RsResource, popupService, NgTableParams, $location, APP_PROPERTIES, this));
+  .controller('RichcontentController',
+  ['$rootScope', '$scope', '$stateParams', '$state', 'RsResource', 'popupService', 'NgTableParams',
+    '$filter', '$location',
+    'factoryItems', 'APP_PROPERTIES',
+    function ($rootScope, $scope, $stateParams, $state, RsResource, popupService, NgTableParams,
+              $filter, $location, factoryItems, APP_PROPERTIES) {
+      angular.extend(this, new BaseController($rootScope, $scope, $stateParams, $state, RsResource, popupService, NgTableParams, $location, APP_PROPERTIES, this));
 
       $scope.listPage = 'richcontent';
       $scope.newPage = 'richcontent_new';
@@ -25,16 +29,9 @@ angular.module('giavacms-private')
       };
 
       //inizializzo la lista dei richcontenttype
-      if (angular.isUndefined($scope.richcontenttypes)) {
-        var reqParams = {};
-        reqParams['host'] = APP_PROPERTIES.HOST;
-        reqParams['startRow'] = 0;
-        reqParams['pageSize'] = 0;
-        reqParams['entityType'] = 'richcontenttype';
-        RsResource.query(reqParams, function (data) {
-          $scope.richcontenttypes = data;
-        });
-      }
+      factoryItems.getRichcontenttypes().then(function (result) {
+        $scope.richcontenttypes = result;
+      });
 
 
       // anche dopo $scope.init() il valore di $scope.element non e' immediatamente disponibile. Si tratta di un promise non ancora risolto.
@@ -77,6 +74,24 @@ angular.module('giavacms-private')
         templateUrl: 'views/richcontent/edit.html',
         ncyBreadcrumb: {
           label: 'edit',
+          parent: 'richcontent'
+        }
+      })
+
+      .state('richcontent_images_edit', {
+        url: '/richcontent/:id/images/edit',
+        templateUrl: 'views/richcontent/edit-images.html',
+        ncyBreadcrumb: {
+          label: 'edit images',
+          parent: 'richcontent'
+        }
+      })
+
+      .state('richcontent_documents_edit', {
+        url: '/richcontent/:id/documents/edit',
+        templateUrl: 'views/richcontent/edit-documents.html',
+        ncyBreadcrumb: {
+          label: 'edit documents',
           parent: 'richcontent'
         }
       })

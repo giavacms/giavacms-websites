@@ -1,0 +1,11 @@
+<td class="rowTd"> {{$index+1}}</td>
+<td class="rowTd"><input type="text" name="nome" class="w100" ng-model="p.name"></td>
+<td class="rowTd"><input type="text" name="description" class="w100" ng-model="p.description"></td>
+<td class="rowTd"><input type="text" name="type" class="w100" ng-model="p.type"></td>
+
+<td>
+  <a class="btn btn-primary" ng-click="updateInLine(p); setEditId(-1);">update</a>
+  <a class="btn btn-primary" ng-click="setEditId(-1)">cancel</a>
+  <a class="btn btn-primary" ng-click="deleteInLine(p)">delete</a>
+</td>
+

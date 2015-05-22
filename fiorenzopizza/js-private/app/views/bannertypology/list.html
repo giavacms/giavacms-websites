@@ -2,7 +2,7 @@
      ng-init="image='home-bg.jpg'; pageTitle ='home'; pageSubTitle = 'angularJS+giavaCMS clipboard'"></div>
 
 
-<div class="container-fluid">
+<div class="container-fluid" ng-controller="BannerTypologyController">
 
   <script type="text/ng-template" id="custom/pager">
     <div ng-if="params.data.length" style="text-align: center">
@@ -22,29 +22,41 @@
 
   <table ng-table="tableParams" template-pagination="custom/pager" class="table table-hover">
     <tbody ng-repeat="p in $data">
-    <tr ng-class-odd="'odd'" ng-class-even="'even'">
+    <tr ng-class-odd="'odd'" ng-class-even="'even'" ng-show="editId!==p.id" ng-if="editId!==p.id">
       <td data-title="'num'">
-        {{$index}}
+        {{$index+1}}
       </td>
       <td data-title="'name'">
         {{p.name}}
       </td>
+      <td data-title="'description'">
+        {{p.description}}
+      </td>
+      <td data-title="'type'">
+        {{p.type}}
+      </td>
       <td data-title="'Operations'">
-        <a href="/#/bannertypology/{{p.id}}/edit"><i class="fa fa-pencil-square-o"></i></a>
+        <a ng-click="setEditId(p.id)" title="edit"><i class="fa fa-pencil-square-o"></i></a>
       </td>
     </tr>
+    <tr ng-show="editId===p.id" ng-if="editId===p.id" ng-include src="'views/bannertypology/edit.html'">
+    </tr>
+
     </tbody>
   </table>
 
   <form>
     <div class="form-group">
-      <label for="id">id</label>
-      <input type="text" class="form-control" id="id" placeholder="id" ng-model="element.id" readonly="true">
-    </div>
-
-    <div class="form-group">
       <label for="name">name</label>
       <input type="text" class="form-control" id="name" placeholder="name" ng-model="element.name">
+    </div>
+    <div class="form-group">
+      <label for="name">description</label>
+      <input type="text" class="form-control" id="description" placeholder="description" ng-model="element.description">
+    </div>
+    <div class="form-group">
+      <label for="name">type</label>
+      <input type="text" class="form-control" id="type" placeholder="type" ng-model="element.type">
     </div>
 
 

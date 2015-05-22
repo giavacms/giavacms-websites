@@ -22,36 +22,33 @@
 
   <table ng-table="tableParams" template-pagination="custom/pager" class="table table-hover">
     <tbody ng-repeat="p in $data">
-    <tr ng-class-odd="'odd'" ng-class-even="'even'">
+    <tr ng-class-odd="'odd'" ng-class-even="'even'" ng-show="editId!==p.id" ng-if="editId!==p.id">
       <td data-title="'num'">
-        {{$index}}
+        {{$index+1}}
       </td>
       <td data-title="'name'">
         {{p.name}}
       </td>
       <td data-title="'Operations'">
-        <a href="/#/richcontenttype/{{p.id}}/edit"><i class="fa fa-pencil-square-o"></i></a>
+        <a ng-click="setEditId(p.id)" title="edit"><i class="fa fa-pencil-square-o"></i></a>
       </td>
+    </tr>
+    <tr ng-show="editId===p.id" ng-if="editId===p.id" ng-include src="'views/richcontenttype/edit.html'">
     </tr>
     </tbody>
   </table>
 
   <form>
     <div class="form-group">
-      <label for="id">id</label>
-      <input type="text" class="form-control" id="id" placeholder="id" ng-model="element.id" readonly="true">
-    </div>
-
-    <div class="form-group">
       <label for="name">name</label>
       <input type="text" class="form-control" id="name" placeholder="name" ng-model="element.name">
     </div>
 
 
-    <button ng-click="save()" ng-show="element.id === undefined">Save</button>
-    <button ng-click="update()" ng-show="element.id !== undefined">Update</button>
-    <button ng-click="delete()" ng-show="element.id !== undefined">Delete</button>
-    <button ng-click="undo()">Undo</button>
+    <a class="btn btn-primary" ng-click="save()" ng-show="element.id === undefined">Save</a>
+    <a class="btn btn-primary" ng-click="update()" ng-show="element.id !== undefined">Update</a>
+    <a class="btn btn-primary" ng-click="delete()" ng-show="element.id !== undefined">Delete</a>
+    <a class="btn btn-primary" ng-click="undo()">Undo</a>
 
   </form>
 

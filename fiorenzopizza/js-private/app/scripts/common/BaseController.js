@@ -1,7 +1,7 @@
 'use strict';
 
 
-function BaseController($scope, $stateParams, $state, Service, popupService, NgTableParams, $location, APP_PROPERTIES, controller) {
+function BaseController($rootScope, $scope, $stateParams, $state, Service, popupService, NgTableParams, $location, APP_PROPERTIES, controller) {
 
   var host = APP_PROPERTIES.HOST;
   var context = APP_PROPERTIES.CONTEXT;
@@ -85,6 +85,7 @@ function BaseController($scope, $stateParams, $state, Service, popupService, NgT
     reqParams['context'] = context;
     reqParams['entityType'] = $scope.entityType;
     Service.create(reqParams, $scope.element, function () {
+      $rootScope.$broadcast($scope.entityType, 'save');
       $scope.element = {};
       $state.go($scope.listPage);
     });
@@ -97,6 +98,7 @@ function BaseController($scope, $stateParams, $state, Service, popupService, NgT
     reqParams['context'] = context;
     reqParams['entityType'] = $scope.entityType;
     Service.update(reqParams, $scope.element, function () {
+      $rootScope.$broadcast($scope.entityType, 'update');
       $state.go($scope.listPage);
     });
   }
@@ -107,6 +109,7 @@ function BaseController($scope, $stateParams, $state, Service, popupService, NgT
     reqParams['context'] = context;
     reqParams['entityType'] = $scope.entityType;
     Service.update(reqParams, inLine, function () {
+      $rootScope.$broadcast($scope.entityType, 'update');
       $scope.tableParams.reload();
     });
   }
@@ -118,6 +121,7 @@ function BaseController($scope, $stateParams, $state, Service, popupService, NgT
       reqParams['context'] = context;
       reqParams['entityType'] = $scope.entityType;
       Service.delete(reqParams, $scope.element, function () {
+        $rootScope.$broadcast($scope.entityType, 'delete');
         $state.go($scope.listPage);
       });
     }
@@ -130,6 +134,7 @@ function BaseController($scope, $stateParams, $state, Service, popupService, NgT
       reqParams['context'] = context;
       reqParams['entityType'] = $scope.entityType;
       Service.delete(reqParams, inLine, function () {
+        $rootScope.$broadcast($scope.entityType, 'delete');
         $scope.tableParams.reload();
       });
     }
