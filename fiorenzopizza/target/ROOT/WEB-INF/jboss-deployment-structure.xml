@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jboss-deployment-structure>
+    <!--<deployment>-->
+    <!--<dependencies>-->
+    <!--<module name="org.codehaus.jackson.jackson-mapper-asl" />-->
+    <!--<module name="org.codehaus.jackson.jackson-xc" />-->
+    <!--</dependencies>-->
+    <!--</deployment>-->
+    <!--</jboss-deployment-structure>-->
+    <!--<jboss-deployment-structure>-->
+    <!--<deployment>-->
+    <!--<dependencies>-->
+    <!--<module name="org.jboss.resteasy.resteasy-jackson2-provider"/>-->
+    <!--</dependencies>-->
+    <!--<exclusions>-->
+    <!--<module name="org.jboss.resteasy.resteasy-jettison-provider"/>-->
+    <!--</exclusions>-->
+    <!--</deployment>-->
+</jboss-deployment-structure>
