@@ -3,16 +3,36 @@
 
 
 <div class="container-fluid" ng-controller="RichcontentController">
-  <form>
+    <form>
+
+        <label>id:</label>
+        <span>{{element.id}}</span><br/>
 
 
+        <label>title:</label>
+        <span>{{element.title}}</span><br/>
+
+        <div>
+            nome:
+            <input type="text" ng-model="img.name"/><br/>
+            descrizione:
+            <input type="text" ng-model="img.description"/>
+            <input type="file" file-model="img.file"/>
+            <button class="btn btn-primary" ng-click="singleupload()">upload</button>
+        </div>
+        <br/>
+
+        <div class="container slider">
+            <p ng-repeat="img in element.images">
+                <img class="slide" ng-src="{{img.image}}" title="{{img.name}}">
+                description: {{image.description}}<br/>
+                filename: {{image.filename}}<br/>
+                filePath: {{image.filePath}}<br/>
+            </p>
+        </div>
 
 
-    <button class="btn btn-primary" ng-click="save()" ng-show="element.id === undefined">Save</button>
-    <button class="btn btn-primary" ng-click="update()" ng-show="element.id !== undefined">Update</button>
-    <button class="btn btn-primary" ng-click="delete()" ng-show="element.id !== undefined">Delete</button>
-    <button class="btn btn-primary" ng-click="undo()">Undo</button>
-  </form>
+    </form>
 </div>
 
 <div ng-include="'/views/templates/footer.html'"></div>
