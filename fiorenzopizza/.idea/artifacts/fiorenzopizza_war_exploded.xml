@@ -1,0 +1,28 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="fiorenzopizza:war exploded">
+    <output-path>$PROJECT_DIR$/target/ROOT</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="fiorenzopizza" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.giavacms:base:3.0.0-SNAPSHOT" />
+          <element id="library" level="project" name="Maven: org.giavacms:api:3.0.0-SNAPSHOT" />
+          <element id="library" level="project" name="Maven: org.giavacms:banner:3.0.0-SNAPSHOT" />
+          <element id="library" level="project" name="Maven: org.giavacms:catalogue:3.0.0-SNAPSHOT" />
+          <element id="library" level="project" name="Maven: org.giavacms:richcontent:3.0.0-SNAPSHOT" />
+          <element id="library" level="project" name="Maven: commons-lang:commons-lang:2.5" />
+          <element id="library" level="project" name="Maven: commons-io:commons-io:1.4" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.5.3" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.5.3" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.5.3" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="fiorenzopizza/web/Web" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="597f3d2e-91a5-4d5a-a805-167180eb353b" name="Default" comment="" />
+    <ignored path="giavacms-websites.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/misc.xml" />
+    <ignored path=".idea/.name" />
+    <ignored path=".idea/giavacms-websites.iml" />
+    <ignored path=".idea/modules.xml" />
+    <ignored path=".idea/vcs.xml" />
+    <ignored path=".idea/compiler.xml" />
+    <ignored path=".idea/copyright/profiles_settings.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_wildfly_wildfly_ejb3_9_0_0_Beta2.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_wildfly_wildfly_clustering_common_9_0_0_Beta2.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_spec_javax_annotation_jboss_annotations_api_1_2_spec_1_0_0_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_giavacms_api_3_0_0_SNAPSHOT.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__javax_mail_mail_1_5_0_b01.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_javassist_javassist_3_18_1_GA.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_spec_javax_resource_jboss_connector_api_1_7_spec_1_0_0_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_metadata_jboss_metadata_ejb_9_0_0_Beta1.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_wildfly_core_wildfly_platform_mbean_1_0_0_Beta2.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_wildfly_core_wildfly_network_1_0_0_Beta2.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_spec_javax_servlet_jboss_servlet_api_3_0_spec_1_0_1_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_wildfly_core_wildfly_protocol_1_0_0_Beta2.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_wildfly_core_wildfly_version_1_0_0_Beta2.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_wildfly_wildfly_clustering_ejb_spi_9_0_0_Beta2.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_ironjacamar_ironjacamar_spec_api_1_2_3_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_ironjacamar_ironjacamar_common_spi_1_2_3_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_logging_jboss_logging_annotations_1_2_0_Beta1.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_giavacms_base_3_0_0_SNAPSHOT.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_narayana_jts_narayana_jts_integration_5_0_4_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_ironjacamar_ironjacamar_core_impl_1_2_3_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__commons_cli_commons_cli_1_2.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__com_sun_mail_javax_mail_1_5_1.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_invocation_jboss_invocation_1_3_1_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_wildfly_wildfly_clustering_jgroups_spi_9_0_0_Beta2.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_wildfly_wildfly_clustering_service_9_0_0_Beta2.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_1_2_GA.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__javax_activation_activation_1_1_1.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_resteasy_resteasy_client_3_0_11_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_giavacms_richcontent_3_0_0_SNAPSHOT.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_wildfly_wildfly_naming_9_0_0_Beta2.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__commons_lang_commons_lang_2_5.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_jboss_ejb_client_2_0_3_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_wildfly_security_wildfly_security_manager_1_1_2_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_spec_javax_jms_jboss_jms_api_2_0_spec_1_0_0_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_spec_javax_security_jacc_jboss_jacc_api_1_5_spec_1_0_0_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_narayana_jts_narayana_jts_idlj_5_0_4_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_marshalling_jboss_marshalling_river_1_4_10_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_sasl_jboss_sasl_1_0_5_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_jboss_transaction_spi_7_1_0_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_metadata_jboss_metadata_common_9_0_0_Beta1.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_jboss_dmr_1_3_0_Beta2.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_hibernate_hibernate_core_4_3_8_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_5_3.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_wildfly_wildfly_iiop_openjdk_9_0_0_Beta2.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_logmanager_jboss_logmanager_2_0_0_Beta1.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_hibernate_javax_persistence_hibernate_jpa_2_1_api_1_0_0_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_remoting_jboss_remoting_4_0_5_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_wildfly_core_wildfly_process_controller_1_0_0_Beta2.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__commons_logging_commons_logging_1_1_1.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_wildfly_core_wildfly_request_controller_1_0_0_Beta2.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_wildfly_core_wildfly_io_1_0_0_Beta2.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_ironjacamar_ironjacamar_common_impl_1_2_3_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_picketbox_picketbox_infinispan_4_9_0_Beta2.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_wildfly_core_wildfly_deployment_repository_1_0_0_Beta2.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_wildfly_wildfly_clustering_spi_9_0_0_Beta2.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_wildfly_core_wildfly_remoting_1_0_0_Beta2.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_jboss_iiop_client_1_0_0_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jgroups_jgroups_3_6_2_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_stdio_jboss_stdio_1_0_2_GA.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_xnio_xnio_nio_3_3_0_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_msc_jboss_msc_1_2_4_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_security_jboss_negotiation_common_2_3_6_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_openjdk_orb_openjdk_orb_8_0_2_Beta1.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_wildfly_core_wildfly_core_security_1_0_0_Beta2.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_wildfly_checkstyle_wildfly_checkstyle_config_1_0_1_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_wildfly_wildfly_clustering_infinispan_spi_9_0_0_Beta2.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_security_jboss_negotiation_extras_2_3_6_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_jandex_1_1_0_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_wildfly_wildfly_ee_9_0_0_Beta2.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_modules_jboss_modules_1_4_2_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_wildfly_core_wildfly_server_1_0_0_Beta2.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_staxmapper_1_2_0_Beta1.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_wildfly_core_wildfly_controller_client_1_0_0_Beta2.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_jboss_common_core_2_5_0_Beta1.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_ironjacamar_ironjacamar_jdbc_1_2_3_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_resteasy_resteasy_jaxrs_3_0_11_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_threads_jboss_threads_2_2_0_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_wildfly_core_wildfly_core_security_api_1_0_0_Beta2.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_glassfish_javax_enterprise_concurrent_1_0.xml" />
+    <ignored path="fiorenzopizza/.idea/.name" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_wildfly_core_wildfly_domain_http_interface_1_0_0_Beta2.xml" />
+    <ignored path="fiorenzopizza/.idea/modules.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__dom4j_dom4j_1_6_1.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_hibernate_hibernate_entitymanager_4_3_8_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_wildfly_wildfly_connector_9_0_0_Beta2.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_wildfly_wildfly_security_9_0_0_Beta2.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_picketbox_picketbox_4_9_0_Beta2.xml" />
+    <ignored path="fiorenzopizza/.idea/workspace.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_xnio_xnio_api_3_2_0_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/uiDesigner.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_wildfly_wildfly_clustering_ee_spi_9_0_0_Beta2.xml" />
+    <ignored path="fiorenzopizza/.idea/compiler.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_spec_javax_xml_rpc_jboss_jaxrpc_api_1_1_spec_1_0_1_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/misc.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_narayana_compensations_compensations_5_0_4_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_resteasy_jaxrs_api_3_0_10_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_resteasy_resteasy_jaxb_provider_3_0_11_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/encodings.xml" />
+    <ignored path="fiorenzopizza/.idea/vcs.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_ironjacamar_ironjacamar_deployers_common_1_2_3_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/artifacts/fiorenzopizza_war_exploded.xml" />
+    <ignored path="fiorenzopizza/.idea/artifacts/fiorenzopizza_war.xml" />
+    <ignored path="fiorenzopizza/.idea/copyright/profiles_settings.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_ironjacamar_ironjacamar_core_api_1_2_3_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_giavacms_banner_3_0_0_SNAPSHOT.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_ironjacamar_ironjacamar_validator_1_2_3_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_5_3.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_jboss_remote_naming_2_0_3_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_wildfly_wildfly_transactions_9_0_0_Beta2.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_giavacms_catalogue_3_0_0_SNAPSHOT.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_wildfly_wildfly_clustering_api_9_0_0_Beta2.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_marshalling_jboss_marshalling_1_4_10_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_spec_javax_interceptor_jboss_interceptors_api_1_2_spec_1_0_0_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_wildfly_core_wildfly_controller_1_0_0_Beta2.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_spec_javax_enterprise_concurrent_jboss_concurrency_api_1_0_spec_1_0_0_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__javax_validation_validation_api_1_1_0_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_ironjacamar_ironjacamar_common_api_1_2_3_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_resteasy_resteasy_multipart_provider_3_0_11_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_wildfly_core_wildfly_threads_1_0_0_Beta2.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_classfilewriter_jboss_classfilewriter_1_1_0_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_wildfly_wildfly_clustering_jgroups_api_9_0_0_Beta2.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_infinispan_infinispan_commons_7_1_1_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_wildfly_core_wildfly_domain_management_1_0_0_Beta2.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_ejb3_jboss_ejb3_ext_api_2_1_0.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__io_undertow_undertow_core_1_2_0_Beta10.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__xml_apis_xml_apis_1_0_b2.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_spec_javax_ejb_jboss_ejb_api_3_2_spec_1_0_0_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_spec_javax_transaction_jboss_transaction_api_1_2_spec_1_0_0_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_picketbox_picketbox_commons_1_0_0_final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_4_0_5_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_wildfly_wildfly_clustering_marshalling_9_0_0_Beta2.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_infinispan_infinispan_core_7_1_1_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__commons_io_commons_io_1_4.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_metadata_jboss_metadata_ear_9_0_0_Beta1.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_5_3.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__javax_javaee_api_7_0.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_apache_james_apache_mime4j_0_6.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_security_jboss_negotiation_spnego_2_3_6_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_spec_javax_servlet_jboss_servlet_api_3_1_spec_1_0_0_Final.xml" />
+    <ignored path="fiorenzopizza/.idea/libraries/Maven__org_jboss_jboss_vfs_3_2_9_Final.xml" />
+    <ignored path="fiorenzopizza/js/.gitignore" />
+    <ignored path="fiorenzopizza/js/.gitattributes" />
+    <ignored path="fiorenzopizza/js/.jshintrc" />
+    <ignored path="fiorenzopizza/js/.travis.yml" />
+    <ignored path="fiorenzopizza/js/.editorconfig" />
+    <ignored path="fiorenzopizza/js/.yo-rc.json" />
+    <ignored path="fiorenzopizza/js-private/.gitignore" />
+    <ignored path="fiorenzopizza/js-private/.yo-rc.json" />
+    <ignored path="fiorenzopizza/js-private/.travis.yml" />
+    <ignored path="fiorenzopizza/js-private/.gitattributes" />
+    <ignored path="fiorenzopizza/js-private/.editorconfig" />
+    <ignored path="fiorenzopizza/js-private/.jshintrc" />
+    <ignored path="fiorenzopizza/target/ROOT/images/about-bg.jpg" />
+    <ignored path="fiorenzopizza/target/ROOT/views/templates/header.html" />
+    <ignored path="fiorenzopizza/target/ROOT/views/templates/header-post.html" />
+    <ignored path="fiorenzopizza/target/ROOT/views/templates/footer.html" />
+    <ignored path="fiorenzopizza/target/ROOT/views/templates/content.html" />
+    <ignored path="fiorenzopizza/target/ROOT/images/contact-bg.jpg" />
+    <ignored path="fiorenzopizza/target/classes/META-INF/persistence.xml" />
+    <ignored path="fiorenzopizza/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" />
+    <ignored path="fiorenzopizza/target/ROOT/views/about.html" />
+    <ignored path="fiorenzopizza/target/ROOT/images/post-bg.jpg" />
+    <ignored path="fiorenzopizza/target/ROOT/styles/main.css" />
+    <ignored path="fiorenzopizza/target/ROOT/images/home-bg.jpg" />
+    <ignored path="fiorenzopizza/target/ROOT/styles/clean-blog.min.css" />
+    <ignored path="fiorenzopizza/target/ROOT/views/single-news.html" />
+    <ignored path="fiorenzopizza/target/ROOT/views/projects.html" />
+    <ignored path="fiorenzopizza/target/ROOT-sources.jar" />
+    <ignored path="fiorenzopizza/target/ROOT/views/home.html" />
+    <ignored path="fiorenzopizza/target/ROOT/scripts/vendor.b5fd2cab.js" />
+    <ignored path="fiorenzopizza/target/ROOT/styles/vendor.f6063a9f.css" />
+    <ignored path="fiorenzopizza/target/ROOT/scripts/scripts.3148d114.js" />
+    <ignored path="fiorenzopizza/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
+    <ignored path="fiorenzopizza/target/ROOT.war" />
+    <ignored path="fiorenzopizza/target/ROOT/robots.txt" />
+    <ignored path="fiorenzopizza/target/ROOT/styles/clean-blog.css" />
+    <ignored path="fiorenzopizza/target/ROOT/index.html" />
+    <ignored path="fiorenzopizza/target/ROOT/images/post-sample-image.jpg" />
+    <ignored path="fiorenzopizza/target/ROOT/fonts/glyphicons-halflings-regular.woff2" />
+    <ignored path="fiorenzopizza/target/ROOT/images/yeoman.png" />
+    <ignored path="fiorenzopizza/target/ROOT/fonts/glyphicons-halflings-regular.svg" />
+    <ignored path="fiorenzopizza/target/ROOT/fonts/glyphicons-halflings-regular.eot" />
+    <ignored path="fiorenzopizza/target/ROOT/fonts/glyphicons-halflings-regular.ttf" />
+    <ignored path="fiorenzopizza/target/ROOT/fonts/glyphicons-halflings-regular.woff" />
+    <ignored path="fiorenzopizza/target/maven-archiver/pom.properties" />
+    <ignored path="fiorenzopizza/target/ROOT/favicon.ico" />
+    <ignored path="fiorenzopizza/target/ROOT/.htaccess" />
+    <ignored path="fiorenzopizza/target/javadoc-bundle-options/javadoc-options-javadoc-resources.xml" />
+    <ignored path="fiorenzopizza/target/ROOT/404.html" />
+    <ignored path="fiorenzopizza/fiorenzopizza.iml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="giavacms-websites" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Bundled (Maven 3)" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="NamedScopeManager">
+    <order />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="216" />
+    <option name="y" value="62" />
+    <option name="width" value="1409" />
+    <option name="height" value="863" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="giavacms-websites" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="giavacms-websites" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="giavacms-websites" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="giavacms-websites" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="giavacms-websites" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fiorenzopizza" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="myFilePath" />
+      <option name="GLUE" />
+      <option name="myNameFilter" />
+      <option name="myGeneratedName" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
+      <option name="BCName" value="" />
+      <option name="IOSSimulatorSdkPath" value="" />
+      <option name="adlOptions" value="" />
+      <option name="airProgramParameters" value="" />
+      <option name="appDescriptorForEmulator" value="Android" />
+      <option name="debugTransport" value="USB" />
+      <option name="debuggerSdkRaw" value="BC SDK" />
+      <option name="emulator" value="NexusOne" />
+      <option name="emulatorAdlOptions" value="" />
+      <option name="fastPackaging" value="true" />
+      <option name="fullScreenHeight" value="0" />
+      <option name="fullScreenWidth" value="0" />
+      <option name="launchUrl" value="false" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="/Applications/Flash Player Debugger.app" />
+        </LauncherParameters>
+      </option>
+      <option name="mobileRunTarget" value="Emulator" />
+      <option name="moduleName" value="" />
+      <option name="overriddenMainClass" value="" />
+      <option name="overriddenOutputFileName" value="" />
+      <option name="overrideMainClass" value="false" />
+      <option name="runTrusted" value="true" />
+      <option name="screenDpi" value="0" />
+      <option name="screenHeight" value="0" />
+      <option name="screenWidth" value="0" />
+      <option name="url" value="http://" />
+      <option name="usbDebugPort" value="7936" />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
+      <option name="BCName" value="" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="/Applications/Flash Player Debugger.app" />
+        </LauncherParameters>
+      </option>
+      <option name="moduleName" value="" />
+      <option name="trusted" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
+      <module name="" />
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="depsClasspath" value="false" />
+      <setting name="passParentEnv" value="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <setting name="launchBrowser" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
+      <profiling log-folder="$PROJECT_DIR$" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="597f3d2e-91a5-4d5a-a805-167180eb353b" name="Default" comment="" />
+      <created>1431940660355</created>
+      <option name="number" value="Default" />
+      <updated>1431940660355</updated>
+      <workItem from="1431940662072" duration="895000" />
+    </task>
+    <task id="LOCAL-00001" summary="fiorenzo pizz web site">
+      <created>1431940997699</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1431940997700</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="895000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="216" y="62" width="1409" height="863" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32885906" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24945135" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fiorenzo pizz web site" />
+    <option name="LAST_COMMIT_MESSAGE" value="fiorenzo pizz web site" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+</project>
