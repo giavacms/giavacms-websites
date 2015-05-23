@@ -13,7 +13,8 @@ angular.module('giavacms-private')
                   $filter, $location, factoryItems, APP_PROPERTIES) {
             angular.extend(this, new BaseController($rootScope, $scope, $stateParams, $state, RsResource, popupService, NgTableParams, $location, APP_PROPERTIES, this));
 
-            angular.extend(this, new UploadController($scope, SigleFileUploadService, this));
+            angular.extend(this, new AttachmentController($scope, $stateParams, SigleFileUploadService, RsResource, APP_PROPERTIES, this));
+
 
             $scope.listPage = 'richcontent';
             $scope.newPage = 'richcontent_new';
@@ -43,27 +44,15 @@ angular.module('giavacms-private')
             // ...e quindi...
             // funzione di callback. altre idee?
             $scope.getSuccess = function () {
-
                 console.log('element: ' + $scope.element);
             };
 
             $scope.getFailure = function () {
 
-                $scope.sectionPath = ['news'];
             };
             $scope.init();
 
-            if ($stateParams.id !== undefined) {
-
-
-                $scope.img = {};
-                $scope.getImageObj = function () {
-                    return $scope.img;
-                }
-                $scope.getImageUrl = function () {
-                    return 'http://' + APP_PROPERTIES.HOST + APP_PROPERTIES.CONTEXT + '/api/v1/' + $scope.entityType + "/" + $stateParams.id + "/image"
-                }
-            }
+            $scope.initAttachments();
         }])
 
     .config(['$stateProvider', function ($stateProvider) {

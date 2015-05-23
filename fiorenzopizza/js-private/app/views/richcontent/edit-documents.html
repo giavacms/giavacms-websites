@@ -3,14 +3,47 @@
 
 
 <div class="container-fluid" ng-controller="RichcontentController">
-  <form>
+    <form>
+        <form>
+
+            <label>id:</label>
+            <span>{{element.id}}</span><br/>
 
 
-    <button class="btn btn-primary" ng-click="save()" ng-show="element.id === undefined">Save</button>
-    <button class="btn btn-primary" ng-click="update()" ng-show="element.id !== undefined">Update</button>
-    <button class="btn btn-primary" ng-click="delete()" ng-show="element.id !== undefined">Delete</button>
-    <button class="btn btn-primary" ng-click="undo()">Undo</button>
-  </form>
+            <label>title:</label>
+            <span>{{element.title}}</span><br/>
+
+            <div>
+                <h1>documents</h1>
+                <button class="btn btn-primary" ng-click="addDocument()">addDocument</button>
+                <p ng-repeat="doc in documents">
+                    nome {{$index+1}}:
+                    <input type="text" ng-model="doc.name"/><br/>
+                    descrizione {{$index+1}}:
+                    <input type="text" ng-model="doc.description"/>
+                    <input type="file" file-model="doc.file"/>
+                <ol></ol>
+                </p>
+                <button class="btn btn-primary" ng-click="uploadDocuments()" ng-disabled="images.length <1">
+                    uploadDocuments
+                </button>
+            </div>
+            <br/>
+
+            <div class="container slider">
+                <p ng-repeat="doc in element.documents">
+                    <img class="slide" ng-src="/docs/{{doc.filename}}" title="{{doc.name}}">
+                    id: {{doc.id}}<br/>
+                    description: {{doc.description}}<br/>
+                    filename: {{doc.filename}}<br/>
+                    filePath: {{doc.filePath}}<br/>
+                    <a ng-click="deleteDocument(doc.id)"><i class="fa fa-trash-o"></i></a>
+                </p>
+            </div>
+
+
+        </form>
+    </form>
 </div>
 
 <div ng-include="'/views/templates/footer.html'"></div>

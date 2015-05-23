@@ -29,10 +29,11 @@
   <br/>
 
   <div class="container slider">
-    <img ng-repeat="image in images" class="slide" ng-src="{{image.image}}" title="name">
-    <p>description: {{image.description}}<br/>
-    filename:  {{image.filename}}<br/>
-    filePath:  {{image.filePath}}<br/>
+    <p ng-repeat="img in element.images">
+      <img class="slide" ng-src="/img/{{img.filename}}" title="{{img.name}}">
+      description: {{img.description}}<br/>
+      filename: {{img.filename}}<br/>
+      filePath: {{img.filePath}}<br/>
     </p>
   </div>
 

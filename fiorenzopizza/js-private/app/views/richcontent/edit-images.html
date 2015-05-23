@@ -13,21 +13,28 @@
         <span>{{element.title}}</span><br/>
 
         <div>
-            nome:
-            <input type="text" ng-model="img.name"/><br/>
-            descrizione:
-            <input type="text" ng-model="img.description"/>
-            <input type="file" file-model="img.file"/>
-            <button class="btn btn-primary" ng-click="singleupload()">upload</button>
+            <h1>images</h1>
+            <button class="btn btn-primary" ng-click="addImage()">addImage</button>
+            <p ng-repeat="image in images">
+                nome {{$index+1}}:
+                <input type="text" ng-model="image.name"/><br/>
+                descrizione {{$index+1}}:
+                <input type="text" ng-model="image.description"/>
+                <input type="file" file-model="image.file"/>
+                <ol></ol>
+            </p>
+            <button class="btn btn-primary" ng-click="uploadImages()" ng-disabled="images.length <1">uploadImages</button>
         </div>
         <br/>
 
         <div class="container slider">
             <p ng-repeat="img in element.images">
-                <img class="slide" ng-src="{{img.image}}" title="{{img.name}}">
-                description: {{image.description}}<br/>
-                filename: {{image.filename}}<br/>
-                filePath: {{image.filePath}}<br/>
+                <img class="slide" ng-src="/img/{{img.filename}}" title="{{img.name}}">
+                id: {{img.id}}<br/>
+                description: {{img.description}}<br/>
+                filename: {{img.filename}}<br/>
+                filePath: {{img.filePath}}<br/>
+                <a ng-click="deleteImage(img.id)"><i class="fa fa-trash-o"></i></a>
             </p>
         </div>
 
