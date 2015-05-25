@@ -26,6 +26,10 @@ angular.module('giavacms-private')
                     console.log('title: ' + search.like.title);
                     reqParams['like.title'] = search.like.title;
                 }
+                if (search && search.obj && search.obj.tag) {
+                    console.log('tag: ' + search.obj.tag);
+                    reqParams['obj.tag'] = search.obj.tag;
+                }
                 if (search && search.obj && search.obj.richContentType && search.obj.richContentType.id) {
                     console.log('id: ' + search.obj.richContentType.id);
                     reqParams['obj.richContentType.id'] = search.obj.richContentType.id;

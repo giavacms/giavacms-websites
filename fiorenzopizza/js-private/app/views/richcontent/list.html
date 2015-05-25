@@ -25,6 +25,9 @@
       <label>Nome</label>
       <input type="text" name="title" ng-model="search.like.title" class="span10"><br/>
 
+      <label>Tag</label>
+      <input type="text" name="tag" ng-model="search.obj.tag" class="span10"><br/>
+
       <label>richContentType</label>
       <select ng-model="search.obj.richContentType" class="form-control"
               ng-options="richcontenttype as richcontenttype.name for richcontenttype in richcontenttypes track by richcontenttype.id"></select>
@@ -49,6 +52,9 @@
       </td>
       <td data-title="'title'">
         {{p.title}}
+      </td>
+      <td data-title="'tags'">
+        {{p.tags}}
       </td>
       <td data-title="'type'">
         {{p.richContentType.name}}
