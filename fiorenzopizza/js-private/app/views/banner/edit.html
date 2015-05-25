@@ -3,46 +3,61 @@
 
 
 <div class="container-fluid" ng-controller="BannerController">
-  <form>
+    <form>
 
-    <div class="form-group">
-      <label for="id">id</label>
-      <input type="text" class="form-control" id="id" placeholder="id" ng-model="element.id" readonly="true">
-    </div>
+        <div class="form-group">
+            <label for="id">id</label>
+            <input type="text" class="form-control" id="id" placeholder="id" ng-model="element.id" readonly="true">
+        </div>
 
-    <div class="form-group">
-      <label for="title">title</label>
-      <input type="text" class="form-control" id="title" placeholder="title" ng-model="element.title">
-    </div>
-    <div class="form-group">
-      <label for="preview">preview</label>
-      <input type="text" class="form-control" id="preview" placeholder="preview" ng-model="element.preview">
-    </div>
+        <div class="form-group">
+            <label for="name">name</label>
+            <input type="text" class="form-control" id="name" placeholder="name" ng-model="element.name">
+        </div>
+        <div class="form-group">
+            <label for="bannerType">bannerType</label>
+            <select id="bannerType" ng-model="search.obj.bannerType" class="form-control"
+                    ng-options="bannerType as bannerType.name for bannerType in bannertypes track by bannerType.id"></select>
 
-    <label for="content">content</label>
+        </div>
+        <div class="form-group">
+            <label for="description">description</label>
+            <input type="text" class="form-control" id="description" placeholder="description"
+                   ng-model="element.description">
+        </div>
 
-    <div id="content" text-angular ng-model="element.content" name="demo-editor"></div>
+        <div class="form-group">
+            <label for="language">language</label>
+            <input type="text" class="form-control" id="language" placeholder="language"
+                   ng-model="element.language">
+        </div>
 
-    <div class="form-group">
-      <label for="author">author</label>
-      <input type="text" class="form-control" id="author" placeholder="element.tags" ng-model="element.tags">
-    </div>
-    <div class="form-group">
-      <label for="tags">tags</label>
-      <input type="text" class="form-control" id="tags" placeholder="tags" ng-model="element.tags">
-    </div>
-    <div class="form-group">
-      <label for="tags">date {{element.date | date : 'dd/MM/yyyy'}}</label>
-      <input type="text" class="form-control" id="date" placeholder="date"
-             ng-model="element.date">
-    </div>
+        <div class="form-group">
+            <label for="url">url</label>
+            <input type="text" class="form-control" id="url" placeholder="url"
+                   ng-model="element.url">
+        </div>
+
+        <div class="form-group">
+            <label for="internal">internal</label>
+            <input type="checkbox" class="form-control" id="internal" placeholder="internal"
+                   ng-model="element.internal">
+        </div>
+
+        <div class="form-group">
+            <label for="online">online</label>
+            <input type="checkbox" class="form-control" id="online" placeholder="online"
+                   ng-model="element.online">
+        </div>
 
 
-    <button ng-click="save()" ng-show="element.id === undefined">Save</button>
-    <button ng-click="update()" ng-show="element.id !== undefined">Update</button>
-    <button ng-click="delete()" ng-show="element.id !== undefined">Delete</button>
-    <button ng-click="undo()">Undo</button>
-  </form>
+
+
+        <button class="btn btn-primary btn-lg" ng-click="save()" ng-show="element.id === undefined">Save</button>
+        <button class="btn btn-primary btn-lg" ng-click="update()" ng-show="element.id !== undefined">Update</button>
+        <button class="btn btn-primary btn-lg" ng-click="delete()" ng-show="element.id !== undefined">Delete</button>
+        <button class="btn btn-primary btn-lg" ng-click="undo()">Undo</button>
+    </form>
 </div>
 
 <div ng-include="'/views/templates/footer.html'"></div>

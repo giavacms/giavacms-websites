@@ -9,15 +9,15 @@ angular.module('giavacms-private')
             //fd.append("name", name);
             //fd.append("description", description);
             //fd.append('file', file);
-            $http.post(uploadUrl, fd, {
+            var res = $http.post(uploadUrl, fd, {
                 transformRequest: angular.identity,
                 headers: {'Content-Type': undefined}
-            })
-                .success(function (output) {
-                    console.log(output);
-                })
-                .error(function (output) {
-                    console.log(output);
-                });
+            });
+            res.success(function (data, status, headers, config) {
+                console.log(JSON.stringify(data));
+            });
+            res.error(function (data, status, headers, config) {
+                console.log(JSON.stringify(data));
+            });
         }
     }]);

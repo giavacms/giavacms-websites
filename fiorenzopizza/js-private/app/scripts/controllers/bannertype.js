@@ -3,14 +3,14 @@
 
 angular.module('giavacms-private')
 
-  .controller('BannerTypologyController',
+  .controller('BannerTypeController',
   ['$rootScope', '$scope', '$stateParams', '$state', 'RsResource', 'popupService', 'NgTableParams', '$filter', '$location', 'APP_PROPERTIES',
     function ($rootScope, $scope, $stateParams, $state, RsResource, popupService, NgTableParams, $filter, $location, APP_PROPERTIES) {
       angular.extend(this, new BaseController($rootScope, $scope, $stateParams, $state, RsResource, popupService, NgTableParams, $location, APP_PROPERTIES, this));
 
-      $scope.listPage = 'bannertypology';
-      $scope.newPage = 'bannertypology';
-      $scope.entityType = 'bannertypology';
+      $scope.listPage = 'bannertype';
+      $scope.newPage = 'bannertype';
+      $scope.entityPath = 'bannertypes';
       $scope.sortingArray = {id: 'desc'};
 
       $scope.getBaseSearch = function (search, reqParams) {
@@ -40,11 +40,11 @@ angular.module('giavacms-private')
   .config(['$stateProvider', function ($stateProvider) {
 
     $stateProvider
-      .state('bannertypology', {
-        url: '/bannertypology',
-        templateUrl: 'views/bannertypology/list.html',
+      .state('bannertype', {
+        url: '/bannertype',
+        templateUrl: 'views/bannertype/list.html',
         ncyBreadcrumb: {
-          label: 'Bannertypology',
+          label: 'Bannertype',
           parent: 'home'
         }
       })

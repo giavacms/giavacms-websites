@@ -25,9 +25,9 @@
       <label>Name</label>
       <input type="text" name="name" ng-model="search.like.name" class="span10"><br/>
 
-      <label>bannerTypology</label>
-      <select ng-model="search.obj.bannerTypology" class="form-control"
-              ng-options="bannerTypology as bannerTypology.name for bannerTypology in bannerTypologies track by bannerTypology.id"></select>
+      <label>bannerType</label>
+      <select ng-model="search.obj.bannerType" class="form-control"
+              ng-options="bannerType as bannerType.name for bannerType in bannertypes track by bannerType.id"></select>
 
 
       <button type="button" class="btn btn-primary" ng-click="reload()">
@@ -44,8 +44,8 @@
       <td data-title="'num'">
         {{$index}}
       </td>
-      <td data-title="'bannerTypology'">
-        {{p.bannerTypology.name}}
+      <td data-title="'bannerType'">
+        {{p.bannerType.name}}
       </td>
       <td data-title="'name'">
         {{p.name}}
@@ -62,14 +62,16 @@
       <td data-title="'internal'">
         {{p.internal ? 'si' : 'no'}}
       </td>
+      <td data-title="'online'">
+        {{p.online ? 'si' : 'no'}}
+      </td>
+
       <td data-title="'filename'">
         {{p.image.filename}}
       </td>
       <td data-title="'Operations'">
         <a href="/#/banner/{{p.id}}/edit" title="edit"><i class="fa fa-pencil-square-o"></i></a>
         <a href="/#/banner/{{p.id}}" title="view"> <i class="fa fa-info-circle"></i></a>
-        <a href="/#/banner/{{p.id}}/images/edit" title="edit images"><i class="fa fa-file-image-o"></i></a>
-        <a href="/#/banner/{{p.id}}/documents/edit" title="edit documents"><i class="fa fa-file-text-o"></i></i></a>
       </td>
     </tr>
     </tbody>

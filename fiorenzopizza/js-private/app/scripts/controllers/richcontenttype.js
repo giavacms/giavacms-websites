@@ -11,7 +11,7 @@ angular.module('giavacms-private')
 
       $scope.listPage = 'richcontenttype';
       $scope.newPage = 'richcontenttype';
-      $scope.entityType = 'richcontenttype';
+      $scope.entityPath = 'richcontenttypes';
       $scope.sortingArray = {data: 'desc'};
 
       $scope.getBaseSearch = function (search, reqParams) {

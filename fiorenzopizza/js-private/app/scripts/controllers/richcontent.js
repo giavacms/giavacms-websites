@@ -18,7 +18,7 @@ angular.module('giavacms-private')
 
             $scope.listPage = 'richcontent';
             $scope.newPage = 'richcontent_new';
-            $scope.entityType = 'richcontent';
+            $scope.entityPath = 'richcontents';
             $scope.sortingArray = {data: 'desc'};
 
             $scope.getBaseSearch = function (search, reqParams) {
@@ -44,7 +44,8 @@ angular.module('giavacms-private')
             // ...e quindi...
             // funzione di callback. altre idee?
             $scope.getSuccess = function () {
-                console.log('element: ' + $scope.element);
+                console.log(JSON.stringify($scope.element));
+                $scope.initAttachments();
             };
 
             $scope.getFailure = function () {
@@ -52,7 +53,7 @@ angular.module('giavacms-private')
             };
             $scope.init();
 
-            $scope.initAttachments();
+
         }])
 
     .config(['$stateProvider', function ($stateProvider) {

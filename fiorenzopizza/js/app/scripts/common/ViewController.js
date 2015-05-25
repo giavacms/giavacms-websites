@@ -14,7 +14,7 @@ function ViewController($scope, $stateParams, $state, Service, NgTableParams, $f
       var reqParams = {};
       reqParams['host'] = host;
       reqParams['context'] = context;
-      reqParams['entityType'] = $scope.entityType;
+      reqParams['entityPath'] = $scope.entityPath;
       reqParams['id'] = $stateParams.id;
       $scope.element = Service.get(reqParams, $scope.getSuccess, $scope.getFailure);
     } else {
@@ -42,7 +42,7 @@ function ViewController($scope, $stateParams, $state, Service, NgTableParams, $f
         var reqParams = {};
         reqParams['host'] = host;
         reqParams['context'] = context;
-        reqParams['entityType'] = $scope.entityType;
+        reqParams['entityPath'] = $scope.entityPath;
         reqParams['startRow'] = (params.page() - 1) * params.count();
         reqParams['pageSize'] = params.count();
         if (angular.isDefined(params.$params['sorting'])) {

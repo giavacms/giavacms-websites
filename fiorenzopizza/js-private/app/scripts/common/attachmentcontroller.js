@@ -6,17 +6,17 @@ function AttachmentController($scope, $stateParams, SigleFileUploadService, RsRe
 
     $scope.initAttachments = function () {
         if ($stateParams.id !== undefined) {
-            $scope.loadImages($scope.element, $scope.entityType, $stateParams.id, APP_PROPERTIES.HOST);
-            $scope.loadDocuments($scope.element, $scope.entityType, $stateParams.id, APP_PROPERTIES.HOST);
+            $scope.loadImages();
+            $scope.loadDocuments();
 
             $scope.images = [];
             $scope.documents = [];
 
             $scope.imageUrl = 'http://' + APP_PROPERTIES.HOST +
-            APP_PROPERTIES.CONTEXT + '/api/v1/' + $scope.entityType + "/" + $stateParams.id + "/image";
+            APP_PROPERTIES.CONTEXT + '/api/v1/' + $scope.entityPath + "/" + $stateParams.id + "/images";
 
             $scope.documentUrl = 'http://' + APP_PROPERTIES.HOST +
-            APP_PROPERTIES.CONTEXT + '/api/v1/' + $scope.entityType + "/" + $stateParams.id + "/document";
+            APP_PROPERTIES.CONTEXT + '/api/v1/' + $scope.entityPath + "/" + $stateParams.id + "/documents";
 
         }
     }
@@ -35,24 +35,30 @@ function AttachmentController($scope, $stateParams, SigleFileUploadService, RsRe
     $scope.uploadImages = function () {
         for (var i = 0; i < $scope.images.length; i++) {
             SigleFileUploadService.uploadFileToUrl($scope.imageUrl, $scope.images[i]);
+            //$scope.images.splice(i, 1);
         }
-        $scope.images = [];
     }
 
     $scope.uploadDocuments = function () {
         for (var i = 0; i < $scope.documents.length; i++) {
             SigleFileUploadService.uploadFileToUrl($scope.documentUrl, $scope.documents[i]);
+            //$scope.documents.splice(i, 1);
         }
-        $scope.documents = [];
     }
 
 
     $scope.deleteImage = function (imageId) {
+        for (var i = 0; i < $scope.element.images.length; i++) {
+            if ($scope.element.images[i].id == imageId) {
+                $scope.element.images.splice(i, 1);
+                break;
+            }
+        }
         var reqParams = {};
         reqParams['host'] = APP_PROPERTIES.HOST;
-        reqParams['entityType'] = $scope.entityType;
+        reqParams['entityPath'] = $scope.entityPath;
         reqParams['id'] = $scope.element.id;
-        reqParams['entityType2'] = 'image';
+        reqParams['entityPath2'] = 'images';
         reqParams['id2'] = imageId;
         RsResource.delete(reqParams, function (response) {
             console.log(response);
@@ -60,11 +66,17 @@ function AttachmentController($scope, $stateParams, SigleFileUploadService, RsRe
     }
 
     $scope.deleteDocument = function (documentId) {
+        for (var i = 0; i < $scope.element.documents.length; i++) {
+            if ($scope.element.documents[i].id == documentId) {
+                $scope.element.documents.splice(i, 1);
+                break;
+            }
+        }
         var reqParams = {};
         reqParams['host'] = APP_PROPERTIES.HOST;
-        reqParams['entityType'] = $scope.entityType;
+        reqParams['entityPath'] = $scope.entityPath;
         reqParams['id'] = $scope.element.id;
-        reqParams['entityType2'] = 'document';
+        reqParams['entityPath2'] = 'documents';
         reqParams['id2'] = documentId;
         RsResource.delete(reqParams, function (response) {
             console.log(response);
@@ -80,25 +92,26 @@ function AttachmentController($scope, $stateParams, SigleFileUploadService, RsRe
     }
 
 
-    $scope.loadImages = function (element, entityType, id, host) {
+    $scope.loadImages = function () {
+        //$scope.element, $scope.entityPath, $stateParams.id, APP_PROPERTIES.HOST
         var reqParams = {};
-        reqParams['host'] = host;
-        reqParams['entityType'] = entityType;
-        reqParams['id'] = id;
-        reqParams['entityType2'] = 'images';
+        reqParams['host'] = APP_PROPERTIES.HOST;
+        reqParams['entityPath'] = $scope.entityPath;
+        reqParams['id'] = $scope.element.id;
+        reqParams['entityPath2'] = 'images';
         RsResource.query(reqParams, function (images) {
-            element.images = images;
+            $scope.element.images = images;
         });
     }
 
-    $scope.loadDocuments = function (element, entityType, id, host) {
+    $scope.loadDocuments = function () {
         var reqParams = {};
-        reqParams['host'] = host;
-        reqParams['entityType'] = entityType;
-        reqParams['id'] = id;
-        reqParams['entityType2'] = 'documents';
+        reqParams['host'] = APP_PROPERTIES.HOST;
+        reqParams['entityPath'] = $scope.entityPath;
+        reqParams['id'] = $scope.element.id;
+        reqParams['entityPath2'] = 'documents';
         RsResource.query(reqParams, function (documents) {
-            element.documents = documents;
+            $scope.element.documents = documents;
         });
     }
 

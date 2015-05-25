@@ -21,9 +21,10 @@
                 descrizione {{$index+1}}:
                 <input type="text" ng-model="image.description"/>
                 <input type="file" file-model="image.file"/>
-                <ol></ol>
+            <ol></ol>
             </p>
-            <button class="btn btn-primary" ng-click="uploadImages()" ng-disabled="images.length <1">uploadImages</button>
+            <button class="btn btn-primary" ng-click="uploadImages()" ng-disabled="images.length <1">uploadImages
+            </button>
         </div>
         <br/>
 
@@ -37,6 +38,7 @@
                 <a ng-click="deleteImage(img.id)"><i class="fa fa-trash-o"></i></a>
             </p>
         </div>
+        <button class="btn btn-primary" ng-click="loadImages()">loadImages</button>
 
 
     </form>

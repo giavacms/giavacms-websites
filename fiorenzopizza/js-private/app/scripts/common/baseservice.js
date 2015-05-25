@@ -5,11 +5,11 @@ angular.module('giavacms-private')
 
     .factory('RsResource', function ($resource) {
 
-        return $resource('http://:host/api/v1/:entityType/:id/:entityType2/:id2', {
+        return $resource('http://:host/api/v1/:entityPath/:id/:entityPath2/:id2', {
             host: '@host',
-            entityType: '@entityType',
+            entityPath: '@entityPath',
             id: '@id',
-            entityType2: '@entityType2',
+            entityPath2: '@entityPath2',
             id2: '@id2'
         }, {
             query: {method: 'GET', isArray: true},

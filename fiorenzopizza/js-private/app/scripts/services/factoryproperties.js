@@ -4,7 +4,7 @@ angular.module('giavacms-private')
     ['$rootScope', 'RsResource', '$q', 'APP_PROPERTIES',
         function ($rootScope, RsResource, $q, APP_PROPERTIES) {
             var service = {};
-            //service.bannertypologies;
+            //service.bannertypes;
             //service.richcontenttypes = {};
 
             var reqParams = {};
@@ -12,16 +12,16 @@ angular.module('giavacms-private')
             reqParams['startRow'] = 0;
             reqParams['pageSize'] = 0;
 
-            service.getBannertypologies = function () {
+            service.getBannertypes = function () {
                 var d = $q.defer();
-                if (angular.isUndefined(service.bannertypologies)) {
-                    reqParams['entityType'] = 'bannertypology';
+                if (angular.isUndefined(service.bannertypes)) {
+                    reqParams['entityPath'] = 'bannertypes';
                     RsResource.query(reqParams, function (data) {
-                        service.bannertypologies = data;
-                        d.resolve(service.bannertypologies);
+                        service.bannertypes = data;
+                        d.resolve(service.bannertypes);
                     });
                 } else {
-                    d.resolve(service.bannertypologies);
+                    d.resolve(service.bannertypes);
                 }
                 return d.promise;
             }
@@ -29,7 +29,7 @@ angular.module('giavacms-private')
             service.getRichcontenttypes = function () {
                 var d = $q.defer();
                 if (angular.isUndefined(service.richcontenttypes)) {
-                    reqParams['entityType'] = 'richcontenttype';
+                    reqParams['entityPath'] = 'richcontenttypes';
                     RsResource.query(reqParams, function (data) {
                         service.richcontenttypes = data;
                         d.resolve(service.richcontenttypes);
@@ -40,12 +40,12 @@ angular.module('giavacms-private')
                 return d.promise;
             }
 
-            $rootScope.$on('richcontenttype', function () {
+            $rootScope.$on('richcontenttypes', function () {
                 service.richcontenttypes = undefined;
             });
 
-            $rootScope.$on('bannertypology', function () {
-                service.bannertypologies = undefined;
+            $rootScope.$on('bannertypes', function () {
+                service.bannertypes = undefined;
             });
 
 

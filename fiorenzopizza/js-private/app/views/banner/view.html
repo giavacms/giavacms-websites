@@ -2,10 +2,35 @@
      ng-init="image='home-bg.jpg'; pageTitle ='home'; pageSubTitle = 'angularJS+giavaCMS clipboard'"></div>
 
 
-<div class="container-fluid" ng-controller="BannerController">
-  <h1>{{element.title}}</h1>
-  <span ng-bind-html="element.content"></span>
-  <a class="btn btn-default" href="/#/banner/{{element.id}}/edit" role="button">Modifica</a>
+<div class=" container-fluid" ng-controller="BannerController">
+
+
+    <label>name:</label>
+    <span>{{element.name}}</span><br/>
+
+    <label>bannerType</label>
+    <span>{{element.bannerType.name}}</span><br/>
+
+    <label>name</label>
+    <span>{{element.name}}</span><br/>
+
+    <label>description</label>
+    <span>{{element.description}}</span><br/>
+
+    <label>language</label></span>
+    <span>{{element.language}} </span><br/>
+
+    <label>url</label>
+    <span>{{element.url}} </span><br/>
+
+    <label>internal</label>
+    <span>{{element.internal ? 'si' : 'no'}}</span><br/>
+
+    <label>online</label>
+    <span>{{element.online ? 'si' : 'no'}}</span><br/>
+
+
+    <a class="btn btn-default" href="/#/banner/{{element.id}}/edit" role="button">Modifica</a>
 
 </div>
 

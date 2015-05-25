@@ -5,9 +5,9 @@ angular.module('fiorenzopizza')
 
   .factory('RsResource', function ($resource) {
 
-    return $resource('http://:host/api/v1/:entityType/:id', {
+    return $resource('http://:host/api/v1/:entityPath/:id', {
       host: '@host',
-      entityType: '@entityType',
+      entityPath: '@entityPath',
       id: '@id'
     }, {
       query: {method: 'GET', isArray: true},

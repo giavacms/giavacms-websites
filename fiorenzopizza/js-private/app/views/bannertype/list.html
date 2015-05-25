@@ -2,7 +2,7 @@
      ng-init="image='home-bg.jpg'; pageTitle ='home'; pageSubTitle = 'angularJS+giavaCMS clipboard'"></div>
 
 
-<div class="container-fluid" ng-controller="BannerTypologyController">
+<div class="container-fluid" ng-controller="BannerTypeController">
 
   <script type="text/ng-template" id="custom/pager">
     <div ng-if="params.data.length" style="text-align: center">
@@ -39,7 +39,7 @@
         <a ng-click="setEditId(p.id)" title="edit"><i class="fa fa-pencil-square-o"></i></a>
       </td>
     </tr>
-    <tr ng-show="editId===p.id" ng-if="editId===p.id" ng-include src="'views/bannertypology/edit.html'">
+    <tr ng-show="editId===p.id" ng-if="editId===p.id" ng-include src="'views/bannerType/edit.html'">
     </tr>
 
     </tbody>

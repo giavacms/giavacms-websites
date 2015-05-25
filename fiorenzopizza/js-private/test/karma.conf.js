@@ -39,6 +39,8 @@ module.exports = function(config) {
       'bower_components/textAngular/src/textAngular-sanitize.js',
       'bower_components/textAngular/src/textAngularSetup.js',
       'bower_components/angular-breadcrumb/release/angular-breadcrumb.js',
+      'bower_components/spin.js/spin.js',
+      'bower_components/angular-spinner/angular-spinner.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

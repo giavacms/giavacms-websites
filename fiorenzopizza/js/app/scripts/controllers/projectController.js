@@ -6,7 +6,7 @@ angular.module('fiorenzopizza')
     function ($scope, $stateParams, $state, RsResource, NgTableParams, $filter, $location, APP_PROPERTIES) {
       angular.extend(this, new ViewController($scope, $stateParams, $state, RsResource, NgTableParams, $filter, $location, APP_PROPERTIES));
       $scope.listPage = 'news';
-      $scope.entityType = 'richcontent';
+      $scope.entityPath = 'richcontent';
       $scope.sortingArray = {data: 'desc'};
 
       $scope.getBaseSearch = function (search, reqParams) {

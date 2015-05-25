@@ -13,7 +13,7 @@ angular.module('giavacms-private')
 
       $scope.listPage = 'banner';
       $scope.newPage = 'banner_new';
-      $scope.entityType = 'banner';
+      $scope.entityPath = 'banners';
       $scope.sortingArray = {id: 'desc'};
 
       $scope.getBaseSearch = function (search, reqParams) {
@@ -21,16 +21,16 @@ angular.module('giavacms-private')
           console.log('name: ' + search.like.name);
           reqParams['like.name'] = search.like.name;
         }
-        if (search && search.obj && search.obj.bannerTypology && search.obj.bannerTypology.id) {
-          console.log('id: ' + search.obj.bannerTypology.id);
-          reqParams['obj.bannerTypology.id'] = search.obj.bannerTypology.id;
+        if (search && search.obj && search.obj.bannerType && search.obj.bannerType.id) {
+          console.log('bannerType.id: ' + search.obj.bannerType.id);
+          reqParams['obj.bannerType.id'] = search.obj.bannerType.id;
         }
         reqParams['obj.language'] = 'ITA';
       };
 
       //inizializzo la lista dei bannerTypology
-      factoryItems.getBannertypologies().then(function (result) {
-        $scope.bannerTypologies = result;
+      factoryItems.getBannertypes().then(function (result) {
+        $scope.bannertypes = result;
       });
 
 
