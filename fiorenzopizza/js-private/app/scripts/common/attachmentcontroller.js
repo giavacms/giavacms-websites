@@ -37,6 +37,7 @@ function AttachmentController($scope, $stateParams, SigleFileUploadService, RsRe
             SigleFileUploadService.uploadFileToUrl($scope.imageUrl, $scope.images[i]);
             //$scope.images.splice(i, 1);
         }
+        $scope.loadImages();
     }
 
     $scope.uploadDocuments = function () {
@@ -44,6 +45,7 @@ function AttachmentController($scope, $stateParams, SigleFileUploadService, RsRe
             SigleFileUploadService.uploadFileToUrl($scope.documentUrl, $scope.documents[i]);
             //$scope.documents.splice(i, 1);
         }
+        $scope.loadDocuments();
     }
 
 
