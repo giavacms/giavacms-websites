@@ -40,12 +40,30 @@ angular.module('giavacms-private')
                 return d.promise;
             }
 
+            service.getCategories = function () {
+                var d = $q.defer();
+                if (angular.isUndefined(service.categories)) {
+                    reqParams['entityPath'] = 'categories';
+                    RsResource.query(reqParams, function (data) {
+                        service.categories = data;
+                        d.resolve(service.categories);
+                    });
+                } else {
+                    d.resolve(service.categories);
+                }
+                return d.promise;
+            }
+
             $rootScope.$on('richcontenttypes', function () {
                 service.richcontenttypes = undefined;
             });
 
             $rootScope.$on('bannertypes', function () {
                 service.bannertypes = undefined;
+            });
+
+            $rootScope.$on('categories', function () {
+                service.categories = undefined;
             });
 
 
