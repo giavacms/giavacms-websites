@@ -14,54 +14,26 @@
             <input type="text" class="form-control" id="name" placeholder="name" ng-model="element.name">
         </div>
         <div class="form-group">
-            <label for="description">description</label>
-            <textarea class="form-control" id="description" placeholder="description"
-                      ng-model="element.description"></textarea>
+            <label for="id">category</label>
+            <select ng-model="element.category" class="form-control"
+                    ng-options="category as category.name for category in categories track by category.id"></select>
         </div>
+
+
         <div class="form-group">
-            <label for="name">orderNum</label>
-            <input type="text" class="form-control" id="orderNum" placeholder="orderNum" ng-model="element.orderNum">
+            <label for="language">val1 {{element.category.prop1}}</label>
+            <select ng-model="element.val1" class="form-control"
+                    ng-options="prop1 for prop1 in featureItems[element.category.ref1]"></select>
         </div>
-        <div class="form-group">
-            <label for="prop1">prop1</label>
-            <input type="text" class="form-control" id="prop1" placeholder="prop1" ng-model="element.prop1">
-        </div>
-        <div class="form-group">
-            <label for="prop2">prop2</label>
-            <input type="text" class="form-control" id="prop2" placeholder="prop2" ng-model="element.prop2">
-        </div>
-        <div class="form-group">
-            <label for="prop3">prop3</label>
-            <input type="text" class="form-control" id="prop3" placeholder="prop3" ng-model="element.prop3">
-        </div>
-        <div class="form-group">
-            <label for="prop4">prop4</label>
-            <input type="text" class="form-control" id="prop4" placeholder="prop4" ng-model="element.prop4">
-        </div>
-        <div class="form-group">
-            <label for="prop5">prop5</label>
-            <input type="text" class="form-control" id="prop5" placeholder="prop5" ng-model="element.prop5">
-        </div>
-        <div class="form-group">
-            <label for="prop6">prop6</label>
-            <input type="text" class="form-control" id="prop6" placeholder="prop6" ng-model="element.prop6">
-        </div>
-        <div class="form-group">
-            <label for="name">prop7</label>
-            <input type="text" class="form-control" id="prop7" placeholder="prop7" ng-model="element.prop7">
-        </div>
-        <div class="form-group">
-            <label for="prop8">prop8</label>
-            <input type="text" class="form-control" id="prop8" placeholder="prop8" ng-model="element.prop8">
-        </div>
-        <div class="form-group">
-            <label for="prop9">prop9</label>
-            <input type="text" class="form-control" id="prop9" placeholder="prop9" ng-model="element.prop9">
-        </div>
-        <div class="form-group">
-            <label for="prop10">prop10</label>
-            <input type="text" class="form-control" id="prop10" placeholder="prop10" ng-model="element.prop10">
-        </div>
+
+
+        category: {{element.category}}
+        <br/>
+        ref1:{{element.category.ref1}}.
+
+        <br/>
+        {{featureItems | json}}
+
 
         <div class="form-group">
             <label for="language">language</label>

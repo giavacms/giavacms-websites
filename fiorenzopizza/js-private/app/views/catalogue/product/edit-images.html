@@ -1,0 +1,47 @@
+<div ng-include="'/views/templates/header.html'"
+     ng-init="image='home-bg.jpg'; pageTitle ='home'; pageSubTitle = 'angularJS+giavaCMS clipboard'"></div>
+
+
+<div class="container-fluid" ng-controller="ProductController">
+    <form>
+
+        <label>id:</label>
+        <span>{{element.id}}</span><br/>
+
+
+        <label>title:</label>
+        <span>{{element.title}}</span><br/>
+
+        <div>
+            <h1>images</h1>
+            <button class="btn btn-primary" ng-click="addImage()">addImage</button>
+            <p ng-repeat="image in images">
+                nome {{$index+1}}:
+                <input type="text" ng-model="image.name"/><br/>
+                descrizione {{$index+1}}:
+                <input type="text" ng-model="image.description"/>
+                <input type="file" file-model="image.file"/>
+            <ol></ol>
+            </p>
+            <button class="btn btn-primary" ng-click="uploadImages()" ng-disabled="images.length <1">uploadImages
+            </button>
+        </div>
+        <br/>
+
+        <div class="container slider">
+            <p ng-repeat="img in element.images">
+                <img class="slide" ng-src="/img/{{img.filename}}" title="{{img.name}}">
+                id: {{img.id}}<br/>
+                description: {{img.description}}<br/>
+                filename: {{img.filename}}<br/>
+                filePath: {{img.filePath}}<br/>
+                <a ng-click="deleteImage(img.id)"><i class="fa fa-trash-o"></i></a>
+            </p>
+        </div>
+        <button class="btn btn-primary" ng-click="loadImages()">loadImages</button>
+
+
+    </form>
+</div>
+
+<div ng-include="'/views/templates/footer.html'"></div>

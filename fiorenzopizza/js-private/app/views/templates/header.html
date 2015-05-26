@@ -44,16 +44,19 @@
                             <li><a ui-sref="richcontenttype">richcontent type</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">
+                    <li class="dropdown"
+                        ng-class="{active:$state.includes('banner') || $state.includes('banner_view')  || $state.includes('banner_edit')}">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Banner <span
                                 class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li ng-class="{active: $state.includes('banner')}"><a ui-sref="banner">Banner</a></li>
-                            <li ng-class="{active: $state.includes('bannertype')}"><a ui-sref="bannertype">bannertype</a>
+                            <li ng-class="{active: $state.includes('banner')}"><a
+                                    ui-sref="bannertype">bannertype</a>
                             </li>
                         </ul>
                     </li>
-                    <li class="dropdown">
+                    <li class="dropdown"
+                        ng-class="{active:$state.includes('category') || $state.includes('category')  || $state.includes('feature')}">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                            aria-expanded="false">Catalogue <span
                                 class="caret"></span></a>
@@ -61,10 +64,8 @@
                             <li ng-class="{active: $state.includes('catalogue-configuration')}"><a
                                     ui-sref="catalogue-configuration">Configuration</a>
                             <li ng-class="{active: $state.includes('category')}"><a ui-sref="category">Category</a></li>
-                            <li ng-class="{active: $state.includes('products')}"><a ui-sref="products">Products</a>
-                            <li ng-class="{active: $state.includes('features')}"><a ui-sref="features">Features</a>
-
-                            </li>
+                            <li ng-class="{active: $state.includes('product')}"><a ui-sref="product">Product</a></li>
+                            <li ng-class="{active: $state.includes('feature')}"><a ui-sref="feature">Features</a>
                         </ul>
                     </li>
                 </ul>

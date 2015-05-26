@@ -86,6 +86,7 @@ function BaseController($rootScope, $scope, $stateParams, $state, Service, popup
         reqParams['entityPath'] = $scope.entityPath;
         Service.create(reqParams, $scope.element, function () {
             $rootScope.$broadcast($scope.entityPath, 'save');
+            $scope.tableParams.reload();
             $scope.element = {};
             $state.go($scope.listPage);
         });
@@ -98,6 +99,7 @@ function BaseController($rootScope, $scope, $stateParams, $state, Service, popup
         reqParams['context'] = context;
         reqParams['entityPath'] = $scope.entityPath;
         Service.update(reqParams, $scope.element, function () {
+            $scope.tableParams.reload();
             $rootScope.$broadcast($scope.entityPath, 'update');
             $state.go($scope.listPage);
         });
@@ -109,6 +111,7 @@ function BaseController($rootScope, $scope, $stateParams, $state, Service, popup
         reqParams['context'] = context;
         reqParams['entityPath'] = $scope.entityPath;
         Service.update(reqParams, inLine, function () {
+            $scope.tableParams.reload();
             $rootScope.$broadcast($scope.entityPath, 'update');
             $scope.tableParams.reload();
         });
@@ -121,6 +124,7 @@ function BaseController($rootScope, $scope, $stateParams, $state, Service, popup
             reqParams['context'] = context;
             reqParams['entityPath'] = $scope.entityPath;
             Service.delete(reqParams, $scope.element, function () {
+                $scope.tableParams.reload();
                 $rootScope.$broadcast($scope.entityPath, 'delete');
                 $state.go($scope.listPage);
             });
@@ -134,6 +138,7 @@ function BaseController($rootScope, $scope, $stateParams, $state, Service, popup
             reqParams['context'] = context;
             reqParams['entityPath'] = $scope.entityPath;
             Service.delete(reqParams, inLine, function () {
+                $scope.tableParams.reload();
                 $rootScope.$broadcast($scope.entityPath, 'delete');
                 $scope.tableParams.reload();
             });

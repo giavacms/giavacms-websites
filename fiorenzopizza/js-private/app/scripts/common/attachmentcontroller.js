@@ -9,13 +9,19 @@ function AttachmentController($scope, $stateParams, SigleFileUploadService, RsRe
             $scope.loadImages();
             $scope.loadDocuments();
 
+            $scope.image = {};
+            $scope.document = {};
+
             $scope.images = [];
             $scope.documents = [];
 
             $scope.imageUrl = 'http://' + APP_PROPERTIES.HOST +
+            APP_PROPERTIES.CONTEXT + '/api/v1/' + $scope.entityPath + "/" + $stateParams.id + "/image";
+
+            $scope.imagesUrl = 'http://' + APP_PROPERTIES.HOST +
             APP_PROPERTIES.CONTEXT + '/api/v1/' + $scope.entityPath + "/" + $stateParams.id + "/images";
 
-            $scope.documentUrl = 'http://' + APP_PROPERTIES.HOST +
+            $scope.documentsUrl = 'http://' + APP_PROPERTIES.HOST +
             APP_PROPERTIES.CONTEXT + '/api/v1/' + $scope.entityPath + "/" + $stateParams.id + "/documents";
 
         }
@@ -23,18 +29,24 @@ function AttachmentController($scope, $stateParams, SigleFileUploadService, RsRe
 
 
     $scope.addImage = function () {
+        $scope.image = {};
         var img = {};
         $scope.images.push(img);
     }
 
     $scope.addDocument = function () {
+        $scope.document = {};
         var doc = {};
         $scope.documents.push(doc);
     }
 
+    $scope.uploadImage = function () {
+        SigleFileUploadService.uploadFileToUrl($scope.imageUrl, $scope.image);
+    }
+
     $scope.uploadImages = function () {
         for (var i = 0; i < $scope.images.length; i++) {
-            SigleFileUploadService.uploadFileToUrl($scope.imageUrl, $scope.images[i]);
+            SigleFileUploadService.uploadFileToUrl($scope.imagesUrl, $scope.images[i]);
             //$scope.images.splice(i, 1);
         }
         $scope.loadImages();
@@ -42,7 +54,7 @@ function AttachmentController($scope, $stateParams, SigleFileUploadService, RsRe
 
     $scope.uploadDocuments = function () {
         for (var i = 0; i < $scope.documents.length; i++) {
-            SigleFileUploadService.uploadFileToUrl($scope.documentUrl, $scope.documents[i]);
+            SigleFileUploadService.uploadFileToUrl($scope.documentsUrl, $scope.documents[i]);
             //$scope.documents.splice(i, 1);
         }
         $scope.loadDocuments();

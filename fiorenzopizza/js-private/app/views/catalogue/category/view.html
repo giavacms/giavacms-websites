@@ -17,59 +17,60 @@
 
     <label>prop1:</label>
     <span>{{element.prop1}}</span><br/>
+    <label>ref1:</label>
+    <span>{{element.ref1}}</span><br/>
+
+
     <label>prop2:</label>
     <span>{{element.prop2}}</span><br/>
+    <label>ref2:</label>
+    <span>{{element.ref2}}</span><br/>
+
     <label>prop3:</label>
     <span>{{element.prop3}}</span><br/>
+    <label>ref3:</label>
+    <span>{{element.ref3}}</span><br/>
+
     <label>prop4:</label>
     <span>{{element.prop4}}</span><br/>
+    <label>ref4:</label>
+    <span>{{element.ref4}}</span><br/>
+
     <label>prop5:</label>
     <span>{{element.prop5}}</span><br/>
+    <label>ref5:</label>
+    <span>{{element.ref5}}</span><br/>
+
     <label>prop6:</label>
     <span>{{element.prop6}}</span><br/>
+    <label>ref6:</label>
+    <span>{{element.ref6}}</span><br/>
+
     <label>prop7:</label>
     <span>{{element.prop7}}</span><br/>
+    <label>ref7:</label>
+    <span>{{element.ref7}}</span><br/>
+
     <label>prop8:</label>
     <span>{{element.prop8}}</span><br/>
+    <label>ref8:</label>
+    <span>{{element.ref8}}</span><br/>
+
     <label>prop9:</label>
     <span>{{element.prop9}}</span><br/>
+    <label>ref9:</label>
+    <span>{{element.ref9}}</span><br/>
 
     <label>prop10:</label>
     <span>{{element.prop10}}</span><br/>
-
+    <label>ref10:</label>
+    <span>{{element.ref10}}</span><br/>
 
     <label>language:</label>
     <span>{{element.language}}</span><br/>
 
 
-    <label>author:</label>
-    <span>{{element.author}}</span><br/>
-
-    <label>tags:</label>
-    <span>{{element.tags}}</span><br/>
-
-
-    <label>richContentType:</label>
-    <span>{{element.richContentType.name}}</span><br/>
-
-    <label>preview:</label><br/>
-    <span ng-bind-html="element.preview"></span><br/>
-
-    <label>content:</label><br/>
-    <span ng-bind-html="element.content"></span><br/>
-    <br/>
-
-    <div class="container slider">
-        <p ng-repeat="img in element.images">
-            <img class="slide" ng-src="/img/{{img.filename}}" title="{{img.name}}">
-            description: {{img.description}}<br/>
-            filename: {{img.filename}}<br/>
-            filePath: {{img.filePath}}<br/>
-        </p>
-    </div>
-
-
-    <a class="btn btn-default" href="/#/richcontent/{{element.id}}/edit" role="button">Modifica</a>
+    <a class="btn btn-default" href="/#/category/{{element.id}}/edit" role="button">Modifica</a>
 </div>
 
 

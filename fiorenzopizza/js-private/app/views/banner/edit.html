@@ -51,6 +51,23 @@
         </div>
 
 
+        <div class="form-group">
+            <label for="img">immagine</label>
+            nome:
+            <input type="text" ng-model="element.image.name"/><br/>
+            descrizione:
+            <input type="text" ng-model="element.image.description"/>
+            <input id="img" type="file" file-model="element.image.file"/>
+            <button class="btn btn-primary" ng-click="uploadImage()">uploadImage</button>
+        </div>
+
+        <div>
+            <img class="slide" ng-src="/img/{{element.image.filename}}" title="{{element.image.name}}">
+            id: {{element.image.id}}<br/>
+            description: {{element.image.description}}<br/>
+            filename: {{element.image.filename}}<br/>
+            filePath: {{element.image.filePath}}<br/>
+        </div>
 
 
         <button class="btn btn-primary btn-lg" ng-click="save()" ng-show="element.id === undefined">Save</button>

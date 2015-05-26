@@ -38,6 +38,10 @@ angular.module('giavacms-private')
                 $scope.categories = result;
             });
 
+            factoryItems.getFeatureItems().then(function (result) {
+                $scope.featureItems = result;
+            });
+
 
             // anche dopo $scope.init() il valore di $scope.element non e' immediatamente disponibile. Si tratta di un promise non ancora risolto.
             // anche ng-init='function()...' viene invocata prima di quel momento e assegna i valori definitivi a $scope.sectionXXX prima del tempo.
@@ -60,54 +64,54 @@ angular.module('giavacms-private')
 
         $stateProvider
             .state('product', {
-                url: '/products',
-                templateUrl: 'views/category/products/list.html',
+                url: '/product',
+                templateUrl: 'views/catalogue/product/list.html',
                 ncyBreadcrumb: {
                     label: 'products',
                     parent: 'home'
                 }
             })
-            .state('products_new', {
-                url: '/products/new',
-                templateUrl: 'views/category/products/edit.html',
+            .state('product_new', {
+                url: '/product/new',
+                templateUrl: 'views/catalogue/product/edit.html',
                 ncyBreadcrumb: {
                     label: 'new',
-                    parent: 'products'
+                    parent: 'product'
                 }
             })
-            .state('products_edit', {
-                url: '/products/:id/edit',
-                templateUrl: 'views/category/products/edit.html',
+            .state('product_edit', {
+                url: '/product/:id/edit',
+                templateUrl: 'views/catalogue/product/edit.html',
                 ncyBreadcrumb: {
                     label: 'edit',
-                    parent: 'products'
+                    parent: 'product'
                 }
             })
 
-            .state('products_images_edit', {
-                url: '/products/:id/images/edit',
-                templateUrl: 'views/category/products/edit-images.html',
+            .state('product_images_edit', {
+                url: '/product/:id/images/edit',
+                templateUrl: 'views/catalogue/product/edit-images.html',
                 ncyBreadcrumb: {
                     label: 'edit images',
-                    parent: 'products'
+                    parent: 'product'
                 }
             })
 
-            .state('products_documents_edit', {
-                url: '/products/:id/documents/edit',
-                templateUrl: 'views/category/products/edit-documents.html',
+            .state('product_documents_edit', {
+                url: '/product/:id/documents/edit',
+                templateUrl: 'views/catalogue/product/edit-documents.html',
                 ncyBreadcrumb: {
                     label: 'edit documents',
-                    parent: 'products'
+                    parent: 'product'
                 }
             })
 
-            .state('products_view', {
-                url: '/products/:id',
-                templateUrl: 'views/category/products/view.html',
+            .state('product_view', {
+                url: '/product/:id',
+                templateUrl: 'views/catalogue/product/view.html',
                 ncyBreadcrumb: {
                     label: 'detail',
-                    parent: 'products'
+                    parent: 'product'
                 }
             })
 

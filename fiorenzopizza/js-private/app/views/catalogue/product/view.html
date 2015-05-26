@@ -9,67 +9,55 @@
 
     <label>name:</label>
     <span>{{element.name}}</span><br/>
+
+
+    <label>category:</label>
+    <span>{{element.category.name}}</span><br/>
+
+
     <label>description:</label>
     <span>{{element.description}}</span><br/>
 
     <label>orderNum:</label>
     <span>{{element.orderNum}}</span><br/>
 
-    <label>prop1:</label>
-    <span>{{element.prop1}}</span><br/>
-    <label>prop2:</label>
-    <span>{{element.prop2}}</span><br/>
-    <label>prop3:</label>
-    <span>{{element.prop3}}</span><br/>
-    <label>prop4:</label>
-    <span>{{element.prop4}}</span><br/>
-    <label>prop5:</label>
-    <span>{{element.prop5}}</span><br/>
-    <label>prop6:</label>
-    <span>{{element.prop6}}</span><br/>
-    <label>prop7:</label>
-    <span>{{element.prop7}}</span><br/>
-    <label>prop8:</label>
-    <span>{{element.prop8}}</span><br/>
-    <label>prop9:</label>
-    <span>{{element.prop9}}</span><br/>
+    <label>{{element.category.prop1}} (prop1):</label>
+    <span>{{element.val1}}</span><br/>
 
-    <label>prop10:</label>
-    <span>{{element.prop10}}</span><br/>
+    <label>{{element.category.prop2}} (prop2):</label>
+    <span>{{element.val2}}</span><br/>
+
+    <label>{{element.category.prop3}} (prop3):</label>
+    <span>{{element.val3}}</span><br/>
+
+    <label>{{element.category.prop4}} (prop4):</label>
+    <span>{{element.val4}}</span><br/>
+
+    <label>{{element.category.prop5}} (prop5):</label>
+    <span>{{element.val5}}</span><br/>
+
+    <label>{{element.category.prop6}} (prop6):</label>
+    <span>{{element.val6}}</span><br/>
+
+    <label>{{element.category.prop7}} (prop7):</label>
+    <span>{{element.val7}}</span><br/>
+
+    <label>{{element.category.prop8}} (prop8):</label>
+    <span>{{element.val8}}</span><br/>
+
+    <label>{{element.category.prop9}} (prop9):</label>
+    <span>{{element.val9}}</span><br/>
+
+    <label>{{element.category.prop10}} (prop10):</label>
+    <span>{{element.val10}}</span><br/>
 
 
     <label>language:</label>
     <span>{{element.language}}</span><br/>
 
 
-    <label>author:</label>
-    <span>{{element.author}}</span><br/>
 
-    <label>tags:</label>
-    <span>{{element.tags}}</span><br/>
-
-
-    <label>richContentType:</label>
-    <span>{{element.richContentType.name}}</span><br/>
-
-    <label>preview:</label><br/>
-    <span ng-bind-html="element.preview"></span><br/>
-
-    <label>content:</label><br/>
-    <span ng-bind-html="element.content"></span><br/>
-    <br/>
-
-    <div class="container slider">
-        <p ng-repeat="img in element.images">
-            <img class="slide" ng-src="/img/{{img.filename}}" title="{{img.name}}">
-            description: {{img.description}}<br/>
-            filename: {{img.filename}}<br/>
-            filePath: {{img.filePath}}<br/>
-        </p>
-    </div>
-
-
-    <a class="btn btn-default" href="/#/richcontent/{{element.id}}/edit" role="button">Modifica</a>
+    <a class="btn btn-default" href="/#/product/{{element.id}}/edit" role="button">Modifica</a>
 </div>
 
 
