@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence xmlns="http://java.sun.com/xml/ns/persistence"
-             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
           http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
-             version="1.0">
-    <persistence-unit name="MysqlDS">
-        <jta-data-source>java:jboss/datasources/MySQLDS</jta-data-source>
-        <jar-file>lib/banner-${project.version}.jar</jar-file>
-        <jar-file>lib/base-${project.version}.jar</jar-file>
-        <jar-file>lib/catalogue-${project.version}.jar</jar-file>
-        <jar-file>lib/richcontent-${project.version}.jar</jar-file>
-        <jar-file>lib/contest-${project.version}.jar</jar-file>
-        <properties>
+	version="1.0">
+	<persistence-unit name="MysqlDS">
+		<jta-data-source>java:jboss/datasources/MySQLDS</jta-data-source>
+		<jar-file>lib/banner-${project.version}.jar</jar-file>
+		<jar-file>lib/base-${project.version}.jar</jar-file>
+		<jar-file>lib/catalogue-${project.version}.jar</jar-file>
+		<jar-file>lib/richcontent-${project.version}.jar</jar-file>
+		<jar-file>lib/contest-${project.version}.jar</jar-file>
+		<jar-file>lib/expo-${project.version}.jar</jar-file>
+		<properties>
 
-            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect"/>
-            <property name="hibernate.hbm2ddl.auto" value="update"/>
-            <property name="hibernate.connection.useUnicode" value="true"/>
-            <property name="hibernate.connection.characterEncoding"
-                      value="UTF-8"/>
-            <!--<property name="hibernate.hbm2ddl.auto" value="validate"/>-->
-            <!--<property-->
-                    <!--name="hibernate.generate_statistics" value="true"/>-->
-            <property name="hibernate.show_sql"
-                      value="true"/>
-            <property name="hibernate.format_sql" value="true"/>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.connection.useUnicode" value="true" />
+			<property name="hibernate.connection.characterEncoding"
+				value="UTF-8" />
+			<!--<property name="hibernate.hbm2ddl.auto" value="validate"/> -->
+			<!--<property -->
+			<!--name="hibernate.generate_statistics" value="true"/> -->
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
 
 
-        </properties>
-    </persistence-unit>
+		</properties>
+	</persistence-unit>
 </persistence>
  
  
