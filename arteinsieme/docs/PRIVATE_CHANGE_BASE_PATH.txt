@@ -1,0 +1,8 @@
+http://stackoverflow.com/questions/23413368/modifying-ng-include-directive
+
+
+Modify the head tag in your markup:
+
+<head>
+  <base href="collosys" />
+</head>
