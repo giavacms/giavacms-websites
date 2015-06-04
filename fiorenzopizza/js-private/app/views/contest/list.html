@@ -1,0 +1,42 @@
+<div ng-include="'/views/templates/header.html'"
+     ng-init="image='home-bg.jpg'; pageTitle ='home'; pageSubTitle = 'angularJS+giavaCMS clipboard'"></div>
+
+
+<div class="container-fluid" ng-controller="ContestController">
+    <form>
+        <div class="form-group">
+            <label for="name">name</label>
+            <input type="text" class="form-control" id="name" placeholder="name" ng-model="vote.name">
+        </div>
+
+        <div class="form-group">
+            <label for="surname">surname</label>
+            <input type="text" class="form-control" id="surname" placeholder="surname" ng-model="vote.surname">
+        </div>
+
+        <div class="form-group">
+            <label for="phone">phone</label>
+            <input type="text" class="form-control" id="phone" placeholder="phone" ng-model="vote.phone">
+        </div>
+
+        <div class="form-group">
+            <label for="picture">picture</label>
+            <input type="text" class="form-control" id="picture" placeholder="picture" ng-model="vote.picture">
+        </div>
+
+
+        <div class="form-group">
+            <label for="sculpture">sculpture</label>
+            <input type="text" class="form-control" id="sculpture" placeholder="sculpture" ng-model="vote.sculpture">
+        </div>
+
+        <div class="form-group">
+            <label for="photo">photo</label>
+            <input type="text" class="form-control" id="photo" placeholder="photo" ng-model="vote.photo">
+        </div>
+
+        <button class="btn btn-primary btn-lg" ng-click="send()">send</button>
+    </form>
+</div>
+
+<div ng-include="'/views/templates/footer.html'"></div>

@@ -33,6 +33,25 @@
                         </ul>
                     </li>
 
+                    <li class="dropdown"
+                        ng-class="{active:$state.includes('resources')}">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Resources <span
+                                class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li ng-class="{active: $state.includes('resources')}"><a ui-sref="resources">resources</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown"
+                        ng-class="{active:$state.includes('contest')}">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Contest <span
+                                class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li ng-class="{active: $state.includes('contest')}"><a ui-sref="contest">vote</a></li>
+                        </ul>
+                    </li>
+
 
                     <li class="dropdown"
                         ng-class="{active:$state.includes('richcontent') || $state.includes('richcontent_view')  || $state.includes('richcontent_edit')}">

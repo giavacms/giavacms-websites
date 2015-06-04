@@ -19,7 +19,8 @@ angular
         'ngTable',
         'textAngular',
         'ncy-angular-breadcrumb',
-        'angularSpinner'])
+        'angularSpinner',
+        'ui.ace'])
 
     .run(function ($state, $rootScope, $log) {
         $rootScope.$state = $state;

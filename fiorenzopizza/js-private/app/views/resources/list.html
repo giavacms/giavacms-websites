@@ -1,0 +1,36 @@
+<div ng-include="'/views/templates/header.html'"
+     ng-init="image='home-bg.jpg'; pageTitle ='home'; pageSubTitle = 'angularJS+giavaCMS clipboard'"></div>
+
+
+<div class="container-fluid" ng-controller="ResourcesController">
+
+
+    <div class="row">
+
+        <h3><a ng-click="loadResources(previuous)" ng-show="previuous">{{previuous}} </a></h3>
+        <h3>folder: {{folder}}</h3>
+        <ul>
+            <li ng-repeat="resource in resources">
+                name: {{resource.name}} - path: {{resource.path}} - folder: {{resource.folder}} - type:
+                {{resource.type}}
+                <a ng-click="edit(resource)" ng-show="resource.type !== 'folder'">edit</a>
+                <a ng-click="loadResources(resource.path)" ng-show="resource.type=== 'folder'">open</a>
+            </li>
+        </ul>
+
+        <textarea ng-model="resource.fileContent" ng-show="ok"></textarea><br/>
+        <a class="btn btn-primary" ng-click="update()" ng-show="ok">update</a>
+        <a class="btn btn-primary" ng-click="delete()" ng-show="ok">delete</a>
+        <button class="btn btn-primary" ng-click="loadResources()">Undo</button>
+
+        <br/>
+
+    </div>
+
+
+    <form>
+        <a class="btn btn-primary" href="/#/resources/new">Aggiungi nuova risorsa</a>
+    </form>
+</div>
+
+<div ng-include="'/views/templates/footer.html'"></div>

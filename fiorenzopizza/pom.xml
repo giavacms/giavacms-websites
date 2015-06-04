@@ -62,9 +62,22 @@
             <artifactId>catalogue</artifactId>
             <scope>compile</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.giavacms</groupId>
+            <artifactId>contest</artifactId>
+            <scope>compile</scope>
+        </dependency>
+
         <dependency>
             <groupId>org.giavacms</groupId>
             <artifactId>richcontent</artifactId>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.giavacms</groupId>
+            <artifactId>resources</artifactId>
             <scope>compile</scope>
         </dependency>
 

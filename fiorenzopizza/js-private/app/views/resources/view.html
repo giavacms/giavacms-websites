@@ -1,0 +1,45 @@
+<div ng-include="'/views/templates/header.html'"
+     ng-init="image='home-bg.jpg'; pageTitle ='home'; pageSubTitle = 'angularJS+giavaCMS clipboard'"></div>
+
+
+<div class="container-fluid" ng-controller="ResourcesController">
+
+  <label>id:</label>
+  <span>{{element.id}}</span><br/>
+
+
+  <label>title:</label>
+  <span>{{element.title}}</span><br/>
+
+  <label>author:</label>
+  <span>{{element.author}}</span><br/>
+
+  <label>tags:</label>
+  <span>{{element.tags}}</span><br/>
+
+
+  <label>richContentType:</label>
+  <span>{{element.richContentType.name}}</span><br/>
+
+  <label>preview:</label><br/>
+  <span ng-bind-html="element.preview"></span><br/>
+
+  <label>content:</label><br/>
+  <span ng-bind-html="element.content"></span><br/>
+  <br/>
+
+  <div class="container slider">
+    <p ng-repeat="img in element.images">
+      <img class="slide" ng-src="/img/{{img.filename}}" title="{{img.name}}">
+      description: {{img.description}}<br/>
+      filename: {{img.filename}}<br/>
+      filePath: {{img.filePath}}<br/>
+    </p>
+  </div>
+
+
+  <a class="btn btn-default" href="/#/richcontent/{{element.id}}/edit" role="button">Modifica</a>
+</div>
+
+
+<div ng-include="'/views/templates/footer.html'"></div>
