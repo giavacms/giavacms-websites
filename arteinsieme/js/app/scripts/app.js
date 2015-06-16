@@ -35,6 +35,22 @@ angular
                 }
             })
 
+            .state('artisti', {
+                url: '/artisti',
+                templateUrl: 'views/artisti.html',
+                ncyBreadcrumb: {
+                    label: 'artisti'
+                }
+            })
+
+            .state('blog', {
+                url: '/blog',
+                templateUrl: 'views/blog.html',
+                ncyBreadcrumb: {
+                    label: 'blog'
+                }
+            })
+
 
     }])
 ;

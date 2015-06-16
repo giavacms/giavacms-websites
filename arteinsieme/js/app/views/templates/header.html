@@ -10,22 +10,21 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="ASSAN"></a>
+            <a class="navbar-brand" ui-sref="home"><img src="img/logo.png" alt="ARTE INSIEME 2015"></a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Home</a>
+                <li ng-class="{active: $state.includes('home')}">
+                    <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">Home</a>
                 </li>
-                <!--menu Portfolio li end here-->
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Edizioni <i class="fa fa-angle-down"></i></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="blog-full.html">2015</a></li>
-                        <li><a href="blog-leftimg.html">2014</a></li>
-                        <li><a href="blog-sidebar.html">2013</a></li>
-                        <li><a href="blog-2col.html">2012</a></li>
-                    </ul>
+                <li>
+                    <a href="http://pietraiadeipoeti.it/arte-insieme-2015/" target="_blank" class="dropdown-toggle">Arte
+                        Insieme 2015</a>
+                </li>
+                <li>
+                    <a href="http://pietraiadeipoeti.it" target="_blank" class="dropdown-toggle">Museo Pietraia dei
+                        Poeti</a>
                 </li>
             </ul>
         </div>

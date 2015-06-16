@@ -1,0 +1,55 @@
+<div ng-include="'/views/templates/header.html'"
+     ng-init="image='home-bg.jpg'; pageTitle ='home'; pageSubTitle = 'angularJS+giavaCMS clipboard'"></div>
+
+
+<div class="breadcrumb-wrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h4>Blog timeline</h4>
+            </div>
+            <div class="col-sm-6 hidden-xs text-right">
+                <ol class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li>Exhibitions</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div><!--breadcrumbs-->
+<div class="divide80"></div>
+<!--=== Content Part ===-->
+<!-- {"id":"arte-insieme-2015",
+"name":"Arte Insieme 2015",
+"year":"2015","website":null,"preview":"Arte Insieme 2015",
+"description":"Arte Insieme 2015","imageurl":null,"catalogueurl":null},-->
+<div class="container" ng-controller="ExhibitionsController">
+    <ul class="timeline">
+        <li ng-repeat="exh in exhibitions" ng-class="($index%2==0) ? '' : 'timeline-inverted'">
+            <div class="timeline-badge primary"><i class="fa fa-image"></i></div>
+            <div class="timeline-panel wow animated fadeInUp">
+                <div class="timeline-heading">
+                    <img class="img-responsive" ng-src="{{exh.imageurl}}" alt="{{exh.name}}"/>
+                </div>
+
+                <div class="timeline-body">
+                    <h2><a href="/#/exhibitions/{{exh.id}}">{{exh.name}}</a></h2>
+                    <ul class="list-inline post-detail">
+                        <li><a href="{{exh.catalogueurl}}">scarica catalogo</a></li>
+                        <li><i class="fa fa-calendar"></i>{{exh.year}}</li>
+                    </ul>
+                    <p>{{exh.description}}</p>
+                    <a class="btn border-theme" href="/#/exhibitions/{{exh.id}}">continua</a>
+                </div>
+
+            </div>
+        </li>
+
+        <li class="clearfix" style="float: none;"></li>
+    </ul>
+
+</div><!--/container-->
+<!-- End Content Part -->
+<div class="divide60"></div>
+
+<footerSite></footerSite>

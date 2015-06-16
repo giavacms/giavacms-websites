@@ -83,6 +83,12 @@
 
         <dependency>
             <groupId>org.giavacms</groupId>
+            <artifactId>security</artifactId>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.giavacms</groupId>
             <artifactId>resources</artifactId>
             <scope>compile</scope>
         </dependency>
