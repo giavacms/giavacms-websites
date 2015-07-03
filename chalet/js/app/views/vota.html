@@ -9,12 +9,26 @@
     <div class="divide50"></div>
 
     <table class="table">
-      <tr ng-repeat="c in chalets" ng-click="voteFor(c.licenseNumber)">
+      <tr ng-repeat="c in chalets" ng-show="!errors.length && call && !confirmed" ng-if="c.licenseNumber == vote.preference1">
         <td>
           {{c.licenseNumber}}
         </td>
         <td>
-          {{c.name}}
+          <a>{{c.name}}</a>
+        </td>
+        <td>
+          <a>GRAZIE PER IL TUO VOTO</a>
+        </td>
+      </tr>
+      <tr ng-repeat="c in chalets" ng-click="voteFor(c.licenseNumber)" ng-hide="!errors.length && call && !confirmed">
+        <td>
+          {{c.licenseNumber}}
+        </td>
+        <td>
+          <a>{{c.name}}</a>
+        </td>
+        <td>
+          <span ng-show="vote.preference1 == c.licenseNumber">NUMERO UNO!</span>
         </td>
       </tr>
     </table>

@@ -20,7 +20,9 @@ angular.module('jsApp')
       $scope.call = '';
       $scope.confirmed = false;
 
-      $scope.chalets = ChaletService.getList(0, 0, 100);
+      ChaletService.getList(0, 0, 100, function (data) {
+        $scope.chalets = data;
+      });
 
       $scope.voteFor = function (licenseNumber) {
         $scope.vote.preference1 = licenseNumber;

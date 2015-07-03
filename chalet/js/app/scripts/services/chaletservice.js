@@ -20,7 +20,7 @@ angular.module('jsApp')
         }
 
 
-        var getList = function (search, from, to) {
+        var getList = function (search, from, to, callback) {
             if (angular.isUndefined(model) || model.length == 0) {
                 model = init(model);
             }
@@ -29,7 +29,7 @@ angular.module('jsApp')
             if (angular.isUndefined(to))
                 to = 10;
             $q.when(model).then(function (data) {
-                return data.slice(from, to);
+                callback(data.slice(from, to));
             });
         }
 
