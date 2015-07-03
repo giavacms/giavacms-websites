@@ -1,14 +1,15 @@
 <div ng-include="'/views/templates/header.html'"></div>
+
 <div class="jumbotron">
   <h1>lista chalet</h1>
 </div>
 
 <div class="row marketing">
-
   {{model}}
   <div ng-repeat="item in model" >
     {{item.licenseNumber}} - {{item.name}}
   </div>
 
 </div>
+
 <div ng-include="'/views/templates/footer.html'" ></div>

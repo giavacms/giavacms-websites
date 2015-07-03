@@ -8,11 +8,11 @@ angular.module('jsApp')
       var reqParams = {};
       reqParams['host'] = APP_PROPERTIES.HOST;
       reqParams['context'] = APP_PROPERTIES.CONTEXT;
-      reqParams['entityType'] = 'chalets';
+      reqParams['entityPath'] = 'chalets';
       return reqParams;
     }
 
-    var reqParams = getReqParams;
+    var reqParams = getReqParams();
     reqParams['startRow'] = 0;
     reqParams['pageSize'] = 0;
     RsResource.query(reqParams, function (model) {
