@@ -20,15 +20,6 @@ angular.module('jsApp')
             return reqParams;
         }
 
-        var getSizeModel = function () {
-            if (angular.isUndefined(model) || model.length == 0) {
-                model = init(model);
-            }
-            $q.when(model).then(function () {
-                return model.length;
-            });
-        }
-
 
         var getList = function (search, from, to) {
             if (angular.isUndefined(model) || model.length == 0) {
@@ -36,7 +27,7 @@ angular.module('jsApp')
             }
             if (angular.isUndefined(from) || Number(from) < 0)
                 from = 0;
-            if (angular.isUndefined(to) || Number(to) > getSizeModel())
+            if (angular.isUndefined(to))
                 to = 10;
             $q.when(model).then(function () {
                 return model.slice(from, to);
@@ -59,7 +50,7 @@ angular.module('jsApp')
 
 
         var init = function (model) {
-            var list = RsResource.query(reqParams, function (data) {
+            var list = RsResource.query(getReqParams(), function (data) {
                 model = data;
             }).$promise;
             return list;
