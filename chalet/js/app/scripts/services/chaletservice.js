@@ -26,7 +26,7 @@ angular.module('jsApp')
       }
       if (angular.isUndefined(from) || Number(from) < 0)
         from = 0;
-      if (angular.isUndefined(to))
+      if (angular.isUndefined(to) || to < 1)
         to = 10;
       $q.when(model).then(function (data) {
         callback(data.slice(from, to));
