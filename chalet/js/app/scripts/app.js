@@ -31,24 +31,6 @@ angular
       })
 
 
-      .state('chalet_single', {
-        url: '/chalet/:id',
-        templateUrl: 'views/chalet_single.html',
-        ncyBreadcrumb: {
-          label: 'chalet single'
-        }
-      })
-
-
-      .state('classifica', {
-        url: '/classifica',
-        templateUrl: 'views/classifica.html',
-        ncyBreadcrumb: {
-          label: 'classifica'
-        }
-      })
-
-
   }])
 ;
 
