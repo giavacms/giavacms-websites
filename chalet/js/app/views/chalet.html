@@ -4,6 +4,11 @@
 </div>
 
 <div class="row marketing">
-  listone
+
+  {{model}}
+  <div ng-repeat="item in model" >
+    {{item.licenseNumber}} - {{item.name}}
+  </div>
+
 </div>
-<div ng-include="'/views/templates/footer.html'"></div>
+<div ng-include="'/views/templates/footer.html'" ></div>

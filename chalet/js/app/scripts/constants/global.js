@@ -4,7 +4,7 @@
 angular.module('jsApp')
 
   .constant("APP_PROPERTIES", {
-    "HOST": "vota.pietraiadeipoeti.it",
+    "HOST": "localhost:8080",
     "CONTEXT": "",
     "PAGE": 1,
     "COUNT": 5
