@@ -21,6 +21,9 @@ angular.module('jsApp')
 
 
     var getLast = function (callback) {
+      if (angular.isUndefined(model) || model.length == 0) {
+        model = init(model);
+      }
       $q.when(model).then(function (data) {
         if (data && data.length > 0) {
           callback(data[0]);
