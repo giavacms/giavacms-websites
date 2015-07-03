@@ -16,12 +16,12 @@
         </div>
     </div>
 
-    <div class="col-sm-6 sky-form-login-register v2">
+    <div class="col-sm-6 sky-form-login-register v2" >
         <div class="margin40">
 
             <form id="sky-form" class="sky-form" novalidate>
 
-                <fieldset>
+                <fieldset ng-hide="sent">
                     <section>
                         <label class="input">nome:</label>
                         <input type="text" name="name" placeholder="Nome" ng-model="vote.name" required>
@@ -98,10 +98,10 @@
                     <div ng-if="confirmed">
                         <h3>Grazie per aver votato!</h3>
                     </div>
-                    <button type="submit" class="button" ng-click="send()">Invia il voto
+                    <button type="submit" class="button" ng-click="send()" ng-hide="sent">Invia il voto
                     </button>
 
-                    <button type="submit" class="button" ng-click="reset()">Annulla
+                    <button type="submit" class="button" ng-click="reset()" ng-hide="sent">Annulla
                     </button>
                     <button type="submit" class="button" ng-click="confirmed = true;" ng-if="false">Conferma
                     </button>
