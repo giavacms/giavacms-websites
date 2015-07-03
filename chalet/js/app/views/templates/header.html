@@ -1,0 +1,23 @@
+<!--top bar end hidden in small devices-->
+<!--navigation -->
+<!-- Static navbar -->
+<div class="navbar navbar-default navbar-static-top yamm sticky" role="navigation">
+    <div class="container">
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li ng-class="{active: $state.includes('home')}">
+                    <a ui-sref="home" class="dropdown-toggle" data-toggle="dropdown">Home</a>
+                </li>
+                <li>
+                    <a ui-sref="chalet" class="dropdown-toggle" data-toggle="dropdown">Chalet</a>
+                </li>
+                <li>
+                    <a ui-sref="classifica" class="dropdown-toggle" data-toggle="dropdown">Classifica</a>
+                </li>
+                <li>
+                    <a ui-sref="vota" class="dropdown-toggle" data-toggle="dropdown">Vota</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
