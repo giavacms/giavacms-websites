@@ -2,7 +2,7 @@
 
 angular.module('jsApp')
 
-  .controller('Chalet', ['$scope', 'RsResource', 'APP_PROPERTIES', function ($scope, RsResource, APP_PROPERTIES) {
+  .controller('Chalet', ['$scope', 'RsResource', 'APP_PROPERTIES', '$location', function ($scope, RsResource, APP_PROPERTIES, $location) {
 
     var getReqParams = function () {
       var reqParams = {};
@@ -18,6 +18,10 @@ angular.module('jsApp')
     RsResource.query(reqParams, function (model) {
       $scope.model = model;
     });
+
+    $scope.go = function ( path ) {
+      $location.path( path );
+    };
 
   }])
 

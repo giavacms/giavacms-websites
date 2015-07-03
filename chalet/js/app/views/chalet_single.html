@@ -1,9 +1,11 @@
 <div ng-include="'/views/templates/header.html'"></div>
 <div class="jumbotron">
-  <h1>chalet pippo</h1>
+  <h1>{{element.licenseNumber}} - {{element.name}}</h1>
 </div>
 
 <div class="row marketing">
- scheda chalet
+  <div ng-if="element.description">{{element.description}}</div>
+  <div ng-if="!element.description">{{element.licenseNumber}} - {{element.name}}</div>
+  <h1 ng-click="voteForMe()">VOTAMI !! </h1>
 </div>
 <div ng-include="'/views/templates/footer.html'"></div>

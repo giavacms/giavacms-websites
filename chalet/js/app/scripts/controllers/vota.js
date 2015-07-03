@@ -15,7 +15,6 @@ angular.module('jsApp')
 
       var timer = {};
 
-      $scope.vote = {};
       $scope.errors = [];
       $scope.call = '';
       $scope.confirmed = false;
@@ -57,6 +56,7 @@ angular.module('jsApp')
         reqParams['host'] = APP_PROPERTIES.HOST;
         reqParams['entityPath'] = 'contest';
         RsResource.create(reqParams, $scope.vote, function (success) {
+          $scope.sent = true;
           console.log(JSON.stringify(success));
           $scope.call = 'OK';
           timer = $interval(function () {
@@ -88,8 +88,13 @@ angular.module('jsApp')
           });
         });
 
-
       }
+
+      $scope.vote = {};
+      if ( $stateParams.licenseNumber ) {
+        $scope.vote.preference1 = $stateParams.licenseNumber;
+      }
+
 
 
     }])
@@ -102,6 +107,15 @@ angular.module('jsApp')
 
       .state('vota', {
         url: '/vota',
+        controller: 'Vota',
+        templateUrl: 'views/vota.html',
+        ncyBreadcrumb: {
+          label: 'vota'
+        }
+      })
+
+      .state('votami', {
+        url: '/vota/:licenseNumber',
         controller: 'Vota',
         templateUrl: 'views/vota.html',
         ncyBreadcrumb: {

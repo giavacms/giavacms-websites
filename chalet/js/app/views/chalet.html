@@ -6,7 +6,7 @@
 
 <div class="row marketing">
   {{model}}
-  <div ng-repeat="item in model" >
+  <div ng-repeat="item in model" ng-click="go('/chalet/'+item.id)">
     {{item.licenseNumber}} - {{item.name}}
   </div>
 

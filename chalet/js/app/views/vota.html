@@ -6,33 +6,50 @@
 <div class="container">
 
   <div class="col-sm-6 margin30">
-    <div class="divide50"></div>
-
-    <table class="table">
-      <tr ng-repeat="c in chalets" ng-show="!errors.length && call && !confirmed" ng-if="c.licenseNumber == vote.preference1">
-        <td>
-          {{c.licenseNumber}}
-        </td>
-        <td>
-          <a>{{c.name}}</a>
-        </td>
-        <td>
-          <a>GRAZIE PER IL TUO VOTO</a>
-        </td>
-      </tr>
-      <tr ng-repeat="c in chalets" ng-click="voteFor(c.licenseNumber)" ng-hide="!errors.length && call && !confirmed">
-        <td>
-          {{c.licenseNumber}}
-        </td>
-        <td>
-          <a>{{c.name}}</a>
-        </td>
-        <td>
-          <span ng-show="vote.preference1 == c.licenseNumber">NUMERO UNO!</span>
-        </td>
-      </tr>
-    </table>
+    <div class="divide50">
+      <h3>Dopo aver espresso il tuo voto, ti chiederemo di fare uno squillo ad un numero di
+        telefono</h3>
+      <ul>
+        <li>la telefonata E' COMPLETAMENTE GRATUITA;</li>
+        <li>al primo squillo la chiamata verra' terminata.</li>
+      </ul>
+    </div>
   </div>
+
+  <div class="col-sm-6 margin30">
+    <div class="divide50">
+      <h3>Scegli il tuo chalet preferito!</h3>
+      <table class="table" ng-show="vote.preference1">
+        <tr ng-repeat="c in chalets" ng-if="c.licenseNumber == vote.preference1">
+          <td>
+            {{c.licenseNumber}}
+          </td>
+          <td>
+            <a>{{c.name}}</a>
+          </td>
+          <td>
+            <a ng-show="errors.length || !sent">PER FAVORE, INSERISCI I TUOI DATI</a>
+            <a ng-show="!errors.length && sent && !confirmed">ORA CONFERMA IL TUO VOTO</a>
+            <a ng-show="!errors.length && sent && confirmed">GRAZIE PER IL TUO VOTO</a>
+          </td>
+        </tr>
+      </table>
+      <table class="table" ng-hide="vote.preference1">
+        <tr ng-repeat="c in chalets" ng-click="voteFor(c.licenseNumber)">
+          <td>
+            {{c.licenseNumber}}
+          </td>
+          <td>
+            <a>{{c.name}}</a>
+          </td>
+          <td>
+            <span ng-show="vote.preference1 == c.licenseNumber">NUMERO UNO!</span>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
   <div class="col-sm-6 sky-form-login-register v2">
     <div class="margin40">
 
@@ -69,6 +86,26 @@
             </label>
           </section>
 
+          <section>
+            <label class="input">
+              <i class="icon-append fa fa-phone">
+              </i>
+              <input type="checkbox" name="sendMeParadeUpdates"
+                     ng-model="vote.sendMeParadeUpdates">
+              <b class="tooltip tooltip-bottom-right">Vuoi ricevere gli aggiornamenti periodici della classifica?
+                Riceverai un SMS al giorno, gratuito.</b>
+            </label>
+          </section>
+          <section>
+            <label class="input">
+              <i class="icon-append fa fa-phone"></i>
+              <input type="checkbox" name="sendMeFreeTickets"
+                     ng-model="vote.sendMeFreeTickets">
+              <b class="tooltip tooltip-bottom-right">Vuoi partecipare all'estrazione di consumazioni gratuite? In caso di vittoria, riceverai un SMS da presentare allo chalet
+                che offre il premio!</b>
+            </label>
+          </section>
+
         </fieldset>
 
         <footer>
@@ -97,12 +134,6 @@
               <li>cognome</li>
               <li>numero di telefono</li>
             </ul>
-            <h3>Dopo aver espresso il tuo voto, ti chiederemo di fare uno squillo ad un numero di
-              telefono, usando il telefono con lo stesso numero dichiarato:</h3>
-            <ul>
-              <li>la telefonata E' COMPLETAMENTE GRATUITA;</li>
-              <li>al primo squillo la chiamata verra' terminata.</li>
-            </ul>
           </div>
 
           <div ng-if="confirmed">
@@ -112,6 +143,8 @@
           </button>
 
           <button type="submit" class="button" ng-click="reset()">Annulla
+          </button>
+          <button type="submit" class="button" ng-click="confirmed = true;" ng-if="false">Conferma
           </button>
           <br/>
           <br/>
