@@ -6,6 +6,6 @@
 <div class="row marketing">
   <div ng-if="element.description">{{element.description}}</div>
   <div ng-if="!element.description">{{element.licenseNumber}} - {{element.name}}</div>
-  <h1 ng-click="voteForMe()">VOTAMI !! </h1>
+  <a href="/#/vota/{{element.licenseNumber}}">VOTAMI !!</a>
 </div>
 <div ng-include="'/views/templates/footer.html'"></div>
