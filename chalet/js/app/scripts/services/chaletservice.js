@@ -3,8 +3,7 @@
 
 angular.module('jsApp')
 
-    .service('ChaletService', ['RsResource', 'APP_PROPERTIES', function (RsResource, APP_PROPERTIES) {
-
+    .service('ChaletService', ['RsResource', 'APP_PROPERTIES', '$q', function (RsResource, APP_PROPERTIES, $q) {
 
         var model = [];
         var element = {};
@@ -29,8 +28,8 @@ angular.module('jsApp')
                 from = 0;
             if (angular.isUndefined(to))
                 to = 10;
-            $q.when(model).then(function () {
-                return model.slice(from, to);
+            $q.when(model).then(function (data) {
+                return data.slice(from, to);
             });
         }
 
