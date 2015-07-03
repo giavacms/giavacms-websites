@@ -3,8 +3,112 @@
   <h1>si vota</h1>
 </div>
 
-<div class="row marketing">
+<div class="container">
+
+  <div class="col-sm-6 margin30">
+    <div class="divide50"></div>
+
+    <table class="table">
+      <tr ng-repeat="c in chalets" ng-click="voteFor(c.licenseNumber)">
+        <td>
+          {{c.licenseNumber}}
+        </td>
+        <td>
+          {{c.name}}
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="col-sm-6 sky-form-login-register v2">
+    <div class="margin40">
+
+      <form id="sky-form" class="sky-form" novalidate>
+        <h3 class="text-center">Vota</h3>
+
+        <fieldset>
+          <section>
+            <label class="input">
+              <i class="icon-append fa fa-user"></i>
+              <input type="text" name="name" placeholder="Nome" ng-model="vote.name" required>
+              <b class="tooltip tooltip-bottom-right">Si richiede un nome</b>
+            </label>
+          </section>
+
+          <section>
+            <label class="input">
+              <i class="icon-append fa fa-user"></i>
+              <input type="text" name="surname" placeholder="Cognome" ng-model="vote.surname"
+                     required>
+              <b class="tooltip tooltip-bottom-right">Si richiede un cognome</b>
+            </label>
+          </section>
+
+          <section>
+            <label class="input">
+              <i class="icon-append fa fa-phone"></i>
+              <input type="text" name="phone"
+                     placeholder="Numero di telefono con cui confermare il voto."
+                     ng-model="vote.phone"
+                     required>
+              <b class="tooltip tooltip-bottom-right">Si richiede un numero di telefono con cui
+                confermare il voto.</b>
+            </label>
+          </section>
+
+        </fieldset>
+
+        <footer>
+
+          <div ng-if="errors.length && !call">
+            <ul>
+              <li ng-repeat="erro in errors track by $index"><b style="color: red;">{{erro}}</b>
+              </li>
+            </ul>
+          </div>
+          <div ng-if="!errors.length && call && !confirmed">
+            <b>Chiama questo numero per confermare il tuo voto <a href="tel:+3905221520065">+3905221520065</a>
+              usando il telefono con lo stesso numero dichiarato.</b>. Ricordati che:
+            <ul>
+              <li>se non chiamerai entro 5 minuti il tuo voto verra' annullato;</li>
+              <li>non e' prevista alcuna spesa;</li>
+              <li>al primo squillo la chiamata verra' terminata;</li>
+              <li>devi indicare almeno una preferenza per una disciplina.</li>
+              <li>la stessa persona non puo' votare piu' volte.</li>
+            </ul>
+          </div>
+          <div ng-if="!errors.length && !call && !confirmed">
+            <h3>Per votare inserisci:</h3>
+            <ul>
+              <li>nome</li>
+              <li>cognome</li>
+              <li>numero di telefono</li>
+            </ul>
+            <h3>Dopo aver espresso il tuo voto, ti chiederemo di fare uno squillo ad un numero di
+              telefono, usando il telefono con lo stesso numero dichiarato:</h3>
+            <ul>
+              <li>la telefonata E' COMPLETAMENTE GRATUITA;</li>
+              <li>al primo squillo la chiamata verra' terminata.</li>
+            </ul>
+          </div>
+
+          <div ng-if="confirmed">
+            <h3>Grazie per aver votato!</h3>
+          </div>
+          <button type="submit" class="button" ng-click="send()">Invia il voto
+          </button>
+
+          <button type="submit" class="button" ng-click="reset()">Annulla
+          </button>
+          <br/>
+          <br/>
+          <br/>
 
 
+        </footer>
+
+      </form>
+
+    </div>
+  </div>
 </div>
 <div ng-include="'/views/templates/footer.html'"></div>
