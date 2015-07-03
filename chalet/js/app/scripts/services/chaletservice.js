@@ -33,7 +33,7 @@ angular.module('jsApp')
             });
         }
 
-        var getElement = function (id) {odel
+        var getElement = function (id) {
             if (angular.isUndefined(model) || model.length == 0) {
                 init(model);
             }
