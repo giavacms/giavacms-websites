@@ -1,15 +1,14 @@
 <div ng-include="'/views/templates/header.html'"></div>
 
 <div class="jumbotron">
-  <h1>lista chalet</h1>
+    <h1>lista chalet</h1>
 </div>
 
 <div class="row marketing">
-  {{model}}
-  <div ng-repeat="item in model" ng-click="go('/chalet/'+item.id)">
-    {{item.licenseNumber}} - {{item.name}}
-  </div>
+    <div ng-repeat="item in model">
+        <a href="/#/chalet/{{item.id}}">{{item.licenseNumber}} - {{item.name}}</a>
+    </div>
 
 </div>
 
-<div ng-include="'/views/templates/footer.html'" ></div>
+<div ng-include="'/views/templates/footer.html'"></div>
