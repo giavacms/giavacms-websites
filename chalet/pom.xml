@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.giavacms</groupId>
+    <artifactId>chalet</artifactId>
+    <parent>
+        <artifactId>giavacms</artifactId>
+        <groupId>org.giavacms</groupId>
+        <version>3.0.0-SNAPSHOT</version>
+    </parent>
+    <packaging>war</packaging>
+    <build>
+        <finalName>ROOT</finalName>
+        <resources>
+            <!-- this doesn't work: perhaps src/main/webapp is not a well-known maven
+                path <resource> <directory>src/main/webapp</directory> <filtering>true</filtering>
+                <includes> <include>WEB-INF/web.xml</include> <include>WEB-INF/jboss-web.xml</include>
+                <include>**/*.xhtml</include> </includes> </resource> -->
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>META-INF/persistence.xml</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+                <excludes>
+                    <exclude>META-INF/persistence.xml</exclude>
+                </excludes>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+    <dependencies>
+
+        <!-- Giava CMS -->
+
+        <dependency>
+            <groupId>org.giavacms</groupId>
+            <artifactId>base</artifactId>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.giavacms</groupId>
+            <artifactId>banner</artifactId>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.giavacms</groupId>
+            <artifactId>chalet</artifactId>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.giavacms</groupId>
+            <artifactId>contest</artifactId>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.giavacms</groupId>
+            <artifactId>richcontent</artifactId>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.giavacms</groupId>
+            <artifactId>security</artifactId>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.giavacms</groupId>
+            <artifactId>resources</artifactId>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <scope>compile</scope>
+        </dependency>
+
+    </dependencies>
+
+</project>
