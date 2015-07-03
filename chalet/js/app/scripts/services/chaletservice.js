@@ -20,6 +20,15 @@ angular.module('jsApp')
             return reqParams;
         }
 
+        var getSizeModel = function () {
+            if (angular.isUndefined(model) || model.length == 0) {
+                model = init(model);
+            }
+            $q.when(model).then(function () {
+                return model.length;
+            });
+        }
+
 
         var getList = function (search, from, to) {
             if (angular.isUndefined(model) || model.length == 0) {
@@ -27,7 +36,7 @@ angular.module('jsApp')
             }
             if (angular.isUndefined(from) || Number(from) < 0)
                 from = 0;
-            if (angular.isUndefined(to))
+            if (angular.isUndefined(to) || Number(to) > getSizeModel())
                 to = 10;
             $q.when(model).then(function () {
                 return model.slice(from, to);
