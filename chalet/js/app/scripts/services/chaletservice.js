@@ -20,13 +20,14 @@ angular.module('jsApp')
             return reqParams;
         }
 
+
         var getList = function (search, from, to) {
             if (angular.isUndefined(model) || model.length == 0) {
                 model = init(model);
             }
             if (angular.isUndefined(from) || Number(from) < 0)
                 from = 0;
-            if (angular.isUndefined(to) || Number(to) > model.length)
+            if (angular.isUndefined(to))
                 to = 10;
             $q.when(model).then(function () {
                 return model.slice(from, to);
