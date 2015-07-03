@@ -22,33 +22,37 @@ angular.module('jsApp')
 
         var getList = function (search, from, to) {
             if (angular.isUndefined(model) || model.length == 0) {
-                init();
+                model = init(model);
             }
-            if (angular.isUndefined(model)) {
-                if (angular.isUndefined(from) || Number(from) < 0)
-                    from = 0;
-                if (angular.isUndefined(to) || Number(to) > model.length)
-                    to = 10;
-
+            if (angular.isUndefined(from) || Number(from) < 0)
+                from = 0;
+            if (angular.isUndefined(to) || Number(to) > model.length)
+                to = 10;
+            $q.when(model).then(function () {
                 return model.slice(from, to);
-            }
-
-            return model;
-        }
-
-        var getElement = function (id) {
-            if (angular.isUndefined(model) || model.length == 0) {
-                init();
-            }
-            model.forEach()
-            return element;
-        }
-
-
-        var init = function () {
-            RsResource.query(reqParams, function (model) {
-                $scope.model = model;
             });
+        }
+
+        var getElement = function (id) {odel
+            if (angular.isUndefined(model) || model.length == 0) {
+                init(model);
+            }
+            $q.when(model).then(function () {
+                for (i = 0; i < model.length; ++i) {
+                    if (model[i].id = id) {
+                        element = model[i];
+                    }
+                }
+                return element;
+            });
+        }
+
+
+        var init = function (model) {
+            var list = RsResource.query(reqParams, function (data) {
+                model = data;
+            }).$promise;
+            return list;
         }
 
         return {
@@ -57,4 +61,6 @@ angular.module('jsApp')
         };
 
 
-    }]);
+    }
+    ])
+;
