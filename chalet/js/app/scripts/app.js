@@ -48,14 +48,6 @@ angular
         }
       })
 
-      .state('vota', {
-        url: '/vota',
-        templateUrl: 'views/vota.html',
-        ncyBreadcrumb: {
-          label: 'vota'
-        }
-      })
-
 
   }])
 ;
