@@ -3,11 +3,11 @@
 
 angular.module('votalatuaestate')
 
-	// basato su ActivityCtrl
+    // basato su ActivityCtrl
 
     .controller('HomeCtrl',
-    ['$scope', 'ChaletService', 'IonicService', '$interval',
-        function ($scope, ChaletService, IonicService, $interval) {
+    ['$scope', '$state', 'ChaletService', 'IonicService', '$interval', 'APP_PROPERTIES',
+        function ($scope, $state, ChaletService, IonicService, $interval, APP_PROPERTIES) {
 
             // Headers and co
             IonicService.expand($scope);
@@ -28,10 +28,25 @@ angular.module('votalatuaestate')
             refresh();
 
             // model gets periodically refreshed
-            $interval(refresh, 10000);
+//            $interval(refresh, 10000);
 
 
             // Activate ink for controller
             IonicService.ink($scope);
+
+            $scope.view = function (id) {
+                $state.go('app.chalet_single', {id: id});
+            }
+
+            $scope.imgSrc = function (src) {
+                if (src) {
+                    if (src.indexOf('http') === 0) {
+                        return src;
+                    }
+                    else {
+                        return APP_PROPERTIES.PROTOCOL + "://" + APP_PROPERTIES.HOST + APP_PROPERTIES.CONTEXT + "/img/" + src;
+                    }
+                }
+            }
 
         }])

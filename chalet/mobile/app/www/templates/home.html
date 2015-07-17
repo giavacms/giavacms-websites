@@ -8,21 +8,21 @@
 
             <!-- repeat degli chalet della lista -->
             <div class="card card-gallery item item-text-wrap" ng-repeat="item in model" ng-if="$index % 2 == 0">
-                <div class="ink dark-bg">
-                    <a ui-sref="app.chalet_single({id:item.id})">
+                <div class="ink dark-bg" ng-click="view(item.id)">
+                    <a>
                         <!-- nome -->
                         <h2>{{item.name}}</h2>
                         <!-- immagine no -->
                         <img class="full-image" src="/img/logo-no-chalet.jpg"
                              alt="{{item.name}}" ng-if="item.images.length==0">
                         <!-- immagine si-->
-                        <img class="full-image" ng-src="/img/{{item.images[0].filename}}"
+                        <img class="full-image" ng-src="{{imgSrc(item.images[0].filename)}}"
                              alt="{{item.name}}" ng-if="item.images.length>0">
                     </a>
                 </div>
                 <div class="item tabs tabs-secondary tabs-icon-left">
                     <!-- concessione -->
-                    <a ui-sref="app.chalet_single({id:item.id})" class="tab-item stable-bg positive-900">
+                    <a class="tab-item stable-bg positive-900">
                         <span style="font-size: 2.5em; font-weight: bolder;">Numero {{item.licenseNumber}}</span>
                     </a>
                     <!-- vota -->
@@ -39,21 +39,21 @@
 
             <!-- repeat degli chalet della lista -->
             <div class="card card-gallery item item-text-wrap" ng-repeat="item in model" ng-if="$index % 2 == 1">
-                <div class="ink dark-bg">
-                    <a ui-sref="app.chalet({id:item.id})">
+                <div class="ink dark-bg" ng-click="view(item.id)">
+                    <a>
                         <!-- nome -->
                         <h2>{{item.name}}</h2>
                         <!-- immagine no -->
                         <img class="full-image" src="/img/logo-no-chalet.jpg"
                              alt="{{item.name}}" ng-if="item.images.length==0">
                         <!-- immagine si-->
-                        <img class="full-image" ng-src="/img/{{item.images[0].filename}}"
+                        <img class="full-image" ng-src="{{imgSrc(item.images[0].filename)}}"
                              alt="{{item.name}}" ng-if="item.images.length>0">
                     </a>
                 </div>
                 <div class="item tabs tabs-secondary tabs-icon-left">
                     <!-- concessione -->
-                    <a ui-sref="app.chalet_single({id:item.id})" class="tab-item stable-bg positive-900">
+                    <a class="tab-item stable-bg positive-900">
                         <span style="font-size: 2.5em; font-weight: bolder;">Numero {{item.licenseNumber}}</span>
                     </a>
                     <!-- vota -->
@@ -68,9 +68,10 @@
 
     </ion-content>
 
-		<!-- vai alla list completa -->
-        <div class="button-bar social-login">
-            <a ui-sref="app.chalet" class="button button-small button-border button-assertive-900 ">Elenco completo
-            </a>
-        </div>
+    <!-- vai alla list completa -->
+    <div class="button-bar social-login">
+        <a class="button button-small button-border button-assertive-900 ">&nbsp;
+        </a>
+    </div>
+
 </ion-view>

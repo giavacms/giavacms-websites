@@ -3,11 +3,11 @@
 
 angular.module('votalatuaestate')
 
-	// basato su FriendsCtrl
+    // basato su FriendsCtrl
 
     .controller('ChaletCtrl',
-    ['$scope', 'ChaletService', 'IonicService',
-        function ($scope, ChaletService, IonicService) {
+    ['$scope', 'ChaletService', 'IonicService', 'APP_PROPERTIES',
+        function ($scope, ChaletService, IonicService, APP_PROPERTIES) {
 
             // Headers and co
             IonicService.expand($scope);
@@ -18,6 +18,17 @@ angular.module('votalatuaestate')
                 $scope.model = data;
                 IonicService.motion($scope, 'fadeSlideInRight');
             });
+
+            $scope.imgSrc = function (src) {
+                if (src) {
+                    if (src.indexOf('http') === 0) {
+                        return src;
+                    }
+                    else {
+                        return APP_PROPERTIES.PROTOCOL + "://" + APP_PROPERTIES.HOST + APP_PROPERTIES.CONTEXT + "/img/" + src;
+                    }
+                }
+            }
 
         }])
 

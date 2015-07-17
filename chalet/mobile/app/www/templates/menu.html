@@ -24,6 +24,9 @@
         </ion-header-bar>
         <ion-content class="stable-bg has-expanded-header">
             <ion-list>
+                <ion-item nav-clear menu-close ui-sref="app.home">
+                    Home
+                </ion-item>
                 <ion-item nav-clear menu-close ui-sref="app.chalet">
                     Chalet
                 </ion-item>
@@ -35,6 +38,9 @@
                 </ion-item>
                 <ion-item nav-clear menu-close ui-sref="app.blog">
                     Notizie
+                </ion-item>
+                <ion-item nav-clear menu-close >
+                    <a ng-click=logout()">Logout</a>
                 </ion-item>
             </ion-list>
         </ion-content>

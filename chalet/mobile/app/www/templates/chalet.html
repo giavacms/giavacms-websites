@@ -1,11 +1,12 @@
 <!--  basato su Friends.html -->
 
-<ion-view view-title="Chalet" >
+<ion-view view-title="Chalet">
     <ion-content ng-class="{expanded:isExpanded}">
+
         <div class="content has-header">
 
             <!-- lista completa, magari da paginare? magari no? -->
-            <div class="list animate-fade-slide-in-right" >
+            <div class="list animate-fade-slide-in-right">
 
                 <!-- singolo chalet -->
                 <a ui-sref="app.chalet_single({id:item.id})" class="item item-avatar item-icon-right"
@@ -15,7 +16,7 @@
                     <img src="/img/logo-no-chalet.jpg"
                          alt="{{item.name}}" ng-if="item.images.length==0">
                     <!-- immagine si -->
-                    <img ng-src="/img/{{item.images[0].filename}}"
+                    <img ng-src="{{imgSrc(item.images[0].filename)}}"
                          alt="{{item.name}}" ng-if="item.images.length>0">
 
                     <!-- nome -->
@@ -25,17 +26,20 @@
                     <p>{{item.preview}}</p>
 
                     <!-- boh -->
-                    <i class="icon ion-heart muted"></i>
+                    <i class="icon ion-flag muted"></i>
 
                 </a>
             </div>
 
         </div>
-        
-        	<!-- horror vacui -->
-        <div class="button-bar social-login">
-            <a class="button button-small button-border button-assertive-900 ">&nbsp;
-            </a>
-        </div>
+
+
     </ion-content>
+
+    <!-- horror vacui -->
+    <div class="button-bar social-login">
+        <a class="button button-small button-border button-assertive-900 ">&nbsp;
+        </a>
+    </div>
+
 </ion-view>

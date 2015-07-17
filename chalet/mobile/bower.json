@@ -33,6 +33,7 @@
   ],
   "dependencies": {
     "ionic": "~1.0.0",
-    "waves": "0.6"
+    "waves": "0.6",
+    "angular-jwt": "~0.0.9"
   }
 }

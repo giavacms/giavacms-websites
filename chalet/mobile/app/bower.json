@@ -9,6 +9,7 @@
   "appPath": "app",
   "moduleName": "votalatuaestate",
   "dependencies": {
-    "angular-resource": "~1.4.3"
+    "angular-resource": "~1.4.3",
+    "angular-jwt": "~0.0.9"
   }
 }

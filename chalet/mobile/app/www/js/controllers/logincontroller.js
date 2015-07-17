@@ -41,6 +41,11 @@ angular.module('votalatuaestate')
 
         IonicService.ink($scope);
 
+        $scope.logout = function () {
+            $state.go('app.login');
+        }
+
+
     }])
 
 ;

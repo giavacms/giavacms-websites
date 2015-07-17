@@ -5,16 +5,16 @@ angular.module('votalatuaestate')
 
     // basato su profile
 
-    .controller('ChaletSingleCtrl',
-    ['$scope', '$stateParams', 'ChaletService', 'IonicService', 'APP_PROPERTIES',
-        function ($scope, $stateParams, ChaletService, IonicService, APP_PROPERTIES) {
+    .controller('BlogSingleCtrl',
+    ['$scope', '$stateParams', 'BlogService', 'IonicService', 'APP_PROPERTIES',
+        function ($scope, $stateParams, BlogService, IonicService, APP_PROPERTIES) {
 
             // Headers and co
             IonicService.expand($scope);
 
             // fill this with the desired element
             $scope.element = {};
-            ChaletService.getElement($stateParams.id).then(function (element) {
+            BlogService.getElement($stateParams.id).then(function (element) {
                 $scope.element = element;
 
 
