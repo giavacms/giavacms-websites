@@ -8,17 +8,38 @@
                 <h1>Vota la tua estate</h1>
             </div>
         </div>
-        <div class="list">
-            <ion-md-input placeholder="Il tuo nome ..." highlight-color="balanced" type="text" ng-model="username"></ion-md-input>
-            <ion-md-input placeholder="Il tuo numero di telefono..." highlight-color="balanced" type="text" ng-model="phone"></ion-md-input>
 
-            <ion-md-input placeholder="Dai il consenso al trattamento dei tuoi dati?" highlight-color="balanced" type="" ng-model="accept"></ion-md-input>
+        <!-- input fields -->
+        <div class="list">
+            <ion-md-input placeholder="Il tuo nome (*)..." highlight-color="balanced" type="text"
+                          ng-model="name"></ion-md-input>
+            <ion-md-input placeholder="Il tuo cognome (*)..." highlight-color="balanced" type="text"
+                          ng-model="surname"></ion-md-input>
+            <ion-md-input placeholder="Il tuo numero di telefono (*)..." highlight-color="balanced" type="text"
+                          ng-model="phone"></ion-md-input>
+            <ion-checkbox ng-model="accept">Dai il consenso al trattamento dei tuoi dati?</ion-checkbox>
         </div>
-        <div class="padding" ng-show="accept && username && phone">
-            <a href="tel:#{numberToCall}" class="button button-full button-assertive ink" >Fammi uno squillo!</a>
-            La telefonata e' gratuita
+
+        <!-- input fields -->
+        <div class="padding" ng-show="accept && name && surname && phone">
+
+            <!-- command to send the number and wait for ring -->
+            <button ng-hide="numbertocall" ng-click="register()" class="button button-full button-balanced ink">
+                Attiva un account
+            </button>
+
+            <!-- command to ring -->
+            <div ng-show="numbertocall">
+                <a href="tel:#{numberToCall}" class="button button-full button-assertive ink">Ora fammi uno squillo per
+                    confermare i tuoi dati!</a>
+                <br/>
+                La telefonata e' gratuita
+            </div>
         </div>
+
+        <!-- horror vacui -->
         <div class="button-bar social-login">
         </div>
+
     </ion-content>
 </ion-view>

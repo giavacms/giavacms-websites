@@ -3,7 +3,7 @@
 
 angular.module('votalatuaestate')
 
-	// basato su LoginCtrl
+    // basato su LoginCtrl
 
     .controller('RegisterCtrl', ['$scope', '$timeout', '$log', '$state', 'AuthenticationService', 'IonicService', function ($scope, $timeout, $log, $state, AuthenticationService, IonicService) {
 
@@ -11,31 +11,38 @@ angular.module('votalatuaestate')
 
         // use cordova to get it from device or leave user input it
         $scope.phone;
-        $scope.username;
+        $scope.name;
+        $scope.surname;
         $scope.accept = false;
 
-        // change this to true when login succeeds
-        var loginOk = false;
+        $scope.register = function () {
+            AuthenticationSerivce.register($scope.phone, $scope.name, $scope.surname);
+        }
 
-        // try to login by means of the authentication service
+        // try to register by means of the authentication service
         $scope.numberToCall;
-        // $scope.numberToCall = AuthenticationSerivce.login($scope.phone)['numberToCall'];
+
+        // change this to true when login succeeds
+        $scope.loginOk = false;
+
+        $scope.$on('registration-unconfirmed', function () {
+            $scope.numbertocall = AuthenticationService.getTocall();
+            if ($scope.numbertocall) {
+                while (!$scope.loginOk) {
+                    $log.info('not logged');
+                    $timeout(function () {
+                        AuthenticationService.confirm();
+                    }, 2000);
+                }
+            }
+        });
+
+        $scope.$on('login-confirmed', function () {
+            $scope.loginOk = true;
+            $state.go('app.home');
+        });
 
         IonicService.ink($scope);
-
-        // loop while waiting for login with given phone number to succeed
-        var login = function () {
-            while (!loginOk) {
-                $timeout(function () {
-                    loginOk = false;
-                    $log.info('not logged');
-                    if (loginOk) {
-                        $state.go('home', {}, {reload: true, inherit: false});
-                    }
-                }, 1000);
-
-            }
-        }
 
     }])
 

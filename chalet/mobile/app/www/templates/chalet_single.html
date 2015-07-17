@@ -29,7 +29,9 @@
 
 
         <!-- mezza lista delle foto con indice pari -->
-        <div class="list half">
+        <div class="list half" class="animate-fade-slide-in">
+
+            <div class="item"></div>
 
             <!-- repeat delle foto della lista -->
             <div class="card card-gallery item item-text-wrap" ng-repeat="image in element.images" ng-if="$index % 2 == 0">
@@ -44,6 +46,8 @@
 
         <!-- mezza lista delle foto con indice dispari -->
         <div class="list half">
+
+            <div class="item"></div>
 
             <!-- repeat delle foto della lista -->
             <div class="card card-gallery item item-text-wrap" ng-repeat="image in element.images" ng-if="$index % 2 == 1">

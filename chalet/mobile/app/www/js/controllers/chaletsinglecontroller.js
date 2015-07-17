@@ -21,10 +21,10 @@ angular.module('votalatuaestate')
 
             // Set Motion
             IonicService.motion($scope,'slideUp','.slide-up',300);
-            IonicService.motion($scope,'fadeSlideInRight','.slide-up',700);
+            IonicService.motion($scope,'fadeSlideIn','.animate-fade-slide-in',700);
 
             // Set Ink
-            IonicService.ink();
+            IonicService.ink($scope);
 
         }])
 

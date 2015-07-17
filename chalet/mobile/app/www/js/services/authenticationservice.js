@@ -12,17 +12,22 @@ angular.module('votalatuaestate')
 
             StorageService.get('info').then(
                 function (info) {
-                    if (info[0].host) {
-                        host = info[0].host;
-                    }
-                    if (info[0].context) {
-                        context = info[0].context;
-                    }
-                    if (info[0].protocol) {
-                        protocol = info[0].protocol;
+                    if (info[0]) {
+                        if (info[0].host) {
+                            host = info[0].host;
+                        }
+                        if (info[0].context) {
+                            context = info[0].context;
+                        }
+                        if (info[0].protocol) {
+                            protocol = info[0].protocol;
+                        }
                     }
                 }
             );
+
+            var tocall;
+            var uuid;
 
             var logged;
             var tokenPayload = {};
@@ -48,6 +53,12 @@ angular.module('votalatuaestate')
                     });
                 },
 
+                getTocall: function () {
+                    return tocall;
+                },
+                getUuid: function () {
+                    return uuid;
+                },
                 getToken: function () {
                     return token;
                 },
@@ -64,13 +75,57 @@ angular.module('votalatuaestate')
                     return tokenPayload.roles ? tokenPayload.roles : [];
                 },
 
-
-                login: function (user) {
-                    var url = protocol + '://' + host + '/' + context + '/api/v1/utenti';
+                register: function (phone, name, surname) {
+                    var url = protocol + '://' + host + '/' + context + '/api/v1/accounts';
                     $http.post(url, {
-                        username: user.username,
-                        password: user.password
+                        phone: phone,
+                        name: name,
+                        surname: surname
                     }).success(function (data, status, headers, config) {
+                        // this callback will be called asynchronously
+                        // when the response is available
+                        $log.debug(data);
+                        tocall = data.tocall;
+                        uuid = data.uuid;
+                        logged = false;
+                        var storedToken = [];
+                        storedToken.push(token);
+                        StorageService.set('token', storedToken);
+                        $rootScope.$broadcast('registration-unconfirmed', status);
+                    }).error(function (data, status, headers, config) {
+                        // called asynchronously if an error occurs
+                        // or server returns response with an error status.
+                        $log.debug(data);
+                        $rootScope.$broadcast('registration-failed');
+                    });
+                },
+
+                login: function (phone) {
+                    var url = protocol + '://' + host + '/' + context + '/api/v1/accounts/login';
+                    $http.post(url, {
+                        login: phone
+                    }).success(function (data, status, headers, config) {
+                        // this callback will be called asynchronously
+                        // when the response is available
+                        $log.debug(data);
+                        uuid = data.uuid;
+                        logged = false;
+                        var storedToken = [];
+                        storedToken.push(token);
+                        StorageService.set('token', storedToken);
+                        $rootScope.$broadcast('login-unconfirmed', status);
+                    }).error(function (data, status, headers, config) {
+                        // called asynchronously if an error occurs
+                        // or server returns response with an error status.
+                        $log.debug(data);
+                        $rootScope.$broadcast('login-failed');
+                    });
+                },
+
+
+                confirm: function () {
+                    var url = protocol + '://' + host + '/' + context + '/api/v1/accounts/login/' + uuid + '/token';
+                    $http.get(url).success(function (data, status, headers, config) {
                         // this callback will be called asynchronously
                         // when the response is available
                         $log.debug(data);
@@ -80,15 +135,15 @@ angular.module('votalatuaestate')
                         var storedToken = [];
                         storedToken.push(token);
                         StorageService.set('token', storedToken);
-                        $rootScope.$broadcast('loginConfirmed', status);
+                        $rootScope.$broadcast('login-confirmed', status);
                     }).error(function (data, status, headers, config) {
                         // called asynchronously if an error occurs
                         // or server returns response with an error status.
                         $log.debug(data);
-                        $rootScope.$broadcast('login-failed');
                     });
                 },
-                logout: function (user) {
+
+                logout: function () {
                     logged = false;
                     token = {};
                     tokenPayload = {};
@@ -98,10 +153,9 @@ angular.module('votalatuaestate')
                     //StorageService.set('token', []);
 
                 },
-                loginCancelled: function () {
-                    $rootScope.$broadcast('login-failed');
-                }
+
             };
+
             return service;
         }])
 

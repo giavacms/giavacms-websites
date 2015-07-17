@@ -116,7 +116,7 @@ angular.module('votalatuaestate',
                 views: {
                     'menuContent': {
                         templateUrl: 'templates/chalet_single.html',
-                        controller: 'ChaletSingletCtrl'
+                        controller: 'ChaletSingleCtrl'
                     },
                     'fabContent': {
                         template: '<button id="fab-chalet-single" class="button button-fab button-fab-top-right expanded button-energized-900 drop"><i class="icon ion-heart"></i></button>',

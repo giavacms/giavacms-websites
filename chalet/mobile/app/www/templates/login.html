@@ -8,16 +8,47 @@
                 <h1>Vota la tua estate</h1>
             </div>
         </div>
-        <div class="list">
-            <ion-md-input placeholder="Il tuo numero di telefono..." highlight-color="balanced" type="text" ng-model="phone"></ion-md-input>
+
+        <!-- input when not logged in -->
+        <div class="list" ng-hide="loginOk">
+            <ion-md-input placeholder="Il tuo numero di telefono..." highlight-color="balanced"
+                          type="text"
+                          ng-model="phone"></ion-md-input>
         </div>
-        <div class="padding" ng-show="phone">
-            <a href="tel:#{numberToCall}" class="button button-full button-assertive ink">Fammi uno squillo!</a>
-            La telefonata e' gratuita
+        <!-- output when logged in -->
+        <div class="list" ng-show="loginOk">
+            <div class="item">{{phone}}</div>
         </div>
+
+        <!-- logout button when logged in -->
+        <div class="padding" ng-show="loginOk">
+            <button ng-click="logout()" class="button button-full button-assertive ink">Logout</button>
+        </div>
+
+        <!-- login fields and commands when not logged in -->
+        <div class="padding" ng-hide="loginOk" ng-if="phone">
+
+            <!-- command to send the number and wait for ring -->
+            <button ng-hide="numbertocall" ng-click="login()" class="button button-full button-balanced ink">
+                Invia il tuo
+                numero
+            </button>
+
+            <!-- command to ring -->
+            <div ng-show="numbertocall">
+                <a href="tel:#{numbertocall}" class="button button-full button-energized ink">Ora fammi uno
+                    squillo per confermare il tuo numero!</a>
+                <br/>
+                La telefonata e' gratuita
+            </div>
+        </div>
+
+        <!-- link to registration page -->
         <div class="button-bar social-login">
-            <a ui-sref="app.register" class="button button-small button-border icon-left ion-social-twitter button-calm-900">Registrati
+            <a ui-sref="app.register"
+               class="button button-small button-border icon-left ion-social-twitter button-calm-900">Registrati
             </a>
         </div>
+
     </ion-content>
 </ion-view>
