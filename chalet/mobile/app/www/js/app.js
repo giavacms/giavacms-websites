@@ -67,7 +67,32 @@ angular.module('votalatuaestate',
                 }
             })
             
-            /*
+            .state('app.login', {
+                url: '/login',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/login.html',
+                        controller: 'LoginCtrl'
+                    },
+                    'fabContent': {
+                        template: ''
+                    }
+                }
+            })
+            
+            .state('app.register', {
+                url: '/register',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/register.html',
+                        controller: 'RegisterCtrl'
+                    },
+                    'fabContent': {
+                        template: ''
+                    }
+                }
+            })
+            
             .state('app.chalet', {
                 url: '/chalet',
                 views: {
@@ -94,7 +119,7 @@ angular.module('votalatuaestate',
                         controller: 'ChaletSingletCtrl'
                     },
                     'fabContent': {
-                        template: '<button id="fab-chalet-single" class="button button-fab button-fab-top-left expanded button-energized-900 spin"><i class="icon ion-chatbubbles"></i></button>',
+                        template: '<button id="fab-chalet-single" class="button button-fab button-fab-top-right expanded button-energized-900 drop"><i class="icon ion-heart"></i></button>',
                         controller: function ($timeout) {
                             $timeout(function () {
                                 document.getElementById('fab-chalet-single').classList.toggle('on');
@@ -104,6 +129,7 @@ angular.module('votalatuaestate',
                 }
             })
 
+            /*
             .state('app.classifica', {
                 url: '/classifica',
                 views: {

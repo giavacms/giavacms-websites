@@ -1,0 +1,60 @@
+<!-- based on Profile.html -->
+
+<ion-view view-title="{{element.licenseNumber}}">
+    <ion-content ng-class="{expanded:$scope.isExpanded}">
+
+        <!-- fascione con sfondo + avatar -->
+        <div class="hero slide-up" style="background-image: url('img/black-logo.jpg');">
+            <div class="content">
+                <div class="avatar" style="background-image: url('img/logo-no-chalet.jpg');"></div>
+                <h3><a class="light">{{element.name}}</a></h3>
+                <h4>{{element.preview}}</h4>
+            </div>
+        </div>
+
+        <!-- link rapidi -->
+        <div class="tabs tabs-dark tabs-icon-top static">
+            <a ui-sref="app.home" class="tab-item">
+                <i class="icon ion-home"></i> Home
+            </a>
+            <a ui-sref="app.chalet" class="tab-item">
+                <i class="icon ion-images"></i> Elenco completo
+            </a>
+        </div>
+
+        <h4 class="content padding double-padding-x">{{elment.name}}</h4>
+        <h6 class="content padding double-padding-x">{{elment.description}}</h6>
+
+		<!-- NOTA BENE: sezione following sostituita con sezione a-là activity... o magari gallery... cmq sono arrivato qui -->
+
+
+        <!-- mezza lista delle foto con indice pari -->
+        <div class="list half">
+
+            <!-- repeat delle foto della lista -->
+            <div class="card card-gallery item item-text-wrap" ng-repeat="image in element.images" ng-if="$index % 2 == 0">
+                <div class="ink dark-bg">
+                        <img class="full-image" ng-src="/img/{{image.filename}}"
+                             alt="Immagine {{$index}}" >
+                </div>
+                <div class="item tabs tabs-secondary tabs-icon-left">
+                </div>
+            </div>
+        </div>
+
+        <!-- mezza lista delle foto con indice dispari -->
+        <div class="list half">
+
+            <!-- repeat delle foto della lista -->
+            <div class="card card-gallery item item-text-wrap" ng-repeat="image in element.images" ng-if="$index % 2 == 1">
+                <div class="ink dark-bg">
+                    <img class="full-image" ng-src="/img/{{image.filename}}"
+                         alt="Immagine {{$index}}" >
+                </div>
+                <div class="item tabs tabs-secondary tabs-icon-left">
+                </div>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

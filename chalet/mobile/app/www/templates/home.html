@@ -1,26 +1,76 @@
-<ion-view view-title="Login" align-title="left">
-    <ion-content style="background: url(img/login.jpg) center; background-size: cover;">
-        <div class="hero no-header flat">
-            <div class="content">
-                <div class="app-icon"></div>
-                <h1>Thronester</h1>
+<!-- basato su Activity.html -->
+
+<ion-view view-title="Home">
+    <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in">
+
+        <!-- mezza lista degli chalet con indice pari -->
+        <div class="list half">
+
+            <!-- repeat degli chalet della lista -->
+            <div class="card card-gallery item item-text-wrap" ng-repeat="item in model" ng-if="$index % 2 == 0">
+                <div class="ink dark-bg">
+                    <a ui-sref="app.chalet_single({id:item.id})">
+                        <!-- nome -->
+                        <h2>{{item.name}}</h2>
+                        <!-- immagine no -->
+                        <img class="full-image" src="/img/logo-no-chalet.jpg"
+                             alt="{{item.name}}" ng-if="item.images.length==0">
+                        <!-- immagine si-->
+                        <img class="full-image" ng-src="/img/{{item.images[0].filename}}"
+                             alt="{{item.name}}" ng-if="item.images.length>0">
+                    </a>
+                </div>
+                <div class="item tabs tabs-secondary tabs-icon-left">
+                    <!-- concessione -->
+                    <a ui-sref="app.chalet_single({id:item.id})" class="tab-item stable-bg positive-900">
+                        <span style="font-size: 2.5em; font-weight: bolder;">Numero {{item.licenseNumber}}</span>
+                    </a>
+                    <!-- vota -->
+                    <a ui-sref="app.vota({id:item.id})" class="tab-item stable-bg assertive">
+                        <i class="icon ion-heart"></i>
+                        <span style="font-size: 2.5em; font-weight: bolder;">Vota</span>
+                    </a>
+                </div>
             </div>
         </div>
-        <div class="list">
-            <ion-md-input placeholder="Username" highlight-color="balanced" type="text"></ion-md-input>
-            <ion-md-input placeholder="Password" highlight-color="energized" type="password"></ion-md-input>
+
+        <!-- mezza lista degli chalet con indice dispari -->
+        <div class="list half">
+
+            <!-- repeat degli chalet della lista -->
+            <div class="card card-gallery item item-text-wrap" ng-repeat="item in model" ng-if="$index % 2 == 1">
+                <div class="ink dark-bg">
+                    <a ui-sref="app.chalet({id:item.id})">
+                        <!-- nome -->
+                        <h2>{{item.name}}</h2>
+                        <!-- immagine no -->
+                        <img class="full-image" src="/img/logo-no-chalet.jpg"
+                             alt="{{item.name}}" ng-if="item.images.length==0">
+                        <!-- immagine si-->
+                        <img class="full-image" ng-src="/img/{{item.images[0].filename}}"
+                             alt="{{item.name}}" ng-if="item.images.length>0">
+                    </a>
+                </div>
+                <div class="item tabs tabs-secondary tabs-icon-left">
+                    <!-- concessione -->
+                    <a ui-sref="app.chalet_single({id:item.id})" class="tab-item stable-bg positive-900">
+                        <span style="font-size: 2.5em; font-weight: bolder;">Numero {{item.licenseNumber}}</span>
+                    </a>
+                    <!-- vota -->
+                    <a ui-sref="app.vota({id:item.id})" class="tab-item stable-bg assertive">
+                        <i class="icon ion-heart"></i>
+                        <span style="font-size: 2.5em; font-weight: bolder;">Vota</span>
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class="padding">
-            <button ui-sref="app.profile" class="button button-full button-assertive ink">Login</button>
-        </div>
-        <div class="button-bar social-login">
-            <button class="button button-small button-border icon-left ion-social-google button-assertive-900">Google+
-            </button>
-            <button class="button button-small button-border icon-left ion-social-twitter button-calm-900">Twitter
-            </button>
-            <button class="button button-small button-border icon-left ion-social-facebook button-positive-900">
-                Facebook
-            </button>
-        </div>
+
+
     </ion-content>
+
+		<!-- vai alla list completa -->
+        <div class="button-bar social-login">
+            <a ui-sref="app.chalet" class="button button-small button-border button-assertive-900 ">Elenco completo
+            </a>
+        </div>
 </ion-view>

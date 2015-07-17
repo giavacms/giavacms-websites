@@ -11,6 +11,21 @@ angular.module('votalatuaestate')
     .factory('IonicService', ['$q', '$timeout', 'ionicMaterialInk', 'ionicMaterialMotion', '$log',
         function ($q, $timeout, ionicMaterialInk, ionicMaterialMotion, $log) {
 
+            var clear = function ($scope) {
+                $scope.$parent.clearFabs();
+                $timeout(function () {
+                    $scope.$parent.hideHeader();
+                }, 0);
+            };
+
+            var expand = function ($scope) {
+                $scope.$parent.showHeader();
+                $scope.$parent.clearFabs();
+                $scope.isExpanded = true;
+                $scope.$parent.setExpanded(true);
+                $scope.$parent.setHeaderFab(false);
+            };
+
             var ink = function ($scope) {
                 $scope.$applyAsync(
                     function () {
@@ -40,9 +55,9 @@ angular.module('votalatuaestate')
 
             var service = {
 
-                ink: ink
-                ,
-
+                clear: clear,
+                expand: expand,
+                ink: ink,
                 motion: motion
 
             };

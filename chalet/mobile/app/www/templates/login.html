@@ -1,0 +1,23 @@
+<!-- basato su Login.html -->
+
+<ion-view view-title="Login" align-title="left">
+    <ion-content style="background: url(img/logo-no-chalet.jpg) center; background-size: cover;">
+        <div class="hero no-header flat">
+            <div class="content">
+                <div class="app-icon"></div>
+                <h1>Vota la tua estate</h1>
+            </div>
+        </div>
+        <div class="list">
+            <ion-md-input placeholder="Il tuo numero di telefono..." highlight-color="balanced" type="text" ng-model="phone"></ion-md-input>
+        </div>
+        <div class="padding" ng-show="phone">
+            <a href="tel:#{numberToCall}" class="button button-full button-assertive ink">Fammi uno squillo!</a>
+            La telefonata e' gratuita
+        </div>
+        <div class="button-bar social-login">
+            <a ui-sref="app.register" class="button button-small button-border icon-left ion-social-twitter button-calm-900">Registrati
+            </a>
+        </div>
+    </ion-content>
+</ion-view>
