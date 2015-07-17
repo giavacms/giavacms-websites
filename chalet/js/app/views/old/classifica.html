@@ -1,0 +1,29 @@
+<div ng-include="'/views/templates/header.html'"></div>
+<div class="jumbotron">
+    <h1>classifica generale</h1>
+</div>
+
+CLASSIFICA: {{element.name}} del {{element.data | date}}
+
+<div class="row marketing">
+    <div class="col-lg-6">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>posizione</th>
+                <th>conc. num.</th>
+                <th>nome</th>
+                <th>voti</th>
+            </tr>
+            </thead>
+            <tr ng-repeat="item in element.chaletRankings">
+                <td><span class="badge">{{item.position}}</span></td>
+                <td>{{item.licenseNumber}}</td>
+                <td><a href="/#/chalet/{{item.licenseNumber}}">{{item.chaletName}}</a>
+                </td>
+                <td><span class="label label-default">{{item.votes}}</span></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div ng-include="'/views/templates/footer.html'"></div>

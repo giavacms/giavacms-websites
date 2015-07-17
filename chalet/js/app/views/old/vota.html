@@ -1,0 +1,141 @@
+<div ng-include="'/views/templates/header.html'"></div>
+<div class="jumbotron">
+    <h1>si vota</h1>
+</div>
+
+<div class="container">
+
+    <div class="row marketing" ng-hide="sent">
+        <h3>Dopo aver espresso il tuo voto, ti chiederemo di fare uno squillo ad un numero di
+            telefono - la chiamata E' COMPLETAMENTE GRATUITA ed al primo squillo verra' terminata.</h3>
+    </div>
+
+    <div class="row marketing">
+
+        <form class="form-horizontal">
+
+            <div ng-hide="sent">
+                <div class="form-group">
+                    <label for="name" class="col-sm-2 control-label">nome:</label>
+
+                    <div class="col-sm-10">
+                        <input id="name" class="form-control" type="text" name="name" placeholder="Nome"
+                               ng-model="vote.name" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cognome" class="col-sm-2 control-label">cognome</label>
+
+                    <div class="col-sm-10">
+                        <input id="cognome" class="form-control" type="text" name="surname" placeholder="Cognome"
+                               ng-model="vote.surname"
+                               required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="chalet" class="col-sm-2 control-label">chalet </label>
+
+                    <div class="col-sm-10">
+                        <select id="chalet" class="form-control" ng-model="vote.preference1"
+                                ng-options="c.licenseNumber as c.name for c in chalets">
+                            <option value="">scegli uno chalet</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono" class="col-sm-2 control-label">telefono</label>
+
+                    <div class="col-sm-10">
+                        <input id="telefono" class="form-control" type="text" name="phone"
+                               placeholder="Numero di telefono con cui confermare il voto."
+                               ng-model="vote.phone"
+                               required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="sendMeParadeUpdates"
+                                       ng-model="vote.sendMeParadeUpdates">
+                                Vuoi ricevere gli aggiornamenti periodici della
+                                classifica?
+                                Riceverai un SMS al giorno, gratuito.
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="sendMeFreeTickets"
+                                       ng-model="vote.sendMeFreeTickets">
+                                Vuoi partecipare all'estrazione di consumazioni
+                                gratuite? In caso di vittoria, riceverai un SMS da mostrare allo chalet
+                                che offre il premio!
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="sendMeFreeTickets"
+                                       ng-model="privacy">
+                                <b>accetto il trattamento dati</b>
+                                <textarea class="form-control" rows="1" cols="100">accetto il trattamento datiaccetto il trattamento datiaccetto il trattamento datiaccetto il trattamento datiaccetto il trattamento datiaccetto il
+                                    trattamento datiaccetto il trattamento datiaccetto il trattamento dati</textarea>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <footer>
+
+                <div ng-if="errors.length && !call">
+                    <ul>
+                        <li ng-repeat="erro in errors track by $index"><b style="color: red;">{{erro}}</b>
+                        </li>
+                    </ul>
+                </div>
+                <div ng-if="!errors.length && call && !confirmed">
+                    <b>Chiama questo numero per confermare il tuo voto <a
+                            href="tel:+3905221520065">+3905221520065</a>
+                        usando il telefono con lo stesso numero dichiarato.</b>. Ricorda che:
+                    <ul>
+                        <li>se non chiamerai entro 5 minuti il tuo voto verra' annullato;</li>
+                        <li>non e' prevista alcuna spesa;</li>
+                        <li>al primo squillo la chiamata verra' terminata;</li>
+                        <li>la stessa persona non puo' votare piu' volte.</li>
+                    </ul>
+                </div>
+
+                <div ng-if="confirmed">
+                    <h3>Grazie per aver votato!</h3>
+                    <button type="submit" class="button" ng-click="reset()" ng-hide="sent">Vota Ancora
+                    </button>
+                </div>
+                <button button type="submit" class="btn btn-primary" ng-click="send()" ng-hide="sent">Invia il voto
+                </button>
+
+                <button button type="submit" class="btn btn-default" ng-click="reset()" ng-hide="sent">Annulla
+                </button>
+                <button button type="submit" class="btn btn-default" ng-click="confirmed = true;" ng-if="false">Conferma
+                </button>
+                <br/>
+                <br/>
+                <br/>
+
+
+            </footer>
+
+        </form>
+
+    </div>
+</div>
+<div ng-include="'/views/templates/footer.html'"></div>

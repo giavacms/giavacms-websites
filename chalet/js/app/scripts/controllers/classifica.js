@@ -2,24 +2,33 @@
 
 angular.module('jsApp')
 
-  .controller('Classifica', ['$scope', 'ClassificaService', function ($scope, ClassificaService) {
-    ClassificaService.getLast(function (element) {
-      $scope.element = element;
-    })
-  }])
+    .controller('Classifica', ['$scope', 'ClassificaService', function ($scope, ClassificaService) {
+        ClassificaService.getLast(function (element) {
+            $scope.element = element;
+        })
+    }])
 
 
-  .config(['$stateProvider', function ($stateProvider) {
+    .config(['$stateProvider', function ($stateProvider) {
 
-    $stateProvider
-      .state('classifica', {
-        url: '/classifica',
-        controller: 'Classifica',
-        templateUrl: 'views/classifica.html',
-        ncyBreadcrumb: {
-          label: 'classifica'
-        }
-      })
+        $stateProvider
+            .state('classifica', {
+                url: '/classifica',
+                controller: 'Classifica',
+                templateUrl: 'views/classifica.html',
+                ncyBreadcrumb: {
+                    label: 'classifica'
+                }
+            })
 
-  }])
+            .state('classifica2', {
+                url: '/classifica2',
+                controller: 'Classifica',
+                templateUrl: 'views/new/classifica.html',
+                ncyBreadcrumb: {
+                    label: 'classifica2'
+                }
+            })
+
+    }])
 

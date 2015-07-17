@@ -1,0 +1,105 @@
+<div tabheader></div>
+<div class="section page-title small-padding background-wrapper with-overlay black-overlay active-section">
+    <div class="background-image parallax-background" data-stellar-background-ratio="0.5"
+         style="background: url(http://demo.geniuspro.net/material/demo/demo/hero/big1.jpg) 0% 0%;">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" style=""><h1>Vota la tua estate</h1>
+
+                <p class="">
+                    Professionally iterate efficient best practices and cooperative communities
+                </p>
+                <ol class="breadcrumb">
+                    <li><a ui-sref="home">Home</a></li>
+                    <li class="active">Contatti</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="section active-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="gmap shadow-1" id="google-map"
+                     style="height: 350px; position: relative; overflow: hidden; transform: translateZ(0px); background-color: rgb(229, 227, 223);">
+                </div>
+            </div>
+            <div class="col-md-3 col-md-offset-1">
+                <address>
+                    <strong>Vota la tua estate</strong><br>
+                    San Benedetto del Tronto (AP)<br>
+                    <abbr title="Phone">P:</abbr> (123) 456-7890
+                </address>
+                <div class="divider"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section big-padding active-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form data-toggle="validator" id="template-contactform" name="template-contactform"
+                      action="include/sendemail.php" method="post" role="form">
+                    <div class="form-process"></div>
+                    <div class="col-md-6 form-group">
+                        <label for="template-contactform-name">Nome e cognome
+                            <small>*</small>
+                        </label>
+                        <input type="text" id="template-contactform-name" name="template-contactform-name" value=""
+                               class="form-control" required="">
+
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label for="template-contactform-email">Email
+                            <small>*</small>
+                        </label>
+                        <input type="email" id="template-contactform-email" name="template-contactform-email"
+                               value="" class="email form-control" required="">
+
+                        <div class="help-block with-errors"></div>
+                    </div>
+
+                    <div class="col-md-12 form-group">
+                        <label for="template-contactform-message">Messaggio
+                            <small>*</small>
+                        </label>
+                            <textarea class="form-control" id="template-contactform-message"
+                                      name="template-contactform-message" rows="6" cols="30" required=""></textarea>
+
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="col-md-12 hidden form-group">
+                        <input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck"
+                               value="" class="form-control">
+                    </div>
+                    <div class="col-md-12">
+                        <p id="contact-form-result"></p>
+                        <br>
+                    </div>
+                    <div class="col-md-12">
+                        <button class="btn btn-punch btn-xs btn-black disabled" type="submit"
+                                id="template-contactform-submit" name="template-contactform-submit" value="submit"
+                                style="pointer-events: all; cursor: pointer;">Invia
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section divider-section active-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="divider"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<div tabfooter></div>

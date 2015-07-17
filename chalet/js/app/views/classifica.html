@@ -1,11 +1,64 @@
-<div ng-include="'/views/templates/header.html'"></div>
-<div class="jumbotron">
-  <h1>classifica generale</h1>
+<div tabheader></div>
+<div class="section page-title small-padding background-wrapper with-overlay black-overlay active-section">
+    <div class="background-image parallax-background" data-stellar-background-ratio="0.5"
+         style="background: url(http://demo.geniuspro.net/material/demo/demo/hero/big1.jpg) 0% 0%;">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" style=""><h1>Vota la tua estate</h1>
+
+                <p class="">
+                    Professionally iterate efficient best practices and cooperative communities
+                </p>
+                <ol class="breadcrumb">
+                    <li><a ui-sref="home">Home</a></li>
+                    <li class="active">Classifica</li>
+                    <!--<li class="active">Data</li>-->
+                </ol>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div class="row marketing">
-{{element.name}}
-<hr/>
-  {{element.chaletRankings}}
-</div>
-<div ng-include="'/views/templates/footer.html'"></div>
+<section class="section active-section grey-background">
+    <div class="container">
+        <div class="row">
+            <h3 class="widget-title">{{element.name}}</h3>
+
+            <div class="col-md-6">
+                <div class="widget">
+                    <ul class="list-group">
+                        <li class="list-group-item" ng-repeat="item in element.chaletRankings | orderBy:'position'" ng-if="$index <50">
+                            <span class="label label-info">{{item.position}}</span> {{item.chaletName}} - conc.
+                            num.{{item.licenseNumber}}
+                            <span class="badge"> {{item.votes}}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="widget">
+                    <ul class="list-group">
+                        <li class="list-group-item" ng-repeat="item in element.chaletRankings | orderBy:'position'" ng-if="$index >=50">
+                            <span class="label label-info">{{item.position}}</span> {{item.chaletName}} - conc.
+                            num.{{item.licenseNumber}}
+                            <span class="badge"> {{item.votes}}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <h5 class="widget-title">aggiornata il {{element.data | date}}</h5>
+        </div>
+    </div>
+</section>
+
+<section class="section divider-section active-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="divider"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<div tabfooter></div>

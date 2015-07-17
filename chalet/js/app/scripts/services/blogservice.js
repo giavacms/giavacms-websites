@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('jsApp')
-    .service('ChaletService', ['RsResource', 'APP_PROPERTIES', '$q', function (RsResource, APP_PROPERTIES, $q) {
+    .service('BlogService', ['RsResource', 'APP_PROPERTIES', '$q', function (RsResource, APP_PROPERTIES, $q) {
 
         var model = [];
         var element = {};
@@ -29,7 +29,7 @@ angular.module('jsApp')
             var reqParams = {};
             reqParams['host'] = APP_PROPERTIES.HOST;
             reqParams['context'] = APP_PROPERTIES.CONTEXT;
-            reqParams['entityPath'] = 'chalets';
+            reqParams['entityPath'] = 'richcontents';
             reqParams['startRow'] = 0;
             reqParams['pageSize'] = 0;
             return reqParams;
@@ -73,7 +73,6 @@ angular.module('jsApp')
 
         var init = function (model) {
             var reqParams = getReqParams();
-            reqParams['id'] = 'all';
             var list = RsResource.query(reqParams, function (data) {
                 model = data;
             }).$promise;

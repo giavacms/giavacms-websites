@@ -1,0 +1,23 @@
+<div ng-include="'/views/templates/header.html'"></div>
+
+
+<div class="jumbotron">
+    <h1>{{element.name}}</h1>
+
+    <p><a class="btn btn-primary btn-lg" href="/#/vota/{{element.licenseNumber}}" role="button">VOTAMI !!</a></p>
+</div>
+
+<div class="row marketing">
+    <p>concessione num: {{element.licenseNumber}}</p>
+
+    <div ng-if="element.address">{{element.address}}</div>
+    <div ng-if="element.city">{{element.city}}</div>
+    <div ng-if="element.postalNumber">{{element.postalNumber}}</div>
+    <div class="col-sm-6 col-md-4" ng-repeat="image in element.images">
+        <div class="thumbnail">
+            <img ng-src="/img/{{image.filename}}"
+                 alt="{{ielement.name}}">
+        </div>
+    </div>
+</div>
+<div ng-include="'/views/templates/footer.html'"></div>

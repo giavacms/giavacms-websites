@@ -1,11 +1,79 @@
-<div ng-include="'/views/templates/header.html'"></div>
-<div class="jumbotron">
-  <h1>{{element.licenseNumber}} - {{element.name}}</h1>
+<div tabheader></div>
+<div class="section page-title small-padding background-wrapper with-overlay black-overlay active-section">
+    <div class="background-image parallax-background" data-stellar-background-ratio="0.5"
+         style="background: url(http://demo.geniuspro.net/material/demo/demo/hero/big1.jpg) 0% 0%;">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" style=""><h1>Vota la tua estate</h1>
+
+                <p class="">
+                    Professionally iterate efficient best practices and cooperative communities
+                </p>
+                <ol class="breadcrumb">
+                    <li><a ui-sref="home">Home</a></li>
+                    <li><a ui-sref="chalet">Chalet</a></li>
+                    <li class="active">{{element.name}}</li>
+                    <!--<li class="active">Data</li>-->
+                </ol>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div class="row marketing">
-  <div ng-if="element.description">{{element.description}}</div>
-  <div ng-if="!element.description">{{element.licenseNumber}} - {{element.name}}</div>
-  <a href="/#/vota/{{element.licenseNumber}}">VOTAMI !!</a>
-</div>
-<div ng-include="'/views/templates/footer.html'"></div>
+<section class="section active-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="flexslider">
+                    <ul class="slides">
+                        <li class="flex-active-slide" ng-repeat="image in element.images"
+                            style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 1; display: block; z-index: 2;">
+                            <img ng-src="/img/{{image.filename}}" alt="{{element.name}}"
+                                 class="img-responsive border-radius"
+                                 draggable="false">
+                        </li>
+                    </ul>
+
+                    <ol class="flex-control-nav flex-control-paging">
+                        <li ng-repeat="n in [] | range: element.images.length"><a class="flex-active">{{$index+1}}</a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="col-md-3 col-md-offset-1">
+                <div class="space"></div>
+                <h2 class="lighter">{{element.name}}</h2>
+
+                <p class="lead">
+                    concessione num: {{element.licenseNumber}} <br/>
+                    {{element.address}}<br/>
+                    {{element.postalNumber}} - {{element.city}} {{element.province}} <br/>
+                </p>
+
+                <p>
+                <ul class="list-inline social-links text-center">
+                    <li><a href="#" title=""><i class="icon ti-facebook"></i></a></li>
+                    <li><a href="#" title=""><i class="icon ti-twitter"></i></a></li>
+                    <li><a href="#" title=""><i class="icon ti-google"></i></a></li>
+                </ul>
+                </p>
+
+                <p class="text-center"><a href="/#/vota/{{element.licenseNumber}}" title=""
+                                          class="btn btn-punch btn-sm btn-black">Vota {{element.licenseNumber}}</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section divider-section active-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="divider"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<div tabfooter></div>

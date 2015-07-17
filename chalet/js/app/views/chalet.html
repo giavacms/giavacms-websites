@@ -1,14 +1,64 @@
-<div ng-include="'/views/templates/header.html'"></div>
-
-<div class="jumbotron">
-    <h1>lista chalet</h1>
-</div>
-
-<div class="row marketing">
-    <div ng-repeat="item in model">
-        <a href="/#/chalet/{{item.id}}">{{item.licenseNumber}} - {{item.name}}</a>
+<div tabheader></div>
+<div class="section page-title small-padding background-wrapper with-overlay black-overlay active-section">
+    <div class="background-image parallax-background" data-stellar-background-ratio="0.5"
+         style="background: url(http://demo.geniuspro.net/material/demo/demo/hero/big1.jpg) 0% 0%;">
     </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" style=""><h1>Vota la tua estate</h1>
 
+                <p class="">
+                    Professionally iterate efficient best practices and cooperative communities
+                </p>
+                <ol class="breadcrumb">
+                    <li><a ui-sref="home">Home</a></li>
+                    <li class="active">Chalet</li>
+                </ol>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div ng-include="'/views/templates/footer.html'"></div>
+<section class="section active-section grey-background">
+    <div class="container">
+        <div class="row">
+            <h3 class="widget-title">Chalet</h3>
+
+            <form>
+                <div class="form-group">
+                    <label for="nome">Nome</label>
+                    <input type="text" class="form-control" id="nome" ng-model="search.name" placeholder="nome">
+                </div>
+            </form>
+
+            <div class="col-md-3" ng-repeat="model in models">
+                <div class="widget">
+                    <ul class="recent-posts">
+                        <li class="clearfix" ng-repeat="item in model | filter:search">
+                            <img src="/img/logo-no-chalet.jpg" style="width: 80px; height: 80px;"
+                                 alt="{{item.name}}" ng-if="item.images.length==0">
+
+                            <img ng-src="/img/{{item.images[0].filename}}" style="width: 80px; height: 80px;"
+                                 alt="{{item.name}}" ng-if="item.images.length>0">
+                            <a href="/#/chalet/{{item.id}}" title="">{{item.name}}</a>
+                            <span>concessione n. {{item.licenseNumber}}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+<section class="section divider-section active-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="divider"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<div tabfooter></div>

@@ -1,0 +1,39 @@
+<div ng-include="'/views/templates/header.html'"></div>
+
+<div class="jumbotron">
+    <h1>lista chalet</h1>
+</div>
+
+<div class="row marketing">
+
+    <form class="form-inline">
+        <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" class="form-control" id="nome" ng-model="search.name" placeholder="nome">
+        </div>
+        <div class="form-group">
+            <label for="licenseNumber">Concessione num.</label>
+            <input type="text" class="form-control" id="licenseNumber" ng-model="search.licenseNumber"
+                   placeholder="conc. num.">
+        </div>
+    </form>
+
+
+    <div class="col-lg-6">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>conc. num.</th>
+                <th>nome</th>
+            </tr>
+            </thead>
+            <tr ng-repeat="item in model | filter:search">
+                <td>{{item.licenseNumber}}</td>
+                <td><a href="/#/chalet/{{item.id}}">{{item.name}}</a> <i class="fa fa-file-image-o"
+                                                                         ng-if="item.images.length>0"></i></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div ng-include="'/views/templates/footer.html'"></div>

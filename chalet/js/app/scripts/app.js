@@ -9,28 +9,26 @@
  * Main module of the application.
  */
 angular
-  .module('jsApp', [
-    'ngCookies',
-    'ngResource',
-    'ngSanitize',
-    'ui.router',
-    'ngTouch'
-  ])
+    .module('jsApp', [
+        'ngCookies',
+        'ngResource',
+        'ngSanitize',
+        'ui.router',
+        'ngTouch'
+    ])
 
-  .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/');
-
-    $stateProvider
-
-      .state('home', {
-        url: '/',
-        templateUrl: 'views/home.html',
-        ncyBreadcrumb: {
-          label: 'Home page'
+    .filter('range', function () {
+        return function (input, total) {
+            total = parseInt(total);
+            for (var i = 0; i < total; i++)
+                input.push(i);
+            return input;
         }
-      })
+    })
 
+    .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+        $urlRouterProvider.otherwise('/');
 
-  }])
+    }])
 ;
 

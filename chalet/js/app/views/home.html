@@ -1,10 +1,87 @@
-<div ng-include="'/views/templates/header.html'"></div>
+<div tabheader></div>
 
-<div class="jumbotron">
-  <h1>home page</h1>
+<div class="section page-title small-padding background-wrapper with-overlay black-overlay active-section">
+    <div class="background-image parallax-background" data-stellar-background-ratio="0.5"
+         style="background: url(http://demo.geniuspro.net/material/demo/demo/hero/big1.jpg) 0% 0%;">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" style=""><h1>Vota la tua estate</h1>
+
+                <p class="">
+                    Professionally iterate efficient best practices and cooperative communities
+                </p>
+                <ol class="breadcrumb">
+                    <li class="active"><a href="#">Home</a></li>
+                    <!-- <li><a href="#">Library</a></li>
+                     <li class="active">Data</li>-->
+                </ol>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div class="row marketing">
-  link alle varie sezioni
-</div>
-<div ng-include="'/views/templates/footer.html'"></div>
+<section class="section active-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4" ng-repeat="item in model">
+                <div class="team-block">
+                    <a href="/#/chalet/{{item.id}}" title="" class="team-image text-center">
+
+                        <img src="/img/logo-no-chalet.jpg"
+                             alt="{{item.name}}" ng-if="item.images.length==0">
+
+                        <img ng-src="/img/{{item.images[0].filename}}"
+                             alt="{{item.name}}" ng-if="item.images.length>0">
+
+                        <span class="overlay">
+                                <i class="icon ti-check-box middle-content"></i>
+                        </span>
+                    </a>
+
+                    <p class="position">{{item.name}}</p>
+
+                    <h3>conc. nro. {{item.licenseNumber}}</h3>
+
+                    <p>{{item.address}} - {{item.city}} - {{item.province}}</p>
+                    <ul class="list-inline social-links text-center">
+                        <li><a href="#" title=""><i class="icon ti-facebook"></i></a></li>
+                        <li><a href="#" title=""><i class="icon ti-twitter"></i></a></li>
+                        <li><a href="#" title=""><i class="icon ti-google"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-12"><div class="space"></div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section divider-section active-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="divider"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="features" class="section active-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="heading-line big color-danger"></div>
+                <h2 class="lighter">Vota la tua estate: san benedetto del tronto.</h2>
+            </div>
+            <div class="col-md-3 col-md-offset-1">
+                <div class="heading-line color-info big"></div>
+                <p>Un gioco per turisti e residenti. Vogliamo la vostra preferenza sul vostro chalet preferito.</p>
+            </div>
+            <div class="col-md-3">
+                <div class="heading-line color-success big"></div>
+                <p>Tre voti in canna. Ed eleggi il tuo chalet preferito.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<div tabfooter></div>

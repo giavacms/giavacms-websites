@@ -1,0 +1,48 @@
+<div ng-include="'/views/templates/header.html'"></div>
+
+<div class="jumbotron">
+    <h1>home page</h1>
+</div>
+<div class="row marketing" ng-hide="true">
+    <div class="col-lg-6">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>conc. num.</th>
+                <th>nome</th>
+            </tr>
+            </thead>
+            <tr ng-repeat="item in model">
+                <td>{{item.licenseNumber}}</td>
+                <td><a href="/#/chalet/{{item.id}}">{{item.name}}</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6 col-md-4" ng-repeat="item in model">
+        <div class="thumbnail">
+            <img src="/img/votalatuaestate.jpg"
+                 alt="{{item.name}}" ng-if="item.images.length==0">
+
+            <img ng-src="/img/{{item.images[0].filename}}"
+                 alt="{{item.name}}" ng-if="item.images.length>0">
+            <br ng-show="item.images.length>0"/>
+
+            <div class="caption">
+                <p class="text-center">
+                    <b>{{item.name}} {{item.name.length}}</b><br/>
+                    <br ng-show="item.name.length < 21"/>
+                    <a href="/#/chalet/{{item.id}}" class="btn btn-primary" role="button">concessione
+                        {{item.licenseNumber}}</a>
+                </p>
+
+                <p class="text-center">
+                    <a href="/#/vota/{{item.licenseNumber}}" class="btn btn-default" role="button">vota</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ng-include="'/views/templates/footer.html'"></div>
