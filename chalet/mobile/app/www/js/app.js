@@ -48,7 +48,6 @@ angular.module('votalatuaestate',
         $stateProvider
 
             .state('app', {
-                url: '/app',
                 abstract: true,
                 templateUrl: 'templates/menu.html',
                 controller: 'AppCtrl'
@@ -56,7 +55,7 @@ angular.module('votalatuaestate',
 
             
             .state('app.home', {
-                url: '/home',
+                url: '/',
                 views: {
                     'menuContent': {
                         templateUrl: 'templates/home.html',
