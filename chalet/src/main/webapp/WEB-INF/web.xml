@@ -1,45 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
-	version="3.0">
-	<display-name>arteinsieme</display-name>
-	<security-constraint>
-		<web-resource-collection>
-			<web-resource-name>HtmlAuth</web-resource-name>
-			<description>application security constraints</description>
-			<!-- banner -->
-			<url-pattern>/api/v1/banners/*</url-pattern>
-			<url-pattern>/api/v1/bannertypes/*</url-pattern>
-			<!-- catalogue -->
-			<url-pattern>/api/v1/categories/*</url-pattern>
-			<url-pattern>/api/v1/products/*</url-pattern>
-			<url-pattern>/api/v1/features/*</url-pattern>
-			<!-- contest <url-pattern>/api/v1/call/*</url-pattern> <url-pattern>/api/v1/contest/*</url-pattern> -->
-			<!-- expo -->
-			<url-pattern>/api/v1/exhibitions/*</url-pattern>
-			<url-pattern>/api/v1/artists/*</url-pattern>
-			<url-pattern>/api/v1/participations/*</url-pattern>
-			<!-- resources -->
-			<url-pattern>/api/v1/resources/*</url-pattern>
-			<!-- richcontent -->
-			<url-pattern>/api/v1/richcontents/*</url-pattern>
-			<url-pattern>/api/v1/richcontenttypes/*</url-pattern>
-			<url-pattern>/api/v1/tags/*</url-pattern>
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+    <display-name>arteinsieme</display-name>
 
-			<http-method>POST</http-method>
-			<http-method>PUT</http-method>
-			<http-method>DELETE</http-method>
-		</web-resource-collection>
-		<auth-constraint>
-			<role-name>Manager</role-name>
-		</auth-constraint>
-	</security-constraint>
-	<login-config>
-		<auth-method>BASIC</auth-method>
-		<realm-name>ApplicationRealm</realm-name>
-	</login-config>
-	<security-role>
-		<role-name>Manager</role-name>
-	</security-role>
+    <context-param>
+        <param-name>jwtRoles</param-name>
+        <param-value>USER</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>jwtSecret</param-name>
+        <param-value>supersecret</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>jwtExpireTime</param-name>
+        <param-value>2592000</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>voteNumber</param-name>
+        <param-value>+3905221520065</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>tokenNumber</param-name>
+        <param-value>+390694801029</param-value>
+    </context-param>
+
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>HtmlAdaptor</web-resource-name>
+            <url-pattern>/private</url-pattern>
+            <url-pattern>/private/index.jsp</url-pattern>
+            <url-pattern>/private/index.jsf</url-pattern>
+            <url-pattern>/private/index.xhtml</url-pattern>
+            <http-method>GET</http-method>
+            <http-method>POST</http-method>
+        </web-resource-collection>
+    </security-constraint>
+
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>HtmlAuth</web-resource-name>
+            <description>application security constraints</description>
+            <!-- banner -->
+            <url-pattern>/api/v1/banners/*</url-pattern>
+            <url-pattern>/api/v1/bannertypes/*</url-pattern>
+            <!-- catalogue -->
+            <url-pattern>/api/v1/categories/*</url-pattern>
+            <url-pattern>/api/v1/products/*</url-pattern>
+            <url-pattern>/api/v1/features/*</url-pattern>
+            <!-- contest <url-pattern>/api/v1/call/*</url-pattern> <url-pattern>/api/v1/contest/*</url-pattern> -->
+            <!-- expo -->
+            <url-pattern>/api/v1/exhibitions/*</url-pattern>
+            <url-pattern>/api/v1/artists/*</url-pattern>
+            <url-pattern>/api/v1/participations/*</url-pattern>
+            <!-- resources -->
+            <url-pattern>/api/v1/resources/*</url-pattern>
+            <!-- richcontent -->
+            <url-pattern>/api/v1/richcontents/*</url-pattern>
+            <url-pattern>/api/v1/richcontenttypes/*</url-pattern>
+            <url-pattern>/api/v1/tags/*</url-pattern>
+
+            <http-method>POST</http-method>
+            <http-method>PUT</http-method>
+            <http-method>DELETE</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>Manager</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <login-config>
+        <auth-method>BASIC</auth-method>
+        <realm-name>ApplicationRealm</realm-name>
+    </login-config>
+    <security-role>
+        <role-name>Manager</role-name>
+    </security-role>
 
 </web-app>

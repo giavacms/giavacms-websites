@@ -10,6 +10,7 @@
   "moduleName": "votalatuaestate",
   "dependencies": {
     "angular-resource": "~1.4.3",
-    "angular-jwt": "~0.0.9"
+    "angular-jwt": "~0.0.9",
+    "angular-local-storage": "~0.2.2"
   }
 }

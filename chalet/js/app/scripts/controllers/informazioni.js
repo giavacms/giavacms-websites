@@ -2,7 +2,7 @@
 
 angular.module('jsApp')
 
-    .controller('Blog', ['$scope', 'BlogService', function ($scope, ChaletService) {
+    .controller('Informazioni', ['$scope', 'BlogService', function ($scope, ChaletService) {
 
         $scope.models = [];
 
@@ -15,12 +15,12 @@ angular.module('jsApp')
 
     .config(['$stateProvider', function ($stateProvider) {
         $stateProvider.
-            state('blog', {
-                url: '/blog',
-                controller: 'Blog',
-                templateUrl: 'views/blog.html',
+            state('informazioni', {
+                url: '/informazioni',
+                controller: 'Informazioni',
+                templateUrl: 'views/informazioni.html',
                 ncyBreadcrumb: {
-                    label: 'blog'
+                    label: 'informazioni'
                 }
             })
 

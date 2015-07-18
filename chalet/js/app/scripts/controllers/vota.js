@@ -15,9 +15,7 @@ angular.module('jsApp')
                 'ER1': 'il nome non puo\' essere vuoto.',
                 'ER2': 'il cognome non puo\' essere vuoto.',
                 'ER3': 'il numero di telefono non puo\' essere vuoto.',
-                'ER4': 'esiste gia\' un voto con stesso numero di telefono, nome, cognome.',
-                'ER5': 'esiste gia\' un voto con stesso numero di telefono.'
-            };
+                'ER4': 'puoi votare al massimo 3 volte al giorno.'};
 
             var timer = {};
 
@@ -70,13 +68,14 @@ angular.module('jsApp')
                 reqParams['entityPath'] = 'contest';
                 RsResource.create(reqParams, $scope.vote, function (success) {
                     $scope.sent = true;
+                    $scope.tocall = success.tocall;
                     console.log(JSON.stringify(success));
                     $scope.call = 'OK';
                     timer = $interval(function () {
                         var reqParams = {};
                         reqParams['host'] = APP_PROPERTIES.HOST;
                         reqParams['entityPath'] = 'contest';
-                        reqParams['id'] = $scope.vote.phone;
+                        reqParams['id'] = success.uid;
                         reqParams['entityPath2'] = 'confirmed';
                         RsResource.get(reqParams, $scope.vote, function (success) {
                             console.log(JSON.stringify(success));

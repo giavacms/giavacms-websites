@@ -3,12 +3,13 @@
 
 angular.module('votalatuaestate')
 
-    .factory('AuthenticationService', ['$rootScope', '$http', 'jwtHelper', 'StorageService', '$q', '$timeout', 'PROTOCOL', 'HOST', 'CONTEXT', '$log',
-        function ($rootScope, $http, jwtHelper, StorageService, $q, $timeout, PROTOCOL, HOST, CONTEXT, $log) {
+    .factory('AuthenticationService', ['$rootScope', '$http', 'jwtHelper', 'StorageService', '$q', '$timeout',
+        'APP_PROPERTIES', '$log',
+        function ($rootScope, $http, jwtHelper, StorageService, $q, $timeout, APP_PROPERTIES, $log) {
 
-            var protocol = PROTOCOL;
-            var host = HOST;
-            var context = CONTEXT;
+            var protocol = APP_PROPERTIES.PROTOCOL;
+            var host = APP_PROPERTIES.HOST;
+            var context = APP_PROPERTIES.CONTEXT;
 
             StorageService.get('info').then(
                 function (info) {

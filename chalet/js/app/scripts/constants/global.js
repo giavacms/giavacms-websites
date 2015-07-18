@@ -4,7 +4,7 @@
 angular.module('jsApp')
 
   .constant("APP_PROPERTIES", {
-    "HOST": "localhost:8080",
+    "HOST": "votalatua.estate",
     "PAGE": 1,
     "COUNT": 5
   });

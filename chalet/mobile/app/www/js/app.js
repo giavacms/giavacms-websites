@@ -8,8 +8,9 @@ angular.module('votalatuaestate',
     ['ionic',
         'ionic-material',
         'ionMdInput',
-        'ngResource'
-//        ,'angular-jwt'
+        'ngResource',
+        'LocalStorageModule',
+       ,'angular-jwt'
     ])
 
 
@@ -22,14 +23,37 @@ angular.module('votalatuaestate',
         }
     })
 
-        .config(['$compileProvider', function ($compileProvider) {
+    .config(['$compileProvider', function ($compileProvider) {
         $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|mailto|content|file|data):/);
     }])
 
     .config(['$logProvider', function ($logProvider) {
-        $logProvider.debugEnabled(false);
+        $logProvider.debugEnabled(true);
     }])
 
+
+    .run(['$rootScope', '$timeout', function ($rootScope, $timeout) {
+        //Be sure to cleanup the modal by removing it from the DOM
+        $rootScope.$on('$destroy', function () {
+            $rootScope.loginModal.remove();
+        })
+    }])
+
+    .run(['$rootScope', 'AuthenticationService', '$state', function ($rootScope, AuthenticationService, $state) {
+        $rootScope.$on('$stateChangeStart', function (e, to) {
+            if (to.name == 'app.login') {
+                return;
+            }
+            AuthenticationService.isLogged().then(
+                function (tokenPayload) {
+                    if (!tokenPayload) {
+                        e.preventDefault();
+                        $state.go('app.login');
+                    }
+                }
+            )
+        })
+    }])
 
     .run(function ($ionicPlatform) {
         $ionicPlatform.ready(function () {
