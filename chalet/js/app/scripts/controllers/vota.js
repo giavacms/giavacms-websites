@@ -75,7 +75,7 @@ angular.module('jsApp')
                         var reqParams = {};
                         reqParams['host'] = APP_PROPERTIES.HOST;
                         reqParams['entityPath'] = 'contest';
-                        reqParams['id'] = success.uid;
+                        reqParams['id'] = success.uuid;
                         reqParams['entityPath2'] = 'confirmed';
                         RsResource.get(reqParams, $scope.vote, function (success) {
                             console.log(JSON.stringify(success));

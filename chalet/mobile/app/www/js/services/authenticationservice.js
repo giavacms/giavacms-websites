@@ -3,9 +3,9 @@
 
 angular.module('votalatuaestate')
 
-    .factory('AuthenticationService', ['$rootScope', '$http', 'jwtHelper', 'StorageService', '$q', '$timeout',
+    .factory('AuthenticationService', ['$rootScope', '$http', 'jwtHelper', 'StorageService', '$q', '$interval',
         'APP_PROPERTIES', '$log',
-        function ($rootScope, $http, jwtHelper, StorageService, $q, $timeout, APP_PROPERTIES, $log) {
+        function ($rootScope, $http, jwtHelper, StorageService, $q, $interval, APP_PROPERTIES, $log) {
 
             var protocol = APP_PROPERTIES.PROTOCOL;
             var host = APP_PROPERTIES.HOST;
@@ -44,8 +44,12 @@ angular.module('votalatuaestate')
                     return StorageService.get('token').then(function (storedToken) {
                         if (storedToken && storedToken.length > 0) {
                             token = storedToken[0];
-                            tokenPayload = jwtHelper.decodeToken(token);
-                            logged = true;
+                            if (token) {
+                                tokenPayload = jwtHelper.decodeToken(token);
+                                logged = true;
+                            } else {
+                                logged = false;
+                            }
                         }
                         else {
                             logged = false;
@@ -77,7 +81,7 @@ angular.module('votalatuaestate')
                 },
 
                 register: function (phone, name, surname) {
-                    var url = protocol + '://' + host + '/' + context + '/api/v1/accounts';
+                    var url = protocol + '://' + host + '/api/v1/accounts';
                     $http.post(url, {
                         phone: phone,
                         name: name,
@@ -102,14 +106,15 @@ angular.module('votalatuaestate')
                 },
 
                 login: function (phone) {
-                    var url = protocol + '://' + host + '/' + context + '/api/v1/accounts/login';
+                    var url = protocol + '://' + host + '/api/v1/accounts/login';
                     $http.post(url, {
-                        login: phone
+                        phone: phone
                     }).success(function (data, status, headers, config) {
                         // this callback will be called asynchronously
                         // when the response is available
                         $log.debug(data);
                         uuid = data.uuid;
+                        tocall = data.tocall;
                         logged = false;
                         var storedToken = [];
                         storedToken.push(token);
@@ -125,7 +130,7 @@ angular.module('votalatuaestate')
 
 
                 confirm: function () {
-                    var url = protocol + '://' + host + '/' + context + '/api/v1/accounts/login/' + uuid + '/token';
+                    var url = protocol + '://' + host + '/api/v1/accounts/login/' + uuid + '/token';
                     $http.get(url).success(function (data, status, headers, config) {
                         // this callback will be called asynchronously
                         // when the response is available
@@ -153,7 +158,7 @@ angular.module('votalatuaestate')
                     });
                     //StorageService.set('token', []);
 
-                },
+                }
 
             };
 

@@ -36,9 +36,12 @@ angular.module('votalatuaestate')
             return reqParams;
         }
 
-        var getListSize = function (model) {
+        var getListSize = function () {
+            if (angular.isUndefined(model) || model.length == 0) {
+                model = init(model);
+            }
             return $q.when(model).then(function (data) {
-                return model.length;
+                return data.length;
             });
         }
 
@@ -49,7 +52,7 @@ angular.module('votalatuaestate')
             }
             if (angular.isUndefined(from) || Number(from) < 0)
                 from = 0;
-            if (angular.isUndefined(to) || to < 1 || to > getListSize(model))
+            if (angular.isUndefined(to) || to < 1 || to > getListSize())
                 to = 10;
             return $q.when(model).then(function (data) {
                 var slice = data.slice(from, to);
@@ -83,6 +86,7 @@ angular.module('votalatuaestate')
 
 
         return {
+            getListSize: getListSize,
             getList: getList,
             getElement: getElement,
             getRandom: getRandom

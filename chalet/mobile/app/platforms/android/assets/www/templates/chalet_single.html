@@ -1,0 +1,73 @@
+<!-- based on Profile.html -->
+
+<ion-view view-title="vota la tua estate: chalet">
+    <ion-content ng-class="{expanded:$scope.isExpanded}">
+
+        <!-- fascione con sfondo + avatar -->
+        <div class="hero slide-up" ng-style="{ 'background-image' : backgroundImage };">
+            <div class="content">
+                <div class="avatar" style="background-image: url('img/logo-no-chalet.jpg');"></div>
+                <h3><a class="dark-bg padding light">{{element.name}}</a></h3>
+                <br/>
+                <h4><a class="dark-bg padding light">{{element.preview}}</a></h4>
+            </div>
+        </div>
+
+        <!-- link rapidi -->
+        <div class="tabs tabs-dark tabs-icon-top static">
+            <a ui-sref="app.home" class="tab-item">
+                <i class="icon ion-home"></i> Home
+            </a>
+            <a ui-sref="app.chalet" class="tab-item">
+                <i class="icon ion-images"></i> Chalet
+            </a>
+        </div>
+
+        <h4 class="content padding double-padding-x">concessione: {{element.licenseNumber}}</h4>
+        <h6 class="content padding double-padding-x" ng-if="element.address">{{element.address}}</h6>
+        <h6 class="content padding double-padding-x">{{element.postalNumber}} {{element.city}} {{element.province}}</h6>
+
+		<!-- NOTA BENE: sezione following sostituita con sezione a-là activity... o magari gallery... cmq sono arrivato qui -->
+
+
+        <!-- mezza lista delle foto con indice pari -->
+        <div class="list half animate-fade-slide-in">
+
+            <div class="item"></div>
+
+            <!-- repeat delle foto della lista -->
+            <div class="card card-gallery item item-text-wrap" ng-repeat="image in element.images" ng-if="$index % 2 == 0">
+                <div class="ink dark-bg">
+                        <img class="full-image" ng-src="{{imgSrc(image.filename)}}"
+                             alt="Immagine {{$index}}" >
+                </div>
+                <div class="item tabs tabs-secondary tabs-icon-left">
+                </div>
+            </div>
+        </div>
+
+        <!-- mezza lista delle foto con indice dispari -->
+        <div class="list half animate-fade-slide-in">
+
+            <div class="item"></div>
+
+            <!-- repeat delle foto della lista -->
+            <div class="card card-gallery item item-text-wrap" ng-repeat="image in element.images" ng-if="$index % 2 == 1">
+                <div class="ink dark-bg">
+                    <img class="full-image" ng-src="{{imgSrc(image.filename)}}"
+                         alt="Immagine {{$index}}" >
+                </div>
+                <div class="item tabs tabs-secondary tabs-icon-left">
+                </div>
+            </div>
+        </div>
+
+    </ion-content>
+
+    <div class="button-bar social-login">
+        <a ng-click="vota()"
+           class="button button-small button-border icon-left button-calm-900">Vota
+        </a>
+    </div>
+
+</ion-view>
