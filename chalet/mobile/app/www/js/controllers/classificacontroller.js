@@ -25,32 +25,20 @@ angular.module('votalatuaestate')
 
                 // Set Motion
                 // angular.element(document.querySelector('#to-animate-fade-slide-in')).addClass('animate-fade-slide-in');
-                document.getElementById('to-animate-fade-slide-in').classList.toggle('animate-fade-slide-in');
-                IonicService.motion($scope, 'fadeSlideIn', '.animate-fade-slide-in', 700);
+                //document.getElementById('to-animate-fade-slide-in').classList.toggle('animate-fade-slide-in');
+                IonicService.motion($scope, 'fadeSlideInRight');
             });
 
             var imgSrc = function (src) {
                 if (src) {
-                    if (src.indexOf('http') === 0) {
+                    if (src.filename.indexOf('http') === 0) {
                         return src;
                     }
                     else {
-                        return APP_PROPERTIES.PROTOCOL + "://" + APP_PROPERTIES.HOST + APP_PROPERTIES.CONTEXT + "/img/" + src;
+                        return APP_PROPERTIES.PROTOCOL + "://" + APP_PROPERTIES.HOST + "/img/" + src;
                     }
                 }
             };
-
-            ChaletService.getList({}, 0, 0).then(function (chalets) {
-                chalets.forEach(function (chalet) {
-                    $scope.chaletIds[chalet.licenseNumber] = chalet.id;
-                    if (chalet.images && chalet.images.length > 0) {
-                        $scope.backgroundImages[chalet.licenseNumber] = "url('" + imgSrc(chalet.images[0]) + "')";
-                    }
-                    else {
-                        $scope.backgroundImages[chalet.licenseNumber] = "url('img/black-logo.jpg')";
-                    }
-                });
-            });
 
             // Set Ink
             IonicService.ink($scope);

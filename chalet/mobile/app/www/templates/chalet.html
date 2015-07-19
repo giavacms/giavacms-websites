@@ -1,11 +1,10 @@
 <!--  basato su Friends.html -->
 
-<ion-view view-title="Chalet">
+<ion-view view-title="vota la tua estate: chalet">
     <ion-content ng-class="{expanded:isExpanded}">
 
         <div class="content has-header">
 
-            <!-- lista completa, magari da paginare? magari no? -->
             <div class="list animate-fade-slide-in-right">
 
                 <!-- singolo chalet -->
@@ -38,7 +37,9 @@
 
     <!-- horror vacui -->
     <div class="button-bar social-login">
-        <a class="button button-small button-border button-assertive-900 ">&nbsp;
+        <a class="button button-small button-border button-assertive-900 " ng-click="previous()" ng-if="from > 0"><<
+        </a>
+        <a class="button button-small button-border button-assertive-900 " ng-click="next()" ng-if="from < max">>>
         </a>
     </div>
 

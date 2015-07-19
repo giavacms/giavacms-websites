@@ -1,6 +1,6 @@
 <!-- basato su Activity.html -->
 
-<ion-view view-title="Home">
+<ion-view view-title="vota la tua estate">
     <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in">
 
         <!-- mezza lista degli chalet con indice pari -->
@@ -20,13 +20,13 @@
                              alt="{{item.name}}" ng-if="item.images.length>0">
                     </a>
                 </div>
-                <div class="item tabs tabs-secondary tabs-icon-left">
+                <div class="item tabs tabs-secondary tabs-icon-left" ng-click="view(item.id)">
                     <!-- concessione -->
                     <a class="tab-item stable-bg positive-900">
-                        <span style="font-size: 2.5em; font-weight: bolder;">Numero {{item.licenseNumber}}</span>
+                        <span style="font-size: 2.5em; font-weight: bolder;">{{item.licenseNumber}}</span>
                     </a>
                     <!-- vota -->
-                    <a ui-sref="app.vota({id:item.id})" class="tab-item stable-bg assertive">
+                    <a class="tab-item stable-bg assertive">
                         <i class="icon ion-heart"></i>
                         <span style="font-size: 2.5em; font-weight: bolder;">Vota</span>
                     </a>
@@ -51,13 +51,13 @@
                              alt="{{item.name}}" ng-if="item.images.length>0">
                     </a>
                 </div>
-                <div class="item tabs tabs-secondary tabs-icon-left">
+                <div class="item tabs tabs-secondary tabs-icon-left" ng-click="view(item.id)">
                     <!-- concessione -->
                     <a class="tab-item stable-bg positive-900">
-                        <span style="font-size: 2.5em; font-weight: bolder;">Numero {{item.licenseNumber}}</span>
+                        <span style="font-size: 2.5em; font-weight: bolder;">{{item.licenseNumber}}</span>
                     </a>
                     <!-- vota -->
-                    <a ui-sref="app.vota({id:item.id})" class="tab-item stable-bg assertive">
+                    <a class="tab-item stable-bg assertive">
                         <i class="icon ion-heart"></i>
                         <span style="font-size: 2.5em; font-weight: bolder;">Vota</span>
                     </a>
@@ -67,11 +67,5 @@
 
 
     </ion-content>
-
-    <!-- vai alla list completa -->
-    <div class="button-bar social-login">
-        <a class="button button-small button-border button-assertive-900 ">&nbsp;
-        </a>
-    </div>
 
 </ion-view>

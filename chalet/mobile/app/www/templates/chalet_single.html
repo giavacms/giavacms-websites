@@ -1,6 +1,6 @@
 <!-- based on Profile.html -->
 
-<ion-view view-title="{{element.licenseNumber}}">
+<ion-view view-title="vota la tua estate: chalet">
     <ion-content ng-class="{expanded:$scope.isExpanded}">
 
         <!-- fascione con sfondo + avatar -->
@@ -19,12 +19,13 @@
                 <i class="icon ion-home"></i> Home
             </a>
             <a ui-sref="app.chalet" class="tab-item">
-                <i class="icon ion-images"></i> Elenco completo
+                <i class="icon ion-images"></i> Chalet
             </a>
         </div>
 
-        <h4 class="content padding double-padding-x">{{element.name}}</h4>
-        <h6 class="content padding double-padding-x">{{element.description}}</h6>
+        <h4 class="content padding double-padding-x">concessione: {{element.licenseNumber}}</h4>
+        <h6 class="content padding double-padding-x" ng-if="element.address">{{element.address}}</h6>
+        <h6 class="content padding double-padding-x">{{element.postalNumber}} {{element.city}} {{element.province}}</h6>
 
 		<!-- NOTA BENE: sezione following sostituita con sezione a-là activity... o magari gallery... cmq sono arrivato qui -->
 
@@ -63,9 +64,9 @@
 
     </ion-content>
 
-    <!-- horror vacui -->
     <div class="button-bar social-login">
-        <a class="button button-small button-border button-assertive-900 ">&nbsp;
+        <a ng-click="vota()"
+           class="button button-small button-border icon-left button-calm-900">Vota
         </a>
     </div>
 

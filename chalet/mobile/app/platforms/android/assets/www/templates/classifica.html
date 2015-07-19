@@ -1,0 +1,33 @@
+<!--  basato su Activity.html -->
+
+<ion-view view-title="vota la tua estate: classifica">
+    <ion-content ng-class="{expanded:isExpanded}" >
+
+        <div class="item card-item">Classifica aggiornata: {{paradeDate}}</div>
+
+        <div class="item card-item" ng-repeat="ranking in element.chaletRankings">
+
+            <div ui-sref="app.chalet_single({id:chaletIds[ranking.licenseNumber]})" class="card stable-bg ink ink-dark">
+                <div class="item item-avatar item-text-wrap">
+                    <span class="avatar" ng-style="{ 'background-image': backgroundImages[ranking.licenseNumber] }"></span>
+                    <strong>{{ranking.chaletName}}</strong>
+                    <div class="card-footer text-right assertive" style="font-size: 3em;">
+                        <i class="icon ion-heart assertive"></i> {{ranking.votes}}
+                        <div class="pull-left dark">
+                            <i class="icon ion-flag"></i> {{ranking.licenseNumber}}
+                        </div>
+                    </div>
+                    <br/>Posizione: {{ranking.position}}
+                </div>
+            </div>
+        </div>
+
+    </ion-content>
+
+    <!-- horror vacui -->
+    <div class="button-bar social-login">
+        <a class="button button-small button-border button-assertive-900 ">&nbsp;
+        </a>
+    </div>
+
+</ion-view>
