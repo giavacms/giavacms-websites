@@ -30,7 +30,11 @@
                 </div>
             </form>
 
-          <div class="col-md-3" ng-repeat="column in filteredModel" ng-if="$index == 0">
+          <hr/>
+          {{size}} chalets
+          <hr/>
+
+          <div class="col-md-3">
             <div class="widget">
               <ul class="recent-posts">
                 <li class="clearfix" ng-repeat="item in filteredModel" ng-if="$index % 4 == 0">
@@ -45,7 +49,7 @@
               </ul>
             </div>
           </div>
-          <div class="col-md-3" ng-repeat="column in filteredModel" ng-if="$index == 1">
+          <div class="col-md-3">
             <div class="widget">
               <ul class="recent-posts">
                 <li class="clearfix" ng-repeat="item in filteredModel" ng-if="$index % 4 == 1">
@@ -60,7 +64,7 @@
               </ul>
             </div>
           </div>
-          <div class="col-md-3" ng-repeat="column in filteredModel" ng-if="$index == 2">
+          <div class="col-md-3">
             <div class="widget">
               <ul class="recent-posts">
                 <li class="clearfix" ng-repeat="item in filteredModel" ng-if="$index % 4 == 2">
@@ -75,7 +79,7 @@
               </ul>
             </div>
           </div>
-          <div class="col-md-3" ng-repeat="column in filteredModel" ng-if="$index == 3">
+          <div class="col-md-3">
             <div class="widget">
               <ul class="recent-posts">
                 <li class="clearfix" ng-repeat="item in filteredModel" ng-if="$index % 4 == 3">

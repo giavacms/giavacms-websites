@@ -34,7 +34,7 @@ angular.module('jsApp')
       $scope.filteredModel = $filter('filter')($scope.model, $scope.search);
     }
 
-    ChaletService.getListSize({}).then(function (max) {
+    ChaletService.getListSize().then(function (max) {
       ChaletService.getList({}, 0, max).then(function(model) {
         $scope.model = model;
         $scope.filtra();
