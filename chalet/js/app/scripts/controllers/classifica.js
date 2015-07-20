@@ -2,11 +2,13 @@
 
 angular.module('jsApp')
 
-    .controller('Classifica', ['$scope', 'ClassificaService', function ($scope, ClassificaService) {
-        ClassificaService.getLast(function (element) {
-            $scope.element = element;
-        })
-    }])
+    .controller('Classifica', ['$scope', 'ClassificaService', 'ChaletService',
+        function ($scope, ClassificaService, ChaletService) {
+            ClassificaService.getLast(function (element) {
+                $scope.element = element;
+            });
+
+        }])
 
 
     .config(['$stateProvider', function ($stateProvider) {
