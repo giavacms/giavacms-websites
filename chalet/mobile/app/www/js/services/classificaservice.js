@@ -45,11 +45,7 @@ angular.module('votalatuaestate')
                     preference1: licenseNumber
                 };
 
-                var result = RsResource.create(reqParams, vote, function (success) {
-                    console.log(vote);
-                }, function (error) {
-                    console.log(error);
-                }).$promise;
+                var result = RsResource.create(reqParams, vote).$promise;
                 return result;
             }
 
