@@ -11,7 +11,7 @@
                 </p>
                 <ol class="breadcrumb">
                     <li><a href="#">Home</a></li>
-                    <li class="active">Informazioni</li>
+                    <li class="active">Cosa si vince</li>
                     <!--<li class="active">Data</li>-->
                 </ol>
             </div>
@@ -23,44 +23,13 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="content">
-                    <h3> Vota</h3>
-
-                    Vota per lo chalet che preferisci, e' facile e gratis!
-
-                    Parteciperai all'estrazione di premi settimanali (link) e deciderai
-                    quale stabilimento balneare vincera' l'edizione 2015 di "Vota la tua
-                    estate".
-                    Il vincitore si aggiudichera' una prestigiosa scultura
-                    dell'artista sambenedettese Marcello Sgattoni (foto)
-
-                    <h3>Come si fa</h3>
-
-                    Facilissimo:
-
-                    1. Scegli il tuo chalet preferito per servizi, cortesia, prezzi o
-                    semplicemente per simpatia
-
-                    2. Inserisci i tuoi dati e il tuo numero di telefono, poi fai uno
-                    squillo al numero indicato.
-
-                    Puoi esprimere fino a tre preferenze al giorno e ricorda di
-                    consultare la classifica! (link).
-
                     <h3>Cosa si vince</h3>
 
                     Ecco i premi che abbiamo scelto per te.
-                    (foto e descrizione)
-
+                    (foto e descrizione)<br/>
+                    <br/>
                     Non ti preoccupare, ti avviseremo attraverso un SMS al numero da te
-                    indicato.
-
-                    <h3> Consenso privacy</h3>
-
-                    Ho letto e do il consenso
-
-                    <h3>Motto</h3>
-
-                    Vota la tua estate, tanto è gratis. Anzi, rischi di vincere un premio.
+                    indicato.<br/>
                 </div>
             </div>
             <div class="col-md-3 col-md-offset-1">
@@ -79,7 +48,8 @@
                     <div class="widget">
                         <h3 class="widget-title">Voti</h3>
 
-                        <div class="progress-container clearfix" ng-repeat="item in element.chaletRankings | orderBy:'position'"
+                        <div class="progress-container clearfix"
+                             ng-repeat="item in element.chaletRankings | orderBy:'position'"
                              ng-if="$index <5">
                             <span class="progress-text pull-left">{{item.chaletName}}</span>
                             <span class="prgress-value pull-right">{{item.votes}}</span>

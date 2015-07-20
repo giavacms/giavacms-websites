@@ -13,12 +13,21 @@ angular.module('jsApp')
 
     .config(['$stateProvider', function ($stateProvider) {
         $stateProvider
-            .state('informazioni', {
-                url: '/informazioni',
+            .state('come-si-fa', {
+                url: '/come-si-fa',
                 controller: 'Informazioni',
-                templateUrl: 'views/informazioni.html',
+                templateUrl: 'views/come-si-fa.html',
                 ncyBreadcrumb: {
-                    label: 'informazioni'
+                    label: 'come-si-fa'
+                }
+            })
+
+            .state('cosa-si-vince', {
+                url: '/cosa-si-vince',
+                controller: 'Informazioni',
+                templateUrl: 'views/cosa-si-vince.html',
+                ncyBreadcrumb: {
+                    label: 'cosa-si-vince'
                 }
             })
 
@@ -27,7 +36,16 @@ angular.module('jsApp')
                 controller: 'Informazioni',
                 templateUrl: 'views/cookie-policy.html',
                 ncyBreadcrumb: {
-                    label: 'informazioni'
+                    label: 'cookie-policy'
+                }
+            })
+
+            .state('privacy', {
+                url: '/privacy',
+                controller: 'Informazioni',
+                templateUrl: 'views/privacy.html',
+                ncyBreadcrumb: {
+                    label: 'privacy'
                 }
             })
 

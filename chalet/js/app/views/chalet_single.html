@@ -32,6 +32,12 @@
                                  class="img-responsive border-radius"
                                  draggable="false">
                         </li>
+                        <li class="flex-active-slide" ng-if="element.images.length==0"
+                            style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 1; display: block; z-index: 2;">
+                            <img ng-src="/img/logo-no-chalet.jpg" alt="{{element.name}}"
+                                 class="img-responsive border-radius"
+                                 draggable="false">
+                        </li>
                     </ul>
 
                     <ol class="flex-control-nav flex-control-paging">
