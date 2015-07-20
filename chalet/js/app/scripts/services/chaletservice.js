@@ -82,6 +82,7 @@ angular.module('jsApp')
 
 
         return {
+            getListSize: getListSize,
             getList: getList,
             getElement: getElement,
             getRandom: getRandom
