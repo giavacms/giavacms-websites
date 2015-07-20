@@ -15,13 +15,15 @@ angular.module('jsApp')
                 'ER1': 'il nome non puo\' essere vuoto.',
                 'ER2': 'il cognome non puo\' essere vuoto.',
                 'ER3': 'il numero di telefono non puo\' essere vuoto.',
-                'ER4': 'puoi votare al massimo 3 volte al giorno.'};
+                'ER4': 'puoi votare al massimo 3 volte al giorno.'
+            };
 
             var timer = {};
 
             $scope.errors = [];
             $scope.call = '';
             $scope.confirmed = false;
+            $scope.firstTime = 'true';
 
             //ChaletService.getList(0, 0, 100, function (data) {
             //  $scope.chalets = data;
@@ -50,13 +52,16 @@ angular.module('jsApp')
                 $scope.errors = [];
                 $scope.call = '';
                 $scope.confirmed = false;
-                if (angular.isUndefined($scope.vote.name) || angular.isUndefined($scope.vote.surname) || angular.isUndefined($scope.vote.phone)) {
+                if (($scope.firstTime === 'true') && (angular.isUndefined($scope.vote.name) || angular.isUndefined($scope.vote.surname) || angular.isUndefined($scope.vote.phone))) {
                     $scope.errors.push('devi inserire nome, cognome e numero di telefono');
+                }
+                if (($scope.firstTime === 'false') && angular.isUndefined($scope.vote.phone)) {
+                    $scope.errors.push('devi inserire numero di telefono');
                 }
                 if (angular.isUndefined($scope.vote.preference1) || $scope.vote.preference1 == '' || $scope.vote.preference1 == null) {
                     $scope.errors.push('non hai specificato la preferenza');
                 }
-                if (angular.isUndefined($scope.privacy) || ($scope.privacy != '1')) {
+                if (($scope.firstTime === 'true') && (angular.isUndefined($scope.privacy) || ($scope.privacy != '1'))) {
                     $scope.errors.push('devi accettare la privacy');
                 }
                 if ($scope.errors.length > 0) {
@@ -66,6 +71,9 @@ angular.module('jsApp')
                 var reqParams = {};
                 reqParams['host'] = APP_PROPERTIES.HOST;
                 reqParams['entityPath'] = 'contest';
+                if ($scope.firstTime == 'false') {
+                    reqParams['id'] = 'reVote';
+                }
                 RsResource.create(reqParams, $scope.vote, function (success) {
                     $scope.sent = true;
                     $scope.tocall = success.tocall;
