@@ -15,7 +15,9 @@ angular.module('jsApp')
                 'ER1': 'il nome non puo\' essere vuoto.',
                 'ER2': 'il cognome non puo\' essere vuoto.',
                 'ER3': 'il numero di telefono non puo\' essere vuoto.',
-                'ER4': 'puoi votare al massimo 3 volte al giorno.'
+                'ER4': 'puoi votare al massimo 3 volte al giorno.',
+                'ER5': 'non ci risultano voti con lo stesso numero.',
+                'ER6': 'abbiamo dei problemi. riprova piu\' tardi.'
             };
 
             var timer = {};
@@ -97,15 +99,17 @@ angular.module('jsApp')
                         }, function (error) {
                             console.log(JSON.stringify(error));
                         });
-                    }, 10000);
+                    }, 20000);
 
                 }, function (error) {
-                    console.log(error.data.msg);
-                    angular.forEach(errValues, function (value, key) {
-                        if (error.data.msg.indexOf(key) != -1) {
-                            $scope.errors.push(value);
-                        }
-                    });
+                    console.log(error);
+                    if (error.data && error.data.msg) {
+                        angular.forEach(errValues, function (value, key) {
+                            if (error.data.msg.indexOf(key) != -1) {
+                                $scope.errors.push(value);
+                            }
+                        });
+                    }
                 });
 
             }

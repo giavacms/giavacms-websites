@@ -43,7 +43,7 @@ angular.module('votalatuaestate')
             }
 
             $scope.vota = function () {
-                ClassificaService.vota($scope.element.id).then(function (result) {
+                ClassificaService.vota($scope.element.licenseNumber).then(function (result) {
                     console.log('result');
                 });
             }
