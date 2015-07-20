@@ -6,8 +6,8 @@ angular.module('votalatuaestate')
     // basato su profile
 
     .controller('ChaletSingleCtrl',
-    ['$scope', '$stateParams', 'ChaletService', 'IonicService', 'APP_PROPERTIES', 'ClassificaService',
-        function ($scope, $stateParams, ChaletService, IonicService, APP_PROPERTIES, ClassificaService) {
+    ['$scope', '$stateParams', 'ChaletService', 'IonicService', 'APP_PROPERTIES', 'ClassificaService', '$timeout',
+        function ($scope, $stateParams, ChaletService, IonicService, APP_PROPERTIES, ClassificaService, $timeout) {
 
             // Headers and co
             IonicService.expand($scope);
@@ -42,10 +42,29 @@ angular.module('votalatuaestate')
                 }
             }
 
+            $timeout(function () {
+                document.getElementById('fab-chalet-vota').classList.toggle('on');
+                document.getElementById('fab-chalet-picture').classList.toggle('on');
+            }, 500);
+
+            $scope.vote = {style: 'button-calm-900', message: 'VOTA IL TUO CHALET PREFERITO'};
+
             $scope.vota = function () {
-                ClassificaService.vota($scope.element.id).then(function (result) {
-                    console.log('result');
+                var votePromise = ClassificaService.vota($scope.element.licenseNumber);
+                votePromise.then(function (success_unused) {
+                    if (!$scope.vote.times) {
+                        $scope.vote.times = 1;
+                    }
+                    else {
+                        $scope.vote.times++;
+                    }
+                    $scope.vote.style = 'button-balanced';
+                    $scope.vote.message = 'GRAZIE PER AVER VOTATO' + ($scope.vote.times == 1 ? '' : $scope.vote.times == 2 ? ' DI NUOVO' : ' ANCORA' );
+                }, function (reason_unused) {
+                    $scope.vote.style = 'button-assertive';
+                    $scope.vote.message = 'HAI SUPERATO IL MASSIMO NUMERO DI VOTI PER GIORNATA';
                 });
+
             }
 
         }]);

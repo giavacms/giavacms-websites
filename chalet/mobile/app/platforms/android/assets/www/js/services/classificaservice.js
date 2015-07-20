@@ -32,7 +32,7 @@ angular.module('votalatuaestate')
                 });
             }
 
-            var vota = function (id) {
+            var vota = function (licenseNumber) {
                 var reqParams = {};
                 reqParams['host'] = APP_PROPERTIES.HOST;
                 reqParams['entityPath'] = "contest";
@@ -42,14 +42,10 @@ angular.module('votalatuaestate')
                     phone: AuthenticationService.getUsername(),
                     name: AuthenticationService.getFullname(),
                     surname: '',
-                    preference1: id
+                    preference1: licenseNumber
                 };
 
-                var result = RsResource.create(reqParams, vote, function (success) {
-                    console.log(vote);
-                }, function (error) {
-                    console.log(error);
-                }).$promise;
+                var result = RsResource.create(reqParams, vote).$promise;
                 return result;
             }
 
