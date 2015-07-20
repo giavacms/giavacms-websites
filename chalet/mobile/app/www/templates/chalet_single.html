@@ -27,7 +27,7 @@
         <h6 class="content padding double-padding-x" ng-if="element.address">{{element.address}}</h6>
         <h6 class="content padding double-padding-x">{{element.postalNumber}} {{element.city}} {{element.province}}</h6>
 
-		<!-- NOTA BENE: sezione following sostituita con sezione a-là activity... o magari gallery... cmq sono arrivato qui -->
+        <!-- NOTA BENE: sezione following sostituita con sezione a-là activity... o magari gallery... cmq sono arrivato qui -->
 
 
         <!-- mezza lista delle foto con indice pari -->
@@ -36,10 +36,11 @@
             <div class="item"></div>
 
             <!-- repeat delle foto della lista -->
-            <div class="card card-gallery item item-text-wrap" ng-repeat="image in element.images" ng-if="$index % 2 == 0">
+            <div class="card card-gallery item item-text-wrap" ng-repeat="image in element.images"
+                 ng-if="$index % 2 == 0">
                 <div class="ink dark-bg">
-                        <img class="full-image" ng-src="{{imgSrc(image.filename)}}"
-                             alt="Immagine {{$index}}" >
+                    <img class="full-image" ng-src="{{imgSrc(image.filename)}}"
+                         alt="Immagine {{$index}}">
                 </div>
                 <div class="item tabs tabs-secondary tabs-icon-left">
                 </div>
@@ -52,10 +53,11 @@
             <div class="item"></div>
 
             <!-- repeat delle foto della lista -->
-            <div class="card card-gallery item item-text-wrap" ng-repeat="image in element.images" ng-if="$index % 2 == 1">
+            <div class="card card-gallery item item-text-wrap" ng-repeat="image in element.images"
+                 ng-if="$index % 2 == 1">
                 <div class="ink dark-bg">
                     <img class="full-image" ng-src="{{imgSrc(image.filename)}}"
-                         alt="Immagine {{$index}}" >
+                         alt="Immagine {{$index}}">
                 </div>
                 <div class="item tabs tabs-secondary tabs-icon-left">
                 </div>
@@ -64,12 +66,15 @@
 
     </ion-content>
 
-	<button id="fab-chalet-vote" class="button button-fab button-fab-bottom-right expanded button-energized-900 drop"><i class="icon ion-heart"></i></button>
-	<button id="fab-chalet-picture" class="button button-fab button-fab-bottom-left expanded button-energized-900 drop"><i class="icon ion-camera"></i></button>
+    <button id="fab-chalet-picture" class="button button-fab button-fab-bottom-left button-energized-900 drop" ng-if="false"><i
+            class="icon ion-camera"></i></button>
+
+    <button id="fab-chalet-vota" class="button button-fab button-fab-bottom-right button-energized-900 drop" ng-click="vota()"><i
+            class="icon ion-heart"></i></button>
 
     <div class="button-bar social-login">
-        <a ng-click="vota()"
-           class="button button-small button-border icon-left button-calm-900">Vota
+        <a
+           class="button button-small button-border icon-left {{vote.style}}">{{vote.message}}
         </a>
     </div>
 

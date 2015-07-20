@@ -13,12 +13,14 @@ angular.module('votalatuaestate')
             // change this to true when login succeeds
             AuthenticationService.isLogged().then(function (success) {
                 $scope.loginOk = success;
+                $scope.unknown = false;
             });
 
             // use cordova to get it from device or leave user input it
             $scope.auth = {};
 
             $scope.login = function () {
+                $scope.unknown = false;
                 AuthenticationService.login($scope.auth.phone);
             }
 
@@ -42,7 +44,17 @@ angular.module('votalatuaestate')
                     timer = undefined;
                 }
                 $scope.loginOk = true;
+                $scope.unknown = false;
                 $state.go('app.home');
+            });
+
+            $scope.$on('login-failed', function () {
+                if (timer) {
+                    $interval.cancel(timer);
+                    timer = undefined;
+                }
+                $scope.loginOk = false;
+                $scope.unknown = true;
             });
 
 
