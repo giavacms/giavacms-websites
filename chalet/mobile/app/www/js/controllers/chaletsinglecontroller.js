@@ -6,8 +6,8 @@ angular.module('votalatuaestate')
     // basato su profile
 
     .controller('ChaletSingleCtrl',
-    ['$scope', '$stateParams', 'ChaletService', 'IonicService', 'APP_PROPERTIES', 'ClassificaService',
-        function ($scope, $stateParams, ChaletService, IonicService, APP_PROPERTIES, ClassificaService) {
+    ['$scope', '$stateParams', 'ChaletService', 'IonicService', 'APP_PROPERTIES', 'ClassificaService', '$timeout'
+        function ($scope, $stateParams, ChaletService, IonicService, APP_PROPERTIES, ClassificaService, $timeout) {
 
             // Headers and co
             IonicService.expand($scope);
@@ -42,6 +42,13 @@ angular.module('votalatuaestate')
                 }
             }
 
+			$timeout(function () {
+				document.getElementById('fab-chalet-vota').classList.toggle('on');
+				document.getElementById('fab-chalet-picture').classList.toggle('on');
+			}, 900);
+
+			$scope.vote = {};
+			
             $scope.vota = function () {
                 ClassificaService.vota($scope.element.licenseNumber).then(function (result) {
                     console.log('result');
