@@ -16,7 +16,7 @@ angular.module('jsApp')
                 'ER2': 'il cognome non puo\' essere vuoto.',
                 'ER3': 'il numero di telefono non puo\' essere vuoto.',
                 'ER4': 'puoi votare al massimo 3 volte al giorno.',
-                'ER5': 'non ci risultano voti con lo stesso numero.',
+                'ER5': 'non ci risultano voti con il numero indicato.',
                 'ER6': 'abbiamo dei problemi. riprova piu\' tardi.'
             };
 

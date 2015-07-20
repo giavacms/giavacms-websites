@@ -2,20 +2,18 @@
 
 angular.module('jsApp')
 
-    .controller('Informazioni', ['$scope', 'BlogService', function ($scope, ChaletService) {
+    .controller('Informazioni', ['$scope', 'ClassificaService', function ($scope, ClassificaService) {
 
-        $scope.models = [];
-
-        ChaletService.getList({}, 0, 19).then(function (data) {
-            $scope.models[0] = data;
-        });
+        ClassificaService.getLast(function (element) {
+            $scope.element = element;
+        })
 
     }])
 
 
     .config(['$stateProvider', function ($stateProvider) {
-        $stateProvider.
-            state('informazioni', {
+        $stateProvider
+            .state('informazioni', {
                 url: '/informazioni',
                 controller: 'Informazioni',
                 templateUrl: 'views/informazioni.html',
@@ -23,6 +21,16 @@ angular.module('jsApp')
                     label: 'informazioni'
                 }
             })
+
+            .state('cookie-policy', {
+                url: '/cookie-policy',
+                controller: 'Informazioni',
+                templateUrl: 'views/cookie-policy.html',
+                ncyBreadcrumb: {
+                    label: 'informazioni'
+                }
+            })
+
 
     }]);
 
