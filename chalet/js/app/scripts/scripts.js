@@ -139,6 +139,9 @@ angular
                 $(this).toggleClass('active');
               }
             });
+            $('.menu-item').on('click', function () {
+              $(this).closest('header').toggleClass('menu-open');
+            });
             var add_mm_class = function () {
               if ($(window).width() < 991) {
                 $('.menu').addClass('mobile-menu')

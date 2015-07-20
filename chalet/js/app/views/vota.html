@@ -43,7 +43,7 @@
                             <div class="radio-inline">
                                 <label>
                                     <input type="radio" name="optionsRadios" id="optionsRadios1" ng-model="firstTime"
-                                           value="true" checked>
+                                           value="true">
                                     Prima volta:
                                 </label>
                             </div>
@@ -60,7 +60,7 @@
 
                             <div class="col-sm-10">
                                 <input id="name" class="form-control" type="text" name="name" placeholder="Nome"
-                                       ng-model="vote.name" required>
+                                       ng-model="vote.name">
                             </div>
                         </div>
                         <div class="form-group" ng-show="firstTime  == 'true'">
@@ -70,7 +70,7 @@
                                 <input id="cognome" class="form-control" type="text" name="surname"
                                        placeholder="Cognome"
                                        ng-model="vote.surname"
-                                       required>
+                                        >
                             </div>
                         </div>
                         <div class="form-group">
@@ -91,7 +91,7 @@
                                 <input id="telefono" class="form-control" type="text" name="phone"
                                        placeholder="Numero di telefono con cui confermare il voto."
                                        ng-model="vote.phone"
-                                       required>
+                                        >
                             </div>
                         </div>
                         <div class="form-group" ng-show="firstTime == 'true'">
