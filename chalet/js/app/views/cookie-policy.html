@@ -173,7 +173,7 @@
                             <li class="list-group-item" ng-repeat="item in element.chaletRankings | orderBy:'position'"
                                 ng-if="$index <5">
                                 <span class="label label-info">{{item.position}}</span>
-                                <a href="/chalets/{{item.id}}" title="">{{item.chaletName}}</a>
+                                <a href="/#/chalet_licenseNumber/{{item.licenseNumber}}">{{item.chaletName}}</a>
                             </li>
                         </ul>
                     </div>
@@ -181,9 +181,11 @@
                     <div class="widget">
                         <h3 class="widget-title">Voti</h3>
 
-                        <div class="progress-container clearfix" ng-repeat="item in element.chaletRankings | orderBy:'position'"
+                        <div class="progress-container clearfix"
+                             ng-repeat="item in element.chaletRankings | orderBy:'position'"
                              ng-if="$index <5">
-                            <span class="progress-text pull-left">{{item.chaletName}}</span>
+                            <a href="/#/chalet_licenseNumber/{{item.licenseNumber}}"><span
+                                    class="progress-text pull-left">{{item.chaletName}}</span></a>
                             <span class="prgress-value pull-right">{{item.votes}}</span>
 
                             <div class="clearfix"></div>

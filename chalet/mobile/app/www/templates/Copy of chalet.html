@@ -12,7 +12,11 @@
                    ng-repeat="item in model">
 
                     <!-- immagine no -->
-                    <img src="/img/logo-no-chalet.jpg"
+<<<<<<< HEAD
+                    <img src="img/logo-no-chalet.jpg"
+=======
+                    <img src="{{imgSrc('/img/logo-no-chalet.jpg')}}
+>>>>>>> refs/remotes/origin/master
                          alt="{{item.name}}" ng-if="item.images.length==0">
                     <!-- immagine si -->
                     <img ng-src="{{imgSrc(item.images[0].filename)}}"
@@ -25,7 +29,9 @@
                     <p>{{item.preview}}</p>
 
                     <!-- boh -->
-                    <i class="icon ion-flag muted"></i>
+                    <span class="icon muted">{{item.licenseNumber}}
+                    <i class="padding-left ion-flag"></i>
+                    </span>
 
                 </a>
             </div>
