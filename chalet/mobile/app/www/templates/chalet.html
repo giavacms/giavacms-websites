@@ -12,7 +12,7 @@
                    ng-repeat="item in model">
 
                     <!-- immagine no -->
-                    <img src="/img/logo-no-chalet.jpg"
+                    <img src="{{imgSrc('/img/logo-no-chalet.jpg')}}
                          alt="{{item.name}}" ng-if="item.images.length==0">
                     <!-- immagine si -->
                     <img ng-src="{{imgSrc(item.images[0].filename)}}"

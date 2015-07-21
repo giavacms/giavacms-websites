@@ -31,18 +31,18 @@ angular.module('jsApp')
     .config(['$stateProvider', function ($stateProvider) {
 
         $stateProvider
-            .state('chalet_single', {
-                url: '/chalet/:id',
+            .state('chalet_id', {
+                url: '/chalet_id/:id',
                 controller: 'ChaletSingle',
                 templateUrl: 'views/chalet_single.html',
                 ncyBreadcrumb: {
                     label: 'chalet single'
                 }
             })
-            .state('chalet_single2', {
-                url: '/chalet2/:licenseNumber',
+            .state('chalet_licenseNumber', {
+                url: '/chalet_licenseNumber/:licenseNumber',
                 controller: 'ChaletSingle',
-                templateUrl: 'views/new/chalet_single.html',
+                templateUrl: 'views/chalet_single.html',
                 ncyBreadcrumb: {
                     label: 'chalet single licenseNumber'
                 }

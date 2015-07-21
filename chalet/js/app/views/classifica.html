@@ -27,8 +27,11 @@
             <div class="col-md-6">
                 <div class="widget">
                     <ul class="list-group">
-                        <li class="list-group-item" ng-repeat="item in element.chaletRankings | orderBy:'position'" ng-if="$index <50">
-                            <span class="label label-info">{{item.position}}</span> {{item.chaletName}} - conc. {{item.licenseNumber}}
+                        <li class="list-group-item" ng-repeat="item in element.chaletRankings | orderBy:'position'"
+                            ng-if="$index <50">
+                            <span class="label label-info">{{item.position}}</span>
+                            <a href="/#/chalet_licenseNumber/{{item.licenseNumber}}">{{item.chaletName}} - conc.
+                                {{item.licenseNumber}}</a>
                             <span class="badge"> {{item.votes}}</span>
                         </li>
                     </ul>
@@ -37,16 +40,19 @@
             <div class="col-md-6">
                 <div class="widget">
                     <ul class="list-group">
-                        <li class="list-group-item" ng-repeat="item in element.chaletRankings | orderBy:'position'" ng-if="$index >=50">
-                            <span class="label label-info">{{item.position}}</span> {{item.chaletName}} - conc. {{item.licenseNumber}}
+                        <li class="list-group-item" ng-repeat="item in element.chaletRankings | orderBy:'position'"
+                            ng-if="$index >=50">
+                            <span class="label label-info">{{item.position}}</span> <a
+                                href="/#/chalet_licenseNumber/{{item.licenseNumber}}">{{item.chaletName}} - conc.
+                            {{item.licenseNumber}}</a>
                             <span class="badge"> {{item.votes}}</span>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
-         <br/>
-            <h5 class="widget-title">aggiornata il {{element.data | date}}</h5>
+        <br/>
+        <h5 class="widget-title">aggiornata il {{element.data | date}}</h5>
     </div>
 </section>
 

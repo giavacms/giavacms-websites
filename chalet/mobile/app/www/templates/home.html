@@ -13,7 +13,7 @@
                         <!-- nome -->
                         <h2>{{item.name}}</h2>
                         <!-- immagine no -->
-                        <img class="full-image" src="/img/logo-no-chalet.jpg"
+                        <img class="full-image" src="{{imgSrc('/img/logo-no-chalet.jpg')}}"
                              alt="{{item.name}}" ng-if="item.images.length==0">
                         <!-- immagine si-->
                         <img class="full-image" ng-src="{{imgSrc(item.images[0].filename)}}"

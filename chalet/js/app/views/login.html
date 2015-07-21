@@ -11,7 +11,7 @@
                 </p>
                 <ol class="breadcrumb">
                     <li><a href="#">Home</a></li>
-                    <li class="active">Come si fa</li>
+                    <li class="active">Cosa si vince</li>
                     <!--<li class="active">Data</li>-->
                 </ol>
             </div>
@@ -23,20 +23,36 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="content">
-                     <h3>Come si fa</h3>
+                    <h3>Login</h3>
 
-                    Facilissimo:<br>
-                    <br>
-                    1. Scegli il tuo chalet preferito per servizi, cortesia, prezzi o
-                    semplicemente per simpatia<br>
-                    <br>
-                    2. Inserisci i tuoi dati e il tuo numero di telefono, poi fai uno
-                    squillo al numero indicato.<br>
-                    <br>
-                    <a ui-sref="vota">Puoi esprimere fino a tre preferenze al giorno</a> e ricorda di
-                    consultare la <a ui-sref="classifica">classifica!</a> .
-                    <br>
+                    <div class="form-group">
+                        <label for="telefono" class="col-sm-2 control-label">telefono</label>
 
+                        <div class="col-sm-10">
+                            <input id="telefono" class="form-control" type="text" name="phone"
+                                   placeholder="Numero di telefono con cui confermare il voto."
+                                   ng-model="vote.phone"
+                                    >
+                        </div>
+                    </div>
+
+                    <div class="text-center ">
+                        <button button type="submit" class="btn btn-primary" ng-click="send()" ng-hide="sent">Invia
+                            il
+                            voto
+                        </button>
+
+                        <button button type="submit" class="btn btn-default" ng-click="reset()" ng-hide="sent">
+                            Annulla
+                        </button>
+                        <button button type="submit" class="btn btn-default" ng-click="confirmed = true;"
+                                ng-if="false">
+                            Conferma
+                        </button>
+                    </div>
+
+
+                    <br/>
                 </div>
             </div>
             <div class="col-md-3 col-md-offset-1">
