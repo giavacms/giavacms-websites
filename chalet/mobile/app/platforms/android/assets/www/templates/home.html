@@ -1,70 +1,41 @@
 <!-- basato su Activity.html -->
 
 <ion-view view-title="vota la tua estate">
-    <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in">
+    <ion-content ng-class="{expanded:isExpanded}" >
 
         <!-- mezza lista degli chalet con indice pari -->
-        <div class="list half">
+        <div class="list animate-fade-slide-in">
 
-            <!-- repeat degli chalet della lista -->
-            <div class="card card-gallery item item-text-wrap" ng-repeat="item in model" ng-if="$index % 2 == 0">
-                <div class="ink dark-bg" ng-click="view(item.id)">
-                    <a>
-                        <!-- nome -->
-                        <h2>{{item.name}}</h2>
-                        <!-- immagine no -->
-                        <img class="full-image" src="/img/logo-no-chalet.jpg"
-                             alt="{{item.name}}" ng-if="item.images.length==0">
-                        <!-- immagine si-->
-                        <img class="full-image" ng-src="{{imgSrc(item.images[0].filename)}}"
-                             alt="{{item.name}}" ng-if="item.images.length>0">
-                    </a>
+                <!-- repeat degli chalet della lista -->
+                <div class="item padding card card-gallery item-text-wrap" ng-repeat="item in model">
+                    <div class="ink dark-bg" ng-click="view(item.id)">
+                        <a>
+                            <!-- nome -->
+                            <h2>{{item.name}}</h2>
+                            <!-- immagine no -->
+                            <img class="full-image" src="img/logo-no-chalet.jpg"
+                                 alt="{{item.name}}" ng-if="item.images.length==0">
+                            <!-- immagine si-->
+                            <img class="full-image" ng-src="{{imgSrc(item.images[0].filename)}}"
+                                 alt="{{item.name}}" ng-if="item.images.length>0" imageonload >
+                        </a>
+                    </div>
+                    <div class="item tabs tabs-secondary tabs-icon-left" ng-click="view(item.id)">
+                        <!-- concessione -->
+                        <a class="tab-item stable-bg positive-900">
+                            <i class="icon ion-flag"></i>
+                            <span style="font-size: 2.5em; font-weight: bolder;">{{item.licenseNumber}}</span>
+                        </a>
+                        <!-- vota -->
+                        <a class="tab-item stable-bg assertive">
+                            <span style="font-size: 2.5em; font-weight: bolder;">Vota</span>
+                            <i class="icon ion-heart"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="item tabs tabs-secondary tabs-icon-left" ng-click="view(item.id)">
-                    <!-- concessione -->
-                    <a class="tab-item stable-bg positive-900">
-                        <span style="font-size: 2.5em; font-weight: bolder;">{{item.licenseNumber}}</span>
-                    </a>
-                    <!-- vota -->
-                    <a class="tab-item stable-bg assertive">
-                        <i class="icon ion-heart"></i>
-                        <span style="font-size: 2.5em; font-weight: bolder;">Vota</span>
-                    </a>
-                </div>
+
             </div>
         </div>
-
-        <!-- mezza lista degli chalet con indice dispari -->
-        <div class="list half">
-
-            <!-- repeat degli chalet della lista -->
-            <div class="card card-gallery item item-text-wrap" ng-repeat="item in model" ng-if="$index % 2 == 1">
-                <div class="ink dark-bg" ng-click="view(item.id)">
-                    <a>
-                        <!-- nome -->
-                        <h2>{{item.name}}</h2>
-                        <!-- immagine no -->
-                        <img class="full-image" src="/img/logo-no-chalet.jpg"
-                             alt="{{item.name}}" ng-if="item.images.length==0">
-                        <!-- immagine si-->
-                        <img class="full-image" ng-src="{{imgSrc(item.images[0].filename)}}"
-                             alt="{{item.name}}" ng-if="item.images.length>0">
-                    </a>
-                </div>
-                <div class="item tabs tabs-secondary tabs-icon-left" ng-click="view(item.id)">
-                    <!-- concessione -->
-                    <a class="tab-item stable-bg positive-900">
-                        <span style="font-size: 2.5em; font-weight: bolder;">{{item.licenseNumber}}</span>
-                    </a>
-                    <!-- vota -->
-                    <a class="tab-item stable-bg assertive">
-                        <i class="icon ion-heart"></i>
-                        <span style="font-size: 2.5em; font-weight: bolder;">Vota</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-
 
     </ion-content>
 

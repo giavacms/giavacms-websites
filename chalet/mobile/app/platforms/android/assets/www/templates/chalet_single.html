@@ -9,7 +9,6 @@
                 <div class="avatar" style="background-image: url('img/logo-no-chalet.jpg');"></div>
                 <h3><a class="dark-bg padding light">{{element.name}}</a></h3>
                 <br/>
-                <h4><a class="dark-bg padding light">{{element.preview}}</a></h4>
             </div>
         </div>
 
@@ -28,6 +27,13 @@
         <h6 class="content padding double-padding-x">{{element.postalNumber}} {{element.city}} {{element.province}}</h6>
 
         <!-- NOTA BENE: sezione following sostituita con sezione a-là activity... o magari gallery... cmq sono arrivato qui -->
+
+
+        <!-- mezza lista delle foto con indice pari -->
+        <div class="list half animate-fade-slide-in" ng-if="false">
+            <div class="item"></div>
+            <div class="item" ng-repeat="tag in element.tags">{{tag}}</div>
+        </div>
 
 
         <!-- mezza lista delle foto con indice pari -->
@@ -66,15 +72,17 @@
 
     </ion-content>
 
-    <button id="fab-chalet-picture" class="button button-fab button-fab-bottom-left button-energized-900 drop" ng-if="false"><i
+    <button id="fab-chalet-picture" class="button button-fab button-fab-bottom-left button-energized-900 drop"
+            ng-if="false"><i
             class="icon ion-camera"></i></button>
 
-    <button id="fab-chalet-vota" class="button button-fab button-fab-bottom-right button-energized-900 drop" ng-click="vota()"><i
+    <button id="fab-chalet-vota" class="button button-fab button-fab-bottom-right button-energized-900 drop"
+            ng-click="vota()"><i
             class="icon ion-heart"></i></button>
 
     <div class="button-bar social-login">
         <a
-           class="button button-small button-border icon-left {{vote.style}}">{{vote.message}}
+                class="button button-small button-border icon-left {{vote.style}}">{{vote.message}}
         </a>
     </div>
 

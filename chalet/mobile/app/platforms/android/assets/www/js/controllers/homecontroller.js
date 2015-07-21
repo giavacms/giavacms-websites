@@ -21,6 +21,7 @@ angular.module('votalatuaestate')
                     $scope.model = data;
                     IonicService.motion($scope, 'pushDown', '.push-down');
                     IonicService.motion($scope, 'fadeSlideInRight', '.animate-fade-slide-in .item');
+                    //IonicService.motion($scope, 'blinds', '.animate-blinds * .item');
                 });
             }
 

@@ -1,0 +1,29 @@
+<!-- basato su Activity.html -->
+
+<ion-view view-title="vota la tua estate">
+    <ion-content ng-class="{expanded:isExpanded}">
+
+        <div class="list condensed-space animate-blinds no-padding">
+
+            <!-- repeat degli chalet della lista -->
+                <div class="card dark-bg in" ng-click="view(item.id)" ng-repeat="item in model">
+                    <a class="item clear-bg item-bg-image waves-effect waves-button waves-light has-mask-reverse" >
+                        <h2>{{item.name}}</h2>
+
+                        <p>                        <i class="icon ion-flag"></i>
+                            {{item.licenseNumber}}
+                        </p>
+                        <img src="img/logo-no-chalet.jpg"
+                             alt="{{item.name}}" ng-if="item.images.length==0">
+                        <!-- immagine si-->
+                        <img ng-src="{{imgSrc(item.images[0].filename)}}"
+                             alt="{{item.name}}" ng-if="item.images.length>0">
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+    </ion-content>
+
+</ion-view>

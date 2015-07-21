@@ -31,7 +31,7 @@ angular.module('votalatuaestate')
                         $scope.backgroundImages[chalet.licenseNumber] = "url('" + imgSrc(chalet.images[0]) + "')";
                     }
                     else {
-                        $scope.backgroundImages[chalet.licenseNumber] = "url('img/black-logo.jpg')";
+                        $scope.backgroundImages[chalet.licenseNumber] = "url('img/votalatuaestate_logo_black.jpg')";
                     }
                 });
             });
