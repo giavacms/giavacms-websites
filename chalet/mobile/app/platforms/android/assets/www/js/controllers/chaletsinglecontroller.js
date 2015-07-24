@@ -18,7 +18,7 @@ angular.module('votalatuaestate')
                 $scope.element = element;
 
 
-                $scope.backgroundImage = "url('img/black-logo.jpg')";
+                $scope.backgroundImage = "url('img/votalatuaestate_logo_black.jpg')";
                 if (element.images && element.images.length > 0) {
                     $scope.backgroundImage = "url('" + $scope.imgSrc(element.images[0]) + "')";
                 }
