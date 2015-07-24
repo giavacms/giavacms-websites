@@ -1,10 +1,10 @@
 angular
     .module('jsApp')
-    .run(function (    		) {
+    .run(function (    		$rootScope) {
 
-//        $rootScope.$on('$viewContentLoaded',
+        $rootScope.$on('$viewContentLoaded',
 
-        angular.element(document).ready(
+  //    angular.element(document).ready(
             function () {
                 console.log('dom is ready NOW');
 
