@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('jsApp')
-    .service('ChaletService', ['RsResource', 'APP_PROPERTIES', '$q', function (RsResource, APP_PROPERTIES, $q) {
+    .service('ChaletService', ['RsResource', 'APP_PROPERTIES', '$q', '$filter', function (RsResource, APP_PROPERTIES, $q, $filter) {
 
         var model = [];
         var element = {};
@@ -91,7 +91,7 @@ angular.module('jsApp')
             var reqParams = getReqParams();
             reqParams['id'] = 'all';
             var list = RsResource.query(reqParams, function (data) {
-                model = data;
+                model = $filter('orderBy')(data, 'name');
             }).$promise;
             return list;
         }

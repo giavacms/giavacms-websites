@@ -1,18 +1,16 @@
 <div class="section page-title small-padding background-wrapper with-overlay black-overlay active-section">
-    <div class="background-image parallax-background" data-stellar-background-ratio="0.5"
-         style="background: url(http://demo.geniuspro.net/material/demo/demo/hero/big1.jpg) 0% 0%;">
+    <div class="background-image parallax-background" data-stellar-background-ratio="0.5">
     </div>
     <div class="container">
         <div class="row">
             <div class="col-md-12" style=""><h1>Vota la tua estate</h1>
 
                 <p class="">
-                    Professionally iterate efficient best practices and cooperative communities
+                    Vota la tua estate
                 </p>
                 <ol class="breadcrumb">
                     <li><a ui-sref="home">Home</a></li>
                     <li class="active">Classifica</li>
-                    <!--<li class="active">Data</li>-->
                 </ol>
             </div>
         </div>
@@ -22,7 +20,13 @@
 <section class="section active-section grey-background">
     <div class="container">
         <div class="row">
-            <h3 class="widget-title">{{element.name}}</h3>
+            <div class="col-md-12">
+                <div class="service-block">
+                    <i class="icon large ti-view-list-alt"></i>
+                    <h1 class="lighter">Classifica delle {{element.name}}</h1>
+                    <div class="space hidden-sm hidden-xs"></div>
+                </div>
+            </div>
 
             <div class="col-md-6">
                 <div class="widget">
@@ -52,7 +56,6 @@
             </div>
         </div>
         <br/>
-        <h5 class="widget-title">aggiornata il {{element.data | date}}</h5>
     </div>
 </section>
 

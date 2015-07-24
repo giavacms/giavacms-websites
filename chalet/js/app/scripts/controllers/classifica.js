@@ -18,18 +18,14 @@ angular.module('jsApp')
                 url: '/classifica',
                 controller: 'Classifica',
                 templateUrl: 'views/classifica.html',
-                ncyBreadcrumb: {
-                    label: 'classifica'
-                }
+                title: 'Classifica'
             })
 
             .state('classifica2', {
                 url: '/classifica2',
                 controller: 'Classifica',
                 templateUrl: 'views/new/classifica.html',
-                ncyBreadcrumb: {
-                    label: 'classifica2'
-                }
+                title: 'Classifica'
             })
 
     }])

@@ -99,7 +99,7 @@ angular.module('jsApp')
                         }, function (error) {
                             console.log(JSON.stringify(error));
                         });
-                    }, 20000);
+                    }, 2000);
 
                 }, function (error) {
                     console.log(error);
@@ -127,18 +127,14 @@ angular.module('jsApp')
                 url: '/vota',
                 controller: 'Vota',
                 templateUrl: 'views/vota.html',
-                ncyBreadcrumb: {
-                    label: 'vota'
-                }
+                title: 'Vota'
             })
 
             .state('votami', {
                 url: '/vota/:licenseNumber',
                 controller: 'Vota',
                 templateUrl: 'views/vota.html',
-                ncyBreadcrumb: {
-                    label: 'vota'
-                }
+                title: 'Vota'
             })
 
     }])

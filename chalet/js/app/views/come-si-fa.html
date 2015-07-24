@@ -1,18 +1,16 @@
 <div class="section page-title small-padding background-wrapper with-overlay black-overlay active-section">
-    <div class="background-image parallax-background" data-stellar-background-ratio="0.5"
-         style="background: url(http://demo.geniuspro.net/material/demo/demo/hero/big1.jpg) 0% 0%;">
+    <div class="background-image parallax-background" data-stellar-background-ratio="0.5">
     </div>
     <div class="container">
         <div class="row">
             <div class="col-md-12" style=""><h1>Vota la tua estate</h1>
 
                 <p class="">
-                    Professionally iterate efficient best practices and cooperative communities
+                    Vota la tua estate
                 </p>
                 <ol class="breadcrumb">
-                    <li><a href="#">Home</a></li>
+                    <li><a ui-sref="home">Home</a></li>
                     <li class="active">Come si fa</li>
-                    <!--<li class="active">Data</li>-->
                 </ol>
             </div>
         </div>
@@ -23,28 +21,59 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="content">
-                     <h3>Come si fa</h3>
+                    <div class="col-md-12">
+                        <h1 class="lighter">Come si fa: facilissimo</h1>
 
-                    Facilissimo:<br>
-                    <br>
-                    1. Scegli il tuo chalet preferito per servizi, cortesia, prezzi o
-                    semplicemente per simpatia<br>
-                    <br>
-                    2. Inserisci i tuoi dati e il tuo numero di telefono, poi fai uno
-                    squillo al numero indicato.<br>
-                    <br>
-                    <a ui-sref="vota">Puoi esprimere fino a tre preferenze al giorno</a> e ricorda di
-                    consultare la <a ui-sref="classifica">classifica!</a> .
-                    <br>
+                        <div class="space large"></div>
+                    </div>
+                    <div class="col-md-2 text-center">
+                        <i class="icon large ti-medall"></i>
 
+                        <p class="uppercase-text">1. Scegli il tuo chalet</p>
+                    </div>
+                    <div class="col-md-2 text-center">
+                        <i class="icon large ti-pencil-alt"></i>
+
+                        <p class="uppercase-text">2. Inserisci i tuoi dati</p>
+                    </div>
+                    <div class="col-md-2 text-center">
+                        <i class="icon large ti-check"></i>
+
+                        <p class="uppercase-text">3. Vota... Vota... Vota...</p>
+                    </div>
+                    <div class="col-md-2 text-center">
+                        <i class="icon large ti-mobile"></i>
+
+                        <p class="uppercase-text">4. Chiama</p>
+                    </div>
+                    <div class="col-md-2 text-center">
+                        <i class="icon large ti-cup"></i>
+
+                        <p class="uppercase-text">5. Vinci</p>
+                    </div>
+                </div>
+                <div class="space large"></div>
+                <div class="col-md-12">
+                    <h4 class="lighter"><i class="ti-info-alt"></i>
+                        Scegli il tuo chalet preferito per servizi, cortesia, prezzi o semplicemente per simpatia.
+                        Inserisci i tuoi dati e il tuo numero di telefono, poi fai uno squillo al numero indicato.
+                    </h4>
+                    <h4 class="lighter"><i class="ti-check"></i>
+                        <a ui-sref="vota">Puoi esprimere fino a tre preferenze al giorno</a>.
+                    </h4>
+                    <h4 class="lighter"><i class="ti-list"></i>
+                        <a ui-sref="classifica">Ricorda di consultare la classifica!</a>
+                    </h4>
                 </div>
             </div>
+
             <div class="col-md-3 col-md-offset-1">
                 <div class="sidebar">
                     <div class="widget">
                         <h3 class="widget-title">Classifica</h3>
                         <ul class="list-group">
-                            <li class="list-group-item" ng-repeat="item in element.chaletRankings | orderBy:'position'"
+                            <li class="list-group-item"
+                                ng-repeat="item in element.chaletRankings | orderBy:'position'"
                                 ng-if="$index <5">
                                 <span class="label label-info">{{item.position}}</span>
                                 <a href="/#/chalet_licenseNumber/{{item.licenseNumber}}">{{item.chaletName}}</a>
@@ -72,8 +101,10 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
+</div>
 </div>
 
 <section class="section divider-section active-section">

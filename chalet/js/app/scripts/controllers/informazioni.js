@@ -17,36 +17,28 @@ angular.module('jsApp')
                 url: '/come-si-fa',
                 controller: 'Informazioni',
                 templateUrl: 'views/come-si-fa.html',
-                ncyBreadcrumb: {
-                    label: 'come-si-fa'
-                }
+                title: 'Come si fa'
             })
 
             .state('cosa-si-vince', {
                 url: '/cosa-si-vince',
                 controller: 'Informazioni',
                 templateUrl: 'views/cosa-si-vince.html',
-                ncyBreadcrumb: {
-                    label: 'cosa-si-vince'
-                }
+                title: 'Cosa si vince'
             })
 
             .state('cookie-policy', {
                 url: '/cookie-policy',
                 controller: 'Informazioni',
                 templateUrl: 'views/cookie-policy.html',
-                ncyBreadcrumb: {
-                    label: 'cookie-policy'
-                }
+                title: 'Cookie Policy'
             })
 
             .state('privacy', {
                 url: '/privacy',
                 controller: 'Informazioni',
                 templateUrl: 'views/privacy.html',
-                ncyBreadcrumb: {
-                    label: 'privacy'
-                }
+                title: 'Privacy'
             })
 
 
