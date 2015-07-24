@@ -224,9 +224,9 @@ angular
                     var sticky_header = function ($this) {
                         $(window).scroll(function () {
                             if (window.scrollY > 100 && !$('.mobile-toggle').is(":visible")) {
-                                $('#header').addClass('sticky');
+//                                $('#header').addClass('sticky');
                             } else {
-                                $('#header').removeClass('sticky');
+  //                              $('#header').removeClass('sticky');
                             }
                         });
                     }
