@@ -37,7 +37,7 @@
                         <li class="list-group-item" ng-repeat="item in element.chaletRankings | orderBy:'position'"
                             ng-if="$index <50">
                             <span class="label label-info">{{item.position}}</span>
-                            <a href="/#/chalet_licenseNumber/{{item.licenseNumber}}">{{item.chaletName}} - conc.
+                            <a href="/#/chalet_licenseNumber/{{item.licenseNumber}}">{{item.chaletName}} - conc. n.
                                 {{item.licenseNumber}}</a>
                             <span class="badge"> {{item.votes}}</span>
                         </li>
@@ -50,7 +50,7 @@
                         <li class="list-group-item" ng-repeat="item in element.chaletRankings | orderBy:'position'"
                             ng-if="$index >=50">
                             <span class="label label-info">{{item.position}}</span> <a
-                                href="/#/chalet_licenseNumber/{{item.licenseNumber}}">{{item.chaletName}} - conc.
+                                href="/#/chalet_licenseNumber/{{item.licenseNumber}}">{{item.chaletName}} - conc. n.
                             {{item.licenseNumber}}</a>
                             <span class="badge"> {{item.votes}}</span>
                         </li>
