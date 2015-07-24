@@ -12,7 +12,9 @@ angular
                   $('.resizeMe').addClass('bigFonts');
                   $('.resizeMeUp').addClass('bigFontsUpperCase');
               }
-    	  });
+          	console.log('go to top');
+          	$('html, body').animate({ scrollTop: 0 }, 'fast');
+        });
 
       angular.element(document).ready(
             function () {
