@@ -3,8 +3,17 @@ angular
     .run(function (    		$rootScope) {
 
         $rootScope.$on('$viewContentLoaded',
+        		function() {
+        	console.log('resize it');
+        	  if ($(window).width() < 991) {
+                  $('.resizeMe').removeClass('bigFonts');
+              } else {
+                  $('.resizeMe').addClass('bigFonts');
+              }
+    	  });
 
-  //    angular.element(document).ready(
+
+      angular.element(document).ready(
             function () {
                 console.log('dom is ready NOW');
 
