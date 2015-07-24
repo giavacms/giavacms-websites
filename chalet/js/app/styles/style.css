@@ -8,6 +8,15 @@ body {
     background-color: #ccc;
 }
 
+.bigFonts {
+    font-size: 2em;
+    font-size: 45px;
+    line-height: 48px;
+    margin-bottom: 11px;
+    letter-spacing: -1px;
+    font-weight: 400;
+}
+
 .small-text {
     font-size: 12px;
 }
