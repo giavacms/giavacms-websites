@@ -1,9 +1,8 @@
 angular
     .module('jsApp')
-    .run(function () {
+    .run(function (    		) {
 
-//    $rootScope
-        //    .$on('$viewContentLoaded',
+//        $rootScope.$on('$viewContentLoaded',
 
         angular.element(document).ready(
             function () {
