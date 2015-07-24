@@ -7,10 +7,10 @@ angular
         	console.log('resize it');
         	  if ($(window).width() < 991) {
                   $('.resizeMe').removeClass('bigFonts');
-                  $('.resizeMeUp').removeClass('upperCase');
+                  $('.resizeMeUp').removeClass('bigFontsUpperCase');
               } else {
                   $('.resizeMe').addClass('bigFonts');
-                  $('.resizeMeUp').addClass('upperCase');
+                  $('.resizeMeUp').addClass('bigFontsUpperCase');
               }
     	  });
 
@@ -159,9 +159,11 @@ angular
                             if ($(window).width() < 991) {
                                 $('.menu').addClass('mobile-menu')
                                 $('.resizeMe').removeClass('bigFonts');
+                                $('.resizeMeUp').removeClass('bigFontsUpperCase');
                             } else {
                                 $('.menu').removeClass('mobile-menu')
                                 $('.resizeMe').addClass('bigFonts');
+                                $('.resizeMeUp').addClass('bigFontsUpperCase');
                             }
                         }
                         add_mm_class();
