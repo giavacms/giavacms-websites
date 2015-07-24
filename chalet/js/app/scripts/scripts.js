@@ -1,6 +1,6 @@
 angular
     .module('jsApp')
-    .run(function (    		$rootScope) {
+    .run(function ($rootScope) {
 
         $rootScope.$on('$viewContentLoaded',
         		function() {
@@ -11,7 +11,6 @@ angular
                   $('.resizeMe').addClass('bigFonts');
               }
     	  });
-
 
       angular.element(document).ready(
             function () {
