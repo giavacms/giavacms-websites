@@ -54,6 +54,7 @@ angular.module('jsApp')
                 to = 10;
             return $q.when(model).then(function (data) {
                 var slice = data.slice(from, to);
+                slice = $filter('orderBy')(slice, 'name');
                 return $q.when(slice);
             });
         }
