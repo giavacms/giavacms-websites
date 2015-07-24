@@ -15,6 +15,7 @@ body {
     margin-bottom: 11px;
     letter-spacing: -1px;
     font-weight: 400;
+    text-transform: uppercase;
 }
 
 .small-text {
