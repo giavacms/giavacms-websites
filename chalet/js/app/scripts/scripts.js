@@ -7,8 +7,10 @@ angular
         	console.log('resize it');
         	  if ($(window).width() < 991) {
                   $('.resizeMe').removeClass('bigFonts');
+                  $('.resizeMeUp').removeClass('upperCase');
               } else {
                   $('.resizeMe').addClass('bigFonts');
+                  $('.resizeMeUp').addClass('upperCase');
               }
     	  });
 

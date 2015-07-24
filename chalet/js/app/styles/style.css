@@ -8,11 +8,14 @@ body {
     background-color: #ccc;
 }
 
+.upperCase {
+	text-transform: uppercase;
+}
+
 .bigFonts {
 	line-height: 48px;
 	margin-bottom: 11px;
 	font-weight: 400;
-	text-transform: uppercase;
 	letter-spacing: 0.5em;
 	font-size: 30px;
 	line-height: 1.8;
