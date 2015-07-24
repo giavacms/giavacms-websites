@@ -143,15 +143,16 @@ angular
                                 $(this).toggleClass('active');
                             }
                         });
-                        $('.resizeMe').toggleClass('bigFonts');
                         $('.menu-item').on('click', function () {
                             $(this).closest('header').toggleClass('menu-open');
                         });
                         var add_mm_class = function () {
                             if ($(window).width() < 991) {
                                 $('.menu').addClass('mobile-menu')
+                                $('.resizeMe').removeClass('bigFonts');
                             } else {
                                 $('.menu').removeClass('mobile-menu')
+                                $('.resizeMe').addClass('bigFonts');
                             }
                         }
                         add_mm_class();
