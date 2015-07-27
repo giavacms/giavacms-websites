@@ -69,7 +69,7 @@
                     <div class="team-block">
                         <a href="/#/chalet_id/{{item.id}}" title="" class="team-image text-center">
 
-                            <img src="/img/logo-no-chalet.jpg"
+                            <img src="/img/logo-no-chalet-239.jpg"
                                  alt="{{item.name}}" ng-if="item.images.length==0">
 
                             <img ng-src="/img/{{item.images[0].filename}}"
@@ -84,11 +84,16 @@
 
                         <h3>conc. n. {{item.licenseNumber}}</h3>
 
-                        <p>{{item.address}} - {{item.city}} - {{item.province}}</p>
+                        <p>{{item.address}} - {{item.city}}</p>
                         <ul class="list-inline social-links text-center">
-                            <li><a href="#" title=""><i class="icon ti-facebook"></i></a></li>
-                            <li><a href="#" title=""><i class="icon ti-twitter"></i></a></li>
-                            <li><a href="#" title=""><i class="icon ti-google"></i></a></li>
+
+                            <li ng-if="item.facebook"><a href="{{item.facebook}}" title="{{item.facebook}}"
+                                                         target="_blank"><i class="icon ti-facebook"></i></a></li>
+                            <li ng-if="item.website"><a href="{{item.website}}" title="{{item.website}}"
+                                                        target="_blank"><i
+                                    class="icon ti-desktop"></i></a></li>
+                            <li ng-if="item.google"><a href="{{item.google}}" title="{{item.google}}"
+                                                       target="_blank"><i class="icon ti-google"></i></a></li>
                         </ul>
                     </div>
                     <div class="col-md-12">

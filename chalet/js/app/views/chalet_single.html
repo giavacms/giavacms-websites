@@ -57,9 +57,13 @@
 
                 <p>
                 <ul class="list-inline social-links text-center">
-                    <li><a href="#" title=""><i class="icon ti-facebook"></i></a></li>
-                    <li><a href="#" title=""><i class="icon ti-twitter"></i></a></li>
-                    <li><a href="#" title=""><i class="icon ti-google"></i></a></li>
+                    <li ng-if="element.facebook"><a href="{{element.facebook}}" title="{{element.facebook}}"
+                                                    target="_blank"><i class="icon ti-facebook"></i></a></li>
+                    <li ng-if="element.website"><a href="{{element.website}}" title="{{element.website}}"
+                                                   target="_blank"><i
+                            class="icon ti-desktop"></i></a></li>
+                    <li ng-if="element.google"><a href="{{element.google}}" title="{{element.google}}"
+                                                  target="_blank"><i class="icon ti-google"></i></a></li>
                 </ul>
                 </p>
 
