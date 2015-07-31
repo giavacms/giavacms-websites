@@ -33,20 +33,8 @@ angular.module('jsApp')
 
     }])
 
-    $scope.pictures = {};
-    
-    $scope.uploadFile = function () {
-            console.log('file is ' + JSON.stringify(file));
-            var uploadUrl = "http://localhost:8080/api/v1/richcontents/1-agosto-ore-2130--le-marche-i-manicomi-i-matti-gli-amori/images";
-            var fileObj = {};
-            fileObj.name = $scope.name;
-            fileObj.description = $scope.description;
-            fileObj.file = $scope.myFile;
-            fileUpload.uploadFileToUrl(uploadUrl, fileObj);
-        };
 
-  .
-  config(['$stateProvider', function ($stateProvider) {
+  .config(['$stateProvider', function ($stateProvider) {
 
     $stateProvider
 
