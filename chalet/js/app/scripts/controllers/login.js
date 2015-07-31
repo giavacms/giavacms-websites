@@ -14,6 +14,9 @@ angular.module('jsApp')
 
       // change this to true when login succeeds
       AuthenticationService.isLogged().then(function (success) {
+        if ( success ) {
+          $state.go('profilo');
+        }
         $scope.loginOk = success;
         $scope.unknown = false;
       });
@@ -45,6 +48,7 @@ angular.module('jsApp')
           $interval.cancel(timer);
           timer = undefined;
         }
+        $state.go('profilo')
         $scope.loginOk = true;
         $scope.unknown = false;
       });
@@ -59,7 +63,7 @@ angular.module('jsApp')
       });
 
       $scope.goToRegister = function () {
-        $state.go('register');
+        $state.go('registrati');
       };
 
       $scope.phone = function () {

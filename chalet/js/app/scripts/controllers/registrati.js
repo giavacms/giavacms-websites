@@ -8,7 +8,7 @@ angular.module('jsApp')
   .controller('Registrati', ['$interval', '$log', '$scope', '$state', 'AuthenticationService',
     function ($interval, $log, $scope, $state, AuthenticationService) {
 
-      $scope.registration = {};
+      $scope.registration = { name: 'test'};
       $scope.privacy = false;
 
       $scope.register = function () {
@@ -16,7 +16,7 @@ angular.module('jsApp')
       }
 
       // try to register by means of the authentication service
-      $scope.numberToCall;
+      $scope.numbertocall;
 
       // change this to true when login succeeds
       $scope.loginOk = false;

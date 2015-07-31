@@ -11,86 +11,118 @@
         </p>
         <ol class="breadcrumb">
           <li><a ui-sref="home">Home</a></li>
-          <li class="active">Cosa si vince</li>
+          <li class="active">Registrati</li>
         </ol>
       </div>
     </div>
   </div>
 </div>
-<div class="section blog-section active-section">
+
+<section class="section active-section grey-background">
   <div class="container">
     <div class="row">
       <div class="col-md-8">
         <div class="content">
 
-          <h3>Registrati</h3>
-
           <form>
+
+            <h3>Registrati</h3>
 
             <div class="form-group">
               <label for="name" class="col-sm-2 control-label">Nome (*):</label>
 
               <div class="col-sm-10">
-                <input id="name" class="form-control" type="text" name="name" ng-change="unknown = false"
+                <input id="name" class="form-control" type="text" name="name"
                        placeholder="Inserisci il tuo nome..."
-                       ng-model="registration.name"
-                  >
+                       ng-model="registration.name"/>
               </div>
             </div>
+
             <div class="form-group">
               <label for="surname" class="col-sm-2 control-label">Cognome (*):</label>
 
               <div class="col-sm-10">
-                <input id="surname" class="form-control" type="text" name="surname" ng-change="unknown = false"
+                <input id="surname" class="form-control" type="text" name="surname"
                        placeholder="Inserisci il tuo cognome..."
-                       ng-model="registration.surname"
-                  >
+                       ng-model="registration.surname"/>
               </div>
             </div>
+
             <div class="form-group">
               <label for="telefono" class="col-sm-2 control-label">Telefono (*):</label>
 
               <div class="col-sm-10">
-                <input id="telefono" class="form-control" type="text" name="phone" ng-change="unknown = false"
+                <input id="telefono" class="form-control" type="text" name="phone"
                        placeholder="Numero di telefono da cui effettuare uno squillo (gratuito!) per eseguire il login."
-                       ng-model="registration.phone"
-                  >
+                       ng-model="registration.phone"/>
               </div>
             </div>
+
             <div class="form-group">
               <div class="col-sm-offset-1 col-sm-10">
                 <div class="checkbox">
                   <label>
                     <input type="checkbox" name="sendMeFreeTickets"
-                           ng-model="registration.sendMeFreeTickets">
+                           ng-model="registration.sendMeFreeTickets"/>
                     Vuoi partecipare all'estrazione dei premi? In caso di vittoria
                     riceverai un SMS!
                   </label>
                 </div>
               </div>
             </div>
+
             <div class="form-group">
               <div class="col-sm-offset-1 col-sm-10">
                 <div class="checkbox">
                   <label>
                     <input type="checkbox" name="privacy"
-                           ng-model="privacy">
+                           ng-model="privacy"/>
                     <b>Consenso al trattamento dei dati personali (cliccando si accettano tutti i
                       termini e le condizioni)</b>
-                    <textarea privacy/>
                   </label>
+<textarea class="form-control" rows="1" cols="100">Informativa ex art. 13 D.lgs. 196/2003
+
+Ciao,
+ti informiamo che il D.lgs. n. 196 del 30 giugno 2003 ("Codice in materia di protezione dei dati personali") prevede la tutela delle persone e di altri soggetti rispetto al trattamento dei dati personali.
+Secondo la normativa indicata, tale trattamento sarà improntato ai principi di correttezza, liceità e trasparenza e di tutela della tua riservatezza e dei tuoi diritti.
+Ai sensi dell'articolo 13 del D.lgs. n.196/2003, pertanto, ti forniamo le seguenti informazioni:
+
+1. I dati da te forniti verranno trattati per le seguenti finalità: ricezione della preferenza e comunicazioni;
+2. Il trattamento sarà effettuato con le seguenti modalità: in modo informatizzato;
+3. Il conferimento dei dati è obbligatorio per l'espressione della preferenza via telefono e l'eventuale rifiuto di fornire tali dati comporta l'impossibilità di esprimere il voto;
+4. I dati non saranno comunicati ad altri soggetti, né saranno oggetto di diffusione 
+
+5. Il titolare del trattamento è: Alicestudio di Menzietti Belinda (info@alicestudio.it)
+6. Il responsabile del trattamento è Belinda Menzietti;
+7. Il rappresentante del titolare nel territorio dello Stato è Belinda Menzietti;
+8. In ogni momento potrai esercitare i tuoi diritti nei confronti del titolare del trattamento, ai sensi dell'art.7 del D.lgs.196/2003, che per tua comodità riproduciamo integralmente:
+
+Decreto Legislativo n.196/2003, Art. 7 - Diritto di accesso ai dati personali ed altri diritti
+
+1. L'interessato ha diritto di ottenere la conferma dell'esistenza o meno di dati personali che lo riguardano, anche se non ancora registrati, e la loro comunicazione in forma intelligibile.
+2. L'interessato ha diritto di ottenere l'indicazione:
+a) dell'origine dei dati personali;
+b) delle finalità e modalità del trattamento;
+c) della logica applicata in caso di trattamento effettuato con l'ausilio di strumenti elettronici;
+d) degli estremi identificativi del titolare, dei responsabili e del rappresentante designato ai sensi dell'articolo 5, comma 2;
+e) dei soggetti o delle categorie di soggetti ai quali i dati personali possono essere comunicati o che possono venirne a conoscenza in qualità di rappresentante designato nel territorio dello Stato, di responsabili o incaricati.
+3. L'interessato ha diritto di ottenere:
+a) l'aggiornamento, la rettificazione ovvero, quando vi ha interesse, l'integrazione dei dati;
+b) la cancellazione, la trasformazione in forma anonima o il blocco dei dati trattati in violazione di legge, compresi quelli di cui non è necessaria la conservazione in relazione agli scopi per i quali i dati sono stati raccolti o successivamente trattati;
+c) l'attestazione che le operazioni di cui alle lettere a) e b) sono state portate a conoscenza, anche per quanto riguarda il loro contenuto, di coloro ai quali i dati sono stati comunicati o diffusi, eccettuato il caso in cui tale adempimento si rivela impossibile o comporta un impiego di mezzi manifestamente sproporzionato rispetto al diritto tutelato.
+4. L'interessato ha diritto di opporsi, in tutto o in parte:
+a) per motivi legittimi al trattamento dei dati personali che lo riguardano, ancorché pertinenti allo scopo della raccolta;
+b) al trattamento di dati personali che lo riguardano a fini di invio di materiale pubblicitario o di vendita diretta o per il compimento di ricerche di mercato o di comunicazione commerciale.</textarea>
                 </div>
               </div>
             </div>
 
-            {{privacy}} {{registration.name}} {{registration.surname}} {{registration.phone}}
-
             <!-- login fields and commands when not logged in -->
-            <div
-              ng-show="privacy && registration.name && registration.surname && registration.phone">
+            <div class="form-group">
 
               <!-- command to send the number and wait for ring -->
-              <button ng-hide="numbertocall" ng-click="register()" class="btn btn-primary">
+              <button ng-hide="numbertocall" ng-click="register()" class="btn btn-primary"
+                      ng-disabled="!privacy || !registration.name || !registration.surname || !registration.phone">
                 Invia i tuoi dati
               </button>
 
@@ -114,15 +146,17 @@
       </div>
     </div>
   </div>
+</section>
 
-  <section class="section divider-section active-section">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="divider"></div>
-        </div>
+<section class="section divider-section active-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="divider"></div>
       </div>
     </div>
-  </section>
-  <div tabfooter></div>
+  </div>
+</section>
+
+<div tabfooter></div>
 </div>

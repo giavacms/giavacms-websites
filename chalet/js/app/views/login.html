@@ -11,23 +11,23 @@
         </p>
         <ol class="breadcrumb">
           <li><a ui-sref="home">Home</a></li>
-          <li class="active">Cosa si vince</li>
+          <li class="active">Login</li>
         </ol>
       </div>
     </div>
   </div>
 </div>
-<div class="section blog-section active-section">
+
+<section class="section active-section grey-background">
   <div class="container">
     <div class="row">
       <div class="col-md-8">
         <div class="content">
-
-          <h3 ng-hide="loginOk">Login</h3>
-
-          <h3 ng-show="loginOk">Il tuo profilo</h3>
-
           <form>
+            <h3 ng-hide="loginOk">Login</h3>
+
+            <h3 ng-show="loginOk">Il tuo profilo</h3>
+
             <div class="form-group">
 
 
@@ -44,10 +44,11 @@
               </div>
 
               <!-- login fields and commands when not logged in -->
-              <div ng-hide="loginOk" ng-if="auth.phone">
+              <div ng-hide="loginOk">
 
                 <!-- command to send the number and wait for ring -->
-                <button ng-hide="numbertocall || unknown" ng-click="login()" class="btn btn-primary">
+                <button ng-hide="numbertocall || unknown" ng-click="login()" class="btn btn-primary"
+                        ng-disabled="!auth.phone">
                   Invia il tuo numero
                 </button>
 
@@ -69,9 +70,6 @@
                   <span class="ti-alert"></span>
                   <label class="control-label">Il tuo numero non risulta registrato</label>
                   <br/>
-                  <button button type="submit" class="btn btn-primary" ng-click="goToRegister()" ng-hide="sent">
-                    Registrati
-                  </button>
                 </div>
 
               </div>
@@ -90,24 +88,40 @@
                 </div>
               </div>
 
-
             </div>
 
           </form>
 
+          <form ng-if="!loginOk">
+            <br/>
+            <br/>
+
+            <h3>Non sei ancora registrato?</h3>
+            <br/>
+
+            <div class="form-group">
+              <!-- not registered? let's register -->
+              <button button type="submit" class="btn btn-primary" ng-click="goToRegister()" ng-hide="sent">
+                Registrati
+              </button>
+
+            </div>
+          </form>
         </div>
       </div>
     </div>
   </div>
+</section>
 
-  <section class="section divider-section active-section">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="divider"></div>
-        </div>
+<section class="section divider-section active-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="divider"></div>
       </div>
     </div>
-  </section>
-  <div tabfooter></div>
+  </div>
+</section>
+
+<div tabfooter></div>
 </div>
