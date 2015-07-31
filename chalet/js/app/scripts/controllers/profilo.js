@@ -39,7 +39,7 @@ angular.module('jsApp')
                         }
                         // ci sono dati. calcolo le pagine
                         else {
-                            $scope.listSize = RsService.getSize();
+                            $scope.listSize = PhotoService.getSize();
                             $scope.pages = [];
                             var p = 0;
                             for (var i = 1; i <= Number($scope.listSize); i += Number($scope.pageSize)) {
