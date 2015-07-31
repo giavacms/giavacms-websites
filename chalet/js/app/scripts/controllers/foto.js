@@ -9,7 +9,7 @@
  */
 angular.module('jsApp')
 
-  .controller('Profilo', ['$scope', '$interval', '$log', '$state', 'AuthenticationService', 'PhotoService',
+  .controller('Foto', ['$scope', '$interval', '$log', '$state', 'AuthenticationService', 'PhotoService',
     function ($scope, $interval, $log, $state, AuthenticationService, PhotoService) {
 
       // change this to true when login succeeds
@@ -36,12 +36,12 @@ angular.module('jsApp')
 
     $stateProvider
 
-      .state('profilo', {
-        url: '/profilo',
-        controller: 'Profilo',
-        templateUrl: 'views/profilo.html',
+      .state('foto', {
+        url: '/foto',
+        controller: 'Foto',
+        templateUrl: 'views/foto.html',
         ncyBreadcrumb: {
-          label: 'Profilo'
+          label: 'Foto'
         }
       })
 
