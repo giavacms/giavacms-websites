@@ -107,5 +107,15 @@ angular.module('jsApp')
           label: 'Login'
         }
       })
+      .state('logout', {
+        url: '/logout',
+        controller: ['AuthenticationService', function (AuthenticationService) {
+          AuthenticationService.logout();
+        }],
+        template: '',
+        ncyBreadcrumb: {
+          label: 'Logout'
+        }
+      })
 
   }]);
