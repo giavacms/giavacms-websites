@@ -26,7 +26,7 @@ angular.module('jsApp')
 
             $scope.model = {};
 
-            var orderBy = $scope.predicate + ($scope.reverse ? ' desc' : ' asc')
+            var orderBy = 'created desc';
             PhotoService.getList($scope.search, $scope.startRow, $scope.pageSize, orderBy).then(
                 // successo
                 function (data) {

@@ -9,12 +9,12 @@ angular.module('jsApp')
 
         var list = [];
         var size = 0;
-        var entityType = 'photo';
+        var entityPath = 'photos';
 
         var getList = function (search, startRow, pageSize, orderBy) {
             var reqParams = {};
             reqParams['host'] = host;
-            reqParams['entityType'] = entityType;
+            reqParams['entityPath'] = entityPath;
             reqParams['startRow'] = startRow;
             reqParams['pageSize'] = pageSize;
             if (orderBy) {
@@ -33,7 +33,7 @@ angular.module('jsApp')
         var getElement = function (id) {
             var reqParams = {};
             reqParams['host'] = host;
-            reqParams['entityType'] = entityType;
+            reqParams['entityPath'] = entityPath;
             reqParams['id'] = id;
             return RsResource.get(reqParams, function (data) {
                 return data;
@@ -43,7 +43,7 @@ angular.module('jsApp')
         var save = function (toTransfer) {
             var reqParams = {};
             reqParams['host'] = host;
-            reqParams['entityType'] = entityType;
+            reqParams['entityPath'] = entityPath;
             return RsResource.create(reqParams, toTransfer, function (data) {
                 return data;
             }).$promise;
@@ -53,7 +53,7 @@ angular.module('jsApp')
         var remove = function (toRemove, id) {
             var reqParams = {};
             reqParams['host'] = host;
-            reqParams['entityType'] = entityType;
+            reqParams['entityPath'] = entityPath;
             if (id) {
                 reqParams['id'] = id;
             }
