@@ -30,6 +30,7 @@
 
 </head>
 <body ng-app="jsApp">
+<a id="top"></a>
 
 <div>
 
@@ -65,6 +66,7 @@
                                 <li class="dropdown menu-item"><a ui-sref="vota">Vota</a></li>
                                 <li class="dropdown menu-item"><a ui-sref="come-si-fa">Come si fa</a></li>
                                 <li class="dropdown menu-item"><a ui-sref="cosa-si-vince">Cosa si vince</a></li>
+                                <li class="dropdown menu-item"><a ui-sref="regolamento">Regolamento</a></li>
                             </ul>
                         </div>
                     </div>
@@ -79,6 +81,8 @@
 
 <div ui-view></div>
 
+
+
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-cookies.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-resource.js"></script>
@@ -86,6 +90,7 @@
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-touch.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
 <script src="//code.angularjs.org/1.4.3/i18n/angular-locale_it-it.js"></script>
+
 
 <script src="scripts/app.js"></script>
 
@@ -120,6 +125,18 @@
 <script src="js/validator.min.js"></script>
 <script src="js/waypoints.min.js"></script>
 
+
 <script type="text/javascript" src="js/cookie.js"></script>
+
+<script>
+    (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-30883525-4', 'auto');
+</script>
+
+
+
 </body>
 </html>

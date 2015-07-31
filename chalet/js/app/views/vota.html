@@ -69,8 +69,7 @@
                         <div class="col-sm-10">
                             <input id="cognome" class="form-control" type="text" name="surname"
                                    placeholder="Cognome"
-                                   ng-model="vote.surname"
-                                    >
+                                   ng-model="vote.surname">
                         </div>
                     </div>
                     <div class="form-group">
@@ -171,17 +170,19 @@ b) al trattamento di dati personali che lo riguardano a fini di invio di materia
                             <li>se non chiamerai entro 5 minuti il tuo voto verra' annullato;</li>
                             <li>non e' prevista alcuna spesa;</li>
                             <li>al primo squillo la chiamata verra' terminata;</li>
-                            <li>la stessa persona non puo' votare piu' volte.</li>
+                            <li>puoi esprimere fino a tre preferenze al giorno.</li>
                         </ul>
                         Non ti risponde? O continua a squillare?<br/>
                         <b>Invia un sms con la tua preferenza (solo il numero della concessione) al seguente
                             numero: </b><br/>
-                        +39.3202041754
+                        +39 320 204 17 54
+                        <br/>
+                        <button type="submit" class="btn btn-primary" ng-click="reset()">Ricomincia</button>
                     </div>
 
                     <div ng-if="confirmed">
-                        <h3>Grazie per aver votato!</h3>
-                        <button type="submit" class="button" ng-click="reset()" ng-hide="sent">Vota Ancora
+                        <h3>Grazie per aver votato!</h3><br/>
+                        <button type="submit" class="btn btn-primary" ng-click="reset()">Vota Ancora
                         </button>
                     </div>
                     <div class="text-center ">

@@ -14,8 +14,19 @@ angular
         'ngResource',
         'ngSanitize',
         'ui.router',
-        'ngTouch'
-    ])
+        'ngTouch'])
+
+    .run(['$rootScope', '$location', '$window', function ($rootScope, $location, $window) {
+        $rootScope
+            .$on('$stateChangeSuccess',
+            function (event) {
+
+                if (!$window.ga)
+                    return;
+
+                $window.ga('send', 'pageview', {page: $location.path()});
+            });
+    }])
 
     .run(['$rootScope', '$state', '$stateParams',
         function ($rootScope, $state, $stateParams) {

@@ -41,6 +41,13 @@ angular.module('jsApp')
                 title: 'Privacy'
             })
 
+            .state('regolamento', {
+                url: '/regolamento',
+                controller: 'Informazioni',
+                templateUrl: 'views/regolamento.html',
+                title: 'Regolamento'
+            })
+
 
     }]);
 

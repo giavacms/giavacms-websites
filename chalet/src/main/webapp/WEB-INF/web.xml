@@ -21,12 +21,12 @@
 
     <context-param>
         <param-name>voteNumber</param-name>
-        <param-value>+3905221520065</param-value>
+        <param-value>+39 0522 152 00 65</param-value>
     </context-param>
 
     <context-param>
         <param-name>tokenNumber</param-name>
-        <param-value>+390694801029</param-value>
+        <param-value>+39 06 9480 10 29</param-value>
     </context-param>
 
 
