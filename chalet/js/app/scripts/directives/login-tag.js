@@ -11,7 +11,7 @@ angular.module('jsApp')
                 console.log('loginTag');
 
                 AuthenticationService.isLogged().then(function (success) {
-                    $scope.logged = successsuccess;
+                    $scope.logged = success;
                 });
 
                 $scope.$on('login-confirmed', function () {
