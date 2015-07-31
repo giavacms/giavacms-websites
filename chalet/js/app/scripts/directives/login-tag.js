@@ -8,16 +8,16 @@ angular.module('jsApp')
             replace: true,
             templateUrl: "views/layout/login-tag.html",
             controller: ['$scope', '$filter', '$document', '$state', function ($scope, $filter, $document, $state) {
-                console.log('tabHeader');
+                console.log('loginTag');
 
                 $scope.$on('login-confirmed', function () {
-                    console.log('tabHeader - login-confirmed');
+                    console.log('loginTag - login-confirmed');
                     $scope.logged = true;
                     $state.go('profilo')
                 });
 
                 $scope.$on('logout-complete', function () {
-                    console.log('tabHeader - logout-complete');
+                    console.log('loginTag - logout-complete');
                     $scope.logged = false;
                     $state.go('login')
                 });
