@@ -70,6 +70,7 @@ angular.module('jsApp')
           return tokenPayload.name;
         },
         getUsername: function () {
+          //console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
           return tokenPayload.username;
         },
         getExpiryDate: function () {

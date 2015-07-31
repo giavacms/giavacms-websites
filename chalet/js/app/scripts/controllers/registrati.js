@@ -41,7 +41,7 @@ angular.module('jsApp')
         $scope.numbertocall = AuthenticationService.getTocall();
         if ($scope.numbertocall) {
           $log.info('not logged');
-          timer = $interval(function () {
+          $rootScope.timer = $interval(function () {
             $log.info('registration timer is running...');
             AuthenticationService.confirm();
           }, 2000);

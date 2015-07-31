@@ -38,14 +38,17 @@ angular.module('jsApp')
       }
 
       // phone number might be in token
-      AuthenticationService.isLogged().then(function (success) {
-        $scope.withToken = success;
-        if (success) {
-          $scope.vote.phone = AuthenticationService.getUsername()
-          $scope.fullname = AuthenticationService.getFullname();
-          $scope.firstTime = 'false';
-        }
-      });
+      var checkAlreadyLogged = function () {
+        AuthenticationService.isLogged().then(function (success) {
+          $scope.withToken = success;
+          if (success) {
+            $scope.vote.phone = AuthenticationService.getUsername()
+            $scope.fullname = AuthenticationService.getFullname();
+            $scope.firstTime = 'false';
+          }
+        });
+      };
+      checkAlreadyLogged();
 
       var errValues = {
         'ER1': 'il nome non puo\' essere vuoto.',
@@ -82,6 +85,7 @@ angular.module('jsApp')
         cleanTimer();
         $location.hash('top');
         $anchorScroll();
+        checkAlreadyLogged();
       }
 
 
