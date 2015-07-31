@@ -11,10 +11,12 @@ angular.module('jsApp')
                 console.log('tabHeader');
 
                 $scope.$on('login-confirmed', function () {
+                    console.log('tabHeader - login-confirmed');
                     $scope.logged = true;
                 });
 
                 $scope.$on('logout-complete', function () {
+                    console.log('tabHeader - logout-complete');
                     $scope.logged = false;
                 });
 
