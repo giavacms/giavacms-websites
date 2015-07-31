@@ -5,10 +5,10 @@ angular.module('jsApp')
 
   // basato su LoginCtrl
 
-  .controller('Registrati', ['$interval', '$log', '$scope', '$state', 'AuthenticationService',
-    function ($interval, $log, $scope, $state, AuthenticationService) {
+  .controller('Registrati', ['$interval', '$log', '$rootScope', '$scope', '$state', 'AuthenticationService',
+    function ($interval, $log, $rootScope, $scope, $state, AuthenticationService) {
 
-      $scope.registration = { name: 'test'};
+      $scope.registration = {name: 'test'};
       $scope.privacy = false;
 
       $scope.register = function () {
@@ -21,13 +21,28 @@ angular.module('jsApp')
       // change this to true when login succeeds
       $scope.loginOk = false;
 
-      var timer = {};
+      // timer cleanup
+      var cleanTimer = function () {
+        if ($rootScope.timer) {
+          $interval.cancel($rootScope.timer);
+        }
+        $rootScope.timer = undefined;
+      }
+      // sempre al caricamento del controller
+      cleanTimer();
+      // sempre all'uscita dallo stato
+      $rootScope.$on('$stateChangeStart', function (ev, to, toParams, from, fromParams) {
+        if (from.name == 'registrati') {
+          cleanTimer();
+        }
+      });
 
       $scope.$on('registration-unconfirmed', function () {
         $scope.numbertocall = AuthenticationService.getTocall();
         if ($scope.numbertocall) {
           $log.info('not logged');
           timer = $interval(function () {
+            $log.info('registration timer is running...');
             AuthenticationService.confirm();
           }, 2000);
 
@@ -35,10 +50,7 @@ angular.module('jsApp')
       });
 
       $scope.$on('login-confirmed', function () {
-        if (timer) {
-          $interval.cancel(timer);
-          timer = undefined;
-        }
+        cleanTimer();
         $scope.loginOk = true;
         $state.go('login');
       });

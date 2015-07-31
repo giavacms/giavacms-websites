@@ -9,12 +9,12 @@
  */
 angular.module('jsApp')
 
-  .controller('Login', ['$scope', '$interval', '$log', '$state', 'AuthenticationService',
-    function ($scope, $interval, $log, $state, AuthenticationService) {
+  .controller('Login', ['$scope', '$interval', '$log', '$rootScope', '$state', 'AuthenticationService',
+    function ($scope, $interval, $log, $rootScope, $state, AuthenticationService) {
 
       // change this to true when login succeeds
       AuthenticationService.isLogged().then(function (success) {
-        if ( success ) {
+        if (success) {
           $state.go('profilo');
         }
         $scope.loginOk = success;
@@ -29,35 +29,45 @@ angular.module('jsApp')
         AuthenticationService.login($scope.auth.phone);
       }
 
+      // timer cleanup
+      var cleanTimer = function () {
+        if ($rootScope.timer) {
+          $interval.cancel($rootScope.timer);
+        }
+        $rootScope.timer = undefined;
+      }
+      // sempre al caricamento del controller
+      cleanTimer();
+      // sempre all'uscita dallo stato
+      $rootScope.$on('$stateChangeStart', function (ev, to, toParams, from, fromParams) {
+        if (from.name == 'login') {
+          cleanTimer();
+        }
+      });
+
       // try to login by means of the authentication service
       $scope.numbertocall;
-      var timer = {};
       $scope.$on('login-unconfirmed', function () {
         $scope.numbertocall = AuthenticationService.getTocall(function () {
         });
         if ($scope.numbertocall) {
           $log.info('not logged');
-          timer = $interval(function () {
+          $rootScope.timer = $interval(function () {
+            $log.info('login timer is running...');
             AuthenticationService.confirm();
           }, 2000);
         }
       });
 
       $scope.$on('login-confirmed', function () {
-        if (timer) {
-          $interval.cancel(timer);
-          timer = undefined;
-        }
+        cleanTimer();
         $state.go('profilo')
         $scope.loginOk = true;
         $scope.unknown = false;
       });
 
       $scope.$on('login-failed', function () {
-        if (timer) {
-          $interval.cancel(timer);
-          timer = undefined;
-        }
+        cleanTimer();
         $scope.loginOk = false;
         $scope.unknown = true;
       });

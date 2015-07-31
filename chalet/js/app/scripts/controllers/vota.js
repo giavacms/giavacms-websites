@@ -6,20 +6,21 @@ angular.module('jsApp')
     ['ChaletService', 'RsResource', 'APP_PROPERTIES', '$stateParams', '$state', '$scope', '$interval', '$location', '$anchorScroll', '$window', '$rootScope',
         function (ChaletService, RsResource, APP_PROPERTIES, $stateParams, $state, $scope, $interval, $location, $anchorScroll, $window, $rootScope) {
 
-            if (!$rootScope.timer) {
-                $interval.cancel($rootScope.timer);
-                $rootScope.timer = undefined;
-            } else {
-                $rootScope.timer = {};
+          // timer cleanup
+          var cleanTimer = function () {
+            if ($rootScope.timer) {
+              $interval.cancel($rootScope.timer);
             }
-
-
-            $rootScope.$on('$stateChangeStart', function (ev, to, toParams, from, fromParams) {
-                if (from.name == 'vota' && $rootScope.timer) {
-                    $interval.cancel($rootScope.timer);
-                    $rootScope.timer = undefined;
-                }
-            });
+            $rootScope.timer = undefined;
+          }
+          // sempre al caricamento del controller
+          cleanTimer();
+          // sempre all'uscita dallo stato
+          $rootScope.$on('$stateChangeStart', function (ev, to, toParams, from, fromParams) {
+            if (from.name == 'vota') {
+              cleanTimer();
+            }
+          });
 
 
             $scope.vote = {};
