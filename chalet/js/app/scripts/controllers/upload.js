@@ -27,17 +27,23 @@ angular.module('jsApp')
         $scope.chalets = data;
       });
 
-      $scope.upload = {};
+      $scope.image = {};
 
-      $scope.uploadFile = function () {
-        $log.debug('file is ' + JSON.stringify($scope.upload.image));
+      $scope.uploadImage = function () {
+        $log.debug('file is ' + JSON.stringify($scope.image));
         var uploadUrl = 'http://' + APP_PROPERTIES.HOST + '/api/v1/photos/chalet/' + $scope.upload.chaletId;
-        var fileObj = {};
-        fileObj.name = $scope.upload.chaletId + '_' + $scope.upload.image.name;
-        fileObj.description = 'Uploaded by ' + $scope.fullname + ' on ' + new Date().toString();
-        fileObj.file = $scope.upload.image.file;
-        SingleFileUploadService.uploadFileToUrl(uploadUrl, fileObj);
-      };
+        SingleFileUploadService.uploadFileToUrl(uploadUrl, $scope.image);
+      }
+
+      //$scope.uploadFile = function () {
+      //  $log.debug('file is ' + JSON.stringify($scope.upload.image));
+      //
+      //  var fileObj = {};
+      //  fileObj.name = $scope.upload.chaletId + '_' + $scope.upload.image.name;
+      //  fileObj.description = 'Uploaded by ' + $scope.fullname + ' on ' + new Date().toString();
+      //  fileObj.file = $scope.upload.image.file;
+      //  SingleFileUploadService.uploadFileToUrl(uploadUrl, fileObj);
+      //};
 
     }])
 
