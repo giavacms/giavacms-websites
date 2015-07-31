@@ -19,17 +19,17 @@ angular
     'angular-jwt'
   ])
 
-    .run(['$rootScope', '$location', '$window', function ($rootScope, $location, $window) {
-        $rootScope
-            .$on('$stateChangeSuccess',
-            function (event) {
+  .run(['$rootScope', '$location', '$window', function ($rootScope, $location, $window) {
+    $rootScope
+      .$on('$stateChangeSuccess',
+      function (event) {
 
-                if (!$window.ga)
-                    return;
+        if (!$window.ga)
+          return;
 
-                $window.ga('send', 'pageview', {page: $location.path()});
-            });
-    }])
+        $window.ga('send', 'pageview', {page: $location.path()});
+      });
+  }])
 
   .run(['$rootScope', '$state', '$stateParams',
     function ($rootScope, $state, $stateParams) {
@@ -61,6 +61,17 @@ angular
   .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
 
+  }])
+
+
+  .config(['jwtInterceptorProvider', '$httpProvider', function (jwtInterceptorProvider, $httpProvider) {
+
+    jwtInterceptorProvider.tokenGetter = function (StorageService) {
+      return StorageService.get('token');
+      //return "nn" ;
+    }
+
+    $httpProvider.interceptors.push('jwtInterceptor');
   }])
 
 
