@@ -8,7 +8,7 @@ angular
 		.module(
 				'votalatuaestate',
 				[ 'ionic', 'ionic-material', 'ionMdInput', 'ngResource',
-						'LocalStorageModule', , 'angular-jwt' ])
+						'LocalStorageModule', 'angular-jwt' ])
 
 		.filter('range', function() {
 			return function(input, total) {

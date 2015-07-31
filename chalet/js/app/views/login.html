@@ -1,103 +1,113 @@
 <div class="section page-title small-padding background-wrapper with-overlay black-overlay active-section">
-    <div class="background-image parallax-background" data-stellar-background-ratio="0.5">
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12" style="">
-                <div class="resizeMe">Vota la tua estate</div>
+  <div class="background-image parallax-background" data-stellar-background-ratio="0.5">
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12" style="">
+        <div class="resizeMe">Vota la tua estate</div>
 
-                <p class="">
-                    Vota la tua estate
-                </p>
-                <ol class="breadcrumb">
-                    <li><a ui-sref="home">Home</a></li>
-                    <li class="active">Cosa si vince</li>
-                </ol>
-            </div>
-        </div>
+        <p class="">
+          Vota la tua estate
+        </p>
+        <ol class="breadcrumb">
+          <li><a ui-sref="home">Home</a></li>
+          <li class="active">Cosa si vince</li>
+        </ol>
+      </div>
     </div>
+  </div>
 </div>
 <div class="section blog-section active-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <div class="content">
-                    <h3>Login</h3>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="content">
 
-                    <div class="form-group">
-                        <label for="telefono" class="col-sm-2 control-label">telefono</label>
+          <h3 ng-hide="loginOk">Login</h3>
 
-                        <div class="col-sm-10">
-                            <input id="telefono" class="form-control" type="text" name="phone"
-                                   placeholder="Numero di telefono con cui confermare il voto."
-                                   ng-model="vote.phone"
-                                    >
-                        </div>
-                    </div>
+          <h3 ng-show="loginOk">Il tuo profilo</h3>
 
-                    <div class="text-center ">
-                        <button button type="submit" class="btn btn-primary" ng-click="send()" ng-hide="sent">Invia
-                            il
-                            voto
-                        </button>
-
-                        <button button type="submit" class="btn btn-default" ng-click="reset()" ng-hide="sent">
-                            Annulla
-                        </button>
-                        <button button type="submit" class="btn btn-default" ng-click="confirmed = true;"
-                                ng-if="false">
-                            Conferma
-                        </button>
-                    </div>
+          <form>
+            <div class="form-group">
 
 
-                    <br/>
+              <!-- input when not logged in -->
+              <div ng-hide="loginOk">
+                <label for="telefono" class="col-sm-2 control-label">Il tuo numero di telefono</label>
+
+                <div class="col-sm-10">
+                  <input id="telefono" class="form-control" type="text" name="phone" ng-change="unknown = false"
+                         placeholder="Numero di telefono da cui effettuare uno squillo (gratuito!) per eseguire il login."
+                         ng-model="auth.phone"
+                    >
                 </div>
-            </div>
-            <div class="col-md-3 col-md-offset-1">
-                <div class="sidebar">
-                    <div class="widget">
-                        <h3 class="widget-title">Classifica</h3>
-                        <ul class="list-group">
-                            <li class="list-group-item" ng-repeat="item in element.chaletRankings | orderBy:'position'"
-                                ng-if="$index <5">
-                                <span class="label label-info">{{item.position}}</span>
-                                <a href="/#/chalet_licenseNumber/{{item.licenseNumber}}">{{item.chaletName}}</a>
-                            </li>
-                        </ul>
-                    </div>
+              </div>
 
-                    <div class="widget">
-                        <h3 class="widget-title">Voti</h3>
+              <!-- login fields and commands when not logged in -->
+              <div ng-hide="loginOk" ng-if="auth.phone">
 
-                        <div class="progress-container clearfix"
-                             ng-repeat="item in element.chaletRankings | orderBy:'position'"
-                             ng-if="$index <5">
-                            <a href="/#/chalet_licenseNumber/{{item.licenseNumber}}"><span
-                                    class="progress-text pull-left">{{item.chaletName}}</span></a>
-                            <span class="prgress-value pull-right">{{item.votes}}</span>
+                <!-- command to send the number and wait for ring -->
+                <button ng-hide="numbertocall || unknown" ng-click="login()" class="btn btn-primary">
+                  Invia il tuo numero
+                </button>
 
-                            <div class="clearfix"></div>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0"
-                                     aria-valuemax="100" style="width: 60%;"></div>
-                                <span class="sr-only">{{item.votes}}</span>
-                            </div>
-                        </div>
-                    </div>
+                <!-- command to ring -->
+                <div ng-show="numbertocall" class="text-center">
+                  <label class="control-label">
+                    Ora fai uno
+                    squillo al numero <a href="tel:{{numbertocall}}">{{numbertocall}}</a> per confermare il tuo numero!
+                  </label>
                 </div>
+                <div ng-show="numbertocall" class="text-center">
+                  <span class="ti-face-smile"></span>
+                  <label class="control-label">
+                    La telefonata e' gratuita </label>
+                </div>
+
+                <!-- command to ring -->
+                <div ng-show="unknown" class="text-center">
+                  <span class="ti-alert"></span>
+                  <label class="control-label">Il tuo numero non risulta registrato</label>
+                  <br/>
+                  <button button type="submit" class="btn btn-primary" ng-click="goToRegister()" ng-hide="sent">
+                    Registrati
+                  </button>
+                </div>
+
+              </div>
+
+              <!-- output when logged in -->
+              <div ng-show="loginOk">
+                <div class="col-sm-10">
+                  Benvenuto, <b>{{fullname()}}</b>
+                </div>
+                <div class="col-sm-10">
+                  Il numero di telefono con cui hai eseguito il login e': <b>{{phone()}}</b>
+                </div>
+                <div class="col-sm-10">
+                  <button class="btn btn-primary" ng-click="logout()" ng-hide="sent">Logout
+                  </button>
+                </div>
+              </div>
+
+
             </div>
+
+          </form>
+
         </div>
+      </div>
     </div>
+  </div>
+
+  <section class="section divider-section active-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="divider"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div tabfooter></div>
 </div>
-
-<section class="section divider-section active-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="divider"></div>
-            </div>
-        </div>
-    </div>
-</section>
-<div tabfooter></div>
