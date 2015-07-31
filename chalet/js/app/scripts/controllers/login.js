@@ -61,7 +61,6 @@ angular.module('jsApp')
 
       $scope.$on('login-confirmed', function () {
         cleanTimer();
-        $state.go('profilo')
         $scope.loginOk = true;
         $scope.unknown = false;
       });
@@ -86,10 +85,6 @@ angular.module('jsApp')
       $scope.logout = function () {
         AuthenticationService.logout();
       };
-
-      $scope.$on('logout-complete', function () {
-        $state.go('home');
-      });
 
     }])
 
