@@ -21,7 +21,7 @@
 
     <context-param>
         <param-name>voteNumber</param-name>
-        <param-value>+39 0522 152 00 65</param-value>
+        <param-value>+39 06 9480 1443;+39 06 9480 6802;+39 06 9480 1527;+39 06 9480 1571;+39 0522 152 0065</param-value>
     </context-param>
 
     <context-param>
