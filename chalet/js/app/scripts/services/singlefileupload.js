@@ -1,6 +1,6 @@
 angular.module('jsApp')
 
-    .service('SigleFileUploadService', ['$http', function ($http) {
+    .service('SingleFileUploadService', ['$http', function ($http) {
         this.uploadFileToUrl = function (uploadUrl, fileObj) {
             var fd = new FormData();
             angular.forEach(fileObj, function (value, key) {
