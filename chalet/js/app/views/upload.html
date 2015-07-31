@@ -33,7 +33,7 @@
               <label for="chalet" class="col-sm-2 control-label">Chalet </label>
 
               <div class="col-sm-10">
-                <select id="chalet" class="form-control" ng-model="upload.chaletId"
+                <select id="chalet" class="form-control" ng-model="upload.chaletId" ng-change="upload.done = false"
                         ng-options="c.id as c.name for c in chalets">
                   <option value="">scegli uno chalet</option>
                 </select>
@@ -44,12 +44,24 @@
               <label for="chalet" class="col-sm-2 control-label">Immagini </label>
 
               <div class="col-sm-10">
-                <input type="file" file-model="image.file"/>
+                <input type="file" file-model="image.file" />
                 <button class="btn btn-primary" ng-click="uploadImage()" ng-disabled="!upload.chaletId">carica le
                   tue foto!
                 </button>
               </div>
             </div>
+
+            <div ng-show="upload.done && upload.ok" class="text-center">
+              <span class="ti-face-smile"></span>
+              <label class="control-label">
+                Caricamento eseguito!</label>
+            </div>
+            <div ng-show="upload.done && !upload.ok" class="text-center">
+              <span class="ti-alert"></span>
+              <label class="control-label">
+                Errori nel caricamento. Riprova piu' tardi</label>
+            </div>
+
 
           </form>
         </div>
