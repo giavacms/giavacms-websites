@@ -54,9 +54,6 @@ angular.module('jsApp')
                     if (!$scope.model) {
                         $scope.message = 'Dati non disponibili.';
                     }
-                    $mdDialog.show(
-                        $mdDialog.alert().title('Errore').content('Dati non disponibili').ok('Ok')
-                    );
                 });
 
         }])
