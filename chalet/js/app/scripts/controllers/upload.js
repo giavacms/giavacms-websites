@@ -28,11 +28,22 @@ angular.module('jsApp')
       });
 
       $scope.image = {};
+      $scope.upload = {done: false, ok: false};
 
       $scope.uploadImage = function () {
+        $scope.upload.done = false;
+        $scope.upload.ok = false;
         $log.debug('file is ' + JSON.stringify($scope.image));
         var uploadUrl = 'http://' + APP_PROPERTIES.HOST + '/api/v1/photos/chalet/' + $scope.upload.chaletId;
-        SingleFileUploadService.uploadFileToUrl(uploadUrl, $scope.image);
+        SingleFileUploadService.uploadFileToUrl(uploadUrl, $scope.image).then(
+          function ok() {
+            $scope.upload.done = true;
+            $scope.upload.ok = true;
+          },
+          function error() {
+            $scope.upload.done = true;
+            $scope.upload.ok = false;
+          });
       }
 
       //$scope.uploadFile = function () {
