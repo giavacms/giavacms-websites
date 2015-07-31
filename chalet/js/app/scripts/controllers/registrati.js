@@ -8,8 +8,10 @@ angular.module('jsApp')
     .controller('Registrati', ['$interval', '$log', '$rootScope', '$scope', '$state', 'AuthenticationService',
         function ($interval, $log, $rootScope, $scope, $state, AuthenticationService) {
 
-            $scope.registration = {name: 'test'};
+            $scope.registration = {name: ''};
             $scope.privacy = false;
+
+            $scope.errors = [];
 
             $scope.register = function () {
                 AuthenticationService.register($scope.registration.phone, $scope.registration.name, $scope.registration.surname);
@@ -48,6 +50,7 @@ angular.module('jsApp')
 
                 }
             });
+
 
             $scope.$on('login-confirmed', function () {
                 cleanTimer();

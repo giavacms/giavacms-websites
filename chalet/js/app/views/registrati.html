@@ -120,6 +120,12 @@ b) al trattamento di dati personali che lo riguardano a fini di invio di materia
 
             <!-- login fields and commands when not logged in -->
             <div class="form-group">
+              <div ng-if="errors.length && !call">
+                <ul>
+                  <li ng-repeat="erro in errors track by $index"><b style="color: red;">{{erro}}</b>
+                  </li>
+                </ul>
+              </div>
 
               <!-- command to send the number and wait for ring -->
               <button ng-hide="numbertocall" ng-click="register()" class="btn btn-primary"
