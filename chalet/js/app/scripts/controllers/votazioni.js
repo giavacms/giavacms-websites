@@ -31,8 +31,8 @@ angular.module('jsApp')
         $stateProvider
 
             .state('votazioni', {
-                url: '/votazioni',
-                controller: 'votazioni',
+                url: '/profilo/votazioni',
+                controller: 'Votazioni',
                 templateUrl: 'views/votazioni.html',
                 ncyBreadcrumb: {
                     label: 'Votazioni'
