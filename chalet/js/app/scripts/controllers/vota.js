@@ -3,8 +3,24 @@
 angular.module('jsApp')
 
     .controller('Vota',
-    ['ChaletService', 'RsResource', 'APP_PROPERTIES', '$stateParams', '$state', '$scope', '$interval',
-        function (ChaletService, RsResource, APP_PROPERTIES, $stateParams, $state, $scope, $interval) {
+    ['ChaletService', 'RsResource', 'APP_PROPERTIES', '$stateParams', '$state', '$scope', '$interval', '$location', '$anchorScroll', '$window', '$rootScope',
+        function (ChaletService, RsResource, APP_PROPERTIES, $stateParams, $state, $scope, $interval, $location, $anchorScroll, $window, $rootScope) {
+
+            if (!$rootScope.timer) {
+                $interval.cancel($rootScope.timer);
+                $rootScope.timer = undefined;
+            } else {
+                $rootScope.timer = {};
+            }
+
+
+            $rootScope.$on('$stateChangeStart', function (ev, to, toParams, from, fromParams) {
+                if (from.name == 'vota' && $rootScope.timer) {
+                    $interval.cancel($rootScope.timer);
+                    $rootScope.timer = undefined;
+                }
+            });
+
 
             $scope.vote = {};
             if ($stateParams.licenseNumber) {
@@ -20,7 +36,6 @@ angular.module('jsApp')
                 'ER6': 'abbiamo dei problemi. riprova piu\' tardi.'
             };
 
-            var timer = {};
 
             $scope.errors = [];
             $scope.call = '';
@@ -41,15 +56,23 @@ angular.module('jsApp')
 
 
             $scope.reset = function () {
+                if ($window.ga) {
+                    $window.ga('send', 'event', 'vote', 'reset', $scope.vote.preference1);
+                }
                 $scope.errors = [];
                 $scope.call = '';
                 $scope.confirmed = false;
                 $scope.vote = {};
-                if (timer) {
-                    $interval.cancel(timer);
-                    timer = undefined;
+                $scope.sent = false;
+                if ($rootScope.timer) {
+                    $interval.cancel($rootScope.timer);
+                    $rootScope.timer = undefined;
                 }
+                $location.hash('top');
+                $anchorScroll();
             }
+
+
             $scope.send = function () {
                 $scope.errors = [];
                 $scope.call = '';
@@ -69,6 +92,9 @@ angular.module('jsApp')
                 if ($scope.errors.length > 0) {
                     return;
                 }
+                if ($window.ga) {
+                    $window.ga('send', 'event', 'vote', 'send', $scope.vote.preference1);
+                }
 
                 var reqParams = {};
                 reqParams['host'] = APP_PROPERTIES.HOST;
@@ -77,11 +103,14 @@ angular.module('jsApp')
                     reqParams['id'] = 'reVote';
                 }
                 RsResource.create(reqParams, $scope.vote, function (success) {
+                    $location.hash('top');
+                    $anchorScroll();
+
                     $scope.sent = true;
                     $scope.tocall = success.tocall;
                     console.log(JSON.stringify(success));
                     $scope.call = 'OK';
-                    timer = $interval(function () {
+                    $rootScope.timer = $interval(function () {
                         var reqParams = {};
                         reqParams['host'] = APP_PROPERTIES.HOST;
                         reqParams['entityPath'] = 'contest';
@@ -90,8 +119,8 @@ angular.module('jsApp')
                         RsResource.get(reqParams, $scope.vote, function (success) {
                             console.log(JSON.stringify(success));
                             if (success.msg == 'true') {
-                                $interval.cancel(timer);
-                                timer = undefined;
+                                $interval.cancel($rootScope.timer);
+                                $rootScope.timer = undefined;
                                 $scope.confirmed = true;
                                 $scope.vote = {};
                             }
@@ -118,8 +147,7 @@ angular.module('jsApp')
         }])
 
 
-    .
-    config(['$stateProvider', function ($stateProvider) {
+    .config(['$stateProvider', function ($stateProvider) {
 
         $stateProvider
 
