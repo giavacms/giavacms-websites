@@ -53,7 +53,7 @@ angular.module('jsApp')
     $stateProvider
 
       .state('upload', {
-        url: '/upload',
+        url: '/profilo/upload',
         controller: 'Upload',
         templateUrl: 'views/upload.html'
       })

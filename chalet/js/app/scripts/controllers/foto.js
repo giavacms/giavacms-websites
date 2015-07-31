@@ -37,7 +37,7 @@ angular.module('jsApp')
     $stateProvider
 
       .state('foto', {
-        url: '/foto',
+        url: '/profilo/foto',
         controller: 'Foto',
         templateUrl: 'views/foto.html',
         ncyBreadcrumb: {
