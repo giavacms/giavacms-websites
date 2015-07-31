@@ -26,44 +26,60 @@
 
                     <div class="space large"></div>
                 </div>
-                <div class="col-md-4 text-center">
-                    <i class="icon large ti-face-smile"></i>
 
-                    <h3 class="lighter no-padding-top">Foto</h3>
 
-                    <p>Carica le foto sul profilo del tuo chalet<br/>
-                        (<a ui-sref="upload">continua</a>)</p>
-                </div>
-                <div class="col-md-4 text-center">
-                    <i class="icon large ti-cup"></i>
+              <div ng-repeat="item in model">
+                {{item}}
+                <img ng-src="/foto/{{item.name}}" style="width: 80px; height: 80px;"
+                     alt="{{$index}} - {{item.chaletId}}" >
+        </div>
 
-                    <h3 class="lighter no-padding-top">Votazioni</h3>
+              <section layout="row" layout-sm="column" layout-align="center center" class="my-table-header">
 
-                    <p>Rivedi i tuoi voti, giorno per giorno.<br/>
-                        (<a ui-sref="votazioni">continua</a>)</p>
-                </div>
+                <span>{{message}}</span>
+                <span flex></span>
 
-            </div>
-            <div class="col-md-3 col-md-offset-1">
-                <div class="sidebar">
-                    <div class="widget">
-                        <h3 class="widget-title">Profilo</h3>
-                        <ul class="list-group">
-                            <li class="list-group-item">
-                                <span class="label label-info">nome</span>
-                                <a href="#"> {{fullname}}</a>
-                            </li>
-                            <li class="list-group-item">
-                                <span class="label label-info">telefono</span>
-                                <a href="#"> {{phone}}</a>
-                            </li>
+                <md-button ng-disabled="startRow == 0" ng-click="firstPage()" aria-label="First Page"
+                           class="md-primary md-hue-2">
+                  <md-icon md-font-icon="icon-skip-previous"></md-icon>
+                </md-button>
 
-                            <li class="list-group-item text-center">
-                                <a ui-sref="logout"> logout</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                <md-button ng-disabled="startRow == 0" ng-click="goToPage(currentPage-1)" aria-label="Previous Page"
+                           class="md-primary md-hue-2">
+                  <md-icon md-font-icon="icon-fast-rewind"></md-icon>
+                </md-button>
+
+
+                <md-button ng-repeat="p in pages track by $index" class="md-primary" ng-click="goToPage(p)"
+                           ng-disabled="currentPage==p">{{$index+1}}
+                </md-button>
+
+
+                <md-button ng-disabled="currentPage == pages.length || pages.length == 0" ng-click="goToPage(currentPage+1)"
+                           aria-label="Next Page"
+                           class="md-primary md-hue-2">
+                  <md-icon md-font-icon="icon-fast-forward"></md-icon>
+                </md-button>
+                <md-button ng-disabled="currentPage == pages.length  || pages.length == 0" ng-click="lastPage()"
+                           aria-label="Last Page"
+                           class="md-primary md-hue-2">
+                  <md-icon md-font-icon="icon-skip-next"></md-icon>
+                </md-button>
+
+                <span flex></span>
+                <span>Mostra:</span>
+                <md-select ng-model="pageSize" ng-change="rowsPerPage(pageSize)">
+                  <md-option value="1">1</md-option>
+                  <md-option value="5">5</md-option>
+                  <md-option value="10">10</md-option>
+                  <md-option value="25">25</md-option>
+                  <md-option value="50">50</md-option>
+                  <md-option value="100">100</md-option>
+                </md-select>
+
+              </section>
+
+
             </div>
         </div>
     </div>
