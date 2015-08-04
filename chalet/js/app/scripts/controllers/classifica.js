@@ -2,10 +2,11 @@
 
 angular.module('jsApp')
 
-    .controller('Classifica', ['$scope', 'ClassificaService', 'ChaletService',
-        function ($scope, ClassificaService, ChaletService) {
+    .controller('Classifica', ['$scope', 'ClassificaService', 'ChaletService', '$state',
+        function ($scope, ClassificaService, ChaletService, $state) {
             ClassificaService.getLast(function (element) {
                 $scope.element = element;
+                $state.current.title = 'Classifica del ' + $scope.element.name;
             });
 
         }])

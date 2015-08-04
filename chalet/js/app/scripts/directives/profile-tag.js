@@ -8,7 +8,7 @@ angular.module('jsApp')
             replace: true,
             templateUrl: "views/layout/profile-tag.html",
             controller: ['$scope', '$filter', '$document', function ($scope, $filter, $document) {
-                console.log('profileTag');
+                //console.log('profileTag');
 
                 $scope.$on('login-confirmed', function () {
                     $scope.logged = true;

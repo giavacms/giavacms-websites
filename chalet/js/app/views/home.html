@@ -68,7 +68,7 @@
 
                 <div class="col-md-4" ng-repeat="item in model">
                     <div class="team-block">
-                        <a href="/#/chalet_id/{{item.id}}" title="" class="team-image text-center">
+                        <a href="/#!/chalet_id/{{item.id}}" title="" class="team-image text-center">
 
                             <img src="/img/votalatuaestate_placeholder.png"
                                  alt="{{item.name}}" ng-if="item.images.length==0">
@@ -95,7 +95,7 @@
                                     class="icon ti-desktop"></i></a></li>
                             <li ng-if="item.google"><a href="{{item.google}}" title="{{item.google}}"
                                                        target="_blank"><i class="icon ti-google"></i></a></li>
-                            <li><a href="/#/vota/{{item.licenseNumber}}" title="vota {{item.name}} - conc. {{item.licenseNumber}}"><i
+                            <li><a href="/#!/vota/{{item.licenseNumber}}" title="vota {{item.name}} - conc. {{item.licenseNumber}}"><i
                                     class="icon ti-check"></i></a></li>
 
                         </ul>

@@ -3,22 +3,22 @@ angular
     .run(function ($rootScope) {
 
         $rootScope.$on('$viewContentLoaded',
-        		function() {
-        	console.log('resize it');
-        	  if ($(window).width() < 991) {
-                  $('.resizeMe').removeClass('bigFonts');
-                  $('.resizeMeUp').removeClass('bigFontsUpperCase');
-              } else {
-                  $('.resizeMe').addClass('bigFonts');
-                  $('.resizeMeUp').addClass('bigFontsUpperCase');
-              }
-          	console.log('go to top');
-          	$('html, body').animate({ scrollTop: 0 }, 'fast');
-        });
-
-      angular.element(document).ready(
             function () {
-                console.log('dom is ready NOW');
+                //console.log('resize it');
+                if ($(window).width() < 991) {
+                    $('.resizeMe').removeClass('bigFonts');
+                    $('.resizeMeUp').removeClass('bigFontsUpperCase');
+                } else {
+                    $('.resizeMe').addClass('bigFonts');
+                    $('.resizeMeUp').addClass('bigFontsUpperCase');
+                }
+                //console.log('go to top');
+                $('html, body').animate({scrollTop: 0}, 'fast');
+            });
+
+        angular.element(document).ready(
+            function () {
+                //console.log('dom is ready NOW');
 
 
                 (function ($) {
@@ -226,7 +226,7 @@ angular
                             if (window.scrollY > 100 && !$('.mobile-toggle').is(":visible")) {
 //                                $('#header').addClass('sticky');
                             } else {
-  //                              $('#header').removeClass('sticky');
+                                //                              $('#header').removeClass('sticky');
                             }
                         });
                     }

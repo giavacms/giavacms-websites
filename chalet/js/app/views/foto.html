@@ -1,79 +1,79 @@
 <div class="section page-title small-padding background-wrapper with-overlay black-overlay active-section">
-  <div class="background-image parallax-background" data-stellar-background-ratio="0.5">
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12" style="">
-        <div class="resizeMe">Vota la tua estate</div>
-
-        <p class="">
-          Vota la tua estate
-        </p>
-        <ol class="breadcrumb">
-          <li><a ui-sref="home">Home</a></li>
-          <li><a ui-sref="profilo">Profilo</a></li>
-          <li class="active">Foto</li>
-        </ol>
-      </div>
+    <div class="background-image parallax-background" data-stellar-background-ratio="0.5">
     </div>
-  </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" style="">
+                <div class="resizeMe">Vota la tua estate</div>
+
+                <p class="">
+                    Vota la tua estate
+                </p>
+                <ol class="breadcrumb">
+                    <li><a ui-sref="home">Home</a></li>
+                    <li><a ui-sref="profilo">Profilo</a></li>
+                    <li class="active">Foto</li>
+                </ol>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="section blog-section active-section">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8">
-        <div class="col-md-12">
-          <h2 class="lighter resizeMe">Le tue foto</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="col-md-12">
+                    <h2 class="lighter resizeMe">Le tue foto</h2>
 
-          <div class="space large"></div>
+                    <div class="space large"></div>
+                </div>
+
+                <div class="col-md-12">
+
+                    <div ng-repeat="item in model">
+                        <img ng-src="/photo/{{item.name}}" style="width: 80px; height: 80px;"
+                             alt="{{$index}} - {{item.chaletId}}">
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+
+                    <a ng-disabled="startRow == 0" ng-click="firstPage()" alt="vai all'inizio" title="vai all'inizio">
+                        <i class="icon ti-angle-double-left"></i></a>
+
+                    <a ng-disabled="startRow == 0" ng-click="goToPage(currentPage-1)" alt="precedente"
+                       title="precedente"> <i
+                            class="icon ti-angle-left"></i></a>
+
+
+                    <a ng-repeat="p in pages track by $index" ng-click="goToPage(p)" alt="{{$index+1}}"
+                       title="{{$index+1}}" ng-disabled="currentPage==p">{{$index+1}}</a>
+
+
+                    <a ng-disabled="currentPage == pages.length || pages.length == 0"
+                       ng-click="goToPage(currentPage+1)" alt="successiva"
+                       title="successiva"> <i
+                            class="icon  ti-angle-right"></i></a>
+
+
+                    <a ng-disabled="currentPage == pages.length  || pages.length == 0" ng-click="lastPage()"
+                       alt="vai alla fine" title="vai alla fine">
+                        <i class="icon  ti-angle-double-right"></i></a>
+
+
+                </div>
+            </div>
         </div>
-
-        <div class="col-md-12">
-
-          <div ng-repeat="item in model">
-            <img ng-src="/photo/{{item.name}}" style="width: 80px; height: 80px;"
-                 alt="{{$index}} - {{item.chaletId}}">
-          </div>
-        </div>
-
-        <div class="col-md-12">
-
-          <button ng-disabled="startRow == 0" ng-click="firstPage()"
-                  class="button button-full button-balanced">INIZIO
-          </button>
-
-          <button ng-disabled="startRow == 0" ng-click="goToPage(currentPage-1)"
-                  class="button button-full button-balanced">PRECEDENTE
-          </button>
-
-          <button ng-repeat="p in pages track by $index"
-                  class="button button-full button-balanced"
-                  ng-click="goToPage(p)"
-                  ng-disabled="currentPage==p">{{$index+1}}
-          </button>
-
-          <button ng-disabled="currentPage == pages.length || pages.length == 0"
-                  ng-click="goToPage(currentPage+1)"
-                  class="button button-full button-balanced">SUCCESSIVA
-          </button>
-
-          <button ng-disabled="currentPage == pages.length  || pages.length == 0" ng-click="lastPage()"
-                  class="button button-full button-balanced">FINE
-          </button>
-
-        </div>
-      </div>
     </div>
-  </div>
 </div>
 
 <section class="section divider-section active-section">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="divider"></div>
-      </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="divider"></div>
+            </div>
+        </div>
     </div>
-  </div>
 </section>
 <div tabfooter></div>

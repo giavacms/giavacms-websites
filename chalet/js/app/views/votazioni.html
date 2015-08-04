@@ -28,6 +28,18 @@
                     <div class="space large"></div>
                 </div>
 
+
+                <div class="col-md-6">
+                    <div class="widget">
+                        <ul class="list-group">
+                            <li class="list-group-item" ng-repeat="voto in model | orderBy:'-created'">
+                                <span class="label label-info">{{voto.created}}</span>
+                                <a href="/#!/chalet_licenseNumber/{{voto.preference1}}"> conc. {{voto.preference1}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
             <div class="col-md-3 col-md-offset-1">
                 <div class="sidebar">

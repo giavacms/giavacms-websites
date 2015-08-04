@@ -1,4 +1,3 @@
-
 <div class="section page-title small-padding background-wrapper with-overlay black-overlay active-section">
     <div class="background-image parallax-background" data-stellar-background-ratio="0.5">
     </div>
@@ -39,8 +38,7 @@
 
                     <h3 class="lighter no-padding-top">Premi</h3>
 
-                    <p>Ti lasceremo un piccolo ricordo di votalatuaestate e di San Benedetto del Tronto e
-                        votalatua.estate.</p>
+                    <p>Ti lasceremo un piccolo ricordo di Vota la tua Estate e di San Benedetto del Tronto.</p>
                 </div>
                 <div class="col-md-4 text-center">
                     <i class="icon large ti-cup"></i>
@@ -66,7 +64,7 @@
                             <li class="list-group-item" ng-repeat="item in element.chaletRankings | orderBy:'position'"
                                 ng-if="$index <5">
                                 <span class="label label-info">{{item.position}}</span>
-                                <a href="/#/chalet_licenseNumber/{{item.licenseNumber}}">{{item.chaletName}}</a>
+                                <a href="/#!/chalet_licenseNumber/{{item.licenseNumber}}">{{item.chaletName}}</a>
                             </li>
                         </ul>
                     </div>
@@ -77,7 +75,7 @@
                         <div class="progress-container clearfix"
                              ng-repeat="item in element.chaletRankings | orderBy:'position'"
                              ng-if="$index <5">
-                            <a href="/#/chalet_licenseNumber/{{item.licenseNumber}}"><span
+                            <a href="/#!/chalet_licenseNumber/{{item.licenseNumber}}"><span
                                     class="progress-text pull-left">{{item.chaletName}}</span></a>
                             <span class="prgress-value pull-right">{{item.votes}}</span>
 

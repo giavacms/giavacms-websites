@@ -67,9 +67,7 @@ angular.module('jsApp')
                 url: '/registrati',
                 controller: 'Registrati',
                 templateUrl: 'views/registrati.html',
-                ncyBreadcrumb: {
-                    label: 'Registrati'
-                }
+                title: 'Registrati'
             })
 
     }])

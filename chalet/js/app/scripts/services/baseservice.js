@@ -5,7 +5,7 @@ angular.module('jsApp')
 
     .factory('RsResource', function ($resource) {
 
-        return $resource('http://:host/api/v1/:entityPath/:id/:entityPath2/:id2', {
+        return $resource('//:host/api/v1/:entityPath/:id/:entityPath2/:id2', {
             host: '@host',
             entityPath: '@entityPath',
             id: '@id',

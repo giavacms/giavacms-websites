@@ -28,7 +28,10 @@ angular.module('jsApp')
                 url: '/chalet',
                 controller: 'Chalet',
                 templateUrl: 'views/chalet.html',
-                title: 'Chalet'
+                title: 'Vota il tuo Chalet di San Benedetto del Tronto',
+                web_url: '//votalatua.estate/#!/chalet',
+                description: 'Scegli il tuo chalet preferito per servizi, cortesia, prezzi o semplicemente per simpatia. Inserisci i tuoi dati e il tuo numero di telefono, poi fai uno squillo al numero indicato.',
+                image: '//votalatua.estate/img/logo-no-chalet.jpg'
             })
 
     }]);

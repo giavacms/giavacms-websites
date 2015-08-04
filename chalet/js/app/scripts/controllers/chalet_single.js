@@ -3,8 +3,8 @@
 angular.module('jsApp')
 
     .controller('ChaletSingle',
-    ['ChaletService', '$stateParams', '$state', '$scope', '$location',
-        function (ChaletService, $stateParams, $state, $scope, $location) {
+    ['ChaletService', '$stateParams', '$state', '$scope', '$location', '$rootScope',
+        function (ChaletService, $stateParams, $state, $scope, $location, $rootScope) {
 
             //DA CHIUDERE
             //DA CHIUDERE
@@ -15,13 +15,27 @@ angular.module('jsApp')
             if ($stateParams.id) {
                 ChaletService.getElement($stateParams.id).then(function (element) {
                     $scope.element = element;
-                    $scope.title = $scope.element.name;
+                    $state.current.title = 'Vota ' + $scope.element.name + " - concessione " + $scope.element.licenseNumber;
+                    $state.current.web_url = '//votalatua.estate/#!/chalet_id/' + $scope.element.id;
+                    $state.current.description = 'Scegli ' + $scope.element.name + " - concessione " + $scope.element.licenseNumber;
+                    if ($scope.element.images.length == 0) {
+                        $state.current.image = '//votalatua.estate/img/logo-no-chalet.jpg';
+                    } else {
+                        $state.current.image = '//votalatua.estate/img/' + $scope.element.images[0]['filename'];
+                    }
                 });
             }
             if ($stateParams.licenseNumber) {
                 ChaletService.getElementByLicenseNumber($stateParams.licenseNumber).then(function (element) {
                     $scope.element = element;
-                    $scope.title = $scope.element.name;
+                    $state.current.title = 'Vota ' + $scope.element.name + " - concessione " + $scope.element.licenseNumber;
+                    $state.current.web_url = '//votalatua.estate/#!/chalet_id/' + $scope.element.id;
+                    $state.current.description = 'Scegli ' + $scope.element.name + " - concessione " + $scope.element.licenseNumber;
+                    if ($scope.element.images.length == 0) {
+                        $state.current.image = '//votalatua.estate/img/logo-no-chalet.jpg';
+                    } else {
+                        $state.current.image = '//votalatua.estate/img/' + $scope.element.images[0]['filename'];
+                    }
                 });
             }
 

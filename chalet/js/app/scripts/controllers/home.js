@@ -34,9 +34,10 @@ angular.module('jsApp')
                 url: '/',
                 controller: 'Home',
                 templateUrl: 'views/home.html',
-                ncyBreadcrumb: {
-                    label: 'Home page'
-                }
+                title: 'Vota la tua estate',
+                web_url: '//votalatua.estate',
+                description: 'Scegli il tuo chalet preferito per servizi, cortesia, prezzi o semplicemente per simpatia. Inserisci i tuoi dati e il tuo numero di telefono, poi fai uno squillo al numero indicato.',
+                image: '//votalatua.estate/img/logo-no-chalet.jpg'
             })
 
     }]);

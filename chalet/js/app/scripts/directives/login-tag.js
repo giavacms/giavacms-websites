@@ -8,7 +8,7 @@ angular.module('jsApp')
             replace: true,
             templateUrl: "views/layout/login-tag.html",
             controller: ['$scope', '$filter', '$document', '$state', 'AuthenticationService', function ($scope, $filter, $document, $state, AuthenticationService) {
-                console.log('loginTag');
+                //console.log('loginTag');
 
                 AuthenticationService.isLogged().then(function (success) {
                     $scope.logged = success;

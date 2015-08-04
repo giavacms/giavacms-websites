@@ -19,9 +19,7 @@ angular.module('jsApp')
                 url: '/contatti',
                 controller: 'Contatti',
                 templateUrl: 'views/contatti.html',
-                ncyBreadcrumb: {
-                    label: 'contatti'
-                }
+                title: 'contatti'
             })
 
     }]);

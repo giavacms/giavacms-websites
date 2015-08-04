@@ -9,8 +9,8 @@
  */
 angular.module('jsApp')
 
-    .controller('Votazioni', ['$scope', '$interval', '$log', '$state', 'AuthenticationService',
-        function ($scope, $interval, $log, $state, AuthenticationService) {
+    .controller('Votazioni', ['$scope', '$interval', '$log', '$state', 'AuthenticationService', 'VotazioniService',
+        function ($scope, $interval, $log, $state, AuthenticationService, VotazioniService) {
 
             // change this to true when login succeeds
             AuthenticationService.isLogged().then(function (success) {
@@ -18,10 +18,14 @@ angular.module('jsApp')
                     $state.go('login');
                 }
                 else {
-                    $scope.phone = AuthenticationService.getUsername()
+                    $scope.phone = AuthenticationService.getUsername();
                     $scope.fullname = AuthenticationService.getFullname();
+                    VotazioniService.getList({'obj.phone': $scope.phone}, 0, 0).then(function (data) {
+                        $scope.model = data;
+                    });
                 }
             });
+
 
         }])
 
@@ -34,9 +38,7 @@ angular.module('jsApp')
                 url: '/profilo/votazioni',
                 controller: 'Votazioni',
                 templateUrl: 'views/votazioni.html',
-                ncyBreadcrumb: {
-                    label: 'Votazioni'
-                }
+                title: 'Le tue Votazioni'
             })
 
     }]);
