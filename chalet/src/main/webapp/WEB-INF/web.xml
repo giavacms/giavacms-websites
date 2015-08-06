@@ -16,7 +16,7 @@
 
     <context-param>
         <param-name>jwtExpireTime</param-name>
-        <param-value>2592000</param-value>
+        <param-value>3456000</param-value>
     </context-param>
 
     <context-param>

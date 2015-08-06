@@ -410,6 +410,9 @@
                     <jms-queue name="giavacms.parade">
                         <entry name="java:/jms/queue/giavacms.parade"/>
                     </jms-queue>
+                    <jms-queue name="giavacms.resizeimage">
+                        <entry name="java:/jms/queue/giavacms.resizeimage"/>
+                    </jms-queue>
                 </jms-destinations>
             </hornetq-server>
         </subsystem>
