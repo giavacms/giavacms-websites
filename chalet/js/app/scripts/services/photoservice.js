@@ -50,14 +50,14 @@ angular.module('jsApp')
     }
 
 
-    var remove = function (toRemove, id) {
+    var remove = function (id) {
       var reqParams = {};
       reqParams['host'] = host;
       reqParams['entityPath'] = entityPath;
       if (id) {
         reqParams['id'] = id;
       }
-      return RsResource.delete(reqParams, toRemove, function (data) {
+      return RsResource.delete(reqParams, function (data) {
         return data;
       }).$promise;
     }

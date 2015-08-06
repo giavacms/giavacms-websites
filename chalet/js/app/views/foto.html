@@ -61,14 +61,14 @@
           <ul class="recent-posts">
             <li class="clearfix" ng-repeat="item in model" ng-if="$index % 4 == 0">
               <img ng-src="/photo/{{item.name}}" style="width: 80px; height: 80px;"
-                   alt="{{item.name}}" ng-if="item.images.length>0">
+                   alt="{{item.name}}" >
               <a href="/photo/{{item.name}}" title="{{item.name}}" target="_blank">{{item.chaletName}}</a>
               <span>
                 {{item.accountNameSurname}}
               </span>
               <a ng-if="supervisor && item.active" ng-click="approva(item.uuid)"><i class="{{item.approved && item.approvedDate ? 'text-danger' :''}} fa fa-check-circle-o"></i></a>
               <a ng-if="supervisor && item.active" ng-click="disapprova(item.uuid)"><i class="{{!item.approved && item.approvedDate ? 'text-danger' :''}} fa fa-ban"></i></a>
-              <a ng-if="supervisor" ng-click="elimina(item.uuid)"><i class="{{!item.active ? 'text-danger' :''}} fa fa-times"></i></a>
+              <a ng-click="elimina(item.uuid)"><i class="{{!item.active ? 'text-danger' :''}} fa fa-times"></i></a>
             </li>
           </ul>
         </div>
@@ -78,14 +78,14 @@
           <ul class="recent-posts">
             <li class="clearfix" ng-repeat="item in model" ng-if="$index % 4 == 1">
               <img ng-src="/photo/{{item.name}}" style="width: 80px; height: 80px;"
-                   alt="{{item.name}}" ng-if="item.images.length>0">
+                   alt="{{item.name}}" >
               <a href="/photo/{{item.name}}" title="{{item.name}}" target="_blank">{{item.chaletName}}</a>
               <span>
                 {{item.accountNameSurname}}
               </span>
               <a ng-if="supervisor && item.active" ng-click="approva(item.uuid)"><i class="{{item.approved && item.approvedDate ? 'text-danger' :''}} fa fa-check-circle-o"></i></a>
               <a ng-if="supervisor && item.active" ng-click="disapprova(item.uuid)"><i class="{{!item.approved && item.approvedDate ? 'text-danger' :''}} fa fa-ban"></i></a>
-              <a ng-if="supervisor" ng-click="elimina(item.uuid)"><i class="{{!item.active ? 'text-danger' :''}} fa fa-times"></i></a>
+              <a ng-click="elimina(item.uuid)"><i class="{{!item.active ? 'text-danger' :''}} fa fa-times"></i></a>
             </li>
             </li>
           </ul>
@@ -96,14 +96,14 @@
           <ul class="recent-posts">
             <li class="clearfix" ng-repeat="item in model" ng-if="$index % 4 == 2">
               <img ng-src="/photo/{{item.name}}" style="width: 80px; height: 80px;"
-                   alt="{{item.name}}" ng-if="item.images.length>0">
+                   alt="{{item.name}}" >
               <a href="/photo/{{item.name}}" title="{{item.name}}" target="_blank">{{item.chaletName}}</a>
               <span>
                 {{item.accountNameSurname}}
               </span>
               <a ng-if="supervisor && item.active" ng-click="approva(item.uuid)"><i class="{{item.approved && item.approvedDate ? 'text-danger' :''}} fa fa-check-circle-o"></i></a>
               <a ng-if="supervisor && item.active" ng-click="disapprova(item.uuid)"><i class="{{!item.approved && item.approvedDate ? 'text-danger' :''}} fa fa-ban"></i></a>
-              <a ng-if="supervisor" ng-click="elimina(item.uuid)"><i class="{{!item.active ? 'text-danger' :''}} fa fa-times"></i></a>
+              <a ng-click="elimina(item.uuid)"><i class="{{!item.active ? 'text-danger' :''}} fa fa-times"></i></a>
             </li>
           </ul>
         </div>
@@ -113,14 +113,14 @@
           <ul class="recent-posts">
             <li class="clearfix" ng-repeat="item in model" ng-if="$index % 4 == 3">
               <img ng-src="/photo/{{item.name}}" style="width: 80px; height: 80px;"
-                   alt="{{item.name}}" ng-if="item.images.length>0">
+                   alt="{{item.name}}" >
               <a href="/photo/{{item.name}}" title="{{item.name}}" target="_blank">{{item.chaletName}}</a>
               <span>
                 {{item.accountNameSurname}}
               </span>
               <a ng-if="supervisor && item.active" ng-click="approva(item.uuid)"><i class="{{item.approved && item.approvedDate ? 'text-danger' :''}} fa fa-check-circle-o"></i></a>
               <a ng-if="supervisor && item.active" ng-click="disapprova(item.uuid)"><i class="{{!item.approved && item.approvedDate ? 'text-danger' :''}} fa fa-ban"></i></a>
-              <a ng-if="supervisor" ng-click="elimina(item.uuid)"><i class="{{!item.active ? 'text-danger' :''}} fa fa-times"></i></a>
+              <a ng-click="elimina(item.uuid)"><i class="{{!item.active ? 'text-danger' :''}} fa fa-times"></i></a>
             </li>
           </ul>
         </div>
