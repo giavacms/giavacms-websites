@@ -89,7 +89,19 @@ angular.module('jsApp')
             return size;
         }
 
+        var getChalets = function (accountId) {
+            var reqParams = {};
+            reqParams['host'] = host;
+            reqParams['entityPath'] = entityPath;
+            reqParams['id'] = 'photos';
+            reqParams['accountId'] = accountId;
+            return RsResource.update(reqParams, function (data) {
+                return data;
+            }).$promise;
+        }
+
         return {
+            getChalet: getChalets,
             getList: getList,
             getSize: getSize,
             getElement: getElement,
