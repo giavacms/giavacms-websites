@@ -1,122 +1,125 @@
 <div class="section page-title small-padding background-wrapper with-overlay black-overlay active-section">
-    <div class="background-image parallax-background" data-stellar-background-ratio="0.5">
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12" style="">
-                <div class="resizeMe">Vota la tua estate</div>
+  <div class="background-image parallax-background" data-stellar-background-ratio="0.5">
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12" style="">
+        <div class="resizeMe">Vota la tua estate</div>
 
-                <p class="">
-                    Vota la tua estate
-                </p>
-                <ol class="breadcrumb">
-                    <li><a ui-sref="home">Home</a></li>
-                    <li><a ui-sref="profilo">Profilo</a></li>
-                    <li class="active">Foto</li>
-                </ol>
-            </div>
-        </div>
+        <p class="">
+          Vota la tua estate
+        </p>
+        <ol class="breadcrumb">
+          <li><a ui-sref="home">Home</a></li>
+          <li><a ui-sref="profilo">Profilo</a></li>
+          <li class="active">Foto</li>
+        </ol>
+      </div>
     </div>
+  </div>
 </div>
 
 
 <section class="section active-section grey-background">
-    <div class="container">
-        <div class="row">
+  <div class="container">
+    <div class="row">
 
 
-            <div class="col-md-12">
-                <div class="service-block">
-                    <i class="icon large ti-home"></i>
+      <div class="col-md-12">
+        <div class="service-block">
+          <i class="icon large ti-home"></i>
 
-                    <h2 class="lighter resizeMe">Le tue foto</h2>
+          <h2 class="lighter resizeMe">Le tue foto</h2>
 
-                    <div class="space hidden-sm hidden-xs"></div>
-                </div>
-            </div>
-
-            <form>
-                <div class="form-group">
-                    <input type="text" class="form-control" id="nome" ng-model="search.name"
-                           placeholder="   cerca per nome"
-                           ng-change="filtra()">
-                </div>
-            </form>
-
-            <div class="col-md-3">
-                <div class="widget">
-                    <ul class="recent-posts">
-                        <li class="clearfix" ng-repeat="item in model" ng-if="$index % 4 == 0">
-                            <img src="/img/logo-no-chalet.jpg" style="width: 80px; height: 80px;"
-                                 alt="{{item.name}}" ng-if="item.images.length==0">
-
-                            <img ng-src="/img/{{item.images[0].filename}}" style="width: 80px; height: 80px;"
-                                 alt="{{item.name}}" ng-if="item.images.length>0">
-                            <a href="/#!/chalet_id/{{item.id}}" title="">{{item.name}}</a>
-                            <span>concessione n. {{item.licenseNumber}}</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="widget">
-                    <ul class="recent-posts">
-                        <li class="clearfix" ng-repeat="item in filteredModel" ng-if="$index % 4 == 1">
-                            <img src="/img/logo-no-chalet.jpg" style="width: 80px; height: 80px;"
-                                 alt="{{item.name}}" ng-if="item.images.length==0">
-
-                            <img ng-src="/img/{{item.images[0].filename}}" style="width: 80px; height: 80px;"
-                                 alt="{{item.name}}" ng-if="item.images.length>0">
-                            <a href="/#!/chalet_id/{{item.id}}" title="">{{item.name}}</a>
-                            <span>concessione n. {{item.licenseNumber}}</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="widget">
-                    <ul class="recent-posts">
-                        <li class="clearfix" ng-repeat="item in filteredModel" ng-if="$index % 4 == 2">
-                            <img src="/img/logo-no-chalet.jpg" style="width: 80px; height: 80px;"
-                                 alt="{{item.name}}" ng-if="item.images.length==0">
-
-                            <img ng-src="/img/{{item.images[0].filename}}" style="width: 80px; height: 80px;"
-                                 alt="{{item.name}}" ng-if="item.images.length>0">
-                            <a href="/#!/chalet_id/{{item.id}}" title="">{{item.name}}</a>
-                            <span>concessione n. {{item.licenseNumber}}</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="widget">
-                    <ul class="recent-posts">
-                        <li class="clearfix" ng-repeat="item in filteredModel" ng-if="$index % 4 == 3">
-                            <img src="/img/logo-no-chalet.jpg" style="width: 80px; height: 80px;"
-                                 alt="{{item.name}}" ng-if="item.images.length==0">
-
-                            <img ng-src="/img/{{item.images[0].filename}}" style="width: 80px; height: 80px;"
-                                 alt="{{item.name}}" ng-if="item.images.length>0">
-                            <a href="/#!/chalet_id/{{item.id}}" title="">{{item.name}}</a>
-                            <span>concessione n. {{item.licenseNumber}}</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-
+          <div class="space hidden-sm hidden-xs"></div>
         </div>
+      </div>
+
+      <form>
+        <div class="form-group">
+
+          <select id="chalet" class="form-control" ng-model="search.obj.chaletId"
+                  ng-options="c.id as c.name for c in chalets" ng-change="filtra()">
+            <option value="">scegli uno chalet</option>
+          </select>
+        </div>
+      </form>
+
+
+      <div class="col-md-3">
+        <div class="widget">
+          <ul class="recent-posts">
+            <li class="clearfix" ng-repeat="item in model" ng-if="$index % 4 == 0">
+              <img src="/img/logo-no-chalet.jpg" style="width: 80px; height: 80px;"
+                   alt="{{item.name}}" ng-if="item.images.length==0">
+
+              <img ng-src="/img/{{item.images[0].filename}}" style="width: 80px; height: 80px;"
+                   alt="{{item.name}}" ng-if="item.images.length>0">
+              <a href="/#!/chalet_id/{{item.id}}" title="">{{item.name}}</a>
+              <span>concessione n. {{item.licenseNumber}}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="widget">
+          <ul class="recent-posts">
+            <li class="clearfix" ng-repeat="item in filteredModel" ng-if="$index % 4 == 1">
+              <img src="/img/logo-no-chalet.jpg" style="width: 80px; height: 80px;"
+                   alt="{{item.name}}" ng-if="item.images.length==0">
+
+              <img ng-src="/img/{{item.images[0].filename}}" style="width: 80px; height: 80px;"
+                   alt="{{item.name}}" ng-if="item.images.length>0">
+              <a href="/#!/chalet_id/{{item.id}}" title="">{{item.name}}</a>
+              <span>concessione n. {{item.licenseNumber}}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="widget">
+          <ul class="recent-posts">
+            <li class="clearfix" ng-repeat="item in filteredModel" ng-if="$index % 4 == 2">
+              <img src="/img/logo-no-chalet.jpg" style="width: 80px; height: 80px;"
+                   alt="{{item.name}}" ng-if="item.images.length==0">
+
+              <img ng-src="/img/{{item.images[0].filename}}" style="width: 80px; height: 80px;"
+                   alt="{{item.name}}" ng-if="item.images.length>0">
+              <a href="/#!/chalet_id/{{item.id}}" title="">{{item.name}}</a>
+              <span>concessione n. {{item.licenseNumber}}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="widget">
+          <ul class="recent-posts">
+            <li class="clearfix" ng-repeat="item in filteredModel" ng-if="$index % 4 == 3">
+              <img src="/img/logo-no-chalet.jpg" style="width: 80px; height: 80px;"
+                   alt="{{item.name}}" ng-if="item.images.length==0">
+
+              <img ng-src="/img/{{item.images[0].filename}}" style="width: 80px; height: 80px;"
+                   alt="{{item.name}}" ng-if="item.images.length>0">
+              <a href="/#!/chalet_id/{{item.id}}" title="">{{item.name}}</a>
+              <span>concessione n. {{item.licenseNumber}}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
     </div>
+  </div>
 </section>
 
 <section class="section divider-section active-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="divider"></div>
-            </div>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="divider"></div>
+      </div>
     </div>
+  </div>
 </section>
 <div tabfooter></div>
 
