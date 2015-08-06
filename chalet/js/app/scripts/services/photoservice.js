@@ -101,7 +101,7 @@ angular.module('jsApp')
         }
 
         return {
-            getChalet: getChalets,
+            getChalets: getChalets,
             getList: getList,
             getSize: getSize,
             getElement: getElement,
