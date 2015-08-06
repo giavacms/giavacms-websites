@@ -62,6 +62,29 @@ angular.module('jsApp')
             }).$promise;
         }
 
+        var approve = function (toRemove, id) {
+            var reqParams = {};
+            reqParams['host'] = host;
+            reqParams['entityPath'] = entityPath;
+            reqParams['id'] = id;
+            reqParams['entityPath2'] = 'approved';
+            return RsResource.update(reqParams, function (data) {
+                return data;
+            }).$promise;
+        }
+
+        var unapprove = function (id) {
+            var reqParams = {};
+            reqParams['host'] = host;
+            reqParams['entityPath'] = entityPath;
+            reqParams['id'] = id;
+            reqParams['entityPath2'] = 'approved';
+            return RsResource.update(reqParams, function (data) {
+                return data;
+            }).$promise;
+        }
+
+
         var getSize = function () {
             return size;
         }
@@ -71,7 +94,9 @@ angular.module('jsApp')
             getSize: getSize,
             getElement: getElement,
             save: save,
-            delete: remove
+            delete: remove,
+            approve: approve,
+            unapprove: unapprove
         };
 
     }]);

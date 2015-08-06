@@ -55,12 +55,13 @@
                             <div class="col-sm-10">
 
                                 <button class="btn btn-primary" ng-click="uploadImage()" ng-disabled="!upload.chaletId">
-                                    carica le
-                                    tue foto!
+                                    Invia
                                 </button>
                                 <button class="btn btn-primary" ng-click="reset()">
                                     Annulla
                                 </button>
+                                <br/>
+                                <i class="fa fa-spinner fa-spin" ng-show="upload.sending"></i>
                             </div>
                         </div>
 
@@ -72,7 +73,7 @@
                         <div ng-show="upload.done && !upload.ok" class="text-center">
                             <span class="ti-alert"></span>
                             <label class="control-label">
-                                Errori nel caricamento. Riprova piu' tardi</label>
+                                Ops! C'e' stato un problema, riprova piu' tardi!</label>
                         </div>
 
 

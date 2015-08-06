@@ -30,6 +30,22 @@ angular.module('jsApp')
             var overrides = {};
             Pager($log, $scope, PhotoService, overrides);
 
+            //LISTA CHALET che ho usato nelle foto
+            $scope.chalets = [];
+
+            $scope.approva = function (uuid) {
+
+            }
+
+            $scope.disapprova = function (uuid) {
+
+            }
+
+            $scope.elimina = function (uuid) {
+
+            }
+
+
         }])
 
 
