@@ -40,7 +40,7 @@ angular.module('jsApp')
             $scope.uploadImage = function () {
                 $scope.upload.done = false;
                 $scope.upload.ok = false;
-                $scope.upload.sendind = true;
+                $scope.upload.sending = true;
                 $log.debug('file is ' + JSON.stringify($scope.image));
                 var uploadUrl = '//' + APP_PROPERTIES.HOST + '/api/v1/photos/chalet/' + $scope.upload.chaletId;
                 SingleFileUploadService.uploadFileToUrl(uploadUrl, $scope.image).then(

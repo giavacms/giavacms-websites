@@ -44,10 +44,10 @@
             <option value="">scegli uno chalet</option>
           </select>
         </div>
-        <div class="form-group">
-
-          <select id="notApproved" class="form-control" ng-model="search['not.approved']"
-                  ng-options="c.value as c.label for c in [{value:false,label:'tutte'},{value:true,label:'da approvare'}]" ng-change="refresh()">
+        <div class="form-group" ng-if="supervisor">
+          <select id="notApprovedDate" class="form-control" ng-model="search['not.approvedDate']"
+                  ng-options="c.value as c.label for c in [{value:undefined,label:'tutte'},{value:'2015-08-01',label:'da approvare'}]"
+                  ng-change="refresh()">
             <option value="">tutte le foto o solo quelle da approvare?</option>
           </select>
         </div>
@@ -63,7 +63,12 @@
               <img ng-src="/photo/{{item.name}}" style="width: 80px; height: 80px;"
                    alt="{{item.name}}" ng-if="item.images.length>0">
               <a href="/photo/{{item.name}}" title="{{item.name}}" target="_blank">{{item.chaletName}}</a>
-              <span>TODO</span>
+              <span>
+                {{item.accountNameSurname}}
+              </span>
+              <a ng-if="supervisor" ng-click="approva()"><i class="{{item.approved && item.approvedDate ? 'text-danger' :''}} fa fa-check-circle-o"></i></a>
+              <a ng-if="supervisor" ng-click="disapprova()"><i class="{{!item.approved && item.approvedDate ? 'text-danger' :''}} fa fa-ban"></i></a>
+              <a ng-if="supervisor" ng-click="elimina()"><i class="fa fa-times"></i></a>
             </li>
           </ul>
         </div>
@@ -75,7 +80,12 @@
               <img ng-src="/photo/{{item.name}}" style="width: 80px; height: 80px;"
                    alt="{{item.name}}" ng-if="item.images.length>0">
               <a href="/photo/{{item.name}}" title="{{item.name}}" target="_blank">{{item.chaletName}}</a>
-              <span>TODO</span>
+              <span>
+                {{item.accountNameSurname}}
+              </span>
+              <a ng-if="supervisor" ng-click="approva()"><i class="{{item.approved && item.approvedDate ? 'text-danger' :''}} fa fa-check-circle-o"></i></a>
+              <a ng-if="supervisor" ng-click="disapprova()"><i class="{{!item.approved && item.approvedDate ? 'text-danger' :''}} fa fa-ban"></i></a>
+              <a ng-if="supervisor" ng-click="elimina()"><i class="fa fa-times"></i></a>
             </li>
             </li>
           </ul>
@@ -88,7 +98,12 @@
               <img ng-src="/photo/{{item.name}}" style="width: 80px; height: 80px;"
                    alt="{{item.name}}" ng-if="item.images.length>0">
               <a href="/photo/{{item.name}}" title="{{item.name}}" target="_blank">{{item.chaletName}}</a>
-              <span>TODO</span>
+              <span>
+                {{item.accountNameSurname}}
+              </span>
+              <a ng-if="supervisor" ng-click="approva()"><i class="{{item.approved && item.approvedDate ? 'text-danger' :''}} fa fa-check-circle-o"></i></a>
+              <a ng-if="supervisor" ng-click="disapprova()"><i class="{{!item.approved && item.approvedDate ? 'text-danger' :''}} fa fa-ban"></i></a>
+              <a ng-if="supervisor" ng-click="elimina()"><i class="fa fa-times"></i></a>
             </li>
           </ul>
         </div>
@@ -100,7 +115,12 @@
               <img ng-src="/photo/{{item.name}}" style="width: 80px; height: 80px;"
                    alt="{{item.name}}" ng-if="item.images.length>0">
               <a href="/photo/{{item.name}}" title="{{item.name}}" target="_blank">{{item.chaletName}}</a>
-              <span>TODO</span>
+              <span>
+                {{item.accountNameSurname}}
+              </span>
+              <a ng-if="supervisor" ng-click="approva()"><i class="{{item.approved && item.approvedDate ? 'text-danger' :''}} fa fa-check-circle-o"></i></a>
+              <a ng-if="supervisor" ng-click="disapprova()"><i class="{{!item.approved && item.approvedDate ? 'text-danger' :''}} fa fa-ban"></i></a>
+              <a ng-if="supervisor" ng-click="elimina()"><i class="fa fa-times"></i></a>
             </li>
           </ul>
         </div>
@@ -110,12 +130,12 @@
 
     <div class="row">
 
-      <div class="col-md-1" ng-hide="currentPage < 3" >
+      <div class="col-md-1" ng-hide="currentPage < 3">
         <a ng-click="firstPage()" alt="vai all'inizio" title="vai all'inizio">
           <i class="icon ti-angle-double-left"></i></a>
       </div>
 
-      <div class="col-md-1" ng-hide="currentPage < 2" >
+      <div class="col-md-1" ng-hide="currentPage < 2">
         <a ng-click="goToPage(currentPage-1)" alt="precedente"
            title="precedente"> <i
           class="icon ti-angle-left"></i></a>
@@ -123,15 +143,15 @@
 
       <div class="col-md-1" ng-repeat="p in subpages track by $index">
         <a ng-click="goToPage(p)" alt="{{p}}"
-           title="{{p}}" ng-disabled="currentPage==p" >
+           title="{{p}}" ng-disabled="currentPage==p">
           <i class="icon {{currentPage==p ? 'text-black' : ''}}">
             {{p}}</i></a>
       </div>
 
       <div class="col-md-1" ng-show="currentPage < pages.length && pages.length > 0">
         <a
-           ng-click="goToPage(currentPage+1)" alt="successiva"
-           title="successiva"> <i
+          ng-click="goToPage(currentPage+1)" alt="successiva"
+          title="successiva"> <i
           class="icon  ti-angle-right"></i></a>
       </div>
 
