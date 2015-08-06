@@ -22,9 +22,8 @@
 
 <section class="section active-section grey-background">
   <div class="container">
+
     <div class="row">
-
-
       <div class="col-md-12">
         <div class="service-block">
           <i class="icon large ti-home"></i>
@@ -34,17 +33,28 @@
           <div class="space hidden-sm hidden-xs"></div>
         </div>
       </div>
+    </div>
 
+    <div class="row">
       <form>
         <div class="form-group">
 
           <select id="chalet" class="form-control" ng-model="search['obj.chaletId']"
-                  ng-options="c.id as c.name for c in chalets" ng-change="filtra()">
+                  ng-options="c.id as c.name for c in chalets" ng-change="refresh()">
             <option value="">scegli uno chalet</option>
           </select>
         </div>
-      </form>
+        <div class="form-group">
 
+          <select id="notApproved" class="form-control" ng-model="search['not.approved']"
+                  ng-options="c.value as c.label for c in [{value:false,label:'tutte'},{value:true,label:'da approvare'}]" ng-change="refresh()">
+            <option value="">tutte le foto o solo quelle da approvare?</option>
+          </select>
+        </div>
+      </form>
+    </div>
+
+    <div class="row">
 
       <div class="col-md-3">
         <div class="widget">
@@ -96,44 +106,43 @@
         </div>
       </div>
 
+    </div>
 
+    <div class="row">
 
+      <div class="col-md-1" ng-hide="currentPage < 3" >
+        <a ng-click="firstPage()" alt="vai all'inizio" title="vai all'inizio">
+          <i class="icon ti-angle-double-left"></i></a>
+      </div>
 
+      <div class="col-md-1" ng-hide="currentPage < 2" >
+        <a ng-click="goToPage(currentPage-1)" alt="precedente"
+           title="precedente"> <i
+          class="icon ti-angle-left"></i></a>
+      </div>
 
+      <div class="col-md-1" ng-repeat="p in subpages track by $index">
+        <a ng-click="goToPage(p)" alt="{{p}}"
+           title="{{p}}" ng-disabled="currentPage==p" >
+          <i class="icon {{currentPage==p ? 'text-black' : ''}}">
+            {{p}}</i></a>
+      </div>
 
+      <div class="col-md-1" ng-show="currentPage < pages.length && pages.length > 0">
+        <a
+           ng-click="goToPage(currentPage+1)" alt="successiva"
+           title="successiva"> <i
+          class="icon  ti-angle-right"></i></a>
+      </div>
 
-                <div class="col-md-12">
-
-                    <a ng-disabled="startRow == 0" ng-click="firstPage()" alt="vai all'inizio" title="vai all'inizio">
-                        <i class="icon ti-angle-double-left"></i></a>
-
-                    <a ng-disabled="startRow == 0" ng-click="goToPage(currentPage-1)" alt="precedente"
-                       title="precedente"> <i
-                            class="icon ti-angle-left"></i></a>
-
-
-                    <a ng-repeat="p in pages track by $index" ng-click="goToPage(p)" alt="{{$index+1}}"
-                       title="{{$index+1}}" ng-disabled="currentPage==p">{{$index+1}}</a>
-
-
-                    <a ng-disabled="currentPage == pages.length || pages.length == 0"
-                       ng-click="goToPage(currentPage+1)" alt="successiva"
-                       title="successiva"> <i
-                            class="icon  ti-angle-right"></i></a>
-
-
-                    <a ng-disabled="currentPage == pages.length  || pages.length == 0" ng-click="lastPage()"
-                       alt="vai alla fine" title="vai alla fine">
-                        <i class="icon  ti-angle-double-right"></i></a>
-
-
-                </div>
-
-
-
-
+      <div class="col-md-1" ng-show="currentPage < pages.length -1 && pages.length > 0">
+        <a ng-disabled="currentPage == pages.length  || pages.length == 0" ng-click="lastPage()"
+           alt="vai alla fine" title="vai alla fine">
+          <i class="icon  ti-angle-double-right"></i></a>
+      </div>
 
     </div>
+
   </div>
 </section>
 

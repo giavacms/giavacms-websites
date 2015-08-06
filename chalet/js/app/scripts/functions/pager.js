@@ -7,7 +7,8 @@ function Pager($log, $scope, RsService, overrides) {
     search: {},
     pageSize: 10,
     autoload: true,
-    id: 'id'
+    id: 'id',
+    shownPages: 10
   };
 
   if (overrides) {
@@ -63,6 +64,8 @@ function Pager($log, $scope, RsService, overrides) {
             $log.debug('Nessun risultato.');
             $scope.listSize = 0;
             $scope.pages = [];
+            // solo un sottoinsieme delle pagine verrà mostrato come link diretto nella pagina
+            $scope.subpages = [];
           }
           // ci sono dati. calcolo le pagine
           else {
@@ -73,6 +76,35 @@ function Pager($log, $scope, RsService, overrides) {
             for (var i = 1; i <= Number($scope.listSize); i += Number($scope.pageSize)) {
               p++;
               $scope.pages.push(p);
+            }
+
+            // solo un sottoinsieme delle pagine verrà mostrato come link diretto nella pagina
+            $scope.subpages = [];
+            var halfPages = Math.round(defaults.shownPages / 2);
+            for (var s = 1; s <= defaults.shownPages; s++) {
+              var subpage = $scope.currentPage - halfPages + s;
+              if ($scope.pages.indexOf(subpage) >= 0) {
+                $scope.subpages.push(subpage);
+              }
+            }
+            var missing = defaults.shownPages - $scope.subpages.length ;
+            if (missing > 0) {
+              if ($scope.subpages[0] == 1) {
+                for (var m = 0; m < missing; m++) {
+                  var lastPage = $scope.subpages[$scope.subpages.length - 1];
+                  if ($scope.pages.indexOf(lastPage + 1) >= 0) {
+                    $scope.subpages.push(lastPage + 1);
+                  }
+                }
+              }
+              else {
+                for (var m = 0; m < missing; m++) {
+                  var firstPage = $scope.subpages[0];
+                  if (firstPage - 1 > 0) {
+                    $scope.subpages.unshift(firstPage - 1);
+                  }
+                }
+              }
             }
           }
         }

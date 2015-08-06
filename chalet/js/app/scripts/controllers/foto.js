@@ -23,7 +23,11 @@ angular.module('jsApp')
         else {
           $scope.phone = AuthenticationService.getUsername()
           $scope.fullname = AuthenticationService.getFullname();
-          $state.current.title = 'Le tue foto';
+          $scope.supervisor = ( AuthenticationService.getRoles().indexOf('ADMIN') >= 0 || AuthenticationService.getRoles().indexOf('SUPERVISOR') >= 0 );
+          if ($scope.supervisor) {
+            $log.warn('SUPERVISOR!');
+          }
+          $state.current.title = $scope.admin ? 'Le foto' : 'Le tue foto';
           PhotoService.getChalets($scope.phone).then(function (chalets) {
             $scope.chalets = chalets;
           });
@@ -33,12 +37,11 @@ angular.module('jsApp')
 
       $scope.predicate = 'created';
       $scope.reverse = true;
-      var overrides = {};
+      var overrides = {
+        pageSize: 16,
+        shownPages: 3
+      };
       Pager($log, $scope, PhotoService, overrides);
-
-      $scope.filtra = function () {
-        PhotoService.getList($scope.search)
-      }
 
       $scope.approva = function (uuid) {
         PhotoService.approve(uuid).then(function (data) {
