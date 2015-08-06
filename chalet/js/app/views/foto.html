@@ -63,9 +63,12 @@
               <img ng-src="/photo/{{item.name}}" style="width: 80px; height: 80px;"
                    alt="{{item.name}}" >
               <a href="/photo/{{item.name}}" title="{{item.name}}" target="_blank">{{item.chaletName}}</a>
-              <span>
+              <span ng-if="supervisor">
                 {{item.accountNameSurname}}
               </span>
+              <span ng-if="!supervisor && item.approved" class="fa fa-check"></span>
+              <span ng-if="!supervisor && !item.approved && item.approvedDate" class="fa fa-ban"> NON APPROVATA</span>
+              <span ng-if="!supervisor && !item.approved && !item.approvedDate" class="fa fa-question"> APPROVAZIONE IN CORSO...</span>
               <a ng-if="supervisor && item.active" ng-click="approva(item.uuid)"><i class="{{item.approved && item.approvedDate ? 'text-danger' :''}} fa fa-check-circle-o"></i></a>
               <a ng-if="supervisor && item.active" ng-click="disapprova(item.uuid)"><i class="{{!item.approved && item.approvedDate ? 'text-danger' :''}} fa fa-ban"></i></a>
               <a ng-click="elimina(item.uuid)"><i class="{{!item.active ? 'text-danger' :''}} fa fa-times"></i></a>
@@ -80,9 +83,12 @@
               <img ng-src="/photo/{{item.name}}" style="width: 80px; height: 80px;"
                    alt="{{item.name}}" >
               <a href="/photo/{{item.name}}" title="{{item.name}}" target="_blank">{{item.chaletName}}</a>
-              <span>
+              <span ng-if="supervisor">
                 {{item.accountNameSurname}}
               </span>
+              <span ng-if="!supervisor && item.approved" class="fa fa-check"></span>
+              <span ng-if="!supervisor && !item.approved && item.approvedDate" class="fa fa-ban"> NON APPROVATA</span>
+              <span ng-if="!supervisor && !item.approved && !item.approvedDate" class="fa fa-question"> APPROVAZIONE IN CORSO...</span>
               <a ng-if="supervisor && item.active" ng-click="approva(item.uuid)"><i class="{{item.approved && item.approvedDate ? 'text-danger' :''}} fa fa-check-circle-o"></i></a>
               <a ng-if="supervisor && item.active" ng-click="disapprova(item.uuid)"><i class="{{!item.approved && item.approvedDate ? 'text-danger' :''}} fa fa-ban"></i></a>
               <a ng-click="elimina(item.uuid)"><i class="{{!item.active ? 'text-danger' :''}} fa fa-times"></i></a>
@@ -98,9 +104,12 @@
               <img ng-src="/photo/{{item.name}}" style="width: 80px; height: 80px;"
                    alt="{{item.name}}" >
               <a href="/photo/{{item.name}}" title="{{item.name}}" target="_blank">{{item.chaletName}}</a>
-              <span>
+              <span ng-if="supervisor">
                 {{item.accountNameSurname}}
               </span>
+              <span ng-if="!supervisor && item.approved" class="fa fa-check"></span>
+              <span ng-if="!supervisor && !item.approved && item.approvedDate" class="fa fa-ban"> NON APPROVATA</span>
+              <span ng-if="!supervisor && !item.approved && !item.approvedDate" class="fa fa-question"> APPROVAZIONE IN CORSO...</span>
               <a ng-if="supervisor && item.active" ng-click="approva(item.uuid)"><i class="{{item.approved && item.approvedDate ? 'text-danger' :''}} fa fa-check-circle-o"></i></a>
               <a ng-if="supervisor && item.active" ng-click="disapprova(item.uuid)"><i class="{{!item.approved && item.approvedDate ? 'text-danger' :''}} fa fa-ban"></i></a>
               <a ng-click="elimina(item.uuid)"><i class="{{!item.active ? 'text-danger' :''}} fa fa-times"></i></a>
@@ -115,9 +124,12 @@
               <img ng-src="/photo/{{item.name}}" style="width: 80px; height: 80px;"
                    alt="{{item.name}}" >
               <a href="/photo/{{item.name}}" title="{{item.name}}" target="_blank">{{item.chaletName}}</a>
-              <span>
+              <span ng-if="supervisor">
                 {{item.accountNameSurname}}
               </span>
+              <span ng-if="!supervisor && item.approved" class="fa fa-check"></span>
+              <span ng-if="!supervisor && !item.approved && item.approvedDate" class="fa fa-ban"> NON APPROVATA</span>
+              <span ng-if="!supervisor && !item.approved && !item.approvedDate" class="fa fa-question"> APPROVAZIONE IN CORSO...</span>
               <a ng-if="supervisor && item.active" ng-click="approva(item.uuid)"><i class="{{item.approved && item.approvedDate ? 'text-danger' :''}} fa fa-check-circle-o"></i></a>
               <a ng-if="supervisor && item.active" ng-click="disapprova(item.uuid)"><i class="{{!item.approved && item.approvedDate ? 'text-danger' :''}} fa fa-ban"></i></a>
               <a ng-click="elimina(item.uuid)"><i class="{{!item.active ? 'text-danger' :''}} fa fa-times"></i></a>
