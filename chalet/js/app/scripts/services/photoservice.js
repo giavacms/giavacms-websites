@@ -62,7 +62,7 @@ angular.module('jsApp')
       }).$promise;
     }
 
-    var approve = function (toRemove, id) {
+    var approve = function (id) {
       var reqParams = {};
       reqParams['host'] = host;
       reqParams['entityPath'] = entityPath;
@@ -78,7 +78,7 @@ angular.module('jsApp')
       reqParams['host'] = host;
       reqParams['entityPath'] = entityPath;
       reqParams['id'] = id;
-      reqParams['entityPath2'] = 'approved';
+      reqParams['entityPath2'] = 'unapproved';
       return RsResource.update(reqParams, function (data) {
         return data;
       }).$promise;

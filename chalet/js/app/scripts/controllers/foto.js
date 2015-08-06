@@ -46,18 +46,21 @@ angular.module('jsApp')
       $scope.approva = function (uuid) {
         PhotoService.approve(uuid).then(function (data) {
           $scope.message = "approved";
+          $scope.refresh();
         });
       }
 
       $scope.disapprova = function (uuid) {
         PhotoService.unapprove(uuid).then(function (data) {
-          $scope.message = "approved";
+          $scope.message = "unapproved";
+          $scope.refresh();
         });
       }
 
       $scope.elimina = function (uuid) {
         PhotoService.delete(uuid).then(function (data) {
           $scope.message = "deleted";
+          $scope.refresh();
         });
       }
 
