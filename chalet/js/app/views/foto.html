@@ -38,7 +38,7 @@
       <form>
         <div class="form-group">
 
-          <select id="chalet" class="form-control" ng-model="search.obj.chaletId"
+          <select id="chalet" class="form-control" ng-model="search['obj.chaletId']"
                   ng-options="c.id as c.name for c in chalets" ng-change="filtra()">
             <option value="">scegli uno chalet</option>
           </select>
@@ -50,13 +50,10 @@
         <div class="widget">
           <ul class="recent-posts">
             <li class="clearfix" ng-repeat="item in model" ng-if="$index % 4 == 0">
-              <img src="/img/logo-no-chalet.jpg" style="width: 80px; height: 80px;"
-                   alt="{{item.name}}" ng-if="item.images.length==0">
-
-              <img ng-src="/img/{{item.images[0].filename}}" style="width: 80px; height: 80px;"
+              <img ng-src="/photo/{{item.name}}" style="width: 80px; height: 80px;"
                    alt="{{item.name}}" ng-if="item.images.length>0">
-              <a href="/#!/chalet_id/{{item.id}}" title="">{{item.name}}</a>
-              <span>concessione n. {{item.licenseNumber}}</span>
+              <a href="/photo/{{item.name}}" title="{{item.name}}" target="_blank">{{item.chaletName}}</a>
+              <span>TODO</span>
             </li>
           </ul>
         </div>
@@ -64,14 +61,12 @@
       <div class="col-md-3">
         <div class="widget">
           <ul class="recent-posts">
-            <li class="clearfix" ng-repeat="item in filteredModel" ng-if="$index % 4 == 1">
-              <img src="/img/logo-no-chalet.jpg" style="width: 80px; height: 80px;"
-                   alt="{{item.name}}" ng-if="item.images.length==0">
-
-              <img ng-src="/img/{{item.images[0].filename}}" style="width: 80px; height: 80px;"
+            <li class="clearfix" ng-repeat="item in model" ng-if="$index % 4 == 1">
+              <img ng-src="/photo/{{item.name}}" style="width: 80px; height: 80px;"
                    alt="{{item.name}}" ng-if="item.images.length>0">
-              <a href="/#!/chalet_id/{{item.id}}" title="">{{item.name}}</a>
-              <span>concessione n. {{item.licenseNumber}}</span>
+              <a href="/photo/{{item.name}}" title="{{item.name}}" target="_blank">{{item.chaletName}}</a>
+              <span>TODO</span>
+            </li>
             </li>
           </ul>
         </div>
@@ -79,14 +74,11 @@
       <div class="col-md-3">
         <div class="widget">
           <ul class="recent-posts">
-            <li class="clearfix" ng-repeat="item in filteredModel" ng-if="$index % 4 == 2">
-              <img src="/img/logo-no-chalet.jpg" style="width: 80px; height: 80px;"
-                   alt="{{item.name}}" ng-if="item.images.length==0">
-
-              <img ng-src="/img/{{item.images[0].filename}}" style="width: 80px; height: 80px;"
+            <li class="clearfix" ng-repeat="item in model" ng-if="$index % 4 == 2">
+              <img ng-src="/photo/{{item.name}}" style="width: 80px; height: 80px;"
                    alt="{{item.name}}" ng-if="item.images.length>0">
-              <a href="/#!/chalet_id/{{item.id}}" title="">{{item.name}}</a>
-              <span>concessione n. {{item.licenseNumber}}</span>
+              <a href="/photo/{{item.name}}" title="{{item.name}}" target="_blank">{{item.chaletName}}</a>
+              <span>TODO</span>
             </li>
           </ul>
         </div>
@@ -94,18 +86,58 @@
       <div class="col-md-3">
         <div class="widget">
           <ul class="recent-posts">
-            <li class="clearfix" ng-repeat="item in filteredModel" ng-if="$index % 4 == 3">
-              <img src="/img/logo-no-chalet.jpg" style="width: 80px; height: 80px;"
-                   alt="{{item.name}}" ng-if="item.images.length==0">
-
-              <img ng-src="/img/{{item.images[0].filename}}" style="width: 80px; height: 80px;"
+            <li class="clearfix" ng-repeat="item in model" ng-if="$index % 4 == 3">
+              <img ng-src="/photo/{{item.name}}" style="width: 80px; height: 80px;"
                    alt="{{item.name}}" ng-if="item.images.length>0">
-              <a href="/#!/chalet_id/{{item.id}}" title="">{{item.name}}</a>
-              <span>concessione n. {{item.licenseNumber}}</span>
+              <a href="/photo/{{item.name}}" title="{{item.name}}" target="_blank">{{item.chaletName}}</a>
+              <span>TODO</span>
             </li>
           </ul>
         </div>
       </div>
+
+
+
+
+
+
+
+                <div class="col-md-12">
+
+                    <a ng-disabled="startRow == 0" ng-click="firstPage()" alt="vai all'inizio" title="vai all'inizio">
+                        <i class="icon ti-angle-double-left"></i></a>
+
+                    <a ng-disabled="startRow == 0" ng-click="goToPage(currentPage-1)" alt="precedente"
+                       title="precedente"> <i
+                            class="icon ti-angle-left"></i></a>
+
+
+                    <a ng-repeat="p in pages track by $index" ng-click="goToPage(p)" alt="{{$index+1}}"
+                       title="{{$index+1}}" ng-disabled="currentPage==p">{{$index+1}}</a>
+
+
+                    <a ng-disabled="currentPage == pages.length || pages.length == 0"
+                       ng-click="goToPage(currentPage+1)" alt="successiva"
+                       title="successiva"> <i
+                            class="icon  ti-angle-right"></i></a>
+
+
+                    <a ng-disabled="currentPage == pages.length  || pages.length == 0" ng-click="lastPage()"
+                       alt="vai alla fine" title="vai alla fine">
+                        <i class="icon  ti-angle-double-right"></i></a>
+
+
+                </div>
+
+
+ <div class="col-md-12">
+
+                    <div ng-repeat="item in model">
+                        <img ng-src="/photo/{{item.name}}" style="width: 80px; height: 80px;"
+                             alt="{{$index}} - {{item.chaletId}}">
+                    </div>
+                </div>
+
 
 
     </div>
