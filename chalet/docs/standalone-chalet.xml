@@ -37,6 +37,7 @@
         <property name="giavacms.authToken" value="YmUyNTU1YjhmZWQ1NmQxNGVjODkwMzBhNWUzOGYw"/>
         <property name="giavacms.number" value="3905221520065 "/>
         <property name="giavacms.url" value="http://52.28.159.158:8080/api/v1/sms/url"/>
+        <property name="giavacms.imageResizeCommand" value="/usr/local/bin/mogrify -resize 800"/>
     </system-properties>
 
 
