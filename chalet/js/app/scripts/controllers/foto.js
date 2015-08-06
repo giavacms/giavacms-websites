@@ -34,15 +34,21 @@ angular.module('jsApp')
             $scope.chalets = [];
 
             $scope.approva = function (uuid) {
-
+                PhotoService.approve(uuid).then(function (data) {
+                    $scope.message = "approved";
+                });
             }
 
             $scope.disapprova = function (uuid) {
-
+                PhotoService.unapprove(uuid).then(function (data) {
+                    $scope.message = "approved";
+                });
             }
 
             $scope.elimina = function (uuid) {
-
+                PhotoService.delete(uuid).then(function (data) {
+                    $scope.message = "deleted";
+                });
             }
 
 
