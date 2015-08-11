@@ -23,6 +23,9 @@ angular.module('jsApp')
                     } else {
                         $state.current.image = '//votalatua.estate/img/' + $scope.element.images[0]['filename'];
                     }
+                    return element;
+                }).then(function (data) {
+
                 });
             }
             if ($stateParams.licenseNumber) {
@@ -36,6 +39,9 @@ angular.module('jsApp')
                     } else {
                         $state.current.image = '//votalatua.estate/img/' + $scope.element.images[0]['filename'];
                     }
+                    return element;
+                }).then(function (data) {
+
                 });
             }
 
