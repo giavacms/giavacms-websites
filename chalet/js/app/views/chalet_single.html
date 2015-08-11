@@ -1,256 +1,155 @@
 <div class="section page-title small-padding background-wrapper with-overlay black-overlay active-section">
-    <div class="background-image parallax-background" data-stellar-background-ratio="0.5">
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12" style="">
-                <div class="resizeMe">Vota la tua estate</div>
+  <div class="background-image parallax-background" data-stellar-background-ratio="0.5">
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12" style="">
+        <div class="resizeMe">Vota la tua estate</div>
 
-                <p class="">
-                    Vota la tua estate
-                </p>
-                <ol class="breadcrumb">
-                    <li><a ui-sref="home">Home</a></li>
-                    <li><a ui-sref="chalet">Chalet</a></li>
-                    <li class="active">{{element.licenseNumber}}</li>
-                </ol>
-            </div>
-        </div>
+        <p class="">
+          Vota la tua estate
+        </p>
+        <ol class="breadcrumb">
+          <li><a ui-sref="home">Home</a></li>
+          <li><a ui-sref="chalet">Chalet</a></li>
+          <li class="active">{{element.licenseNumber}}</li>
+        </ol>
+      </div>
     </div>
+  </div>
 </div>
 
 <section class="section active-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-7">
-                <div class="flexslider">
-                    <ul class="slides">
-                        <li class="flex-active-slide" ng-repeat="image in element.images"
-                            style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 1; display: block; z-index: 2;">
-                            <img ng-src="/img/{{image.filename}}" alt="{{element.name}}"
-                                 class="img-responsive border-radius"
-                                 draggable="false">
-                        </li>
-                        <li class="flex-active-slide" ng-if="element.images.length==0"
-                            style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 1; display: block; z-index: 2;">
-                            <img ng-src="/img/logo-no-chalet.jpg" alt="{{element.name}}"
-                                 class="img-responsive border-radius"
-                                 draggable="false">
-                        </li>
-                    </ul>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <div class="flexslider">
+          <ul class="slides">
+            <li class="flex-active-slide" ng-repeat="image in element.images"
+                style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 1; display: block; z-index: 2;">
+              <img ng-src="/img/{{image.filename}}" alt="{{element.name}}"
+                   class="img-responsive border-radius"
+                   draggable="false">
+            </li>
+            <li class="flex-active-slide" ng-if="element.images.length==0"
+                style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 1; display: block; z-index: 2;">
+              <img ng-src="/img/logo-no-chalet.jpg" alt="{{element.name}}"
+                   class="img-responsive border-radius"
+                   draggable="false">
+            </li>
+          </ul>
 
-                    <ol class="flex-control-nav flex-control-paging">
-                        <li ng-repeat="n in [] | range: element.images.length"><a class="flex-active">{{$index+1}}</a>
-                        </li>
-                    </ol>
-                </div>
-            </div>
-            <div class="col-md-3 col-md-offset-1">
-                <div class="space"></div>
-                <h2 class="lighter">{{element.name}}</h2>
-
-                <p class="lead">
-                    conc. n. {{element.licenseNumber}} <br/>
-                    {{element.address}}<br/>
-                    {{element.postalNumber}} - {{element.city}} {{element.province}} <br/>
-                </p>
-
-                <p>
-                <ul class="list-inline social-links text-center">
-                    <li ng-if="element.facebook"><a href="{{element.facebook}}" title="{{element.facebook}}"
-                                                    target="_blank"><i class="icon ti-facebook"></i></a></li>
-                    <li ng-if="element.website"><a href="{{element.website}}" title="{{element.website}}"
-                                                   target="_blank"><i
-                            class="icon ti-desktop"></i></a></li>
-                    <li ng-if="element.google"><a href="{{element.google}}" title="{{element.google}}"
-                                                  target="_blank"><i class="icon ti-google"></i></a></li>
-
-                    <li ng-if="element.tripadvisor"><a href="{{element.tripadvisor}}" title="{{element.tripadvisor}}"
-                                                       target="_blank"><i class="icon fa fa-tripadvisor"></i></a></li>
-                </ul>
-                </p>
-
-                <p class="text-center"><a href="/#!/vota/{{element.licenseNumber}}" title=""
-                                          class="btn btn-punch btn-sm btn-black">Vota {{element.licenseNumber}}</a>
-                </p>
-            </div>
+          <ol class="flex-control-nav flex-control-paging">
+            <li ng-repeat="n in [] | range: element.images.length"><a class="flex-active">{{$index+1}}</a>
+            </li>
+          </ol>
         </div>
+      </div>
+      <div class="col-md-3 col-md-offset-1">
+        <div class="space"></div>
+        <h2 class="lighter">{{element.name}}</h2>
+
+        <p class="lead">
+          conc. n. {{element.licenseNumber}} <br/>
+          {{element.address}}<br/>
+          {{element.postalNumber}} - {{element.city}} {{element.province}} <br/>
+        </p>
+
+        <p>
+        <ul class="list-inline social-links text-center">
+          <li ng-if="element.facebook"><a href="{{element.facebook}}" title="{{element.facebook}}"
+                                          target="_blank"><i class="icon ti-facebook"></i></a></li>
+          <li ng-if="element.website"><a href="{{element.website}}" title="{{element.website}}"
+                                         target="_blank"><i
+            class="icon ti-desktop"></i></a></li>
+          <li ng-if="element.google"><a href="{{element.google}}" title="{{element.google}}"
+                                        target="_blank"><i class="icon ti-google"></i></a></li>
+
+          <li ng-if="element.tripadvisor"><a href="{{element.tripadvisor}}" title="{{element.tripadvisor}}"
+                                             target="_blank"><i class="icon fa fa-tripadvisor"></i></a></li>
+        </ul>
+        </p>
+
+        <p class="text-center"><a href="/#!/vota/{{element.licenseNumber}}" title=""
+                                  class="btn btn-punch btn-sm btn-black">Vota {{element.licenseNumber}}</a>
+        </p>
+      </div>
     </div>
+  </div>
 </section>
 
 <section class="section grey-background active-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="team-block">
-                    <div class="paper white-background">
-                        <a href="#" title="" class="team-image text-center">
-                            <img src="https://votalatua.estate/photo/0f3a8bdd-0fb7-41a4-a931-d34268ab506c.jpg" alt="">
-                        </a>
+  <div class="container">
+    <div class="row">
 
+      <div class="col-md-3" ng-repeat-start="item in model">
+        <div class="team-block">
+          <div class="paper white-background">
+            <a href="#" title="" class="team-image text-center">
+              <img ng-src="/photo/{{item.name}}" style="width: 80px; height: 80px;"
+                   alt="{{item.name}}">
+            </a>
 
-                        <div class="text-center">
-                            <p class="position">Fiorenzo Pizza</p>
-                            <a href=""><i class="fa fa-check-circle-o"></i></a> <a href=""><i
-                                class="fa fa-check-circle-o"></i></a> <a href=""><i
-                                class="fa fa-check-circle-o"></i></a>
-                        </div>
-                    </div>
-                </div>
+            <div class="text-center">
+
+              <p class="position"> {{item.accountNameSurname}} </p>
+              <a href=""><i class="fa fa-check-circle-o"></i>{{item.created | date:'dd/MM/yyyy HH:mm'}}</a>
+
             </div>
-            <div class="col-md-3">
-                <div class="team-block">
-                    <div class="paper white-background">
-                        <a href="#" title="" class="team-image text-center">
-                            <img src="https://votalatua.estate/photo/0f3a8bdd-0fb7-41a4-a931-d34268ab506c.jpg" alt="">
-                        </a>
-
-
-                        <div class="text-center">
-                            <p class="position">Fiorenzo Pizza</p>
-                            <a href=""><i class="fa fa-check-circle-o"></i></a> <a href=""><i
-                                class="fa fa-check-circle-o"></i></a> <a href=""><i
-                                class="fa fa-check-circle-o"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="team-block">
-                    <div class="paper white-background">
-                        <a href="#" title="" class="team-image text-center">
-                            <img src="https://votalatua.estate/photo/0f3a8bdd-0fb7-41a4-a931-d34268ab506c.jpg" alt="">
-                        </a>
-
-
-                        <div class="text-center">
-                            <p class="position">Fiorenzo Pizza</p>
-                            <a href=""><i class="fa fa-check-circle-o"></i></a> <a href=""><i
-                                class="fa fa-check-circle-o"></i></a> <a href=""><i
-                                class="fa fa-check-circle-o"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="team-block">
-                    <div class="paper white-background">
-                        <a href="#" title="" class="team-image text-center">
-                            <img src="https://votalatua.estate/photo/0f3a8bdd-0fb7-41a4-a931-d34268ab506c.jpg" alt="">
-                        </a>
-
-
-                        <div class="text-center">
-                            <p class="position">Fiorenzo Pizza</p>
-                            <a href=""><i class="fa fa-check-circle-o"></i></a> <a href=""><i
-                                class="fa fa-check-circle-o"></i></a> <a href=""><i
-                                class="fa fa-check-circle-o"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="space"></div>
-            </div>
-            <div class="col-md-3">
-                <div class="team-block">
-                    <div class="paper white-background">
-                        <a href="#" title="" class="team-image text-center">
-                            <img src="demo/team/team1.jpg" alt="">
-<span class="overlay">
-<i class="icon ti-clipboard middle-content"></i>
-</span>
-                        </a>
-
-                        <p class="position">UI Designer</p>
-
-                        <h3 class="">Dylan Hamm</h3>
-
-                        <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut
-                            et voluptates</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="team-block">
-                    <div class="paper white-background">
-                        <a href="#" title="" class="team-image text-center">
-                            <img src="demo/team/team2.jpg" alt="">
-<span class="overlay">
-<i class="icon ti-clipboard middle-content"></i>
-</span>
-                        </a>
-
-                        <p class="position">Photographer</p>
-
-                        <h3 class="">Dallas Groot</h3>
-
-                        <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut
-                            et voluptates</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="team-block">
-                    <div class="paper white-background">
-                        <a href="#" title="" class="team-image text-center">
-                            <img src="demo/team/team3.jpg" alt="">
-<span class="overlay">
-<i class="icon ti-clipboard middle-content"></i>
-</span>
-                        </a>
-
-                        <p class="position">Developer</p>
-
-                        <h3 class="">Caliph Gamble</h3>
-
-                        <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut
-                            et voluptates</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="team-block">
-                    <div class="paper white-background">
-                        <a href="#" title="" class="team-image text-center">
-                            <img src="demo/team/team4.jpg" alt="">
-<span class="overlay">
-<i class="icon ti-clipboard middle-content"></i>
-</span>
-                        </a>
-
-                        <p class="position">Support Staff</p>
-
-                        <h3 class="">Adario Strange</h3>
-
-                        <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut
-                            et voluptates</p>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
+      <div class="col-md-12" ng-repeat-end ng-show="$index % 4 == 3">
+        <div class="space"></div>
+      </div>
+
     </div>
+
+    <div class="row">
+
+      <div class="col-md-1" ng-hide="currentPage < 3">
+        <a ng-click="firstPage()" alt="vai all'inizio" title="vai all'inizio">
+          <i class="icon ti-angle-double-left"></i></a>
+      </div>
+
+      <div class="col-md-1" ng-hide="currentPage < 2">
+        <a ng-click="goToPage(currentPage-1)" alt="precedente"
+           title="precedente"> <i
+          class="icon ti-angle-left"></i></a>
+      </div>
+
+      <div class="col-md-1" ng-repeat="p in subpages track by $index">
+        <a ng-click="goToPage(p)" alt="{{p}}"
+           title="{{p}}" ng-disabled="currentPage==p">
+          <i class="icon {{currentPage==p ? 'text-black' : ''}}">
+            {{p}}</i></a>
+      </div>
+
+      <div class="col-md-1" ng-show="currentPage < pages.length && pages.length > 0">
+        <a
+          ng-click="goToPage(currentPage+1)" alt="successiva"
+          title="successiva"> <i
+          class="icon  ti-angle-right"></i></a>
+      </div>
+
+      <div class="col-md-1" ng-show="currentPage < pages.length -1 && pages.length > 0">
+        <a ng-disabled="currentPage == pages.length  || pages.length == 0" ng-click="lastPage()"
+           alt="vai alla fine" title="vai alla fine">
+          <i class="icon  ti-angle-double-right"></i></a>
+      </div>
+
+    </div>
+
+  </div>
 </section>
 
-<nav class="text-center">
-    <ul class="pagination">
-        <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
-        <li class="active"><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li><a href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
-    </ul>
-</nav>
-
 <section class="section divider-section active-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="divider"></div>
-            </div>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="divider"></div>
+      </div>
     </div>
+  </div>
 </section>
 <div tabfooter></div>
