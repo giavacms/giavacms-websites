@@ -17,7 +17,6 @@ angular.module('jsApp')
                 if (success) {
                     $state.go('profilo');
                 }
-                $scope.loginOk = success;
                 $scope.unknown = false;
             });
 
@@ -25,15 +24,18 @@ angular.module('jsApp')
             $scope.auth = {};
 
             $scope.login = function () {
-                $scope.unknown = false;
-                AuthenticationService.login($scope.auth.phone);
+                if ($scope.auth.phone) {
+                    $scope.unknown = false;
+                    AuthenticationService.login($scope.auth.phone);
+                } else {
+
+                }
             }
 
             $scope.reset = function () {
                 $scope.auth = {};
-                $scope.loginOk = false;
-                $scope.unknown = true;
-                $scope.numbertocall = {};
+                $scope.unknown = false;
+                $scope.numbertocall = '';
                 cleanTimer();
             }
 

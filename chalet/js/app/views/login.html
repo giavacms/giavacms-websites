@@ -24,23 +24,19 @@
             <div class="col-md-8">
                 <div class="content">
                     <form>
-                        <h3 ng-hide="loginOk">Login</h3>
-
-                        <h3 ng-show="loginOk">Il tuo profilo</h3
+                        <h3>Login</h3>
 
                         <div class="form-group">
 
-
                             <!-- input when not logged in -->
-                            <div ng-hide="loginOk || numbertocall">
-                                <label for="telefono" class="col-sm-2 control-label">Il tuo numero di telefono</label>
+                            <div ng-hide="numbertocall">
+                                <label for="telefono" class="col-sm-2 control-label">Telefono</label>
 
                                 <div class="col-sm-10">
                                     <input id="telefono" class="form-control" type="text" name="phone"
                                            ng-change="unknown = false"
-                                           placeholder="Numero di telefono da cui effettuare uno squillo (gratuito!) per eseguire il login."
-                                           ng-model="auth.phone"
-                                            >
+                                           placeholder="Inserisci il tuo numero di cellulare."
+                                           ng-model="auth.phone">
                                 </div>
                             </div>
 
@@ -49,25 +45,23 @@
 
                                 <!-- command to send the number and wait for ring -->
                                 <button ng-hide="numbertocall || unknown" ng-click="login()" class="btn btn-primary">
-                                    Invia il tuo numero
+                                    Effettua il login
                                 </button>
 
-                                <button ng-hide="numbertocall || unknown" ng-click="reset()" class="btn btn-primary">
+                                <button ng-hide="numbertocall" ng-click="reset()" class="btn btn-primary">
                                     Annulla
                                 </button>
 
                                 <!-- command to ring -->
-                                <div ng-show="numbertocall" class="text-center">
+                                <div ng-show="numbertocall" >
                                     <label class="control-label">
-                                        Ora fai uno
-                                        squillo al numero <a href="tel:{{numbertocall}}">{{numbertocall}}</a> per
-                                        confermare il tuo numero!
-                                    </label>
-                                </div>
-                                <div ng-show="numbertocall" class="text-center">
-                                    <span class="ti-face-smile"></span>
-                                    <label class="control-label">
-                                        La telefonata e' gratuita </label>
+
+                                        Chiama questo numero per effettuare il login <a href="tel:{{numbertocall}}">{{numbertocall}}</a><br/>
+                                        usando il telefono con lo stesso numero dichiarato. <br/>La telefonata e' gratuita.
+                                    </label><br/>
+                                    <button ng-click="reset()" class="btn btn-primary">
+                                        Ricomincia
+                                    </button>
                                 </div>
 
                                 <!-- command to ring -->
@@ -91,8 +85,8 @@
                         <br/>
 
                         <div class="form-group">
-                            Vota almeno una volta per il tuo chalet preferito! Da quel momento potrai effettuare il
-                            login e votare senza dover ogni volta chiamare un numero!<br/>
+                            Vota almeno una volta per il tuo chalet preferito. <br/>Potrai votare senza dover ogni volta
+                            effettuare la telefonata.<br/>
                             <a ui-sref="vota">vota! vota! vota!</a>
                         </div>
                     </form>
