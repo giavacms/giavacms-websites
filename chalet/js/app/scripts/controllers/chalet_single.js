@@ -16,7 +16,7 @@ angular.module('jsApp')
       $scope.predicate = 'created';
       $scope.reverse = true;
 
-      $scope.host = "http://votalatua.estate";
+      $scope.host = "";
 
       var overrides = {
         pageSize: 4,
