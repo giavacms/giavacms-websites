@@ -5,7 +5,7 @@ angular.module('jsApp')
 
   .service('ChaletPhotoService', ['RsResource', 'APP_PROPERTIES', '$q', function (RsResource, APP_PROPERTIES, $q) {
 
-    var host = APP_PROPERTIES.HOST;
+    var host = "votalatua.estate"//APP_PROPERTIES.HOST;
 
     var list = [];
     var size = 0;

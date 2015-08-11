@@ -24,10 +24,18 @@
     <div class="row">
       <div class="col-md-7">
         <div class="flexslider">
-          <ul class="slides">
+          <ul class="slides" ng-if="single.name">
+            <li class="flex-active-slide"
+                style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 1; display: block; z-index: 2;">
+              <img ng-src="{{host}}/photo/{{single.name}}" alt="{{single.name}}"
+                   class="img-responsive border-radius"
+                   draggable="false" ng-click="toggle(single)">
+            </li>
+          </ul>
+          <ul class="slides" ng-if="!single.name">
             <li class="flex-active-slide" ng-repeat="image in element.images"
                 style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 1; display: block; z-index: 2;">
-              <img ng-src="/img/{{image.filename}}" alt="{{element.name}}"
+              <img ng-src="{{host}}/img/{{image.filename}}" alt="{{element.name}}"
                    class="img-responsive border-radius"
                    draggable="false">
             </li>
@@ -85,15 +93,15 @@
       <div class="col-md-3" ng-repeat-start="item in model">
         <div class="team-block">
           <div class="paper white-background">
-            <a href="#" title="" class="team-image text-center">
-              <img ng-src="/photo/{{item.name}}" style="width: 80px; height: 80px;"
+            <a class="team-image text-center" ng-click="toggle(item)">
+              <img ng-src="{{host}}/photo/{{item.name}}"
                    alt="{{item.name}}">
             </a>
 
             <div class="text-center">
 
-              <p class="position"> {{item.accountNameSurname}} </p>
-              <a href=""><i class="fa fa-check-circle-o"></i>{{item.created | date:'dd/MM/yyyy HH:mm'}}</a>
+              <p class="position"><strong> {{item.accountNameSurnameShort}} </strong></p>
+              {{item.created | date:'dd/MM/yyyy HH:mm'}}
 
             </div>
           </div>
@@ -105,6 +113,16 @@
 
     </div>
 
+    <div class="row">
+      <div class="col-md-12" ng-repeat-end ng-show="$index % 4 == 3">
+        <div class="space"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section grey-background active-section">
+  <div class="container">
     <div class="row">
 
       <div class="col-md-1" ng-hide="currentPage < 3">

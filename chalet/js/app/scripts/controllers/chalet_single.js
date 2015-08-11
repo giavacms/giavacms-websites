@@ -16,8 +16,10 @@ angular.module('jsApp')
       $scope.predicate = 'created';
       $scope.reverse = true;
 
+      $scope.host = "http://votalatua.estate";
+
       var overrides = {
-        pageSize: 16,
+        pageSize: 4,
         shownPages: 3
       };
 
@@ -33,7 +35,7 @@ angular.module('jsApp')
           } else {
             $state.current.image = '//votalatua.estate/img/' + $scope.element.images[0]['filename'];
           }
-          ChaletPhotoService.setChaletId (element.id);
+          ChaletPhotoService.setChaletId(element.id);
           Pager($log, $scope, ChaletPhotoService, overrides);
         });
       }
@@ -48,9 +50,19 @@ angular.module('jsApp')
           } else {
             $state.current.image = '//votalatua.estate/img/' + $scope.element.images[0]['filename'];
           }
-          ChaletPhotoService.setChaletId (element.id);
+          ChaletPhotoService.setChaletId(element.id);
           Pager($log, $scope, ChaletPhotoService, overrides);
         });
+      }
+
+      $scope.single = {};
+      $scope.toggle = function (photo) {
+        if ($scope.single['name'] == photo.name) {
+          $scope.single = {}
+        }
+        else {
+            $scope.single = photo;
+        }
       }
 
     }])
