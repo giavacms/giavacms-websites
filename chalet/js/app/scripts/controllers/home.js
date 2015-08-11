@@ -21,7 +21,7 @@ angular.module('jsApp')
             return name.length;
         }
         refresh();
-        $interval(refresh, 10000);
+        // $interval(refresh, 10000);
 
     }])
 
