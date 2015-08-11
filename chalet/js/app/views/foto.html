@@ -61,7 +61,7 @@
         <div class="team-block">
           <div class="paper white-background">
             <a href="#" title="" class="team-image text-center">
-              <img ng-src="/photo/{{item.name}}" style="width: 80px; height: 80px;"
+              <img ng-src="{{host}}/photo/{{item.name}}"
                    alt="{{item.name}}">
             </a>
 
@@ -69,21 +69,31 @@
 
               <p ng-if="supervisor" class="position"> {{item.accountNameSurname}} </p>
 
-              <p ng-if="!supervisor && item.approved" class="fa fa-check"></p>
+              <p ng-if="!supervisor && item.approved" class="position fa fa-check"></p>
 
-              <p ng-if="!supervisor && !item.approved && item.approvedDate" class="fa fa-ban"> NON APPROVATA</p>
+              <p ng-if="!supervisor && !item.approved && item.approvedDate" class="position fa fa-ban"> NON APPROVATA</p>
 
-              <p ng-if="!supervisor && !item.approved && !item.approvedDate" class="fa fa-question"> APPROVAZIONE IN
+              <p ng-if="!supervisor && !item.approved && !item.approvedDate" class="position"> APPROVAZIONE IN
                 CORSO...</p>
 
-              <a ng-if="supervisor && item.active" ng-click="approva(item.uuid)"><i
-                class="{{item.approved && item.approvedDate ? 'text-danger' :''}} fa fa-check-circle-o"></i></a>
+              <p style="font-size: 2em">
+                <a ng-if="supervisor && item.active" ng-click="approva(item.uuid)"><i
+                  class="{{item.approved && item.approvedDate ? 'text-success' :''}} fa fa-check-circle-o"></i></a>
 
-              <a ng-if="supervisor && item.active" ng-click="disapprova(item.uuid)"><i
-                class="{{!item.approved && item.approvedDate ? 'text-danger' :''}} fa fa-ban"></i></a>
+                &nbsp;
+                &nbsp;
+                &nbsp;
 
-              <a ng-click="elimina(item.uuid)"><i class="{{!item.active ? 'text-danger' :''}} fa fa-times"></i></a>
+                <a ng-if="supervisor && item.active" ng-click="disapprova(item.uuid)"><i
+                  class="{{!item.approved && item.approvedDate ? 'text-success' :''}} fa fa-ban"></i></a>
 
+                &nbsp;
+                &nbsp;
+                &nbsp;
+
+                <a ng-if="supervisor" ng-click="elimina(item.uuid)"><i class="{{!item.active ? 'text-success' :''}} fa fa-times"></i></a>
+                <a ng-if="!supervisor" ng-click="elimina(item.uuid)"><i class="{{!item.active ? 'text-success' :''}} fa fa-times"></i>ELIMINA </a>
+              </p>
             </div>
           </div>
         </div>
@@ -93,7 +103,7 @@
       </div>
 
 
-      <div class="col-md-12">
+      <div class="col-md-12" ng-if="false">
         <div class="content">
 
           <nav class="text-center">
@@ -142,43 +152,48 @@
 
 
     </div>
+  </div>
+</section>
+
+<section class="section active-section grey-background">
+  <div class="container">
 
     <div class="row">
       <div class="text-center">
 
 
-      <div class="col-md-1" ng-hide="currentPage < 3">
-        <a ng-click="firstPage()" alt="vai all'inizio" title="vai all'inizio">
-          <i class="icon ti-angle-double-left"></i></a>
-      </div>
+        <div class="col-md-1" ng-hide="currentPage < 3">
+          <a ng-click="firstPage()" alt="vai all'inizio" title="vai all'inizio">
+            <i class="icon ti-angle-double-left"></i></a>
+        </div>
 
-      <div class="col-md-1" ng-hide="currentPage < 2">
-        <a ng-click="goToPage(currentPage-1)" alt="precedente"
-           title="precedente"> <i
-          class="icon ti-angle-left"></i></a>
-      </div>
+        <div class="col-md-1" ng-hide="currentPage < 2">
+          <a ng-click="goToPage(currentPage-1)" alt="precedente"
+             title="precedente"> <i
+            class="icon ti-angle-left"></i></a>
+        </div>
 
-      <div class="col-md-1" ng-repeat="p in subpages track by $index">
-        <a ng-click="goToPage(p)" alt="{{p}}"
-           title="{{p}}" ng-disabled="currentPage==p">
-          <i class="icon {{currentPage==p ? 'text-black' : ''}}">
-            {{p}}</i></a>
-      </div>
+        <div class="col-md-1" ng-repeat="p in subpages track by $index">
+          <a ng-click="goToPage(p)" alt="{{p}}"
+             title="{{p}}" ng-disabled="currentPage==p">
+            <i class="icon {{currentPage==p ? 'text-black' : ''}}">
+              {{p}}</i></a>
+        </div>
 
-      <div class="col-md-1" ng-show="currentPage < pages.length && pages.length > 0">
-        <a
-          ng-click="goToPage(currentPage+1)" alt="successiva"
-          title="successiva"> <i
-          class="icon  ti-angle-right"></i></a>
-      </div>
+        <div class="col-md-1" ng-show="currentPage < pages.length && pages.length > 0">
+          <a
+            ng-click="goToPage(currentPage+1)" alt="successiva"
+            title="successiva"> <i
+            class="icon  ti-angle-right"></i></a>
+        </div>
 
-      <div class="col-md-1" ng-show="currentPage < pages.length -1 && pages.length > 0">
-        <a ng-disabled="currentPage == pages.length  || pages.length == 0" ng-click="lastPage()"
-           alt="vai alla fine" title="vai alla fine">
-          <i class="icon  ti-angle-double-right"></i></a>
-      </div>
+        <div class="col-md-1" ng-show="currentPage < pages.length -1 && pages.length > 0">
+          <a ng-disabled="currentPage == pages.length  || pages.length == 0" ng-click="lastPage()"
+             alt="vai alla fine" title="vai alla fine">
+            <i class="icon  ti-angle-double-right"></i></a>
+        </div>
 
-    </div>
+      </div>
     </div>
 
   </div>

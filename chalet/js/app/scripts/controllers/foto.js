@@ -37,6 +37,9 @@ angular.module('jsApp')
 
       $scope.predicate = 'created';
       $scope.reverse = true;
+
+      $scope.host = "http://votalatua.estate";
+
       var overrides = {
         pageSize: 16,
         shownPages: 3
