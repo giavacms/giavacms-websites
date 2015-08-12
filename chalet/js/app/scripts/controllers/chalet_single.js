@@ -63,6 +63,8 @@ angular.module('jsApp')
                 else {
                     $scope.single = photo;
                 }
+                $location.hash('top');
+                $anchorScroll();
             }
 
         }])
