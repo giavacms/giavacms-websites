@@ -20,7 +20,8 @@ angular.module('jsApp')
 
             var overrides = {
                 pageSize: 4,
-                shownPages: 3
+                shownPages: 3,
+                scrollTo: 'gallery'
             };
 
 

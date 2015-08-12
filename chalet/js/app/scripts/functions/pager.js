@@ -8,7 +8,8 @@ function Pager($log, $scope, RsService, overrides, $anchorScroll, $location) {
         pageSize: 10,
         autoload: true,
         id: 'id',
-        shownPages: 10
+        shownPages: 10,
+        scrollTo: 'top'
     };
 
     if (overrides) {
@@ -107,7 +108,7 @@ function Pager($log, $scope, RsService, overrides, $anchorScroll, $location) {
                             }
                         }
                     }
-                    $location.hash('top');
+                    $location.hash(defaults['scrollTo']);
                     $anchorScroll();
                 }
             },

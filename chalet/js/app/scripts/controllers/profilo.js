@@ -27,7 +27,9 @@ angular.module('jsApp')
 
             $scope.predicate = 'created';
             $scope.reverse = true;
-            var overrides = {};
+            var overrides = {
+                scrollTo: 'gallery'
+            };
             Pager($log, $scope, PhotoService, overrides, $anchorScroll, $location);
 
         }])

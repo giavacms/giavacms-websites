@@ -42,7 +42,8 @@ angular.module('jsApp')
 
             var overrides = {
                 pageSize: 16,
-                shownPages: 3
+                shownPages: 3,
+                scrollTo: 'gallery'
             };
             Pager($log, $scope, PhotoService, overrides, $anchorScroll, $location);
 
