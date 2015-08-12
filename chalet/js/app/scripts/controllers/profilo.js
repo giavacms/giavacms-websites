@@ -9,8 +9,8 @@
  */
 angular.module('jsApp')
 
-    .controller('Profilo', ['$scope', '$interval', '$log', '$state', 'AuthenticationService', 'PhotoService', '$rootScope',
-        function ($scope, $interval, $log, $state, AuthenticationService, PhotoService, $rootScope) {
+    .controller('Profilo', ['$scope', '$interval', '$log', '$state', 'AuthenticationService', 'PhotoService', '$rootScope', '$anchorScroll', '$location',
+        function ($scope, $interval, $log, $state, AuthenticationService, PhotoService, $rootScope, $anchorScroll, $location) {
 
             // change this to true when login succeeds
             AuthenticationService.isLogged().then(function (success) {
@@ -28,7 +28,7 @@ angular.module('jsApp')
             $scope.predicate = 'created';
             $scope.reverse = true;
             var overrides = {};
-            Pager($log, $scope, PhotoService, overrides);
+            Pager($log, $scope, PhotoService, overrides, $anchorScroll, $location);
 
         }])
 
