@@ -3,8 +3,8 @@
 angular.module('jsApp')
 
     .controller('ChaletSingle',
-    ['$location', '$log', '$rootScope', '$scope', '$state', '$stateParams', 'ChaletPhotoService', 'ChaletService', '$anchorScroll',
-        function ($location, $log, $rootScope, $scope, $state, $stateParams, ChaletPhotoService, ChaletService, $anchorScroll) {
+    ['$location', '$log', '$rootScope', '$scope', '$state', '$stateParams', 'ChaletPhotoService', 'ChaletService', '$anchorScroll', 'APP_PROPERTIES',
+        function ($location, $log, $rootScope, $scope, $state, $stateParams, ChaletPhotoService, ChaletService, $anchorScroll, APP_PROPERTIES) {
 
             //DA CHIUDERE
             //DA CHIUDERE
@@ -16,7 +16,7 @@ angular.module('jsApp')
             $scope.predicate = 'created';
             $scope.reverse = true;
 
-            $scope.host = "";
+            $scope.host = APP_PROPERTIES.CDN_PHOTO;
 
             var overrides = {
                 pageSize: 4,

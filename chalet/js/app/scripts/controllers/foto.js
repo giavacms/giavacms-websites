@@ -9,8 +9,8 @@
  */
 angular.module('jsApp')
 
-    .controller('Foto', ['$scope', '$interval', '$log', '$state', 'AuthenticationService', 'PhotoService', '$anchorScroll', '$location',
-        function ($scope, $interval, $log, $state, AuthenticationService, PhotoService, $anchorScroll, $location) {
+    .controller('Foto', ['$scope', '$interval', '$log', '$state', 'AuthenticationService', 'PhotoService', '$anchorScroll', '$location', 'APP_PROPERTIES',
+        function ($scope, $interval, $log, $state, AuthenticationService, PhotoService, $anchorScroll, $location, APP_PROPERTIES) {
 
             //LISTA CHALET che ho usato nelle foto
             $scope.chalets = [];
@@ -38,7 +38,7 @@ angular.module('jsApp')
             $scope.predicate = 'created';
             $scope.reverse = true;
 
-            $scope.host = "";
+            $scope.host = APP_PROPERTIES.CDN_PHOTO;
 
             var overrides = {
                 pageSize: 16,
