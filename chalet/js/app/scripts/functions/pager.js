@@ -52,7 +52,7 @@ function Pager($log, $scope, RsService, overrides, $anchorScroll, $location) {
         $scope.search = angular.copy(defaults.search);
         $scope.refresh();
     }
-    $scope.refresh = function () {
+    $scope.refresh = function (scroll) {
         $log.debug('Ricerca in corso...');
         var orderBy = $scope.predicate + ($scope.reverse ? ' desc' : ' asc')
         RsService.getList($scope.search, $scope.startRow, $scope.pageSize, orderBy).then(
@@ -108,20 +108,16 @@ function Pager($log, $scope, RsService, overrides, $anchorScroll, $location) {
                             }
                         }
                     }
+                    if ( scroll ) {
                     $location.hash(defaults['scrollTo']);
                     $anchorScroll();
+                    }
                 }
             },
             // errorre
             function () {
                 $log.debug('Dati non disponibili.');
             })
-    }
-    if (defaults.autoload) {
-        $scope.refresh();
-    }
-    else {
-        $log.debug('Nessuna ricerca eseguita');
     }
 
     // paginazione
@@ -141,6 +137,15 @@ function Pager($log, $scope, RsService, overrides, $anchorScroll, $location) {
         $scope.startRow = 0;
         $scope.refresh();
         $scope.currentPage = 1;
+    }
+
+
+    if (defaults.autoload) {
+    	var scroll = false;
+        $scope.refresh(scroll);
+    }
+    else {
+        $log.debug('Nessuna ricerca eseguita');
     }
 
 
