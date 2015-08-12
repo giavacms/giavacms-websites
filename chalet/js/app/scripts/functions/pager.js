@@ -52,7 +52,7 @@ function Pager($log, $scope, RsService, overrides, $anchorScroll, $location) {
         $scope.search = angular.copy(defaults.search);
         $scope.refresh();
     }
-    $scope.refresh = function (scroll) {
+    $scope.refresh = function (dontScroll) {
         $log.debug('Ricerca in corso...');
         var orderBy = $scope.predicate + ($scope.reverse ? ' desc' : ' asc')
         RsService.getList($scope.search, $scope.startRow, $scope.pageSize, orderBy).then(
@@ -108,9 +108,9 @@ function Pager($log, $scope, RsService, overrides, $anchorScroll, $location) {
                             }
                         }
                     }
-                    if ( scroll ) {
-                    $location.hash(defaults['scrollTo']);
-                    $anchorScroll();
+                    if (!dontScroll) {
+                        $location.hash(defaults['scrollTo']);
+                        $anchorScroll();
                     }
                 }
             },
@@ -141,8 +141,7 @@ function Pager($log, $scope, RsService, overrides, $anchorScroll, $location) {
 
 
     if (defaults.autoload) {
-    	var scroll = false;
-        $scope.refresh(scroll);
+        $scope.refresh(true);
     }
     else {
         $log.debug('Nessuna ricerca eseguita');
